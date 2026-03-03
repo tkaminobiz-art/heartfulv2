@@ -191,6 +191,74 @@ ul, ol { list-style: none; }
   background-size: 256px 256px;
 }
 
+/* ===== Opening Animation ===== */
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.opening::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 40%, rgba(255,255,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.opening__logo {
+  width: clamp(64px, 12vw, 100px);
+  opacity: 0;
+  filter: brightness(0) invert(1);
+  animation: op-logo 700ms var(--ease) 400ms forwards;
+}
+
+.opening__tagline {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.12em;
+  text-align: center;
+  opacity: 0;
+  animation: op-tag 600ms var(--ease) 1200ms forwards;
+}
+
+.opening__line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+  opacity: 0;
+  animation: op-line 500ms var(--ease) 1000ms forwards;
+}
+
+.opening.exit {
+  animation: op-exit 900ms var(--ease) forwards;
+}
+
+@keyframes op-logo {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes op-line {
+  0% { opacity: 0; width: 0; }
+  100% { opacity: 1; width: 40px; }
+}
+@keyframes op-tag {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes op-exit {
+  0% { clip-path: inset(0 0 0 0); }
+  100% { clip-path: inset(0 0 100% 0); }
+}
+
 /* ===== Scroll Animation ===== */
 .fade-in {
   opacity: 0;
@@ -213,16 +281,19 @@ ul, ol { list-style: none; }
 }
 
 .mask-in {
+  opacity: 0;
   clip-path: inset(0 100% 0 0);
-  transition: clip-path 800ms var(--ease);
+  transition: opacity 100ms ease, clip-path 900ms var(--ease);
 }
 .mask-in.visible {
+  opacity: 1;
   clip-path: inset(0 0% 0 0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .fade-in, .reveal-up { opacity: 1; transform: none; transition: none; }
-  .mask-in { clip-path: none; transition: none; }
+  .mask-in { opacity: 1; clip-path: none; transition: none; }
+  .opening { display: none; }
 }
 
 /* ========================================
@@ -338,11 +409,30 @@ ul, ol { list-style: none; }
   z-index: 1;
 }
 
+.fv__identity {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 18px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  margin-bottom: 20px;
+}
+
+.fv__identity svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
 .fv__badges {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
 }
 
 .fv__badge {
@@ -1358,6 +1448,13 @@ ul, ol { list-style: none; }
 </head>
 <body>
 
+<!-- ====== OPENING ANIMATION ====== -->
+<div class="opening" id="opening">
+  <img class="opening__logo" src="ハートクリーンロゴ画像.jpg" alt="">
+  <div class="opening__line"></div>
+  <p class="opening__tagline">溢れるものも、溢れる想いも<br>丁寧に片付ける。</p>
+</div>
+
 <div class="noise-overlay" aria-hidden="true"></div>
 <main>
 
@@ -1387,11 +1484,21 @@ ul, ol { list-style: none; }
 <section class="fv" id="top">
   <div class="fv__inner">
     <div class="fv__content">
+      <div class="fv__identity fade-in">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>元大阪府警察官（5年勤務）が代表を務める遺品整理会社</span>
+      </div>
+
+      <h1 class="fv__heading mask-in">
+        曲がったことが嫌いな、<br>元警察官の遺品整理。
+      </h1>
+
+      <p class="fv__sub fade-in">
+        お見積り金額から、1円も変わりません。<br>
+        追加請求も、不法投棄もしない。それが、元警察官の約束です。
+      </p>
+
       <div class="fv__badges fade-in">
-        <span class="fv__badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          元大阪府警察官
-        </span>
         <span class="fv__badge">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           遺品整理士認定
@@ -1410,32 +1517,23 @@ ul, ol { list-style: none; }
         </span>
       </div>
 
-      <h1 class="fv__heading mask-in">
-        見積りのあとに、<br>金額は変わりません。
-      </h1>
-
-      <p class="fv__sub fade-in">
-        元大阪府警察官が代表を務める、奈良の遺品整理専門会社です。<br>
-        遺品整理・生前整理・特殊清掃・不用品回収。立ち会い不要、すべてお任せください。
-      </p>
-
       <div class="fv__cta fade-in">
-        <a href="tel:0120905734" class="btn btn--phone">
+        <a href="tel:0120905734" class="btn btn--primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          電話で相談する
+          まずは電話で相談する
         </a>
         <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           LINEで無料相談
         </a>
       </div>
-      <p class="microcopy fade-in">相談・お見積り無料 ｜ 秘密厳守</p>
+      <p class="microcopy fade-in">相談・お見積り無料 ｜ 秘密厳守 ｜ 奈良・大阪を中心に近畿一円対応</p>
     </div>
 
     <div class="fv__visual fade-in">
       <div class="fv__image-placeholder">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-        <span>代表者写真<br>（藤田 宗一郎）</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>代表者写真<br>藤田 宗一郎</span>
         <span style="font-size:12px;opacity:0.6;">※クライアント様より提供</span>
       </div>
     </div>
@@ -1968,46 +2066,82 @@ ul, ol { list-style: none; }
 <!-- ====== SCRIPTS ====== -->
 <script>
 (function() {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const delay = el.dataset.delay || 0;
-        setTimeout(() => el.classList.add('visible'), delay);
-        observer.unobserve(el);
+  var OPENING_DURATION = 2800;
+  var opening = document.getElementById('opening');
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced) {
+    if (opening) opening.style.display = 'none';
+    OPENING_DURATION = 0;
+  }
+
+  function triggerFvAnimations() {
+    var fvEls = document.querySelectorAll('.fv .fade-in, .fv .mask-in, .fv .reveal-up');
+    var base = 0;
+    fvEls.forEach(function(el) {
+      setTimeout(function() { el.classList.add('visible'); }, base);
+      base += 200;
+    });
+  }
+
+  if (opening && !prefersReduced) {
+    setTimeout(function() {
+      opening.classList.add('exit');
+    }, 2200);
+
+    setTimeout(function() {
+      triggerFvAnimations();
+    }, OPENING_DURATION);
+
+    opening.addEventListener('animationend', function(e) {
+      if (e.animationName === 'op-exit') {
+        opening.style.pointerEvents = 'none';
+        opening.style.visibility = 'hidden';
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  } else {
+    setTimeout(triggerFvAnimations, 100);
+  }
 
-  document.querySelectorAll('.fade-in, .reveal-up, .mask-in').forEach((el, i) => {
-    const parent = el.closest('.problem__list, .services__grid, .testimonials__grid, .faq__list, .reasons__grid, .flow__steps');
-    if (parent) {
-      const siblings = Array.from(parent.querySelectorAll('.fade-in, .reveal-up'));
-      const idx = siblings.indexOf(el);
-      if (idx >= 0) el.dataset.delay = idx * 80;
-    }
-    observer.observe(el);
-  });
+  setTimeout(function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = el.dataset.delay || 0;
+          setTimeout(function() { el.classList.add('visible'); }, delay);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-  document.querySelectorAll('.faq__question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.parentElement;
-      const wasOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq__item.open').forEach(i => i.classList.remove('open'));
+    document.querySelectorAll('.fade-in:not(.visible), .reveal-up:not(.visible), .mask-in:not(.visible)').forEach(function(el) {
+      var parent = el.closest('.problem__list, .services__grid, .testimonials__grid, .faq__list, .reasons__grid, .flow__steps');
+      if (parent) {
+        var siblings = Array.from(parent.querySelectorAll('.fade-in, .reveal-up'));
+        var idx = siblings.indexOf(el);
+        if (idx >= 0) el.dataset.delay = idx * 80;
+      }
+      observer.observe(el);
+    });
+  }, OPENING_DURATION + 100);
+
+  document.querySelectorAll('.faq__question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item.open').forEach(function(i) { i.classList.remove('open'); });
       if (!wasOpen) item.classList.add('open');
     });
   });
 
-  const floating = document.getElementById('floatingCta');
-  let lastScroll = 0;
-  window.addEventListener('scroll', () => {
-    const st = window.scrollY;
-    if (st > 400) {
+  var floating = document.getElementById('floatingCta');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
       floating.style.transform = 'translateY(0)';
     } else {
       floating.style.transform = 'translateY(100%)';
     }
-    lastScroll = st;
   }, { passive: true });
   floating.style.transform = 'translateY(100%)';
   floating.style.transition = 'transform 300ms cubic-bezier(0.16,1,0.3,1)';
