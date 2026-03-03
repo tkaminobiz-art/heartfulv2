@@ -45,6 +45,8 @@ body {
   color: var(--text);
   background-color: var(--bg);
   -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+  word-break: normal;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -58,6 +60,11 @@ ul, ol { list-style: none; }
 }
 
 /* ===== Typography ===== */
+.br-lg { display: inline; }
+@media (max-width: 768px) {
+  .br-lg { display: none; }
+}
+
 .section-label {
   font-family: 'Inter', sans-serif;
   font-size: 13px;
@@ -73,8 +80,10 @@ ul, ol { list-style: none; }
   font-size: clamp(26px, 3.5vw, 42px);
   font-weight: 400;
   letter-spacing: 0.06em;
-  line-height: 1.35;
+  line-height: 1.4;
   color: var(--text);
+  text-wrap: balance;
+  word-break: auto-phrase;
 }
 
 .section-heading--light {
@@ -87,6 +96,7 @@ ul, ol { list-style: none; }
   line-height: 1.8;
   margin-top: 20px;
   max-width: 640px;
+  text-wrap: pretty;
 }
 
 /* ===== Buttons ===== */
@@ -528,12 +538,21 @@ ul, ol { list-style: none; }
 
 .fv__heading {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(28px, 4.5vw, 52px);
+  font-size: clamp(26px, 4.2vw, 50px);
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.3;
   letter-spacing: 0.06em;
   color: var(--text);
   margin-bottom: 20px;
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+@media (max-width: 768px) {
+  .fv__heading {
+    font-size: clamp(24px, 6.5vw, 32px);
+    line-height: 1.4;
+  }
 }
 
 .fv__sub {
@@ -542,6 +561,7 @@ ul, ol { list-style: none; }
   line-height: 1.8;
   margin-bottom: 32px;
   max-width: 480px;
+  text-wrap: pretty;
 }
 
 .fv__cta {
@@ -694,6 +714,7 @@ ul, ol { list-style: none; }
   font-size: 15px;
   line-height: 1.9;
   color: var(--text-light);
+  text-wrap: pretty;
 }
 
 .reason-card__body p + p {
@@ -1179,6 +1200,7 @@ ul, ol { list-style: none; }
   font-size: 15px;
   line-height: 2;
   color: var(--text);
+  text-wrap: pretty;
 }
 
 .representative__text p + p {
@@ -1581,7 +1603,7 @@ ul, ol { list-style: none; }
       </div>
 
       <h1 class="fv__heading mask-in">
-        曲がったことが嫌いな、<br>元警察官の遺品整理。
+        曲がったことが嫌いな、<br class="br-lg">元警察官のまっすぐな遺品整理。
       </h1>
 
       <p class="fv__sub fade-in">
@@ -1632,7 +1654,7 @@ ul, ol { list-style: none; }
   <div class="wrapper">
     <div class="problem__heading-area fade-in">
       <p class="section-label">Your Concerns</p>
-      <h2 class="section-heading">はじめての遺品整理。<br>不安は、当然です。</h2>
+      <h2 class="section-heading">はじめての遺品整理。<br class="br-lg">不安は、当然です。</h2>
     </div>
 
     <div class="problem__list">
@@ -1673,7 +1695,7 @@ ul, ol { list-style: none; }
   <div class="wrapper">
     <div class="reasons__heading-area fade-in">
       <p class="section-label">3 Reasons</p>
-      <h2 class="section-heading">ハートフルクリーンが<br>選ばれる、3つの理由。</h2>
+      <h2 class="section-heading">ハートフルクリーンが<br class="br-lg">選ばれる、3つの理由。</h2>
     </div>
 
     <div class="reasons__grid">
@@ -1976,7 +1998,7 @@ ul, ol { list-style: none; }
 
       <div class="representative__content">
         <p class="section-label fade-in">Message</p>
-        <h2 class="section-heading fade-in">なぜ、元警察官が<br>遺品整理を始めたのか。</h2>
+        <h2 class="section-heading fade-in">なぜ、元警察官が<br class="br-lg">遺品整理を始めたのか。</h2>
 
         <div class="representative__text fade-in">
           <p>大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。</p>
@@ -2006,7 +2028,7 @@ ul, ol { list-style: none; }
 <section class="area" id="area">
   <div class="wrapper">
     <p class="section-label fade-in">Area</p>
-    <h2 class="section-heading section-heading--light fade-in">奈良・大阪を中心に、<br>近畿一円に対応。</h2>
+    <h2 class="section-heading section-heading--light fade-in">奈良・大阪を中心に、<br class="br-lg">近畿一円に対応。</h2>
     <div class="area__list fade-in">
       <span class="area__item">奈良県</span>
       <span class="area__item">大阪府</span>
