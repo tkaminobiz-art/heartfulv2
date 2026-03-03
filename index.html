@@ -297,6 +297,34 @@ ul, ol { list-style: none; }
   z-index: 1;
 }
 
+.opening__skip {
+  position: absolute;
+  bottom: clamp(16px, 3vh, 28px);
+  right: clamp(20px, 4vw, 40px);
+  z-index: 2;
+  padding: 10px 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
+  opacity: 0;
+  animation: op-fade-up 500ms ease 800ms forwards;
+}
+.opening__skip:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.35);
+}
+.opening__skip:focus {
+  outline: 2px solid rgba(255,255,255,0.5);
+  outline-offset: 2px;
+}
+
 .opening.phase-exit .opening__label,
 .opening.phase-exit .opening__title,
 .opening.phase-exit .opening__divider,
@@ -388,6 +416,10 @@ ul, ol { list-style: none; }
   z-index: 100;
   background: var(--primary);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: box-shadow 400ms var(--ease);
+}
+.header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
 }
 
 .header__inner {
@@ -1084,7 +1116,7 @@ ul, ol { list-style: none; }
 
 .pricing__heading-area {
   text-align: left;
-  margin-bottom: clamp(40px, 5vw, 56px);
+  margin-bottom: clamp(32px, 4vw, 48px);
 }
 
 .pricing__summary {
@@ -1809,6 +1841,7 @@ ul, ol { list-style: none; }
   <div class="opening__divider"></div>
   <p class="opening__tagline">溢れるものも、溢れる想いも<br>丁寧に片付ける。</p>
   <p class="opening__bottom-line">Heartful Clean — Est. 2025</p>
+  <button type="button" class="opening__skip" id="openingSkip" aria-label="オープニングをスキップ">スキップ</button>
 </div>
 
 <div class="noise-overlay" aria-hidden="true"></div>
@@ -2112,7 +2145,7 @@ ul, ol { list-style: none; }
 <!-- ====== PRICING ====== -->
 <section class="pricing" id="pricing">
   <div class="wrapper">
-    <div class="pricing__heading-area fade-in" style="text-align:left;margin-bottom:clamp(32px,4vw,48px);">
+    <div class="pricing__heading-area fade-in">
       <p class="section-label">Price</p>
       <h2 class="section-heading">料金の目安。</h2>
       <p class="pricing__summary"><span class="pricing__summary-item">1K <strong>25,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">1DK <strong>35,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">2DK <strong>45,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">3DK以上 <strong>80,000円〜</strong></span><span class="pricing__summary-note">（目安・物量により変動）</span></p>
@@ -2238,19 +2271,19 @@ ul, ol { list-style: none; }
     <div class="testimonials__grid">
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__stars">★★★★★</div>
-        <p class="testimonial-card__text">母の部屋の片付けで1人では無理だと思い、いくつか見積もりに来ていただきました。ハートフルさんが見積もり段階での料金の説明が丁寧で、それが決め手になりました。作業も丁寧で助かりました。</p>
+        <p class="testimonial-card__text">見積もりの段階から、細かな案内をしていただき、素人の私からは安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。</p>
         <p class="testimonial-card__meta">— Google口コミより</p>
       </div>
 
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__stars">★★★★★</div>
-        <p class="testimonial-card__text">丁寧でスピード感のある対応に感謝しています。見積りも分かりやすく、安心して任せられました。</p>
+        <p class="testimonial-card__text">今回は遺品整理をお願いしました。処分するものが多く何をすればいいかわからなかったですが、丁寧でスムーズに対応していただき助かりました！また買取もしていただき満足です！ありがとうございました。</p>
         <p class="testimonial-card__meta">— Google口コミより</p>
       </div>
 
       <div class="testimonial-card fade-in">
         <div class="testimonial-card__stars">★★★★★</div>
-        <p class="testimonial-card__text">追加料金が一切なく、最初に聞いた金額で完了。信頼できる会社だと思います。</p>
+        <p class="testimonial-card__text">即対応していただきとても助かりました。またご縁があれば利用させて頂きたいです。ありがとうございました。</p>
         <p class="testimonial-card__meta">— Google口コミより</p>
       </div>
     </div>
@@ -2458,23 +2491,29 @@ ul, ol { list-style: none; }
   }
 
   if (opening && !prefersReduced) {
-    setTimeout(function() {
-      opening.classList.add('phase-exit');
-    }, 1800);
-
-    setTimeout(function() {
-      opening.classList.add('phase-circle');
-    }, 2200);
-
-    setTimeout(function() {
-      triggerFvAnimations();
-    }, 2600);
+    var t1 = setTimeout(function() { opening.classList.add('phase-exit'); }, 1800);
+    var t2 = setTimeout(function() { opening.classList.add('phase-circle'); }, 2200);
+    var t3 = setTimeout(function() { triggerFvAnimations(); }, 2600);
 
     opening.addEventListener('animationend', function(e) {
       if (e.animationName === 'op-circle-shrink') {
         opening.style.display = 'none';
       }
     });
+
+    var skipBtn = document.getElementById('openingSkip');
+    if (skipBtn) {
+      skipBtn.addEventListener('click', function() {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+        triggerFvAnimations();
+        opening.classList.add('phase-exit');
+        setTimeout(function() {
+          opening.classList.add('phase-circle');
+        }, 500);
+      });
+    }
   } else {
     setTimeout(triggerFvAnimations, 100);
   }
@@ -2546,15 +2585,30 @@ ul, ol { list-style: none; }
   }
 
   var floating = document.getElementById('floatingCta');
+  var header = document.querySelector('.header');
+  var fvBg = document.querySelector('.fv__bg');
+
   window.addEventListener('scroll', function() {
-    if (window.scrollY > 400) {
-      floating.style.transform = 'translateY(0)';
-    } else {
-      floating.style.transform = 'translateY(100%)';
+    var y = window.scrollY;
+    if (floating) {
+      if (y > 400) {
+        floating.style.transform = 'translateY(0)';
+      } else {
+        floating.style.transform = 'translateY(100%)';
+      }
+    }
+    if (header) {
+      header.classList.toggle('is-scrolled', y > 60);
+    }
+    if (fvBg && !prefersReduced) {
+      var parallax = Math.min(y * 0.22, 100);
+      fvBg.style.transform = 'translateY(' + parallax + 'px)';
     }
   }, { passive: true });
-  floating.style.transform = 'translateY(100%)';
-  floating.style.transition = 'transform 300ms cubic-bezier(0.16,1,0.3,1)';
+  if (floating) {
+    floating.style.transform = 'translateY(100%)';
+    floating.style.transition = 'transform 300ms cubic-bezier(0.16,1,0.3,1)';
+  }
 })();
 </script>
 
