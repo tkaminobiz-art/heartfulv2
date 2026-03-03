@@ -844,6 +844,51 @@ ul, ol { list-style: none; }
 }
 
 /* ========================================
+   SUPPORT（関西の顔・狩野恵輔選手）
+======================================== */
+.support {
+  padding: 0 0 clamp(64px, 8vw, 96px);
+  background: var(--bg-alt);
+}
+
+.support__image-wrap {
+  width: 100%;
+  line-height: 0;
+}
+
+.support__image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  vertical-align: bottom;
+}
+
+.support .wrapper {
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+.support__heading-area {
+  margin-bottom: 16px;
+}
+
+.support__intro {
+  margin-top: 12px;
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-light);
+  text-wrap: pretty;
+}
+
+.support__name {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* ========================================
    CTA BAND (中間CTA)
 ======================================== */
 .cta-band {
@@ -1950,6 +1995,23 @@ ul, ol { list-style: none; }
         <h3 class="promise__title">「土足でいい」と言われても、<br class="br-lg">必ず靴を脱ぎます。</h3>
         <p class="promise__desc">故人の家への敬意。言葉遣い、遺品の扱い、すべてに礼節を尽くします。</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SUPPORT（関西の顔） ====== -->
+<section class="support">
+  <div class="support__image-wrap">
+    <img src="support-kano.png" alt="元阪神タイガース・狩野恵輔さん。インタビュー時の写真" loading="lazy" width="1200" height="800">
+  </div>
+  <div class="wrapper">
+    <div class="support__heading-area fade-in">
+      <p class="section-label">Support</p>
+      <h2 class="section-heading">関西の顔が、私たちを応援しています。</h2>
+    </div>
+    <p class="support__name fade-in">元阪神タイガース　狩野　恵輔さん</p>
+    <div class="support__intro fade-in">
+      <p>関西では誰もが知る元プロ野球選手です。インタビューを受けた際の写真です。狩野さんをはじめ、関西で活躍される方々に、ハートフルクリーンを応援いただいています。</p>
     </div>
   </div>
 </section>
