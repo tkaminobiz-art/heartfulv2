@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ハートフルクリーン｜奈良の遺品整理・不用品回収・特殊清掃</title>
 <meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。遺品整理・生前整理・特殊清掃・不用品回収なら、ハートフルクリーンへ。">
+<!-- Google tag (gtag.js) — 測定IDはお持ちのG-XXXXXXXXXXに差し替えてください -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
@@ -1898,10 +1906,10 @@ ul, ol { list-style: none; }
 }
 
 /* ========================================
-   FLOATING CTA (MOBILE)
+   FLOATING CTA（スマホ・PC両方で追従）
 ======================================== */
 .floating-cta {
-  display: none;
+  display: block;
   position: fixed;
   bottom: 0;
   left: 0;
@@ -1913,12 +1921,15 @@ ul, ol { list-style: none; }
   border-top: 1px solid var(--border);
   padding: 8px 16px;
   padding-bottom: max(8px, env(safe-area-inset-bottom));
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
 }
 
 .floating-cta__inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
+  max-width: var(--content-width);
+  margin: 0 auto;
 }
 
 .floating-cta__btn {
@@ -1944,9 +1955,16 @@ ul, ol { list-style: none; }
   color: #fff;
 }
 
-@media (max-width: 768px) {
-  .floating-cta { display: block; }
-  body { padding-bottom: 72px; }
+/* 追従バー分の余白（コンテンツが隠れないように） */
+body { padding-bottom: 72px; }
+
+@media (min-width: 769px) {
+  .floating-cta__inner {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body { padding-bottom: 68px; }
 }
 
 /* ========================================
@@ -2139,6 +2157,42 @@ ul, ol { list-style: none; }
             <p>自社でメンテナンスし再利用するため、廃棄物も減り処分代も削減。</p>
             <p>故人の愛用品が、どこかで誰かの役に立つ。それは、ご遺族にとっての救いにもなります。</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REPRESENTATIVE（信頼の核心・料金の前に配置） ====== -->
+<section class="representative" id="message">
+  <div class="wrapper">
+    <div class="representative__inner">
+      <div class="representative__photo fade-in">
+        <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
+      </div>
+
+      <div class="representative__content">
+        <p class="section-label fade-in">Message</p>
+        <h2 class="section-heading fade-in">なぜ、元警察官が<br class="br-lg">遺品整理を始めたのか。</h2>
+
+        <div class="representative__text fade-in">
+          <p>大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。</p>
+          <p>遺体が搬出された後に残された部屋。「この後の片付けは、誰がするのだろう」——その疑問から、遺品整理・特殊清掃という仕事の存在を知りました。</p>
+          <p>退職後、同業他社で3年間、現場責任者として経験を積みました。独立を前提に、徹底的に学びました。</p>
+          <p>しかし、そこで目の当たりにしたのは、格安で受注した回収物を不法投棄する業者の存在です。依頼者を騙し、環境を汚す。元警察官として、見過ごせませんでした。</p>
+          <p>曲がったことが嫌いな性分です。この業界を、もっとクリーンにしたい。屋号の「ハートフルクリーン」には、その決意を込めました。</p>
+          <p>私たちは、お客様に決断を急かしません。仕分けで迷われたら「決まったらご連絡ください」とお伝えします。「土足でいい」と言われても、必ず靴を脱ぎます。遺品の一つひとつを、故人の生きた証として扱います。</p>
+          <p>迷っているなら、何度でもご相談ください。</p>
+        </div>
+
+        <div class="representative__name fade-in">
+          ハートフルクリーン 代表
+          <strong>藤田 宗一郎</strong>
+        </div>
+
+        <div class="representative__bio fade-in">
+          <p class="representative__bio-title">スタッフ 神津 直和</p>
+          <p>前職は料理人。「人に喜んでもらう仕事」という点で、この仕事と通じるものを感じました。藤田の「お客様の心に向き合う」という姿勢に共感し、参画しています。</p>
         </div>
       </div>
     </div>
@@ -2455,42 +2509,6 @@ ul, ol { list-style: none; }
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         Googleの口コミをもっと見る
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- ====== REPRESENTATIVE ====== -->
-<section class="representative" id="message">
-  <div class="wrapper">
-    <div class="representative__inner">
-      <div class="representative__photo fade-in">
-        <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
-      </div>
-
-      <div class="representative__content">
-        <p class="section-label fade-in">Message</p>
-        <h2 class="section-heading fade-in">なぜ、元警察官が<br class="br-lg">遺品整理を始めたのか。</h2>
-
-        <div class="representative__text fade-in">
-          <p>大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。</p>
-          <p>遺体が搬出された後に残された部屋。「この後の片付けは、誰がするのだろう」——その疑問から、遺品整理・特殊清掃という仕事の存在を知りました。</p>
-          <p>退職後、同業他社で3年間、現場責任者として経験を積みました。独立を前提に、徹底的に学びました。</p>
-          <p>しかし、そこで目の当たりにしたのは、格安で受注した回収物を不法投棄する業者の存在です。依頼者を騙し、環境を汚す。元警察官として、見過ごせませんでした。</p>
-          <p>曲がったことが嫌いな性分です。この業界を、もっとクリーンにしたい。屋号の「ハートフルクリーン」には、その決意を込めました。</p>
-          <p>私たちは、お客様に決断を急かしません。仕分けで迷われたら「決まったらご連絡ください」とお伝えします。「土足でいい」と言われても、必ず靴を脱ぎます。遺品の一つひとつを、故人の生きた証として扱います。</p>
-          <p>迷っているなら、何度でもご相談ください。</p>
-        </div>
-
-        <div class="representative__name fade-in">
-          ハートフルクリーン 代表
-          <strong>藤田 宗一郎</strong>
-        </div>
-
-        <div class="representative__bio fade-in">
-          <p class="representative__bio-title">スタッフ 神津 直和</p>
-          <p>前職は料理人。「人に喜んでもらう仕事」という点で、この仕事と通じるものを感じました。藤田の「お客様の心に向き合う」という姿勢に共感し、参画しています。</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
