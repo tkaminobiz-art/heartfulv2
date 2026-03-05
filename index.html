@@ -508,6 +508,20 @@ ul, ol { list-style: none; }
   border-color: #fff;
 }
 
+.header__nav a.header__nav-d {
+  padding: 6px 14px;
+  background: var(--primary);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 6px;
+  font-weight: 500;
+  color: #fff;
+}
+.header__nav a.header__nav-d::after { display: none; }
+.header__nav a.header__nav-d:hover {
+  background: #1a2744;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
 .header__cta {
   display: flex;
   align-items: center;
@@ -2081,6 +2095,7 @@ body { padding-bottom: 72px; }
       <a href="#company">会社概要</a>
       <a href="index-b.html">Bパターン</a>
       <a href="index-c.html" class="header__nav-c">C案</a>
+      <a href="index-d.html" class="header__nav-d">D案</a>
     </nav>
     <div class="header__cta">
       <div style="text-align: right;">
@@ -2706,7 +2721,7 @@ body { padding-bottom: 72px; }
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
   <p class="footer__copy">&copy; 2026 ハートフルクリーン（株式会社和）All Rights Reserved.</p>
-  <p class="footer__pattern"><a href="index-b.html">モノクロ版（Bパターン）</a> ｜ <a href="index-c.html">CVR特化版（Cパターン）</a></p>
+  <p class="footer__pattern"><a href="index-b.html">モノクロ版（Bパターン）</a> ｜ <a href="index-c.html">CVR特化版（Cパターン）</a> ｜ <a href="index-d.html">オマージュ再現（D案）</a></p>
 </footer>
 </main>
 

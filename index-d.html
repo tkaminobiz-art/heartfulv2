@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ハートフルクリーン｜奈良の遺品整理・生前整理（Dパターン）</title>
+  <meta name="description" content="元警察官が代表。奈良・近畿一円の遺品整理・生前整理・特殊清掃。Google口コミ★5.0。追加料金ゼロ・立ち会い不要。無料見積り・ご相談はお電話またはLINEで。">
+  <meta property="og:title" content="ハートフルクリーン｜遺品整理（奈良・近畿）">
+  <meta property="og:description" content="元警察官が代表。Google口コミ★5.0。追加料金ゼロ・立ち会い不要。奈良・近畿一円で遺品整理・生前整理・特殊清掃。">
+  <meta property="og:type" content="website">
+  <!-- GA4: 本番IDを設定後、以下のコメントを解除してタグを追加してください -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --d-primary: #d35400;
+      --d-primary-light: #fef5f0;
+      --d-bg: #f9f6f0;
+      --d-bg-white: #fff;
+      --d-text: #333;
+      --d-text-light: #666;
+      --d-border: #e0ddd8;
+      --d-cta-phone: #2980b9;
+      --d-cta-line: #06c755;
+      --d-cta-orange: #e67e22;
+      --d-footer-bg: #2c3e50;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: 'Noto Sans JP', sans-serif; font-size: 15px; line-height: 1.75; color: var(--d-text); background: var(--d-bg); }
+    .d-wrap { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== ヘッダー ===== */
+    .d-header-top { background: var(--d-bg-white); padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; border-bottom: 1px solid var(--d-border); }
+    .d-header-top__title { font-size: 14px; font-weight: 500; }
+    .d-header-top__tel { font-size: 18px; font-weight: 700; color: var(--d-primary); }
+    .d-header-top__tel a { color: inherit; text-decoration: none; }
+    .d-header-top__note { font-size: 12px; color: var(--d-text-light); }
+    .d-nav { background: var(--d-bg-white); padding: 8px 20px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; border-bottom: 1px solid var(--d-border); }
+    .d-nav a { color: var(--d-text); text-decoration: none; font-size: 14px; }
+    .d-nav a:hover { color: var(--d-primary); }
+    .d-cta-bar { background: var(--d-primary-light); padding: 12px 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px; justify-content: center; }
+    .d-cta-bar__note { font-size: 13px; color: var(--d-text); margin-right: auto; }
+    .d-btn { display: inline-flex; align-items: center; justify-content: center; padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 500; text-decoration: none; color: #fff; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .d-btn:hover { opacity: 0.9; }
+    .d-btn-phone { background: var(--d-cta-phone); }
+    .d-btn-orange { background: var(--d-cta-orange); }
+    .d-btn-line { background: var(--d-cta-line); }
+
+    /* ===== FV ===== */
+    .d-fv { background: var(--d-bg-white); padding: 48px 20px 56px; }
+    .d-fv__inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    @media (max-width: 768px) { .d-fv__inner { grid-template-columns: 1fr; text-align: center; } }
+    .d-fv__headline { font-size: clamp(22px, 3vw, 28px); font-weight: 700; color: var(--d-primary); line-height: 1.4; margin-bottom: 16px; }
+    .d-fv__headline-sub { font-size: clamp(16px, 2vw, 18px); color: var(--d-primary); margin-bottom: 20px; }
+    .d-fv__authority { font-size: 14px; color: var(--d-text); margin-bottom: 12px; padding: 12px; background: var(--d-primary-light); border-radius: 8px; }
+    .d-fv__area { font-size: 13px; color: var(--d-text-light); }
+    .d-fv__img { width: 100%; max-width: 480px; border-radius: 12px; object-fit: cover; }
+    .d-fv__img-wrap { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+    .d-fv__img-wrap img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 8px; }
+
+    /* ===== セクション共通 ===== */
+    .d-section { padding: 56px 20px; }
+    .d-section--white { background: var(--d-bg-white); }
+    .d-section--bg { background: var(--d-bg); }
+    .d-heading-bar { background: var(--d-primary); color: #fff; padding: 14px 20px; font-size: 20px; font-weight: 700; margin: -56px -20px 32px -20px; }
+    .d-section h2.d-heading { font-size: 22px; color: var(--d-primary); margin-bottom: 24px; font-weight: 700; }
+
+    /* ===== こんなことにお困りなら ===== */
+    .d-trouble-list { list-style: none; padding: 0; margin: 0; max-width: 720px; }
+    .d-trouble-list li { padding: 10px 0 10px 28px; position: relative; border-bottom: 1px solid var(--d-border); }
+    .d-trouble-list li::before { content: '・'; position: absolute; left: 0; color: var(--d-primary); font-weight: 700; }
+
+    /* ===== 10の理由 ===== */
+    .d-reason-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+    .d-reason-card { background: var(--d-bg-white); padding: 20px; border-radius: 8px; border: 1px solid var(--d-border); }
+    .d-reason-card__num { font-size: 24px; font-weight: 700; color: var(--d-primary); margin-bottom: 8px; }
+    .d-reason-card__title { font-size: 16px; font-weight: 700; margin-bottom: 12px; color: var(--d-text); }
+    .d-reason-card__p { font-size: 14px; color: var(--d-text); line-height: 1.7; margin: 0; }
+
+    /* ===== サービス内容 ===== */
+    .d-service-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; }
+    .d-service-card { background: var(--d-bg-white); padding: 24px; border-radius: 8px; border: 1px solid var(--d-border); }
+    .d-service-card h3 { font-size: 16px; font-weight: 700; color: var(--d-primary); margin: 0 0 12px 0; }
+    .d-service-card p { font-size: 14px; margin: 0; color: var(--d-text); line-height: 1.7; }
+
+    /* ===== サービスエリア ===== */
+    .d-area-lead { margin-bottom: 16px; }
+    .d-area-list { font-size: 14px; color: var(--d-text); line-height: 1.9; }
+
+    /* ===== お客様の声 ===== */
+    .d-voice-list { display: grid; gap: 24px; }
+    .d-voice-card { background: var(--d-bg-white); padding: 24px; border-radius: 8px; border: 1px solid var(--d-border); }
+    .d-voice-card__tag { font-size: 12px; color: var(--d-primary); margin-bottom: 8px; }
+    .d-voice-card__title { font-size: 16px; font-weight: 700; margin-bottom: 12px; }
+    .d-voice-card__p { font-size: 14px; line-height: 1.8; margin: 0; }
+    .d-voice-more { display: inline-block; margin-top: 16px; color: var(--d-cta-phone); text-decoration: underline; }
+
+    /* ===== 費用のご案内 ===== */
+    .d-price-catch { font-size: 18px; font-weight: 700; margin-bottom: 8px; }
+    .d-price-num { font-size: 28px; font-weight: 700; color: var(--d-primary); margin-bottom: 24px; }
+    .d-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+    .d-table th, .d-table td { border: 1px solid var(--d-border); padding: 12px; text-align: left; }
+    .d-table th { background: var(--d-primary-light); font-weight: 600; }
+    .d-table-note { font-size: 13px; color: var(--d-text-light); margin-bottom: 24px; }
+    .d-option-list { list-style: none; padding: 0; margin: 0 0 24px 0; }
+    .d-option-list li { padding: 6px 0; border-bottom: 1px solid var(--d-border); }
+
+    /* ===== ご依頼の流れ ===== */
+    .d-flow-list { list-style: none; padding: 0; margin: 0; }
+    .d-flow-list li { padding: 20px 0; border-bottom: 1px solid var(--d-border); display: grid; grid-template-columns: 60px 1fr; gap: 16px; align-items: start; }
+    .d-flow-list__num { font-size: 24px; font-weight: 700; color: var(--d-primary); }
+    .d-flow-list__title { font-weight: 700; margin-bottom: 8px; }
+    .d-flow-list__p { margin: 0; font-size: 14px; line-height: 1.7; }
+    .d-flow-note { margin-top: 24px; padding: 16px; background: var(--d-primary-light); border-radius: 8px; font-size: 14px; }
+
+    /* ===== FAQ ===== */
+    .d-faq-list { max-width: 800px; }
+    .d-faq-item { margin-bottom: 16px; }
+    .d-faq-q { background: #f0f0f0; padding: 14px 20px; border-radius: 8px; font-weight: 600; cursor: pointer; }
+    .d-faq-a { background: #e8f5e9; padding: 14px 20px; border-radius: 8px; font-size: 14px; line-height: 1.7; margin-top: 4px; border-left: 4px solid var(--d-cta-line); }
+
+    /* ===== フォーム ===== */
+    .d-form-lead { margin-bottom: 24px; color: var(--d-text-light); font-size: 14px; }
+    .d-form-table { width: 100%; max-width: 640px; }
+    .d-form-table th { text-align: left; padding: 12px 12px 12px 0; vertical-align: top; width: 180px; font-size: 14px; }
+    .d-form-table td { padding: 12px 0; }
+    .d-form-table input[type="text"], .d-form-table input[type="email"], .d-form-table input[type="tel"], .d-form-table select, .d-form-table textarea { width: 100%; max-width: 400px; padding: 10px; border: 1px solid var(--d-border); border-radius: 6px; font-size: 14px; }
+    .d-form-table textarea { min-height: 120px; }
+    .d-form-required { color: #c00; font-size: 12px; }
+    .d-form-check { margin: 16px 0; font-size: 14px; }
+    .d-form-submit { margin-top: 24px; }
+
+    /* ===== 会社紹介 ===== */
+    .d-company-intro { display: grid; grid-template-columns: 200px 1fr; gap: 32px; align-items: start; }
+    @media (max-width: 768px) { .d-company-intro { grid-template-columns: 1fr; } }
+    .d-company-intro__img { width: 100%; max-width: 200px; border-radius: 8px; aspect-ratio: 1; object-fit: cover; background: var(--d-border); }
+    .d-company-intro__name { font-weight: 700; margin-bottom: 4px; }
+    .d-company-intro__role { font-size: 13px; color: var(--d-text-light); margin-bottom: 16px; }
+    .d-company-intro__p { font-size: 14px; line-height: 1.9; margin: 0; }
+
+    /* ===== 会社概要表 ===== */
+    .d-company-table { width: 100%; max-width: 720px; }
+    .d-company-table th { background: var(--d-primary-light); padding: 12px; text-align: left; width: 160px; }
+    .d-company-table td { padding: 12px; border: 1px solid var(--d-border); }
+
+    /* ===== フッター ===== */
+    .d-footer { background: var(--d-footer-bg); color: #fff; padding: 40px 20px 24px; }
+    .d-footer__tel { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+    .d-footer__tel a { color: #fff; text-decoration: none; }
+    .d-footer__note { font-size: 13px; opacity: 0.9; margin-bottom: 8px; }
+    .d-footer__area { font-size: 13px; opacity: 0.85; margin-bottom: 24px; }
+    .d-footer__company { font-size: 14px; margin-bottom: 8px; }
+    .d-footer__copy { font-size: 12px; opacity: 0.7; margin-top: 24px; }
+    .d-pagetop { position: fixed; right: 20px; bottom: 20px; background: rgba(0,0,0,0.5); color: #fff; padding: 10px 14px; border-radius: 8px; text-decoration: none; font-size: 13px; }
+    .d-pagetop:hover { color: #fff; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== ヘッダー ===== -->
+  <header class="d-header-top">
+    <div class="d-wrap" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; width: 100%;">
+      <span class="d-header-top__title">奈良・近畿一円で安心の遺品整理・生前整理を。</span>
+      <div>
+        <div class="d-header-top__tel"><a href="tel:0742268496">0742-26-8496</a></div>
+        <div class="d-header-top__note">7:00～22:00 電話受付</div>
+      </div>
+    </div>
+  </header>
+  <nav class="d-nav">
+    <a href="#reason">選ばれる理由</a>
+    <a href="#service">サービス内容</a>
+    <a href="#area">サービスエリア</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#price">費用のご案内</a>
+    <a href="#flow">ご依頼の流れ</a>
+    <a href="#faq">よくある質問</a>
+    <a href="#form">無料見積り</a>
+    <a href="#company">会社紹介</a>
+    <span style="margin-left:12px; color:var(--d-border);">|</span>
+    <a href="index.html">A</a>
+    <a href="index-b.html">B</a>
+    <a href="index-c.html">C</a>
+  </nav>
+  <div class="d-cta-bar">
+    <span class="d-cta-bar__note">お電話の際は、「遺品整理のサイトを見ました」とお知らせください。</span>
+    <a href="tel:0742268496" class="d-btn d-btn-phone">電話をかける</a>
+    <a href="#form" class="d-btn d-btn-orange">見積り・ご依頼</a>
+    <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="d-btn d-btn-line">スピード見積もり（LINE）</a>
+  </div>
+
+  <!-- ===== FV ===== -->
+  <section class="d-fv" id="top">
+    <div class="d-fv__inner">
+      <div>
+        <h1 class="d-fv__headline">なかなか出来ない遺品整理や生前整理。プロに任せてみませんか？</h1>
+        <p class="d-fv__headline-sub">なかなか出来ない遺品整理や生前整理。プロに任せてみませんか？</p>
+        <p class="d-fv__authority">当社は、Google口コミで★5.0の評価をいただいております。代表は元大阪府警察官。遺品整理士も在籍し、奈良を中心に近畿一円のご家族に選ばれています。</p>
+        <p class="d-fv__area">対象地域：奈良県・大阪府・京都府・兵庫県・和歌山県・三重県 ほか近畿一円</p>
+      </div>
+      <div>
+        <img src="fv-hero.png" alt="相談の様子" class="d-fv__img" width="480" height="320" loading="eager">
+        <div class="d-fv__img-wrap" style="margin-top:16px;">
+          <img src="https://images.unsplash.com/photo-1586023492125-6b7366d2c41e?w=400" alt="片付いた部屋" width="150" height="150" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1556911220-bff31c812dba?w=400" alt="整理・仕分け" width="150" height="150" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400" alt="清掃後の明るい部屋" width="150" height="150" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== こんなことにお困りなら ===== -->
+  <section class="d-section d-section--bg" id="trouble">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">こんなことにお困りなら当社にご相談ください</h2>
+      <ul class="d-trouble-list">
+        <li>突然の訃報で、今後家財の整理をどうしてよいかわからない。</li>
+        <li>老人ホームに入所が決まり、不要な家財を処分したい。</li>
+        <li>自分たちだけでは、家具の移動や不用品の廃棄ができない。</li>
+        <li>遠方のため、なかなか片付けができなくて困っている。</li>
+        <li>自宅に両親を引き取るので、実家を整理し、家も処分したい。</li>
+        <li>故人の思い出の品で、買取できるものがあれば買い取ってほしい。</li>
+        <li>入院していた両親が退院しても一人暮らしができないので、アパートを退去したい。</li>
+        <li>まだ元気だが、子供に迷惑をかけたくないので、生きているうちに家財を整理したい。</li>
+        <li>管理アパートの住人が失踪したので、家財の処分をしなければならない。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 選ばれる10の理由 ===== -->
+  <section class="d-section d-section--white" id="reason">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">ハートフルクリーンが選ばれる10の理由</h2>
+      <div class="d-reason-grid">
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">01</div>
+          <h3 class="d-reason-card__title">貴重品・重要品も任せて安心です。</h3>
+          <p class="d-reason-card__p">仕分けで見つかった金銭・通帳・印鑑・証書類は必ずお手元にお戻しします。重要だと思われるものは一旦残し、ご確認いただいてから廃棄の有無を決めます。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">02</div>
+          <h3 class="d-reason-card__title">追加料金は一切ありません。</h3>
+          <p class="d-reason-card__p">見積り額＝最終請求額。一円の追加もありません。その場でお断りいただいても構いません。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">03</div>
+          <h3 class="d-reason-card__title">立ち会い不要。遠方でもご依頼いただけます。</h3>
+          <p class="d-reason-card__p">事前に「残すもの」「処分するもの」のご指示だけでOK。終了後に写真でご報告。貴重品の探索・保護も徹底します。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">04</div>
+          <h3 class="d-reason-card__title">代表は元警察官。信頼と誠実さは職業で証明済みです。</h3>
+          <p class="d-reason-card__p">遺品整理士も在籍。コンプライアンスを重んじ、急かすことは絶対にしません。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">05</div>
+          <h3 class="d-reason-card__title">買取・リサイクルで費用を抑えられます。</h3>
+          <p class="d-reason-card__p">価値ある遺品を買取し、作業費から相殺。故人の愛用品が誰かの役に立つ——遺族の心の救いにもなります。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">06</div>
+          <h3 class="d-reason-card__title">丁寧で迅速な作業を心がけています。</h3>
+          <p class="d-reason-card__p">分別をしたうえで、効率的に人員を配置。多くのお客様に「作業が早い」と驚いていただいています。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">07</div>
+          <h3 class="d-reason-card__title">見つからない物の捜索もお受けします。</h3>
+          <p class="d-reason-card__p">「通帳や印鑑がどこにあるかわからない」「借金の有無を確認したい」など、家財に埋もれたものの捜索も対応します。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">08</div>
+          <h3 class="d-reason-card__title">作業終了報告をいたします。</h3>
+          <p class="d-reason-card__p">立ち会えない方・遠方の方には、作業終了後にメールでビフォアアフターの写真を添付し、終了報告をいたします。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">09</div>
+          <h3 class="d-reason-card__title">特殊清掃（孤独死・事故後）にも対応しています。</h3>
+          <p class="d-reason-card__p">代表の元警察官としての現場経験が直結します。清掃・消臭まで責任を持って対応します。</p>
+        </div>
+        <div class="d-reason-card">
+          <div class="d-reason-card__num">10</div>
+          <h3 class="d-reason-card__title">必要品の発送代行も承ります。</h3>
+          <p class="d-reason-card__p">遠方にお住まいの方で、必要品を持ち帰れない場合の配送代行も可能です。送料はお客様負担となりますが、ご相談ください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== サービス内容 ===== -->
+  <section class="d-section d-section--bg" id="service">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">サービス内容</h2>
+      <div class="d-service-grid">
+        <div class="d-service-card">
+          <h3>遺品・生前 空き家整理</h3>
+          <p>経験豊富な家財整理・片付け・清掃のプロが「家財撤去」「廃棄手伝い」「仕分け」「捜索」を行います。お客様が抱える問題を迅速に解決いたします。</p>
+        </div>
+        <div class="d-service-card">
+          <h3>ゴミ屋敷・汚部屋清掃</h3>
+          <p>ゴミ撤去、廃棄手伝い、仕分け、捜索も承ります。賃貸物件で退去される場合には、退去のお手伝いをいたします。</p>
+        </div>
+        <div class="d-service-card">
+          <h3>特殊清掃</h3>
+          <p>孤独死・事故後の清掃と消臭に対応しています。代表の元警察官としての現場経験が直結します。</p>
+        </div>
+        <div class="d-service-card">
+          <h3>買取サービス</h3>
+          <p>骨董品、貴金属、家具、家電などをはじめとした買取サービスもございます。作業費から相殺でき、費用の負担を軽減できます。</p>
+        </div>
+        <div class="d-service-card">
+          <h3>貴重・必要品の発送代行</h3>
+          <p>通帳・お写真・カード類・証書などの貴重品や形見、その他必要品の発送が必要な場合には、その手配を行い、完了まで責任をもって対応いたします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== サービスエリア ===== -->
+  <section class="d-section d-section--white" id="area">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">サービスエリア</h2>
+      <p class="d-area-lead">奈良を中心に、大阪・京都・兵庫・和歌山・三重をはじめ近畿一円でサービスを提供しています。</p>
+      <div class="d-area-list">
+        <p><strong>奈良県</strong>：奈良市、大和郡山市、天理市、橿原市、桜井市、生駒市、香芝市、葛城市、大和高田市、宇陀市 他。</p>
+        <p><strong>大阪府</strong>：大阪市、堺市、東大阪市、枚方市、八尾市、寝屋川市、守口市、吹田市、高槻市、豊中市 他。</p>
+        <p><strong>京都府</strong>：京都市、宇治市、城陽市、木津川市 他。</p>
+        <p><strong>兵庫県</strong>：神戸市、尼崎市、西宮市、芦屋市、伊丹市 他。</p>
+        <p>和歌山県・三重県も対応可能。まずはお問い合わせください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== お客様の声 ===== -->
+  <section class="d-section d-section--bg" id="voice">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">お客様の声</h2>
+      <div class="d-voice-list">
+        <div class="d-voice-card">
+          <div class="d-voice-card__tag">遺品整理</div>
+          <h3 class="d-voice-card__title">奈良県内 3DK お見積り後ご依頼</h3>
+          <p class="d-voice-card__p">見積もりの段階から、細かな案内をしていただき、素人の私からは安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。 — Google口コミより</p>
+        </div>
+        <div class="d-voice-card">
+          <div class="d-voice-card__tag">遺品整理</div>
+          <h3 class="d-voice-card__title">処分するものが多いご依頼</h3>
+          <p class="d-voice-card__p">今回は遺品整理をお願いしました。処分するものが多く何をすればいいかわからなかったですが、丁寧でスムーズに対応していただき助かりました。買取もしていただき満足です。 — Google口コミより</p>
+        </div>
+      </div>
+      <a href="https://www.google.com/search?q=ハートフルクリーン+口コミ" target="_blank" rel="noopener" class="d-voice-more">Googleの口コミをもっと見る</a>
+    </div>
+  </section>
+
+  <!-- ===== 費用のご案内 ===== -->
+  <section class="d-section d-section--white" id="price">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">費用のご案内</h2>
+      <p class="d-price-catch">当社はわかりやすい料金設定を導入しています。</p>
+      <p class="d-price-num">1K 25,000円～</p>
+      <p class="d-price-catch">物量にあわせた料金設定ですので、通常作業では追加料金は発生しません。</p>
+      <p class="d-table-note">料金計算は物量及び作業の量、お客様のご希望を踏まえ現地で無料見積りを実施しております。買取サービスでお客様に還元するとともに、廃棄処分費用のご負担軽減にも力を入れています。</p>
+      <table class="d-table">
+        <thead><tr><th>間取り</th><th>合計金額目安</th></tr></thead>
+        <tbody>
+          <tr><td>1K</td><td>25,000円～</td></tr>
+          <tr><td>1DK</td><td>35,000円～</td></tr>
+          <tr><td>2DK</td><td>45,000円～</td></tr>
+          <tr><td>2LDK</td><td>60,000円～</td></tr>
+          <tr><td>3DK</td><td>80,000円～</td></tr>
+          <tr><td>3LDK</td><td>要見積り</td></tr>
+        </tbody>
+      </table>
+      <p class="d-table-note">※料金には家財の仕分け・搬出・簡易清掃が含まれます。家電リサイクル料・オプションは別途。不用品の処分費は自治体により異なります。</p>
+      <h3 class="d-heading">お支払方法</h3>
+      <p>現金・振込（後払い）・クレジットカードでのお支払いが可能です。サービス開始～終了までスムーズに実施するため、原則としてご依頼主様に前払いにてご請求させていただいております。</p>
+    </div>
+  </section>
+
+  <!-- ===== ご依頼の流れ ===== -->
+  <section class="d-section d-section--bg" id="flow">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">ご依頼の流れ</h2>
+      <ul class="d-flow-list">
+        <li>
+          <span class="d-flow-list__num">01</span>
+          <div>
+            <div class="d-flow-list__title">まずはお気軽にお問い合わせください</div>
+            <p class="d-flow-list__p">お電話（0742-26-8496）またはLINEにてお問い合わせください。受付時間 7:00～22:00（年中無休）。現場の状況や間取り、ご希望内容など、お分かりになる範囲でお知らせください。</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-flow-list__num">02</span>
+          <div>
+            <div class="d-flow-list__title">無料お見積りにおうかがいします</div>
+            <p class="d-flow-list__p">お客様のスケジュールと当社のスケジュールを調整します。見積り時は、ご予算・ご都合に合わせてプランをご提案します。</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-flow-list__num">03</span>
+          <div>
+            <div class="d-flow-list__title">見積り（ご成約の場合）</div>
+            <p class="d-flow-list__p">具体的な日程の決定、残される物の確認をいたします。</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-flow-list__num">04</span>
+          <div>
+            <div class="d-flow-list__title">ご契約＆作業料金のお支払い</div>
+            <p class="d-flow-list__p">作業前には、必要物だけ出していただくか、捜索物を書き出し、捜索指示を頂くだけで構いません。分別は全てお任せください。</p>
+          </div>
+        </li>
+        <li>
+          <span class="d-flow-list__num">05</span>
+          <div>
+            <div class="d-flow-list__title">作業完了</div>
+            <p class="d-flow-list__p">最終確認をしていただきます。遠方のお客様には、アフター写真をメールでご報告。貴重品・必要品の発送代行も承ります。</p>
+          </div>
+        </li>
+      </ul>
+      <div class="d-flow-note">
+        <strong>貴重品は必ずお引き渡し</strong>：通帳・お写真・カード類・証書などは一時保管し、作業後にお渡しします。<br>
+        <strong>廃棄物の処理は法令順守</strong>：不用品の処分は、法に沿った適正な処理で対応します。
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== よくあるお問い合わせ ===== -->
+  <section class="d-section d-section--white" id="faq">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">よくあるお問い合わせ</h2>
+      <div class="d-faq-list">
+        <div class="d-faq-item">
+          <div class="d-faq-q">急な相談でも対応は可能でしょうか？</div>
+          <div class="d-faq-a">はい、可能です。できる範囲で迅速かつ丁寧な対応に努めさせていただいております。お気兼ねなくご相談ください。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">悪臭がひどく、部屋の汚れも激しいですが、どんな現場でも大丈夫ですか？</div>
+          <div class="d-faq-a">司法行政により立ち入りが制限されていない限り、どのような現場でも対応いたします。遠慮なくご相談ください。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">土・日・祝日や夜間早朝の対応は可能でしょうか？</div>
+          <div class="d-faq-a">可能です。予約状況にもよりますが、できる限りご希望に沿えるよう調整いたします。詳しくはお問い合わせください。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">遺品整理の費用はどのように決まりますか？</div>
+          <div class="d-faq-a">家財の量と分別量、搬出時の階層や移動距離などを踏まえ、現地で無料見積りを実施し、お見積りをご提示しております。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">遠い地域は見積りが高くなりますか？</div>
+          <div class="d-faq-a">いいえ。奈良・近畿一円で同様のお見積りをさせていただきます。交通費のご請求はいたしません。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">見積り以上の請求をすることはありますか？心配です。</div>
+          <div class="d-faq-a">ご安心ください。ご依頼主のご希望である追加のオプション以外、お見積もり時に提示した金額以外は一切いただきません。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">汚染物や家財の廃棄処分はお願いできますか？</div>
+          <div class="d-faq-a">可能です。特殊清掃後は、各ご依頼主のニーズに沿うよう最善のご提案をさせていただきます。</div>
+        </div>
+        <div class="d-faq-item">
+          <div class="d-faq-q">遺品整理以外の作業を依頼してもよいでしょうか？</div>
+          <div class="d-faq-a">可能です。不用品回収・空き家の片付け・生前整理など、お客様の労力や手間を少しでも省くよう努めております。ご相談ください。</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 無料お見積りフォーム ===== -->
+  <!-- 送信先：バックエンド準備後に form action を設定してください -->
+  <section class="d-section d-section--bg" id="form">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">無料お見積りフォーム</h2>
+      <p class="d-form-lead">訪問お見積り・ご相談は無料です。下記フォームに必要事項をご記入ください。返信までにお時間がかかる場合もございますので、お急ぎの方は直接お電話またはLINEにてお問い合わせください。</p>
+      <p style="margin-bottom:24px;"><a href="tel:0742268496" class="d-btn d-btn-phone">0742-26-8496 に電話する</a>　<a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="d-btn d-btn-line">LINEでスピード見積もり</a></p>
+      <form action="#" method="post" id="d-estimate-form">
+        <table class="d-form-table">
+          <tr><th>送信内容 <span class="d-form-required">必須</span></th><td><label><input type="radio" name="send_type" value="visit"> 訪問お見積り予約</label>　<label><input type="radio" name="send_type" value="question"> 質問・相談</label>　<label><input type="radio" name="send_type" value="other"> その他</label></td></tr>
+          <tr><th>ご依頼内容 <span class="d-form-required">必須</span></th><td><label><input type="radio" name="request_type" value="legacy"> 遺品整理</label>　<label><input type="radio" name="request_type" value="senior"> 生前整理</label>　<label><input type="radio" name="request_type" value="hoarder"> ゴミ屋敷清掃</label>　<label><input type="radio" name="request_type" value="vacant"> 空き家整理</label></td></tr>
+          <tr><th>お名前 <span class="d-form-required">必須</span></th><td><input type="text" name="name" maxlength="20" placeholder="全角20文字以内" required></td></tr>
+          <tr><th>お名前かな <span class="d-form-required">必須</span></th><td><input type="text" name="name_kana" maxlength="20" placeholder="全角20文字以内" required></td></tr>
+          <tr><th>電話番号 <span class="d-form-required">必須</span></th><td><input type="tel" name="tel" placeholder="日中連絡の取れる番号" required></td></tr>
+          <tr><th>メールアドレス <span class="d-form-required">必須</span></th><td><input type="email" name="email" required></td></tr>
+          <tr><th>メールアドレス（再入力） <span class="d-form-required">必須</span></th><td><input type="email" name="email_confirm" required></td></tr>
+          <tr><th>連絡方法</th><td><label><input type="radio" name="contact_method" value="tel_10-12"> 電話（10～12時）</label>　<label><input type="radio" name="contact_method" value="tel_13-15"> 電話（13～15時）</label>　<label><input type="radio" name="contact_method" value="tel_15-17"> 電話（15～17時）</label>　<label><input type="radio" name="contact_method" value="email"> メール</label></td></tr>
+          <tr><th>作業現場の住所</th><td><input type="text" name="address" maxlength="50" placeholder="全角50文字以内"></td></tr>
+          <tr><th>表札名</th><td><input type="text" name="nameplate" maxlength="20" placeholder="全角20文字以内"></td></tr>
+          <tr><th>間取り</th><td><select name="layout"><option value="">選択してください</option><option value="1r">1R</option><option value="1k">1K</option><option value="1dk">1DK</option><option value="1ldk">1LDK</option><option value="2dk">2DK</option><option value="2ldk">2LDK</option><option value="3dk">3DK</option><option value="3ldk">3LDK</option><option value="4ldk">4LDK以上</option><option value="other">その他</option></select></td></tr>
+          <tr><th>建物の種類</th><td><label><input type="radio" name="building" value="house"> 戸建て</label>　<label><input type="radio" name="building" value="mansion"> マンション</label>　<label><input type="radio" name="building" value="apartment"> アパート</label>　<label><input type="radio" name="building" value="other"> その他</label></td></tr>
+          <tr><th>見積り希望日・希望時間</th><td><input type="text" name="hope_date" placeholder="例：〇月〇日">　<input type="text" name="hope_time" placeholder="例：10～12時、午前中" maxlength="15"></td></tr>
+          <tr><th>メッセージ</th><td><textarea name="message" maxlength="5000" placeholder="ご状況・ご要望をご記入ください（全角5000文字以内）"></textarea></td></tr>
+        </table>
+        <p class="d-form-check"><label><input type="checkbox" name="privacy" required> 当社のプライバシーポリシーに同意して、送信します。</label></p>
+        <p class="d-form-check"><label><input type="checkbox" name="spam" required> スパム防止のため、こちらのチェックボックスにチェックを入れてから送信してください。</label></p>
+        <p class="d-form-submit"><button type="submit" class="d-btn d-btn-orange">送信する</button></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== 会社紹介 ===== -->
+  <section class="d-section d-section--white" id="company">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">会社紹介</h2>
+      <div class="d-company-intro">
+        <div>
+          <img src="heartful画像/打ち合わせ.jpeg" alt="代表・藤田宗一郎" class="d-company-intro__img" width="200" height="200" loading="lazy">
+          <p class="d-company-intro__name">藤田 宗一郎</p>
+          <p class="d-company-intro__role">代表取締役</p>
+        </div>
+        <div>
+          <h3 class="d-heading">代表挨拶</h3>
+          <p class="d-company-intro__p">私がこの仕事に関わるきっかけは、警察官時代に孤独死・変死事案の現場に何度も立ち会ったことでした。誰にも看取られず亡くなった方の現場を、丁寧に整えることで、残されたご家族の悲しみが少し和らぐのを感じていました。「誰も最後を整えてくれる人がいない」という現実に衝撃を受け、独立しました。お客様を想う気持ちでは常に最善を尽くし、急かすことは絶対にしません。あなたのペースで、一緒に考えましょう。何かお困りごとがございましたら、ハートフルクリーンにお任せください。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 会社概要 ===== -->
+  <section class="d-section d-section--bg">
+    <div class="d-wrap">
+      <h2 class="d-heading-bar">会社概要</h2>
+      <table class="d-company-table">
+        <tr><th>会社名</th><td>ハートフルクリーン</td></tr>
+        <tr><th>代表</th><td>藤田 宗一郎</td></tr>
+        <tr><th>所在地</th><td>〒630-8145 奈良県奈良市八条5-498-1</td></tr>
+        <tr><th>電話番号</th><td>0742-26-8496</td></tr>
+        <tr><th>営業時間</th><td>7:00～22:00 年中無休</td></tr>
+        <tr><th>業務内容</th><td>遺品整理、生前整理、特殊清掃、不用品回収、ゴミ屋敷片付け 他</td></tr>
+        <tr><th>取得資格・所属団体</th><td>遺品整理士認定協会 等</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== プライバシー（アンカー用・短い文言） ===== -->
+  <section class="d-section d-section--white" id="privacy">
+    <div class="d-wrap">
+      <h2 class="d-heading">プライバシーポリシー／免責事項</h2>
+      <p style="font-size:14px; line-height:1.8;">当社は個人情報の取り扱いに十分注意し、適切な保護に努めております。詳細はお問い合わせください。当サイトの内容については、正確性・有用性等いかなる保証もするものではありません。</p>
+    </div>
+  </section>
+
+  <!-- ===== フッター ===== -->
+  <footer class="d-footer">
+    <div class="d-wrap">
+      <div class="d-footer__tel"><a href="tel:0742268496">0742-26-8496</a></div>
+      <p class="d-footer__note">7:00～22:00 電話受付</p>
+      <p class="d-footer__note">お電話の際は、「遺品整理のサイトを見ました」とお知らせください。</p>
+      <p class="d-footer__area">対象地域：奈良県・大阪府・京都府・兵庫県・和歌山県・三重県 ほか近畿一円</p>
+      <p class="d-footer__company">ハートフルクリーン</p>
+      <p class="d-footer__company">〒630-8145 奈良県奈良市八条5-498-1</p>
+      <p style="margin-top:12px; font-size:13px; opacity:0.85;"><a href="index.html" style="color:#fff;">Aパターン</a> ｜ <a href="index-b.html" style="color:#fff;">Bパターン</a> ｜ <a href="index-c.html" style="color:#fff;">Cパターン</a></p>
+      <p class="d-footer__copy">© ハートフルクリーン</p>
+    </div>
+  </footer>
+
+  <a href="#top" class="d-pagetop">ページトップへ</a>
+
+  <script>
+    document.getElementById('d-estimate-form').addEventListener('submit', function(e) {
+      var form = e.target;
+      if (!form.action || form.action === '#' || form.action.endsWith('#')) {
+        e.preventDefault();
+        alert('送信先は現在準備中です。お急ぎの場合は 0742-26-8496 へお電話いただくか、LINE「スピード見積もり」よりご連絡ください。');
+      }
+    });
+  </script>
+</body>
+</html>
