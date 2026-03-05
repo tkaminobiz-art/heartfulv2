@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハートフルクリーン｜奈良の遺品整理・不用品回収・特殊清掃（Bパターン）</title>
+<meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --w: #FAFAFA;
+  --b: #0A0A0A;
+  --g: #666666;
+  --g2: #999999;
+  --border: #E5E5E5;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --width: 720px;
+  --space: clamp(80px, 12vw, 160px);
+  --side: clamp(24px, 5vw, 80px);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: var(--b);
+  background: var(--w);
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+/* ===== HEADER ===== */
+.b-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--w);
+  border-bottom: 1px solid var(--border);
+}
+.b-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px var(--side);
+  height: 64px;
+}
+.b-header__logo {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--b);
+}
+.b-header__logo img {
+  height: 32px;
+  width: auto;
+  filter: grayscale(1) contrast(1.1);
+}
+.b-header__nav {
+  display: flex;
+  gap: 32px;
+}
+.b-header__nav a {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--g);
+  transition: color 0.2s var(--ease);
+}
+.b-header__nav a:hover { color: var(--b); }
+.b-header__tel {
+  font-size: 15px;
+  letter-spacing: 0.02em;
+}
+.b-header__tel a { color: var(--b); }
+@media (max-width: 768px) {
+  .b-header__nav { display: none; }
+}
+
+/* ===== HERO ===== */
+.b-hero {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.b-hero__bg {
+  position: absolute;
+  inset: 0;
+}
+.b-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.4) contrast(1.05);
+}
+.b-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.75) 100%);
+}
+.b-hero__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 0 var(--side);
+  max-width: 800px;
+}
+.b-hero__h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 4.5vw, 48px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  color: #fff;
+  margin-bottom: 32px;
+  text-wrap: balance;
+}
+.b-hero__lead {
+  font-size: clamp(14px, 1.5vw, 16px);
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.8;
+}
+
+/* ===== MESSAGE（余白で際立たせる） ===== */
+.b-message {
+  padding: var(--space) var(--side);
+  background: var(--w);
+}
+.b-message__inner {
+  max-width: var(--width);
+  margin: 0 auto;
+  text-align: center;
+}
+.b-message__label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 24px;
+}
+.b-message__h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  color: var(--b);
+  margin-bottom: 40px;
+  text-wrap: balance;
+}
+.b-message__p {
+  font-size: 17px;
+  letter-spacing: 0.04em;
+  color: var(--g);
+  line-height: 2;
+  max-width: 520px;
+  margin: 0 auto;
+}
+.b-message__meta {
+  margin-top: 48px;
+  font-size: 13px;
+  color: var(--g2);
+  letter-spacing: 0.06em;
+}
+
+/* ===== SECTION COMMON（白／黒交互） ===== */
+.b-section {
+  padding: var(--space) var(--side);
+}
+.b-section--dark {
+  background: var(--b);
+  color: #fff;
+}
+.b-section--dark .b-section__label,
+.b-section--dark .b-section__h2 { color: #fff; }
+.b-section--dark .b-section__p,
+.b-section--dark .b-section__sub { color: rgba(255,255,255,0.75); }
+.b-section__inner {
+  max-width: var(--width);
+  margin: 0 auto;
+}
+.b-section__label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--g2);
+  margin-bottom: 16px;
+}
+.b-section__h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--b);
+  margin-bottom: 48px;
+}
+.b-section__p {
+  font-size: 16px;
+  color: var(--g);
+  line-height: 2;
+}
+
+/* ===== PROBLEM ===== */
+.b-problem { text-align: center; }
+.b-problem__h2 { margin-bottom: 24px; }
+.b-problem__p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ===== REASONS（01 02 03・余白大） ===== */
+.b-reasons__list {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+.b-reason {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+@media (max-width: 600px) {
+  .b-reason { grid-template-columns: 1fr; gap: 16px; }
+}
+.b-reason__num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: var(--b);
+  line-height: 1;
+}
+.b-section--dark .b-reason__num { color: #fff; }
+.b-reason__title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  color: var(--b);
+}
+.b-section--dark .b-reason__title { color: #fff; }
+.b-reason__body {
+  font-size: 15px;
+  color: var(--g);
+  line-height: 1.9;
+}
+.b-section--dark .b-reason__body { color: rgba(255,255,255,0.75); }
+
+/* ===== REPRESENTATIVE ===== */
+.b-rep {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(48px, 6vw, 80px);
+  align-items: start;
+}
+@media (max-width: 768px) {
+  .b-rep { grid-template-columns: 1fr; }
+}
+.b-rep__photo {
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+.b-rep__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.3);
+}
+.b-rep__label { margin-bottom: 12px; }
+.b-rep__h2 { margin-bottom: 32px; }
+.b-rep__text p {
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--g);
+}
+.b-section--dark .b-rep__text p { color: rgba(255,255,255,0.8); }
+.b-rep__name {
+  margin-top: 40px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--g);
+}
+.b-section--dark .b-rep__name { color: rgba(255,255,255,0.7); }
+.b-rep__name strong { color: var(--b); }
+.b-section--dark .b-rep__name strong { color: #fff; }
+
+/* ===== PRICING（数字のみ・ミニマル） ===== */
+.b-price__summary {
+  font-size: clamp(15px, 1.8vw, 18px);
+  color: var(--g);
+  line-height: 2;
+  margin-bottom: 40px;
+}
+.b-section--dark .b-price__summary { color: rgba(255,255,255,0.8); }
+.b-price__summary strong { color: var(--b); font-weight: 500; }
+.b-section--dark .b-price__summary strong { color: #fff; }
+.b-price__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+.b-price__table th,
+.b-price__table td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.b-section--dark .b-price__table th,
+.b-section--dark .b-price__table td { border-color: rgba(255,255,255,0.15); }
+.b-price__table th { color: var(--g); font-weight: 500; }
+.b-section--dark .b-price__table th { color: rgba(255,255,255,0.6); }
+.b-price__table .b-price__num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+/* ===== FLOW（番号＋タイトルのみ） ===== */
+.b-flow__list { display: flex; flex-direction: column; gap: 32px; }
+.b-flow__step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.b-flow__num {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--b);
+}
+.b-section--dark .b-flow__num { color: #fff; }
+.b-flow__title {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--b);
+}
+.b-section--dark .b-flow__title { color: #fff; }
+
+/* ===== VOICE ===== */
+.b-voice__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+.b-voice__card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  background: var(--w);
+}
+.b-section--dark .b-voice__card {
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.03);
+}
+.b-voice__stars {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--g2);
+  margin-bottom: 16px;
+}
+.b-voice__text {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--b);
+  margin-bottom: 16px;
+}
+.b-section--dark .b-voice__text { color: rgba(255,255,255,0.9); }
+.b-voice__meta { font-size: 12px; color: var(--g2); }
+.b-section--dark .b-voice__meta { color: rgba(255,255,255,0.5); }
+
+.b-voice__accordion { margin-top: 32px; }
+.b-voice__accordion-btn {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--b);
+  background: none;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+.b-voice__accordion-btn:hover { background: var(--w); border-color: var(--g2); }
+.b-voice__accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+.b-voice__accordion-body.open { max-height: 2000px; }
+.b-voice__accordion-body .b-voice__grid { margin-top: 24px; }
+
+/* ===== FAQ ===== */
+.b-faq__list { display: flex; flex-direction: column; gap: 12px; }
+.b-faq__item {
+  border: 1px solid var(--border);
+  background: var(--w);
+  overflow: hidden;
+}
+.b-faq__q {
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--b);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.b-faq__q::after {
+  content: '+';
+  font-size: 20px;
+  color: var(--g2);
+  flex-shrink: 0;
+}
+.b-faq__item.open .b-faq__q::after { content: '−'; }
+.b-faq__a {
+  padding: 0 24px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease);
+}
+.b-faq__item.open .b-faq__a { max-height: 500px; }
+.b-faq__a-inner {
+  padding: 0 0 20px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--g);
+}
+
+/* ===== CTA ===== */
+.b-cta { text-align: center; }
+.b-cta__h2 { margin-bottom: 16px; }
+.b-cta__sub {
+  font-size: 15px;
+  margin-bottom: 32px;
+  color: rgba(255,255,255,0.8);
+}
+.b-cta__tel {
+  font-size: clamp(28px, 4vw, 36px);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.b-cta__tel a { color: #fff; }
+.b-cta__hours {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 40px;
+}
+.b-cta__btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+.b-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.5);
+  color: #fff;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+}
+.b-cta__btn:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: #fff;
+}
+
+/* ===== COMPANY ===== */
+.b-company__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.b-company__table th,
+.b-company__table td {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.b-company__table th {
+  width: 28%;
+  font-weight: 500;
+  color: var(--g);
+  letter-spacing: 0.04em;
+}
+.b-company__table td { color: var(--b); }
+.b-company__table a { color: var(--b); text-decoration: underline; }
+
+/* ===== FOOTER ===== */
+.b-footer {
+  background: var(--b);
+  color: rgba(255,255,255,0.6);
+  padding: 32px var(--side);
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+.b-footer__pattern { margin-top: 12px; }
+.b-footer__pattern a { color: rgba(255,255,255,0.7); text-decoration: underline; }
+.b-footer__pattern a:hover { color: #fff; }
+
+/* ===== FLOATING CTA ===== */
+.b-float {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(250,250,250,0.96);
+  border-top: 1px solid var(--border);
+  padding: 12px var(--side);
+  display: none;
+}
+@media (max-width: 768px) {
+  .b-float { display: block; }
+  body { padding-bottom: 72px; }
+}
+.b-float__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.b-float__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--b);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: opacity 0.2s var(--ease);
+}
+.b-float__btn--line { background: #06C755; }
+.b-float__btn:hover { opacity: 0.9; }
+</style>
+</head>
+<body>
+
+<header class="b-header">
+  <div class="b-header__inner">
+    <a href="index.html" class="b-header__logo">
+      <img src="logo.jpg" alt="ハートフルクリーン" width="120" height="36" loading="eager">
+    </a>
+    <nav class="b-header__nav">
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#pricing">料金</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#voice">お客様の声</a>
+      <a href="#company">会社概要</a>
+      <a href="index.html">Aパターン</a>
+    </nav>
+    <div class="b-header__tel"><a href="tel:0742268496">0742-26-8496</a></div>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="b-hero" id="top">
+    <div class="b-hero__bg">
+      <img src="fv-hero.png" alt="" loading="eager" fetchpriority="high">
+    </div>
+    <div class="b-hero__overlay" aria-hidden="true"></div>
+    <div class="b-hero__inner">
+      <h1 class="b-hero__h1">曲がったことが嫌いな、<br>元警察官のまっすぐな遺品整理。</h1>
+      <p class="b-hero__lead">お見積り金額から、1円も変わりません。<br>追加請求も、不法投棄もしない。それが、元警察官の約束です。</p>
+    </div>
+  </section>
+
+  <!-- MESSAGE（余白で際立たせる） -->
+  <section class="b-message">
+    <div class="b-message__inner">
+      <p class="b-message__label">Message</p>
+      <h2 class="b-message__h2">遺品の一つひとつを、<br>故人の生きた証として。</h2>
+      <p class="b-message__p">元大阪府警察官（5年勤務）が代表を務める遺品整理会社です。遺品の一つひとつを、故人の生きた証として扱い、礼節とスピードの両立を約束します。</p>
+      <p class="b-message__meta">遺品整理のプロ ／ Google口コミ ★5.0 ／ 追加料金なし ／ 他社3日→1日の実績</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="b-section b-section--dark" id="problem">
+    <div class="b-section__inner b-problem">
+      <p class="b-section__label">Your Concerns</p>
+      <h2 class="b-section__h2 b-problem__h2">はじめての遺品整理。<br>不安は、当然です。</h2>
+      <p class="b-problem__p">その不安、すべてお引き受けします。</p>
+    </div>
+  </section>
+
+  <!-- REASONS -->
+  <section class="b-section" id="reasons">
+    <div class="b-section__inner">
+      <p class="b-section__label">3 Reasons</p>
+      <h2 class="b-section__h2">選ばれる、3つの理由。</h2>
+      <div class="b-reasons__list">
+        <div class="b-reason">
+          <span class="b-reason__num">01</span>
+          <div>
+            <h3 class="b-reason__title">追加料金は、一切いただきません。</h3>
+            <p class="b-reason__body">遺品整理のプロが現地を確認し、明確なお見積りを提示します。その金額が、最終請求額です。後から費用が増えることは、絶対にありません。</p>
+          </div>
+        </div>
+        <div class="b-reason">
+          <span class="b-reason__num">02</span>
+          <div>
+            <h3 class="b-reason__title">礼節とスピード。どちらも、妥協しません。</h3>
+            <p class="b-reason__body">「土足でいい」と言われても、必ず靴を脱ぎます。一方で、他社で3日かかる現場を1日で完了させた実績があります。</p>
+          </div>
+        </div>
+        <div class="b-reason">
+          <span class="b-reason__num">03</span>
+          <div>
+            <h3 class="b-reason__title">その場で買取査定。費用を抑えます。</h3>
+            <p class="b-reason__body">買取専門会社と連携し、価値ある遺品はその場で査定・買取を提案。作業費から相殺し、ご負担を減らします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPRESENTATIVE -->
+  <section class="b-section b-section--dark" id="message">
+    <div class="b-section__inner">
+      <div class="b-rep">
+        <div class="b-rep__photo">
+          <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
+        </div>
+        <div>
+          <p class="b-section__label b-rep__label">Message</p>
+          <h2 class="b-section__h2 b-rep__h2">なぜ、元警察官が<br>遺品整理を始めたのか。</h2>
+          <div class="b-rep__text">
+            <p>大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。遺体が搬出された後に残された部屋。「この後の片付けは、誰がするのだろう」——その疑問から、遺品整理・特殊清掃という仕事の存在を知りました。</p>
+            <p>退職後、同業他社で3年間、現場責任者として経験を積みました。しかし、そこで目の当たりにしたのは、格安で受注した回収物を不法投棄する業者の存在です。元警察官として、見過ごせませんでした。曲がったことが嫌いな性分です。この業界を、もっとクリーンにしたい。屋号の「ハートフルクリーン」には、その決意を込めました。</p>
+            <p>迷っているなら、何度でもご相談ください。</p>
+          </div>
+          <p class="b-rep__name">ハートフルクリーン 代表 <strong>藤田 宗一郎</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="b-section" id="pricing">
+    <div class="b-section__inner">
+      <p class="b-section__label">Price</p>
+      <h2 class="b-section__h2">料金の目安。</h2>
+      <p class="b-price__summary">1K <strong>25,000円〜</strong>／1DK <strong>35,000円〜</strong>／2DK <strong>45,000円〜</strong>／3DK以上 <strong>80,000円〜</strong>（目安・物量により変動）</p>
+      <table class="b-price__table">
+        <tr><th>間取り</th><td class="b-price__num">1K</td><td><strong>25,000</strong>円〜</td></tr>
+        <tr><th></th><td class="b-price__num">1DK</td><td><strong>35,000</strong>円〜</td></tr>
+        <tr><th></th><td class="b-price__num">2DK</td><td><strong>45,000</strong>円〜</td></tr>
+        <tr><th></th><td class="b-price__num">3DK以上</td><td><strong>80,000</strong>円〜</td></tr>
+      </table>
+      <p class="b-section__p" style="margin-top:24px">※上記は目安です。現地確認後、明確なお見積りをご提示いたします。</p>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="b-section b-section--dark" id="flow">
+    <div class="b-section__inner">
+      <p class="b-section__label">Flow</p>
+      <h2 class="b-section__h2">ご利用の流れ。</h2>
+      <div class="b-flow__list">
+        <div class="b-flow__step"><span class="b-flow__num">1</span><span class="b-flow__title">お問い合わせ（電話・LINE）</span></div>
+        <div class="b-flow__step"><span class="b-flow__num">2</span><span class="b-flow__title">現地訪問・無料見積り</span></div>
+        <div class="b-flow__step"><span class="b-flow__num">3</span><span class="b-flow__title">ご契約・日程調整</span></div>
+        <div class="b-flow__step"><span class="b-flow__num">4</span><span class="b-flow__title">作業実施（立ち会い不要）</span></div>
+        <div class="b-flow__step"><span class="b-flow__num">5</span><span class="b-flow__title">完了・ご精算</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section class="b-section" id="voice">
+    <div class="b-section__inner">
+      <p class="b-section__label">Voice</p>
+      <h2 class="b-section__h2">お客様の声。</h2>
+      <div class="b-voice__grid">
+        <div class="b-voice__card">
+          <p class="b-voice__stars">★★★★★</p>
+          <p class="b-voice__text">見積もりの段階から、細かな案内をしていただき、素人の私からは安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。</p>
+          <p class="b-voice__meta">— Google口コミより</p>
+        </div>
+        <div class="b-voice__card">
+          <p class="b-voice__stars">★★★★★</p>
+          <p class="b-voice__text">今回は遺品整理をお願いしました。処分するものが多く何をすればいいかわからなかったですが、丁寧でスムーズに対応していただき助かりました！また買取もしていただき満足です！ありがとうございました。</p>
+          <p class="b-voice__meta">— Google口コミより</p>
+        </div>
+      </div>
+      <div class="b-voice__accordion" id="bVoiceAccordion">
+        <button type="button" class="b-voice__accordion-btn" id="bVoiceAccordionBtn" aria-expanded="false" aria-controls="bVoiceAccordionBody">他のお客様の声を見る（6件）</button>
+        <div class="b-voice__accordion-body" id="bVoiceAccordionBody" role="region" aria-labelledby="bVoiceAccordionBtn">
+          <div class="b-voice__grid">
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">即対応していただきとても助かりました。またご縁があれば利用させて頂きたいです。ありがとうございました。</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">迅速に作業終了してもらい ありがとうございました。</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">母の介護施設入所に伴い、団地の家財道具の処分や仏壇の引取り供養をお願いしました。急な依頼にも関わらず、年末の30日に作業していただきました。荷物は少なかったのですが、30分もかからなかったです。</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">不用品回収をお願いしました。量も多く、大変な中嫌な顔一つなく終始笑顔で親切に対応してくださり助かりました。</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">不用品回収をお願いしました! 違う場所からソファの運びもしてくださって助かりました! これからも何かあれば頼もうと思います!</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          <div class="b-voice__card">
+            <p class="b-voice__stars">★★★★★</p>
+            <p class="b-voice__text">不用品回収をお願いしました！分別が大変な上に重たい物もたくさんあったのですが、丁寧に対応していただきありがとうございました。</p>
+            <p class="b-voice__meta">— Google口コミより</p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top:32px; text-align:center;">
+        <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:var(--g); text-decoration:underline;">Googleの口コミをもっと見る</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="b-section b-section--dark" id="faq" role="region" aria-labelledby="faq-heading">
+    <div class="b-section__inner">
+      <p class="b-section__label">FAQ</p>
+      <h2 class="b-section__h2" id="faq-heading">よくあるご質問。</h2>
+      <div class="b-faq__list">
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">見積り後に追加料金は発生しますか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">一切発生しません。遺品整理のプロが現地を確認した上でお出しした見積り金額が、最終請求額です。作業中に追加費用が発生することは絶対にありません。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">立ち会いは必要ですか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">不要です。事前に「残すもの」「処分するもの」のご指示をいただければ、お立ち会いなしで作業を進められます。遠方の方やお仕事で来られない方にも多くご利用いただいています。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">家具1点だけでも依頼できますか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">はい、1点から承ります。「タンスだけ」「冷蔵庫だけ」といったご依頼も歓迎です。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">即日対応は可能ですか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">スケジュールに空きがあれば、即日対応も可能です。土日祝日も対応しておりますので、まずはお電話ください。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">対応エリアはどこまでですか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">奈良・大阪を中心に、京都・兵庫・三重・滋賀・和歌山まで近畿一円に対応しています。詳しくはお問い合わせください。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">支払い方法は何がありますか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">現金、クレジットカード、PayPayに対応しています。作業完了後のお支払いです。</div></div>
+        </div>
+        <div class="b-faq__item">
+          <button type="button" class="b-faq__q" aria-expanded="false">遺品の供養はしてもらえますか？</button>
+          <div class="b-faq__a"><div class="b-faq__a-inner">はい。仏壇、写真、人形など、そのまま処分することに抵抗がある品は、合同供養の手配が可能です。別途ご相談ください。</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="b-section b-section--dark" id="contact">
+    <div class="b-section__inner b-cta">
+      <p class="b-section__label">Contact</p>
+      <h2 class="b-section__h2 b-cta__h2">まずは、ご相談ください。</h2>
+      <p class="b-cta__sub">ささいなことでも構いません。遺品整理のプロが、ていねいにお答えします。</p>
+      <p class="b-cta__tel"><a href="tel:0742268496">0742-26-8496</a></p>
+      <p class="b-cta__hours">7時〜22時（年中無休）｜ 相談・お見積り無料</p>
+      <div class="b-cta__btns">
+        <a href="tel:0742268496" class="b-cta__btn">電話で相談する</a>
+        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="b-cta__btn">まずはLINEで状況を送るだけ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPANY -->
+  <section class="b-section" id="company">
+    <div class="b-section__inner">
+      <p class="b-section__label">Company</p>
+      <h2 class="b-section__h2">会社概要。</h2>
+      <table class="b-company__table">
+        <tr><th>屋号</th><td>ハートフルクリーン</td></tr>
+        <tr><th>運営法人</th><td>株式会社和（なごみ）</td></tr>
+        <tr><th>代表者</th><td>藤田 宗一郎</td></tr>
+        <tr><th>所在地</th><td>〒630-8145 奈良県奈良市八条5-498-1</td></tr>
+        <tr><th>電話</th><td><a href="tel:0742268496">0742-26-8496</a></td></tr>
+        <tr><th>営業時間</th><td>7時〜22時（年中無休）</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <footer class="b-footer">
+    &copy; 2026 ハートフルクリーン（株式会社和）All Rights Reserved.<br>
+    <span class="b-footer__pattern"><a href="index.html">カラー版（Aパターン）に戻る</a></span>
+  </footer>
+</main>
+
+<div class="b-float" id="bFloat">
+  <div class="b-float__inner">
+    <a href="tel:0742268496" class="b-float__btn">電話で相談</a>
+    <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="b-float__btn b-float__btn--line">LINEで状況を送る</a>
+  </div>
+</div>
+
+<script>
+(function() {
+  var faqItems = document.querySelectorAll('.b-faq__item');
+  faqItems.forEach(function(item) {
+    var btn = item.querySelector('.b-faq__q');
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      var open = item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  var float = document.getElementById('bFloat');
+  if (float) {
+    window.addEventListener('scroll', function() {
+      float.style.display = window.scrollY > 400 ? 'block' : 'none';
+    }, { passive: true });
+  }
+
+  var voiceAccBtn = document.getElementById('bVoiceAccordionBtn');
+  var voiceAccBody = document.getElementById('bVoiceAccordionBody');
+  if (voiceAccBtn && voiceAccBody) {
+    voiceAccBtn.addEventListener('click', function() {
+      var open = voiceAccBody.classList.toggle('open');
+      voiceAccBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      voiceAccBtn.textContent = open ? '閉じる' : '他のお客様の声を見る（6件）';
+    });
+  }
+})();
+</script>
+</body>
+</html>
