@@ -162,15 +162,45 @@ ul, ol { list-style: none; }
   line-height: 1.85;
 }
 
-/* ===== MESSAGE（余白で際立たせる） ===== */
+/* ===== 約束（フルスクリーン・1行だけの画面・B独自） ===== */
+.b-promise {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--side);
+  background: var(--bg);
+}
+.b-promise__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.b-promise__line {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(28px, 6vw, 72px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  color: var(--text);
+}
+.br-sp { display: none; }
+@media (max-width: 560px) {
+  .br-sp { display: block; }
+}
+
+/* ===== MESSAGE（左寄せ・Aと違うリズム） ===== */
 .b-message {
   padding: var(--space) var(--side);
   background: var(--bg);
 }
 .b-message__inner {
-  max-width: var(--width);
-  margin: 0 auto;
-  text-align: center;
+  max-width: 520px;
+  margin: 0;
+  text-align: left;
+}
+@media (min-width: 900px) {
+  .b-message__inner { margin-left: calc(var(--side) + 5%); }
 }
 .b-message__label {
   font-size: 11px;
@@ -194,8 +224,6 @@ ul, ol { list-style: none; }
   letter-spacing: 0.04em;
   color: var(--text-soft);
   line-height: 2;
-  max-width: 520px;
-  margin: 0 auto;
 }
 .b-message__meta {
   margin-top: 48px;
@@ -246,6 +274,8 @@ ul, ol { list-style: none; }
   max-width: var(--width);
   margin: 0 auto;
 }
+.b-section__inner--wide { max-width: min(900px, 92vw); }
+.b-section__inner--breakout { overflow: visible; }
 .b-section__label {
   font-size: 11px;
   letter-spacing: 0.2em;
@@ -333,26 +363,46 @@ ul, ol { list-style: none; }
 }
 .b-section--dark .b-reason__body { color: rgba(255,255,255,0.78); }
 
-/* ===== REPRESENTATIVE（非対称 60:40） ===== */
+/* ===== REPRESENTATIVE（画像スロット・1枚〜複数枚対応） ===== */
 .b-rep {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  grid-template-columns: 1fr 1.2fr;
   gap: clamp(48px, 6vw, 80px);
   align-items: start;
 }
 @media (max-width: 768px) {
   .b-rep { grid-template-columns: 1fr; }
 }
-.b-rep__photo {
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
+.b-rep__media {
+  min-height: 320px;
   border-radius: 12px;
+  overflow: hidden;
 }
-.b-rep__photo img {
+/* 画像スロット: 1枚なら1枚表示、複数枚ならグリッドで並べる（後から追加可） */
+.b-rep__media .img-slot {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+}
+.b-rep__media .img-slot img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: grayscale(0.2) contrast(1.02);
+}
+.b-rep__media .img-slot img:only-child {
+  aspect-ratio: 3 / 4;
+}
+.b-rep__media .img-slot img:not(:only-child) {
+  aspect-ratio: 1;
+}
+@media (min-width: 640px) {
+  .b-rep__media .img-slot:has(img:nth-child(2)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .b-rep__media .img-slot:has(img:nth-child(n+3)) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .b-rep__label { margin-bottom: 12px; }
 .b-rep__h2 { margin-bottom: 32px; }
@@ -409,6 +459,19 @@ ul, ol { list-style: none; }
   font-weight: 300;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
+}
+/* 料金の数字だけ右にはみ出し（意図的な破り・B独自） */
+.b-price__table-wrap { overflow: visible; }
+@media (min-width: 640px) {
+  .b-price__table .b-price__cell-num {
+    position: relative;
+    padding-right: 0.5em;
+  }
+  .b-price__table .b-price__cell-num strong {
+    display: inline-block;
+    margin-right: -15%;
+    font-size: clamp(18px, 2.2vw, 24px);
+  }
 }
 
 /* ===== FLOW（番号＋タイトルのみ） ===== */
@@ -500,6 +563,43 @@ ul, ol { list-style: none; }
 }
 .b-voice__accordion-body.open { max-height: 2000px; }
 .b-voice__accordion-body .b-voice__grid { margin-top: 24px; }
+
+/* ===== 画像スロット（現場・実績・後から追加可） ===== */
+.b-gallery {
+  padding: var(--space) var(--side);
+  background: var(--bg);
+}
+.b-gallery__inner {
+  max-width: min(1000px, 92vw);
+  margin: 0 auto;
+}
+.b-gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 32px;
+}
+.b-gallery__slot {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.04);
+}
+.b-gallery__slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.15);
+}
+/* 0枚のとき: リスト非表示・注釈表示。画像を足すとリスト表示・注釈非表示 */
+.b-gallery:not(:has(.b-gallery__slot img)) .b-gallery__list { display: none; }
+.b-gallery__note {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.b-gallery:has(.b-gallery__slot img) .b-gallery__note { display: none; }
 
 /* ===== FAQ ===== */
 .b-faq__list { display: flex; flex-direction: column; gap: 12px; }
@@ -714,7 +814,14 @@ ul, ol { list-style: none; }
     </div>
   </section>
 
-  <!-- MESSAGE（余白で際立たせる） -->
+  <!-- 約束（フルスクリーン・1行だけ・B独自の「一枚」） -->
+  <section class="b-promise" id="promise">
+    <div class="b-promise__inner reveal">
+      <p class="b-promise__line">追加料金は、<br class="br-sp">一切いただきません。</p>
+    </div>
+  </section>
+
+  <!-- MESSAGE（左寄せ・Aと違うリズム） -->
   <section class="b-message">
     <div class="b-message__inner reveal">
       <p class="b-message__label">Message</p>
@@ -735,7 +842,7 @@ ul, ol { list-style: none; }
 
   <!-- REASONS -->
   <section class="b-section" id="reasons">
-    <div class="b-section__inner reveal">
+    <div class="b-section__inner b-section__inner--wide reveal">
       <p class="b-section__label">3 Reasons</p>
       <h2 class="b-section__h2">選ばれる、3つの理由。</h2>
       <div class="b-reasons__list">
@@ -762,8 +869,11 @@ ul, ol { list-style: none; }
   <section class="b-section b-section--dark" id="message">
     <div class="b-section__inner">
       <div class="b-rep reveal">
-        <div class="b-rep__photo">
-          <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
+        <div class="b-rep__media">
+          <!-- 画像スロット: 1枚のままでも、後から複数枚追加してもレイアウト対応 -->
+          <div class="img-slot">
+            <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
+          </div>
         </div>
         <div>
           <p class="b-section__label b-rep__label">Message</p>
@@ -779,18 +889,20 @@ ul, ol { list-style: none; }
     </div>
   </section>
 
-  <!-- PRICING -->
+  <!-- PRICING（数字はみ出し・B独自） -->
   <section class="b-section" id="pricing">
-    <div class="b-section__inner reveal">
+    <div class="b-section__inner b-section__inner--breakout reveal">
       <p class="b-section__label">Price</p>
       <h2 class="b-section__h2">料金の目安。</h2>
       <p class="b-price__summary">1K <strong>25,000円〜</strong>／1DK <strong>35,000円〜</strong>／2DK <strong>45,000円〜</strong>／3DK以上 <strong>80,000円〜</strong>（目安・物量により変動）</p>
-      <table class="b-price__table">
-        <tr><th>間取り</th><td class="b-price__num">1K</td><td><strong>25,000</strong>円〜</td></tr>
-        <tr><th></th><td class="b-price__num">1DK</td><td><strong>35,000</strong>円〜</td></tr>
-        <tr><th></th><td class="b-price__num">2DK</td><td><strong>45,000</strong>円〜</td></tr>
-        <tr><th></th><td class="b-price__num">3DK以上</td><td><strong>80,000</strong>円〜</td></tr>
-      </table>
+      <div class="b-price__table-wrap">
+        <table class="b-price__table">
+          <tr><th>間取り</th><td class="b-price__num">1K</td><td class="b-price__cell-num"><strong>25,000</strong>円〜</td></tr>
+          <tr><th></th><td class="b-price__num">1DK</td><td class="b-price__cell-num"><strong>35,000</strong>円〜</td></tr>
+          <tr><th></th><td class="b-price__num">2DK</td><td class="b-price__cell-num"><strong>45,000</strong>円〜</td></tr>
+          <tr><th></th><td class="b-price__num">3DK以上</td><td class="b-price__cell-num"><strong>80,000</strong>円〜</td></tr>
+        </table>
+      </div>
       <p class="b-section__p" style="margin-top:24px">※上記は目安です。現地確認後、明確なお見積りをご提示いたします。</p>
     </div>
   </section>
@@ -865,8 +977,20 @@ ul, ol { list-style: none; }
         </div>
       </div>
       <p style="margin-top:32px; text-align:center;">
-        <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:var(--text-soft); text-decoration:underline;">Googleの口コミをもっと見る</a>
+        <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:var(--muted); text-decoration:underline;">Googleの口コミをもっと見る</a>
       </p>
+    </div>
+  </section>
+
+  <!-- 画像スロット（現場・実績・後から画像を足す用） -->
+  <section class="b-gallery reveal" id="gallery">
+    <div class="b-gallery__inner">
+      <p class="b-section__label">Photo</p>
+      <h2 class="b-section__h2">現場・実績</h2>
+      <p class="b-gallery__note">※画像は後から追加できます。.b-gallery__list 内に .b-gallery__slot で img を足すとグリッド表示されます。</p>
+      <div class="b-gallery__list">
+        <!-- 画像を足す例: <div class="b-gallery__slot"><img src="path/to/image.jpg" alt="" loading="lazy"></div> -->
+      </div>
     </div>
   </section>
 

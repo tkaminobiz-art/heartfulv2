@@ -35,6 +35,9 @@
   --shadow: 0 4px 24px rgba(0,0,0,0.06);
   --shadow-lg: 0 8px 40px rgba(0,0,0,0.10);
   --radius: 8px;
+  --radius-card-sm: 6px;
+  --radius-card-md: 10px;
+  --radius-card-lg: 12px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --content-width: 1100px;
   --side-padding: clamp(20px, 5vw, 80px);
@@ -616,7 +619,15 @@ ul, ol { list-style: none; }
   border-radius: 100px;
   letter-spacing: 0.04em;
 }
-
+.fv__badge--text {
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.fv__badge--star {
+  background: transparent;
+  border: 1px solid rgba(45,90,61,0.28);
+  color: var(--primary-dark);
+}
 .fv__badge svg {
   width: 14px;
   height: 14px;
@@ -720,7 +731,7 @@ ul, ol { list-style: none; }
    PROBLEM SECTION
 ======================================== */
 .problem {
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(100px, 12vw, 180px) 0;
   background: var(--bg);
 }
 
@@ -743,28 +754,27 @@ ul, ol { list-style: none; }
   gap: 16px;
   background: #fff;
   padding: 20px 24px;
-  border-radius: var(--radius);
+  border-radius: var(--radius-card-lg);
   box-shadow: var(--shadow);
   font-size: 15px;
   line-height: 1.7;
   text-wrap: pretty;
 }
 
-.problem__icon {
+.problem__num {
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  background: rgba(230, 126, 34, 0.1);
+  background: rgba(230, 126, 34, 0.12);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 2px;
-}
-
-.problem__icon svg {
-  width: 14px;
-  height: 14px;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
   color: var(--accent);
 }
 
@@ -806,7 +816,7 @@ ul, ol { list-style: none; }
   gap: clamp(20px, 3vw, 40px);
   background: #fff;
   padding: clamp(28px, 4vw, 48px);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card-md);
   box-shadow: var(--shadow);
   border-top: 3px solid var(--primary);
 }
@@ -869,7 +879,7 @@ ul, ol { list-style: none; }
 .promise__card {
   background: #fff;
   padding: clamp(28px, 3.5vw, 40px);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card-md);
   box-shadow: var(--shadow);
   text-align: center;
   border-top: 3px solid var(--primary);
@@ -950,7 +960,10 @@ ul, ol { list-style: none; }
 
 .support__heading-area {
   margin-bottom: 16px;
+  text-align: left;
 }
+.support__heading-area .section-label { display: block; }
+.support__heading-area .section-heading { text-align: left; }
 
 .support__intro {
   margin-top: 12px;
@@ -1072,7 +1085,7 @@ ul, ol { list-style: none; }
 .service-card {
   background: #fff;
   padding: clamp(24px, 3vw, 32px);
-  border-radius: var(--radius);
+  border-radius: var(--radius-card-sm);
   box-shadow: var(--shadow);
   transition: transform 400ms var(--ease), box-shadow 400ms var(--ease);
 }
@@ -1086,7 +1099,7 @@ ul, ol { list-style: none; }
   width: 40px;
   height: 40px;
   background: var(--badge-bg);
-  border-radius: 8px;
+  border-radius: var(--radius-card-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2045,27 +2058,15 @@ body { padding-bottom: 72px; }
       </p>
 
       <div class="fv__badges fade-in">
-        <span class="fv__badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          遺品整理のプロ
-        </span>
-        <span class="fv__badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-          Google口コミ ★5.0
-        </span>
-        <span class="fv__badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-          追加料金なし
-        </span>
-        <span class="fv__badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-          他社3日→1日の実績
-        </span>
+        <span class="fv__badge fv__badge--text">遺品整理のプロ</span>
+        <span class="fv__badge fv__badge--star">Google口コミ ★5.0</span>
+        <span class="fv__badge fv__badge--text">追加料金なし</span>
+        <span class="fv__badge fv__badge--text">他社3日→1日の実績</span>
       </div>
 
       <div class="fv__cta fade-in">
         <a href="tel:0742268496" class="btn btn--primary">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           まずは電話で相談する
         </a>
         <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">
@@ -2088,27 +2089,27 @@ body { padding-bottom: 72px; }
 
     <div class="problem__list">
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">1</span>
         突然のことで、何から手をつけていいかわからない
       </div>
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">2</span>
         どこの業者に頼めば安心か、判断がつかない
       </div>
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">3</span>
         見積りの後に、高額な追加料金を請求されないか不安
       </div>
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">4</span>
         仕事で何日も休めず、立ち会いが難しい
       </div>
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">5</span>
         故人の遺品を、粗末に扱われたくない
       </div>
       <div class="problem__item fade-in">
-        <div class="problem__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <span class="problem__num">6</span>
         作業に何日もかかるのは困る。できるだけ早く終わらせたい
       </div>
     </div>
@@ -2652,7 +2653,7 @@ body { padding-bottom: 72px; }
 <div class="floating-cta" id="floatingCta">
   <div class="floating-cta__inner">
     <a href="tel:0742268496" class="floating-cta__btn floating-cta__btn--phone">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       電話で相談
     </a>
     <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="floating-cta__btn floating-cta__btn--line">
