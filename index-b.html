@@ -7,14 +7,17 @@
 <meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --w: #FAFAFA;
-  --b: #0A0A0A;
-  --g: #666666;
-  --g2: #999999;
-  --border: #E5E5E5;
+  --bg: #FAFAF7;
+  --text: #1C1C1C;
+  --text-soft: #444444;
+  --muted: #888888;
+  --dark: #1a1a1a;
+  --border: rgba(28,28,28,0.08);
+  --accent: #C4851F;
+  --accent-glow: rgba(196, 133, 31, 0.25);
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --width: 720px;
   --space: clamp(80px, 12vw, 160px);
@@ -28,20 +31,37 @@ body {
   font-size: 16px;
   line-height: 1.9;
   letter-spacing: 0.04em;
-  color: var(--b);
-  background: var(--w);
+  color: var(--text);
+  background: var(--bg);
+  position: relative;
+}
+
+/* ノイズテクスチャ（クラフト感・2026トレンド） */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
 }
 
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
 /* ===== HEADER ===== */
 .b-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--w);
+  background: rgba(250,250,247,0.92);
+  backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
 .b-header__inner {
@@ -58,12 +78,12 @@ ul, ol { list-style: none; }
   font-size: 18px;
   font-weight: 400;
   letter-spacing: 0.08em;
-  color: var(--b);
+  color: var(--text);
 }
 .b-header__logo img {
   height: 32px;
   width: auto;
-  filter: grayscale(1) contrast(1.1);
+  filter: grayscale(0.2) contrast(1.05);
 }
 .b-header__nav {
   display: flex;
@@ -72,15 +92,16 @@ ul, ol { list-style: none; }
 .b-header__nav a {
   font-size: 13px;
   letter-spacing: 0.06em;
-  color: var(--g);
-  transition: color 0.2s var(--ease);
+  color: var(--text-soft);
+  transition: color 0.25s var(--ease);
 }
-.b-header__nav a:hover { color: var(--b); }
+.b-header__nav a:hover { color: var(--accent); }
 .b-header__tel {
   font-size: 15px;
   letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
-.b-header__tel a { color: var(--b); }
+.b-header__tel a { color: var(--text); font-family: 'Inter', sans-serif; }
 @media (max-width: 768px) {
   .b-header__nav { display: none; }
 }
@@ -88,7 +109,7 @@ ul, ol { list-style: none; }
 /* ===== HERO ===== */
 .b-hero {
   position: relative;
-  min-height: 85vh;
+  min-height: 88vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,41 +123,49 @@ ul, ol { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.4) contrast(1.05);
+  filter: grayscale(0.25) contrast(1.08) brightness(0.92);
 }
 .b-hero__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.75) 100%);
+  background: linear-gradient(160deg, rgba(26,26,26,0.75) 0%, rgba(26,26,26,0.5) 50%, rgba(26,26,26,0.85) 100%);
+}
+/* ソフトグロー（2026トレンド） */
+.b-hero__glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 80%, var(--accent-glow) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 1;
 }
 .b-hero__inner {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 0 var(--side);
   max-width: 800px;
 }
 .b-hero__h1 {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(28px, 4.5vw, 48px);
+  font-size: clamp(28px, 4.5vw, 52px);
   font-weight: 400;
   letter-spacing: 0.08em;
-  line-height: 1.35;
+  line-height: 1.3;
   color: #fff;
   margin-bottom: 32px;
   text-wrap: balance;
 }
 .b-hero__lead {
-  font-size: clamp(14px, 1.5vw, 16px);
+  font-size: clamp(14px, 1.5vw, 17px);
   letter-spacing: 0.06em;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.85;
 }
 
 /* ===== MESSAGE（余白で際立たせる） ===== */
 .b-message {
   padding: var(--space) var(--side);
-  background: var(--w);
+  background: var(--bg);
 }
 .b-message__inner {
   max-width: var(--width);
@@ -147,7 +176,7 @@ ul, ol { list-style: none; }
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--g2);
+  color: var(--accent);
   margin-bottom: 24px;
 }
 .b-message__h2 {
@@ -156,14 +185,14 @@ ul, ol { list-style: none; }
   font-weight: 400;
   letter-spacing: 0.08em;
   line-height: 1.3;
-  color: var(--b);
+  color: var(--text);
   margin-bottom: 40px;
   text-wrap: balance;
 }
 .b-message__p {
   font-size: 17px;
   letter-spacing: 0.04em;
-  color: var(--g);
+  color: var(--text-soft);
   line-height: 2;
   max-width: 520px;
   margin: 0 auto;
@@ -171,22 +200,48 @@ ul, ol { list-style: none; }
 .b-message__meta {
   margin-top: 48px;
   font-size: 13px;
-  color: var(--g2);
+  color: var(--muted);
   letter-spacing: 0.06em;
 }
 
-/* ===== SECTION COMMON（白／黒交互） ===== */
+/* ===== REVEAL アニメーション（スクロール連動・スタガー） ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal .reveal-child {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+}
+.reveal.is-visible .reveal-child {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal .reveal-child:nth-child(1) { transition-delay: 0ms; }
+.reveal .reveal-child:nth-child(2) { transition-delay: 80ms; }
+.reveal .reveal-child:nth-child(3) { transition-delay: 160ms; }
+.reveal .reveal-child:nth-child(4) { transition-delay: 240ms; }
+.reveal .reveal-child:nth-child(5) { transition-delay: 320ms; }
+.reveal .reveal-child:nth-child(6) { transition-delay: 400ms; }
+
+/* ===== SECTION COMMON（白／ダーク交互・ダークは --dark で柔らかく） ===== */
 .b-section {
   padding: var(--space) var(--side);
 }
 .b-section--dark {
-  background: var(--b);
+  background: var(--dark);
   color: #fff;
 }
-.b-section--dark .b-section__label,
+.b-section--dark .b-section__label { color: var(--accent); }
 .b-section--dark .b-section__h2 { color: #fff; }
 .b-section--dark .b-section__p,
-.b-section--dark .b-section__sub { color: rgba(255,255,255,0.75); }
+.b-section--dark .b-section__sub { color: rgba(255,255,255,0.78); }
 .b-section__inner {
   max-width: var(--width);
   margin: 0 auto;
@@ -195,21 +250,22 @@ ul, ol { list-style: none; }
   font-size: 11px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--g2);
+  color: var(--muted);
   margin-bottom: 16px;
 }
+.b-section--dark .b-section__label { color: rgba(196,133,31,0.95); }
 .b-section__h2 {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(24px, 3vw, 36px);
+  font-size: clamp(24px, 3vw, 38px);
   font-weight: 400;
   letter-spacing: 0.06em;
-  line-height: 1.4;
-  color: var(--b);
+  line-height: 1.35;
+  color: var(--text);
   margin-bottom: 48px;
 }
 .b-section__p {
   font-size: 16px;
-  color: var(--g);
+  color: var(--text-soft);
   line-height: 2;
 }
 
@@ -223,50 +279,64 @@ ul, ol { list-style: none; }
   margin: 0 auto;
 }
 
-/* ===== REASONS（01 02 03・余白大） ===== */
+/* ===== REASONS（Bento UI・不均等グリッド 2026トレンド） ===== */
 .b-reasons__list {
-  display: flex;
-  flex-direction: column;
-  gap: 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 24px;
+}
+@media (max-width: 640px) {
+  .b-reasons__list { grid-template-columns: 1fr; }
 }
 .b-reason {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 40px 32px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
 }
-@media (max-width: 600px) {
-  .b-reason { grid-template-columns: 1fr; gap: 16px; }
+.b-reason:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+.b-reason--lead {
+  grid-column: 1 / -1;
+  max-width: 560px;
 }
 .b-reason__num {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  color: var(--b);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent);
   line-height: 1;
 }
-.b-section--dark .b-reason__num { color: #fff; }
+.b-section--dark .b-reason { background: rgba(255,255,255,0.04); box-shadow: none; border: 1px solid rgba(255,255,255,0.08); }
+.b-section--dark .b-reason:hover { box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
 .b-reason__title {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(18px, 2vw, 22px);
+  font-size: clamp(17px, 1.8vw, 20px);
   font-weight: 400;
   letter-spacing: 0.04em;
-  margin-bottom: 12px;
-  color: var(--b);
+  line-height: 1.4;
+  color: var(--text);
 }
 .b-section--dark .b-reason__title { color: #fff; }
 .b-reason__body {
   font-size: 15px;
-  color: var(--g);
-  line-height: 1.9;
+  color: var(--text-soft);
+  line-height: 1.85;
 }
-.b-section--dark .b-reason__body { color: rgba(255,255,255,0.75); }
+.b-section--dark .b-reason__body { color: rgba(255,255,255,0.78); }
 
-/* ===== REPRESENTATIVE ===== */
+/* ===== REPRESENTATIVE（非対称 60:40） ===== */
 .b-rep {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: clamp(48px, 6vw, 80px);
   align-items: start;
 }
@@ -276,12 +346,13 @@ ul, ol { list-style: none; }
 .b-rep__photo {
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  border-radius: 12px;
 }
 .b-rep__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(0.3);
+  filter: grayscale(0.2) contrast(1.02);
 }
 .b-rep__label { margin-bottom: 12px; }
 .b-rep__h2 { margin-bottom: 32px; }
@@ -289,29 +360,29 @@ ul, ol { list-style: none; }
   margin-bottom: 20px;
   font-size: 15px;
   line-height: 2;
-  color: var(--g);
+  color: var(--text-soft);
 }
 .b-section--dark .b-rep__text p { color: rgba(255,255,255,0.8); }
 .b-rep__name {
   margin-top: 40px;
   font-size: 14px;
   letter-spacing: 0.06em;
-  color: var(--g);
+  color: var(--text-soft);
 }
 .b-section--dark .b-rep__name { color: rgba(255,255,255,0.7); }
-.b-rep__name strong { color: var(--b); }
+.b-rep__name strong { color: var(--text); }
 .b-section--dark .b-rep__name strong { color: #fff; }
 
 /* ===== PRICING（数字のみ・ミニマル） ===== */
 .b-price__summary {
   font-size: clamp(15px, 1.8vw, 18px);
-  color: var(--g);
+  color: var(--text-soft);
   line-height: 2;
   margin-bottom: 40px;
 }
 .b-section--dark .b-price__summary { color: rgba(255,255,255,0.8); }
-.b-price__summary strong { color: var(--b); font-weight: 500; }
-.b-section--dark .b-price__summary strong { color: #fff; }
+.b-price__summary strong { color: var(--accent); font-weight: 500; font-family: 'Inter', sans-serif; font-variant-numeric: tabular-nums; }
+.b-section--dark .b-price__summary strong { color: rgba(196,133,31,0.95); }
 .b-price__table {
   width: 100%;
   border-collapse: collapse;
@@ -324,10 +395,18 @@ ul, ol { list-style: none; }
   text-align: left;
 }
 .b-section--dark .b-price__table th,
-.b-section--dark .b-price__table td { border-color: rgba(255,255,255,0.15); }
-.b-price__table th { color: var(--g); font-weight: 500; }
+.b-section--dark .b-price__table td { border-color: rgba(255,255,255,0.12); }
+.b-price__table th { color: var(--text-soft); font-weight: 500; }
 .b-section--dark .b-price__table th { color: rgba(255,255,255,0.6); }
 .b-price__table .b-price__num {
+  font-variant-numeric: tabular-nums;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.b-price__table td strong {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
   font-variant-numeric: tabular-nums;
   letter-spacing: 0.02em;
 }
@@ -341,17 +420,18 @@ ul, ol { list-style: none; }
   align-items: center;
 }
 .b-flow__num {
-  font-family: 'Noto Serif JP', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 24px;
-  font-weight: 400;
-  color: var(--b);
+  font-weight: 300;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
 }
-.b-section--dark .b-flow__num { color: #fff; }
+.b-section--dark .b-flow__num { color: rgba(196,133,31,0.95); }
 .b-flow__title {
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 0.03em;
-  color: var(--b);
+  color: var(--text);
 }
 .b-section--dark .b-flow__title { color: #fff; }
 
@@ -363,27 +443,39 @@ ul, ol { list-style: none; }
 }
 .b-voice__card {
   padding: 32px;
-  border: 1px solid var(--border);
-  background: var(--w);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  border: 1px solid transparent;
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.3s var(--ease);
+}
+.b-voice__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
 }
 .b-section--dark .b-voice__card {
-  border-color: rgba(255,255,255,0.2);
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.04);
+  box-shadow: none;
+  border-color: rgba(255,255,255,0.1);
+}
+.b-section--dark .b-voice__card:hover {
+  border-color: rgba(255,255,255,0.18);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 .b-voice__stars {
   font-size: 12px;
   letter-spacing: 2px;
-  color: var(--g2);
+  color: var(--accent);
   margin-bottom: 16px;
 }
 .b-voice__text {
   font-size: 15px;
   line-height: 1.9;
-  color: var(--b);
+  color: var(--text);
   margin-bottom: 16px;
 }
 .b-section--dark .b-voice__text { color: rgba(255,255,255,0.9); }
-.b-voice__meta { font-size: 12px; color: var(--g2); }
+.b-voice__meta { font-size: 12px; color: var(--muted); }
 .b-section--dark .b-voice__meta { color: rgba(255,255,255,0.5); }
 
 .b-voice__accordion { margin-top: 32px; }
@@ -393,14 +485,14 @@ ul, ol { list-style: none; }
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.04em;
-  color: var(--b);
+  color: var(--text);
   background: none;
   border: 1px solid var(--border);
   cursor: pointer;
   font-family: inherit;
   transition: background 0.2s var(--ease), border-color 0.2s var(--ease);
 }
-.b-voice__accordion-btn:hover { background: var(--w); border-color: var(--g2); }
+.b-voice__accordion-btn:hover { background: var(--bg); border-color: var(--muted); }
 .b-voice__accordion-body {
   max-height: 0;
   overflow: hidden;
@@ -413,7 +505,7 @@ ul, ol { list-style: none; }
 .b-faq__list { display: flex; flex-direction: column; gap: 12px; }
 .b-faq__item {
   border: 1px solid var(--border);
-  background: var(--w);
+  background: var(--bg);
   overflow: hidden;
 }
 .b-faq__q {
@@ -426,7 +518,7 @@ ul, ol { list-style: none; }
   border: none;
   cursor: pointer;
   font-family: inherit;
-  color: var(--b);
+  color: var(--text);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -435,7 +527,7 @@ ul, ol { list-style: none; }
 .b-faq__q::after {
   content: '+';
   font-size: 20px;
-  color: var(--g2);
+  color: var(--muted);
   flex-shrink: 0;
 }
 .b-faq__item.open .b-faq__q::after { content: '−'; }
@@ -450,7 +542,7 @@ ul, ol { list-style: none; }
   padding: 0 0 20px;
   font-size: 14px;
   line-height: 1.9;
-  color: var(--g);
+  color: var(--text-soft);
 }
 
 /* ===== CTA ===== */
@@ -486,16 +578,28 @@ ul, ol { list-style: none; }
   font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.06em;
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.5);
+  background: var(--accent);
+  border: 1px solid var(--accent);
   color: #fff;
   font-family: inherit;
   cursor: pointer;
-  transition: background 0.3s var(--ease), border-color 0.3s var(--ease);
+  border-radius: 6px;
+  transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease), background 0.3s var(--ease);
 }
 .b-cta__btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 24px 4px var(--accent-glow);
+}
+.b-cta__btn:active { transform: scale(0.98); }
+.b-cta__btn:last-child {
+  background: transparent;
+  border-color: rgba(255,255,255,0.5);
+  color: #fff;
+}
+.b-cta__btn:last-child:hover {
   background: rgba(255,255,255,0.1);
   border-color: #fff;
+  box-shadow: 0 0 20px rgba(255,255,255,0.15);
 }
 
 /* ===== COMPANY ===== */
@@ -513,15 +617,16 @@ ul, ol { list-style: none; }
 .b-company__table th {
   width: 28%;
   font-weight: 500;
-  color: var(--g);
+  color: var(--text-soft);
   letter-spacing: 0.04em;
 }
-.b-company__table td { color: var(--b); }
-.b-company__table a { color: var(--b); text-decoration: underline; }
+.b-company__table td { color: var(--text); }
+.b-company__table a { color: var(--text); text-decoration: underline; }
+.b-company__table a:hover { color: var(--accent); }
 
 /* ===== FOOTER ===== */
 .b-footer {
-  background: var(--b);
+  background: var(--dark);
   color: rgba(255,255,255,0.6);
   padding: 32px var(--side);
   text-align: center;
@@ -529,8 +634,8 @@ ul, ol { list-style: none; }
   letter-spacing: 0.06em;
 }
 .b-footer__pattern { margin-top: 12px; }
-.b-footer__pattern a { color: rgba(255,255,255,0.7); text-decoration: underline; }
-.b-footer__pattern a:hover { color: #fff; }
+.b-footer__pattern a { color: rgba(255,255,255,0.75); text-decoration: underline; }
+.b-footer__pattern a:hover { color: var(--accent); }
 
 /* ===== FLOATING CTA ===== */
 .b-float {
@@ -539,7 +644,8 @@ ul, ol { list-style: none; }
   left: 0;
   right: 0;
   z-index: 99;
-  background: rgba(250,250,250,0.96);
+  background: rgba(250,250,247,0.96);
+  backdrop-filter: blur(12px);
   border-top: 1px solid var(--border);
   padding: 12px var(--side);
   display: none;
@@ -563,16 +669,16 @@ ul, ol { list-style: none; }
   padding: 14px;
   font-size: 13px;
   font-weight: 500;
-  background: var(--b);
+  background: var(--dark);
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   font-family: inherit;
   cursor: pointer;
-  transition: opacity 0.2s var(--ease);
+  transition: transform 0.25s var(--ease), opacity 0.2s var(--ease);
 }
+.b-float__btn:hover { opacity: 0.95; transform: scale(1.02); }
 .b-float__btn--line { background: #06C755; }
-.b-float__btn:hover { opacity: 0.9; }
 </style>
 </head>
 <body>
@@ -601,7 +707,8 @@ ul, ol { list-style: none; }
       <img src="fv-hero.png" alt="" loading="eager" fetchpriority="high">
     </div>
     <div class="b-hero__overlay" aria-hidden="true"></div>
-    <div class="b-hero__inner">
+    <div class="b-hero__glow" aria-hidden="true"></div>
+    <div class="b-hero__inner reveal">
       <h1 class="b-hero__h1">曲がったことが嫌いな、<br>元警察官のまっすぐな遺品整理。</h1>
       <p class="b-hero__lead">お見積り金額から、1円も変わりません。<br>追加請求も、不法投棄もしない。それが、元警察官の約束です。</p>
     </div>
@@ -609,7 +716,7 @@ ul, ol { list-style: none; }
 
   <!-- MESSAGE（余白で際立たせる） -->
   <section class="b-message">
-    <div class="b-message__inner">
+    <div class="b-message__inner reveal">
       <p class="b-message__label">Message</p>
       <h2 class="b-message__h2">遺品の一つひとつを、<br>故人の生きた証として。</h2>
       <p class="b-message__p">元大阪府警察官（5年勤務）が代表を務める遺品整理会社です。遺品の一つひとつを、故人の生きた証として扱い、礼節とスピードの両立を約束します。</p>
@@ -619,7 +726,7 @@ ul, ol { list-style: none; }
 
   <!-- PROBLEM -->
   <section class="b-section b-section--dark" id="problem">
-    <div class="b-section__inner b-problem">
+    <div class="b-section__inner b-problem reveal">
       <p class="b-section__label">Your Concerns</p>
       <h2 class="b-section__h2 b-problem__h2">はじめての遺品整理。<br>不安は、当然です。</h2>
       <p class="b-problem__p">その不安、すべてお引き受けします。</p>
@@ -628,30 +735,24 @@ ul, ol { list-style: none; }
 
   <!-- REASONS -->
   <section class="b-section" id="reasons">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">3 Reasons</p>
       <h2 class="b-section__h2">選ばれる、3つの理由。</h2>
       <div class="b-reasons__list">
-        <div class="b-reason">
+        <div class="b-reason b-reason--lead">
           <span class="b-reason__num">01</span>
-          <div>
-            <h3 class="b-reason__title">追加料金は、一切いただきません。</h3>
-            <p class="b-reason__body">遺品整理のプロが現地を確認し、明確なお見積りを提示します。その金額が、最終請求額です。後から費用が増えることは、絶対にありません。</p>
-          </div>
+          <h3 class="b-reason__title">追加料金は、一切いただきません。</h3>
+          <p class="b-reason__body">遺品整理のプロが現地を確認し、明確なお見積りを提示します。その金額が、最終請求額です。後から費用が増えることは、絶対にありません。</p>
         </div>
         <div class="b-reason">
           <span class="b-reason__num">02</span>
-          <div>
-            <h3 class="b-reason__title">礼節とスピード。どちらも、妥協しません。</h3>
-            <p class="b-reason__body">「土足でいい」と言われても、必ず靴を脱ぎます。一方で、他社で3日かかる現場を1日で完了させた実績があります。</p>
-          </div>
+          <h3 class="b-reason__title">礼節とスピード。どちらも、妥協しません。</h3>
+          <p class="b-reason__body">「土足でいい」と言われても、必ず靴を脱ぎます。一方で、他社で3日かかる現場を1日で完了させた実績があります。</p>
         </div>
         <div class="b-reason">
           <span class="b-reason__num">03</span>
-          <div>
-            <h3 class="b-reason__title">その場で買取査定。費用を抑えます。</h3>
-            <p class="b-reason__body">買取専門会社と連携し、価値ある遺品はその場で査定・買取を提案。作業費から相殺し、ご負担を減らします。</p>
-          </div>
+          <h3 class="b-reason__title">その場で買取査定。費用を抑えます。</h3>
+          <p class="b-reason__body">買取専門会社と連携し、価値ある遺品はその場で査定・買取を提案。作業費から相殺し、ご負担を減らします。</p>
         </div>
       </div>
     </div>
@@ -660,7 +761,7 @@ ul, ol { list-style: none; }
   <!-- REPRESENTATIVE -->
   <section class="b-section b-section--dark" id="message">
     <div class="b-section__inner">
-      <div class="b-rep">
+      <div class="b-rep reveal">
         <div class="b-rep__photo">
           <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="lazy" width="400" height="533">
         </div>
@@ -680,7 +781,7 @@ ul, ol { list-style: none; }
 
   <!-- PRICING -->
   <section class="b-section" id="pricing">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">Price</p>
       <h2 class="b-section__h2">料金の目安。</h2>
       <p class="b-price__summary">1K <strong>25,000円〜</strong>／1DK <strong>35,000円〜</strong>／2DK <strong>45,000円〜</strong>／3DK以上 <strong>80,000円〜</strong>（目安・物量により変動）</p>
@@ -696,7 +797,7 @@ ul, ol { list-style: none; }
 
   <!-- FLOW -->
   <section class="b-section b-section--dark" id="flow">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">Flow</p>
       <h2 class="b-section__h2">ご利用の流れ。</h2>
       <div class="b-flow__list">
@@ -711,7 +812,7 @@ ul, ol { list-style: none; }
 
   <!-- VOICE -->
   <section class="b-section" id="voice">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">Voice</p>
       <h2 class="b-section__h2">お客様の声。</h2>
       <div class="b-voice__grid">
@@ -764,14 +865,14 @@ ul, ol { list-style: none; }
         </div>
       </div>
       <p style="margin-top:32px; text-align:center;">
-        <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:var(--g); text-decoration:underline;">Googleの口コミをもっと見る</a>
+        <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" style="font-size:14px; color:var(--text-soft); text-decoration:underline;">Googleの口コミをもっと見る</a>
       </p>
     </div>
   </section>
 
   <!-- FAQ -->
   <section class="b-section b-section--dark" id="faq" role="region" aria-labelledby="faq-heading">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">FAQ</p>
       <h2 class="b-section__h2" id="faq-heading">よくあるご質問。</h2>
       <div class="b-faq__list">
@@ -809,7 +910,7 @@ ul, ol { list-style: none; }
 
   <!-- CTA -->
   <section class="b-section b-section--dark" id="contact">
-    <div class="b-section__inner b-cta">
+    <div class="b-section__inner b-cta reveal">
       <p class="b-section__label">Contact</p>
       <h2 class="b-section__h2 b-cta__h2">まずは、ご相談ください。</h2>
       <p class="b-cta__sub">ささいなことでも構いません。遺品整理のプロが、ていねいにお答えします。</p>
@@ -824,7 +925,7 @@ ul, ol { list-style: none; }
 
   <!-- COMPANY -->
   <section class="b-section" id="company">
-    <div class="b-section__inner">
+    <div class="b-section__inner reveal">
       <p class="b-section__label">Company</p>
       <h2 class="b-section__h2">会社概要。</h2>
       <table class="b-company__table">
@@ -879,6 +980,23 @@ ul, ol { list-style: none; }
       voiceAccBtn.textContent = open ? '閉じる' : '他のお客様の声を見る（6件）';
     });
   }
+
+  function revealOnScroll() {
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      document.querySelectorAll('.reveal').forEach(function(el) { el.classList.add('is-visible'); });
+      return;
+    }
+    var reveals = document.querySelectorAll('.reveal');
+    reveals.forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      var inView = rect.top < window.innerHeight - 80;
+      if (inView) el.classList.add('is-visible');
+    });
+  }
+  window.addEventListener('scroll', revealOnScroll, { passive: true });
+  window.addEventListener('load', revealOnScroll);
+  revealOnScroll();
 })();
 </script>
 </body>
