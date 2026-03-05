@@ -135,13 +135,16 @@ ul, ol { list-style: none; }
   margin-bottom: 12px;
 }
 .c-fv__loss {
-  font-size: 13px;
-  color: #f0a0a0;
-  background: rgba(176,0,32,0.15);
-  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #b91c1c;
+  background: rgba(185,28,28,0.12);
+  padding: 12px 16px;
   border-radius: 6px;
   margin-bottom: 24px;
-  line-height: 1.7;
+  line-height: 1.75;
+  max-width: 32em;
+  border-left: 3px solid #b91c1c;
 }
 .c-fv__cta-wrap {
   display: flex;
@@ -418,6 +421,25 @@ ul, ol { list-style: none; }
 .c-evidence__voice-stars { color: #e6a800; font-size: 14px; margin-bottom: 8px; }
 .c-evidence__voice-text { font-size: 14px; line-height: 1.9; margin-bottom: 8px; }
 .c-evidence__voice-meta { font-size: 12px; color: var(--c-text-light); }
+.c-evidence__google-wrap { text-align: center; margin-top: 24px; }
+.c-evidence__google-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--c-primary);
+  background: #fff;
+  border: 1px solid var(--c-primary);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.25s var(--c-ease), color 0.25s var(--c-ease);
+}
+.c-evidence__google-btn:hover {
+  background: var(--c-primary);
+  color: #fff;
+}
 
 /* ===== 診断クイズ — 一貫性の原理 ===== */
 .c-quiz {
@@ -668,7 +690,6 @@ ul, ol { list-style: none; }
     <div class="c-fv__cta-wrap">
       <a href="tel:0742268496" class="c-fv__cta-main">無料で話を聞いてもらう</a>
       <p class="c-fv__cta-micro">しつこい営業・即決は一切求めません。まず話すだけでも大丈夫です。</p>
-      <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="c-fv__cta-line">状況をLINEで送るだけ</a>
     </div>
     <p class="c-fv__social">
       累計対応実績 ／ 奈良・大阪を中心に近畿一円対応 ／ 7時〜22時（年中無休）
@@ -786,6 +807,9 @@ ul, ol { list-style: none; }
         <p class="c-evidence__voice-meta">— Google口コミより</p>
       </div>
     </div>
+    <p class="c-evidence__google-wrap">
+      <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" class="c-evidence__google-btn">Googleの口コミをもっと見る</a>
+    </p>
   </div>
 </section>
 
