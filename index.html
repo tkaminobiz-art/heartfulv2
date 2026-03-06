@@ -18,30 +18,31 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary: #2D5A3D;
-  --primary-dark: #1E3D2A;
-  --primary-light: #3A6B4A;
-  --accent: #E67E22;
-  --accent-hover: #D35400;
+  /* 静寂モダン：アクセント1色（彩度を落とした緑） */
+  --accent: #5C6B5E;
+  --accent-dark: #2C3D32;
+  --primary: #5C6B5E;
+  --primary-dark: #2C3D32;
   --bg: #FAFAF8;
-  --bg-alt: #F0F4F1;
-  --bg-dark: #2D5A3D;
-  --text: #1C1C1C;
-  --text-light: #666666;
+  --bg-alt: #F5F3EF;
+  --bg-dark: #2C3D32;
+  --text: #1A1A1A;
+  --text-light: #8A8480;
+  --text-muted: #8A8480;
   --text-on-dark: #FFFFFF;
   --text-on-dark-sub: rgba(255,255,255,0.75);
-  --badge-bg: #EDF5F0;
-  --border: rgba(45, 90, 61, 0.12);
-  --shadow: 0 1px 3px rgba(0,0,0,0.04);
-  --shadow-lg: 0 2px 8px rgba(0,0,0,0.06);
-  --border-card: 1px solid rgba(45, 90, 61, 0.08);
+  --badge-bg: rgba(92, 107, 94, 0.08);
+  --border: #E8E4DE;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 1px 3px rgba(0,0,0,0.05);
+  --border-card: 1px solid rgba(92, 107, 94, 0.1);
   --radius: 8px;
-  --radius-card-sm: 6px;
-  --radius-card-md: 10px;
-  --radius-card-lg: 12px;
+  --radius-card-sm: 8px;
+  --radius-card-md: 8px;
+  --radius-card-lg: 8px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
-  --content-width: 1100px;
-  --side-padding: clamp(20px, 5vw, 80px);
+  --content-width: 960px;
+  --side-padding: clamp(20px, 5vw, 64px);
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -89,7 +90,7 @@ ul, ol { list-style: none; }
 
 .section-heading {
   font-family: 'Noto Serif JP', serif;
-  font-size: clamp(28px, 3.5vw, 44px);
+  font-size: clamp(22px, 2.8vw, 32px);
   font-weight: 400;
   letter-spacing: 0.06em;
   line-height: 1.4;
@@ -133,69 +134,49 @@ ul, ol { list-style: none; }
 .btn--primary {
   background: var(--accent);
   color: #fff;
-  font-weight: 600;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
-  box-shadow: 0 1px 2px rgba(230, 126, 34, 0.2);
-  position: relative;
-}
-.btn--primary::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 6px;
-  background: var(--accent);
-  opacity: 0;
-  filter: blur(8px);
-  z-index: -1;
-  transition: opacity 400ms var(--ease);
+  font-weight: 500;
+  transition: opacity 0.4s var(--ease);
 }
 .btn--primary:hover {
-  background: var(--accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.25);
-}
-.btn--primary:hover::after {
-  opacity: 0.25;
+  opacity: 0.88;
 }
 
 .btn--outline {
   background: transparent;
-  color: var(--primary);
-  border: 1.5px solid var(--primary);
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  transition: opacity 0.4s var(--ease);
 }
 .btn--outline:hover {
-  background: var(--primary);
-  color: #fff;
-  transform: translateY(-1px);
+  opacity: 0.8;
 }
 
 .btn--white {
   background: #fff;
-  color: var(--primary);
+  color: var(--accent);
   border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  transition: opacity 0.4s var(--ease);
 }
 .btn--white:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+  opacity: 0.9;
 }
 
 .btn--line {
   background: #06C755;
   color: #fff;
+  transition: opacity 0.4s var(--ease);
 }
 .btn--line:hover {
-  background: #05b04c;
-  transform: translateY(-1px);
+  opacity: 0.9;
 }
 
 .btn--phone {
-  background: var(--primary);
+  background: var(--accent);
   color: #fff;
+  transition: opacity 0.4s var(--ease);
 }
 .btn--phone:hover {
-  background: var(--primary-dark);
-  transform: translateY(-1px);
+  opacity: 0.88;
 }
 
 .microcopy {
@@ -212,7 +193,7 @@ ul, ol { list-style: none; }
   inset: 0;
   z-index: 9999;
   pointer-events: none;
-  opacity: 0.048;
+  opacity: 0.022;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
@@ -226,24 +207,17 @@ ul, ol { list-style: none; }
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: var(--primary-dark);
+  background: var(--accent-dark);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  will-change: clip-path, transform;
+  will-change: opacity;
 }
 
 .opening__glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(58,107,74,0.28) 0%, transparent 70%);
-  opacity: 0;
-  animation: op-glow 2000ms ease-out 200ms forwards;
-  pointer-events: none;
+  display: none;
 }
 
 .opening__label {
@@ -432,12 +406,12 @@ ul, ol { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--primary);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--accent-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   transition: box-shadow 400ms var(--ease);
 }
 .header.is-scrolled {
-  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
 }
 
 .header__inner {
@@ -467,6 +441,8 @@ ul, ol { list-style: none; }
   max-width: 160px;
   object-fit: contain;
   opacity: 0.98;
+  /* 暗いヘッダー上でロゴを白く表示 */
+  filter: brightness(0) invert(1);
 }
 .header__logo:hover img {
   opacity: 1;
@@ -564,9 +540,9 @@ ul, ol { list-style: none; }
 /* 左カラム：代表写真 */
 .fv__visual {
   position: relative;
-  border-radius: var(--radius-card-lg);
+  border-radius: var(--radius);
   overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
   aspect-ratio: 3 / 4;
   max-height: 80vh;
 }
@@ -925,7 +901,7 @@ ul, ol { list-style: none; }
   width: 600px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(230,126,34,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(92,107,94,0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -1083,7 +1059,7 @@ ul, ol { list-style: none; }
   position: relative;
   z-index: 1;
   padding: clamp(20px, 3vw, 28px);
-  background: linear-gradient(to top, rgba(30,61,42,0.92) 0%, rgba(30,61,42,0.6) 60%, transparent 100%);
+  background: rgba(44, 61, 50, 0.88);
   color: #fff;
 }
 
