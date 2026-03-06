@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>ハートフルクリーン｜奈良の遺品整理・不用品回収・特殊清掃</title>
 <meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。遺品整理・生前整理・特殊清掃・不用品回収なら、ハートフルクリーンへ。">
 <!-- Google tag (gtag.js) — 測定IDはお持ちのG-XXXXXXXXXXに差し替えてください -->
@@ -52,6 +52,7 @@
 html {
   -webkit-text-size-adjust: 100%;
   scroll-padding-top: 80px;
+  -webkit-tap-highlight-color: rgba(92, 107, 94, 0.12);
 }
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
@@ -69,6 +70,7 @@ body {
   overflow-wrap: break-word;
   word-break: normal;
   font-feature-settings: 'palt' 1;
+  overflow-x: hidden;
 }
 
 img { max-width: 100%; height: auto; display: block; }
@@ -561,6 +563,12 @@ ul, ol { list-style: none; }
 @media (max-width: 768px) {
   .header__nav { display: none; }
   .header__phone-sub { display: none; }
+  .header__inner { padding-left: 12px; padding-right: 12px; }
+  .header__logo { min-width: 0; }
+  .header__logo img { max-width: 120px; }
+}
+@media (max-width: 380px) {
+  .header__phone { font-size: 15px; letter-spacing: 0.02em; }
 }
 
 /* ========================================
@@ -766,7 +774,7 @@ ul, ol { list-style: none; }
 
 .problem__list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 20px;
   max-width: 800px;
   margin: 0 auto;
@@ -995,6 +1003,17 @@ ul, ol { list-style: none; }
   flex-wrap: wrap;
 }
 
+@media (max-width: 480px) {
+  .cta-band__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-band__buttons .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
 /* ========================================
    SERVICES
 ======================================== */
@@ -1193,6 +1212,8 @@ ul, ol { list-style: none; }
   border: var(--border-card);
   box-shadow: none;
   overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .pricing__sidebar {
@@ -1248,6 +1269,7 @@ ul, ol { list-style: none; }
 
 .pricing__table {
   width: 100%;
+  min-width: 320px;
   border-collapse: collapse;
 }
 
@@ -1279,6 +1301,15 @@ ul, ol { list-style: none; }
   font-weight: 400;
   font-size: 18px;
   color: var(--primary);
+}
+
+@media (max-width: 480px) {
+  .pricing__table th,
+  .pricing__table td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .pricing__table .price { font-size: 16px; }
 }
 
 .pricing__note {
@@ -1371,6 +1402,25 @@ ul, ol { list-style: none; }
   text-wrap: pretty;
 }
 
+@media (max-width: 480px) {
+  .flow__step {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding-bottom: 32px;
+  }
+  .flow__step-num {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .flow__step::before {
+    left: 23px;
+    top: 48px;
+  }
+  .flow__step-title { font-size: 16px; }
+  .flow__step-desc { font-size: 13px; }
+}
+
 /* ========================================
    TESTIMONIALS
 ======================================== */
@@ -1424,7 +1474,7 @@ ul, ol { list-style: none; }
 
 .testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 20px;
 }
 
@@ -1474,6 +1524,7 @@ ul, ol { list-style: none; }
 .testimonials__accordion-trigger {
   width: 100%;
   padding: 18px 24px;
+  min-height: 52px;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -1482,6 +1533,7 @@ ul, ol { list-style: none; }
   color: var(--primary);
   cursor: pointer;
   display: flex;
+  -webkit-tap-highlight-color: transparent;
   align-items: center;
   justify-content: center;
   gap: 8px;
@@ -1510,7 +1562,7 @@ ul, ol { list-style: none; }
 
 .testimonials__accordion-body {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 20px;
   margin-top: 20px;
   max-height: 0;
@@ -1707,6 +1759,7 @@ ul, ol { list-style: none; }
   background: none;
   border: none;
   padding: 20px 24px;
+  min-height: 56px;
   font-size: 15px;
   font-weight: 500;
   letter-spacing: 0.03em;
@@ -1718,6 +1771,7 @@ ul, ol { list-style: none; }
   gap: 16px;
   font-family: inherit;
   line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .faq__question::before {
@@ -1943,6 +1997,15 @@ ul, ol { list-style: none; }
   color: rgba(255,255,255,0.4);
   letter-spacing: 0.04em;
 }
+.footer__link-wrap {
+  margin-bottom: 20px;
+}
+.footer__alt-link {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 14px;
+  min-height: 48px;
+}
 .footer__pattern { margin-top: 12px; }
 .footer__pattern a { color: rgba(255,255,255,0.6); text-decoration: underline; }
 .footer__pattern a:hover { color: #fff; }
@@ -1979,12 +2042,13 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 12px 8px;
+  padding: 14px 12px;
   border-radius: 4px;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   text-align: center;
-  min-height: 44px;
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .floating-cta__btn--phone {
@@ -1997,8 +2061,8 @@ ul, ol { list-style: none; }
   color: #fff;
 }
 
-/* 追従バー分の余白（コンテンツが隠れないように） */
-body { padding-bottom: 72px; }
+/* 追従バー分の余白（コンテンツが隠れないように・ノッチ対応） */
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
 
 @media (min-width: 769px) {
   .floating-cta__inner {
@@ -2686,8 +2750,10 @@ body { padding-bottom: 72px; }
 
 <!-- ====== FOOTER ====== -->
 <footer class="footer">
+  <div class="footer__link-wrap">
+    <a href="#iiyange" class="btn btn--white footer__alt-link" id="link-iiyange">いいやんげ飛ぶページ</a>
+  </div>
   <p class="footer__copy">&copy; 2026 ハートフルクリーン（株式会社和）All Rights Reserved.</p>
-  <p class="footer__pattern"><a href="index-b.html">モノクロ版（Bパターン）</a> ｜ <a href="index-c.html">CVR特化版（Cパターン）</a> ｜ <a href="index-d.html">オマージュ再現（D案）</a></p>
 </footer>
 </main>
 
