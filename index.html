@@ -118,6 +118,7 @@ ul, ol { list-style: none; }
   justify-content: center;
   gap: 8px;
   padding: 16px 40px;
+  min-height: 48px;
   border-radius: 4px;
   font-size: 15px;
   font-weight: 500;
@@ -132,6 +133,8 @@ ul, ol { list-style: none; }
 .btn--primary {
   background: var(--accent);
   color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
   box-shadow: 0 1px 2px rgba(230, 126, 34, 0.2);
   position: relative;
 }
@@ -450,31 +453,34 @@ ul, ol { list-style: none; }
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 4px 0;
+  gap: 12px;
+  padding: 10px 12px 10px 0;
   margin: 0 -8px 0 0;
+  min-height: 44px;
+  min-width: 180px;
 }
 
 .header__logo img {
   display: block;
-  height: 40px;
+  height: 42px;
   width: auto;
-  max-width: 140px;
+  max-width: 160px;
   object-fit: contain;
-  /* 緑ヘッダー上でロゴを白く表示（透過部分はそのまま） */
   filter: brightness(0) invert(1);
-  opacity: 0.95;
+  opacity: 0.98;
 }
 .header__logo:hover img {
   opacity: 1;
 }
 
+/* ロゴ画像が読めない場合も社名でブランドを表示（フォールバック） */
 .header__logo-text {
   font-family: 'Noto Sans JP', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  font-size: 16px;
+  font-weight: 600;
   color: #fff;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
 }
 
 .header__nav {
@@ -552,7 +558,8 @@ ul, ol { list-style: none; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  /* ポートレートで顔が切れないよう左寄せ（人物は通常左側） */
+  object-position: 28% 50%;
 }
 
 /* 左に社長・右にテキスト：左は透過、右でテキスト可読に */
@@ -758,7 +765,7 @@ ul, ol { list-style: none; }
    PROBLEM SECTION
 ======================================== */
 .problem {
-  padding: clamp(100px, 12vw, 180px) 0;
+  padding: clamp(120px, 14vw, 180px) 0;
   background: var(--bg);
 }
 
@@ -823,7 +830,7 @@ ul, ol { list-style: none; }
    3 REASONS
 ======================================== */
 .reasons {
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(100px, 12vw, 160px) 0;
   background: var(--bg-alt);
 }
 
@@ -1002,7 +1009,7 @@ ul, ol { list-style: none; }
    SERVICES
 ======================================== */
 .services {
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(100px, 12vw, 160px) 0;
   background: var(--bg);
 }
 
@@ -1129,7 +1136,7 @@ ul, ol { list-style: none; }
    PRICING
 ======================================== */
 .pricing {
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(100px, 12vw, 160px) 0;
   background: var(--bg-alt);
 }
 
@@ -1303,7 +1310,7 @@ ul, ol { list-style: none; }
    FLOW
 ======================================== */
 .flow {
-  padding: clamp(80px, 10vw, 160px) 0;
+  padding: clamp(100px, 12vw, 160px) 0;
   background: var(--bg);
 }
 
@@ -1562,7 +1569,7 @@ ul, ol { list-style: none; }
    REPRESENTATIVE
 ======================================== */
 .representative {
-  padding: clamp(64px, 8vw, 120px) 0;
+  padding: clamp(100px, 12vw, 140px) 0;
   background: var(--bg);
 }
 
@@ -2039,7 +2046,7 @@ body { padding-bottom: 72px; }
 <!-- ====== HEADER ====== -->
 <header class="header">
   <div class="header__inner">
-    <a href="#" class="header__logo" aria-label="ハートフルクリーン トップへ">
+    <a href="#top" class="header__logo" aria-label="ハートフルクリーン トップへ">
       <img src="./logo-header-transparent.png" alt="" width="160" height="48" loading="eager">
       <span class="header__logo-text">ハートフルクリーン</span>
     </a>
