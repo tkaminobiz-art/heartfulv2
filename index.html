@@ -255,24 +255,21 @@ ul, ol { list-style: none; }
   animation: op-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
 }
 
-.opening__title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(28px, 5.5vw, 52px);
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  line-height: 1;
-  color: #fff;
-  display: flex;
-  overflow: hidden;
+.opening__logo-wrap {
   position: relative;
   z-index: 1;
+  opacity: 0;
+  transform: scale(0.92);
+  animation: op-logo-in 1000ms cubic-bezier(0.22, 1, 0.36, 1) 400ms forwards;
 }
 
-.opening__char {
-  display: inline-block;
-  clip-path: inset(100% 0 0 0);
-  transform: translateY(30%);
-  animation: op-char 700ms cubic-bezier(0.22, 1, 0.36, 1) calc(600ms + var(--i) * 55ms) forwards;
+.opening__logo {
+  display: block;
+  height: clamp(56px, 10vw, 80px);
+  width: auto;
+  max-width: min(280px, 70vw);
+  object-fit: contain;
+  opacity: 0.96;
 }
 
 .opening__divider {
@@ -342,7 +339,7 @@ ul, ol { list-style: none; }
 }
 
 .opening.phase-exit .opening__label,
-.opening.phase-exit .opening__title,
+.opening.phase-exit .opening__logo-wrap,
 .opening.phase-exit .opening__divider,
 .opening.phase-exit .opening__tagline,
 .opening.phase-exit .opening__bottom-line {
@@ -364,9 +361,9 @@ ul, ol { list-style: none; }
 @keyframes op-glow-out {
   to { opacity: 0; transform: scale(1.5); }
 }
-@keyframes op-char {
-  0% { clip-path: inset(100% 0 0 0); transform: translateY(30%); }
-  100% { clip-path: inset(0 0 0 0); transform: translateY(0); }
+@keyframes op-logo-in {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
 }
 @keyframes op-divider {
   0% { width: 0; }
@@ -420,7 +417,7 @@ ul, ol { list-style: none; }
   .fade-in, .reveal-up { opacity: 1; transform: none; transition: none; }
   .mask-in { opacity: 1; clip-path: none; transition: none; }
   .opening { display: none !important; }
-  .opening__char { clip-path: none; transform: none; }
+  .opening__logo-wrap { opacity: 1; transform: none; animation: none; }
 }
 
 /* ========================================
@@ -451,27 +448,21 @@ ul, ol { list-style: none; }
 .header__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 6px 12px;
-  margin: 0 -12px 0 0;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.18);
+  padding: 4px 0;
+  margin: 0 -8px 0 0;
 }
 
 .header__logo img {
   display: block;
-  height: 36px;
+  height: 44px;
   width: auto;
-  min-width: 36px;
+  max-width: 160px;
   object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.95;
 }
-
-.header__logo-text {
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--text-on-dark);
-  letter-spacing: 0.08em;
+.header__logo:hover img {
+  opacity: 1;
 }
 
 .header__nav {
@@ -499,33 +490,6 @@ ul, ol { list-style: none; }
 }
 .header__nav a:hover { color: #fff; }
 .header__nav a:hover::after { width: 100%; }
-
-.header__nav a.header__nav-c {
-  padding: 6px 14px;
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 6px;
-  font-weight: 500;
-}
-.header__nav a.header__nav-c::after { display: none; }
-.header__nav a.header__nav-c:hover {
-  background: rgba(255, 255, 255, 0.3);
-  border-color: #fff;
-}
-
-.header__nav a.header__nav-d {
-  padding: 6px 14px;
-  background: var(--primary);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 6px;
-  font-weight: 500;
-  color: #fff;
-}
-.header__nav a.header__nav-d::after { display: none; }
-.header__nav a.header__nav-d:hover {
-  background: #1a2744;
-  border-color: rgba(255, 255, 255, 0.6);
-}
 
 .header__cta {
   display: flex;
@@ -2044,12 +2008,12 @@ body { padding-bottom: 72px; }
 </head>
 <body>
 
-<!-- ====== OPENING ANIMATION ====== -->
+<!-- ====== OPENING（ロゴ＋タグライン） ====== -->
 <div class="opening" id="opening">
   <div class="opening__glow"></div>
   <p class="opening__label">奈良の遺品整理・特殊清掃</p>
-  <div class="opening__title" aria-label="ハートフルクリーン">
-    <span class="opening__char" style="--i:0">ハ</span><span class="opening__char" style="--i:1">ー</span><span class="opening__char" style="--i:2">ト</span><span class="opening__char" style="--i:3">フ</span><span class="opening__char" style="--i:4">ル</span><span class="opening__char" style="--i:5">ク</span><span class="opening__char" style="--i:6">リ</span><span class="opening__char" style="--i:7">ー</span><span class="opening__char" style="--i:8">ン</span>
+  <div class="opening__logo-wrap">
+    <img src="./logo-header-transparent.png" alt="ハートフルクリーン" class="opening__logo" width="240" height="72" loading="eager">
   </div>
   <div class="opening__divider"></div>
   <p class="opening__tagline">溢れるものも、溢れる想いも<br>丁寧に片付ける。</p>
@@ -2063,9 +2027,8 @@ body { padding-bottom: 72px; }
 <!-- ====== HEADER ====== -->
 <header class="header">
   <div class="header__inner">
-    <a href="#" class="header__logo">
-      <img src="./logo.jpg" alt="ハートフルクリーン ロゴ" width="120" height="36" loading="eager">
-      <span class="header__logo-text">ハートフルクリーン</span>
+    <a href="#" class="header__logo" aria-label="ハートフルクリーン トップへ">
+      <img src="./logo-header-transparent.png" alt="ハートフルクリーン" width="160" height="48" loading="eager">
     </a>
     <nav class="header__nav">
       <a href="#reasons">選ばれる理由</a>
@@ -2073,9 +2036,6 @@ body { padding-bottom: 72px; }
       <a href="#pricing">料金</a>
       <a href="#flow">ご利用の流れ</a>
       <a href="#company">会社概要</a>
-      <a href="index-b.html">Bパターン</a>
-      <a href="index-c.html" class="header__nav-c">C案</a>
-      <a href="index-d.html" class="header__nav-d">D案</a>
     </nav>
     <div class="header__cta">
       <div style="text-align: right;">
