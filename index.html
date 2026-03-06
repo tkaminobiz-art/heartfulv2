@@ -49,7 +49,13 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 80px;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   font-family: var(--font-body);
@@ -368,8 +374,8 @@ ul, ol { list-style: none; }
 /* ===== Scroll Animation ===== */
 .fade-in {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 1200ms var(--ease), transform 1200ms var(--ease);
+  transform: translateY(20px);
+  transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
 }
 .fade-in.visible {
   opacity: 1;
@@ -378,8 +384,8 @@ ul, ol { list-style: none; }
 
 .reveal-up {
   opacity: 0;
-  transform: translateY(16px);
-  transition: opacity 1000ms var(--ease), transform 1000ms var(--ease);
+  transform: translateY(24px);
+  transition: opacity 1.05s var(--ease), transform 1.05s var(--ease);
 }
 .reveal-up.visible {
   opacity: 1;
@@ -396,8 +402,49 @@ ul, ol { list-style: none; }
   clip-path: inset(0 0% 0 0);
 }
 
+/* ===== セクション別スクロールアニメーション（心地よいヌルヌル感） ===== */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 1.15s var(--ease), transform 1.15s var(--ease);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 1.15s var(--ease), transform 1.15s var(--ease);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+  transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.slide-up-strong {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+.slide-up-strong.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .fade-in, .reveal-up { opacity: 1; transform: none; transition: none; }
+  .fade-in, .reveal-up, .reveal-left, .reveal-right, .scale-in, .slide-up-strong { opacity: 1; transform: none; transition: none; }
   .mask-in { opacity: 1; clip-path: none; transition: none; }
   .opening { display: none !important; }
   .opening__logo-wrap { opacity: 1; transform: none; animation: none; }
@@ -2136,7 +2183,7 @@ body { padding-bottom: 72px; }
 <section class="representative" id="message">
   <div class="wrapper">
     <div class="representative__inner">
-      <div class="representative__photo fade-in">
+      <div class="representative__photo reveal-left">
         <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表・藤田宗一郎" loading="eager" width="400" height="533">
       </div>
 
@@ -2171,12 +2218,12 @@ body { padding-bottom: 72px; }
     <img src="support-kano.png" alt="元阪神タイガース・狩野恵輔さん。インタビュー時の写真" loading="lazy" width="1200" height="800">
   </div>
   <div class="wrapper">
-    <div class="support__heading-area fade-in">
+    <div class="support__heading-area reveal-left">
       <p class="section-label">Support</p>
       <h2 class="section-heading">関西の顔が、私たちを取材してくれました。</h2>
     </div>
     <p class="support__name fade-in">元阪神タイガース　狩野　恵輔さん</p>
-    <div class="support__intro fade-in">
+    <div class="support__intro reveal-left">
       <p>関西では誰もが知る元プロ野球選手です。インタビューを受けた際の写真です。狩野さんをはじめ、関西で活躍される方々に、ハートフルクリーンを応援いただいています。</p>
     </div>
   </div>
@@ -2205,7 +2252,7 @@ body { padding-bottom: 72px; }
     </div>
 
     <div class="services__grid">
-      <div class="service-card service-card--photo fade-in">
+      <div class="service-card service-card--photo scale-in">
         <img src="ハートフルクリーンサイト画像/stock/adobestock-499923559-kimono-documents.jpg" alt="遺品を丁寧に扱うスタッフ" loading="lazy" width="600" height="400">
         <div class="service-card__overlay">
           <h3 class="service-card__name">遺品整理</h3>
@@ -2213,7 +2260,7 @@ body { padding-bottom: 72px; }
         </div>
       </div>
 
-      <div class="service-card fade-in">
+      <div class="service-card scale-in">
         <div class="service-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
         </div>
@@ -2221,7 +2268,7 @@ body { padding-bottom: 72px; }
         <p class="service-card__desc">ご本人の意向に沿った身辺整理。家具1点から対応いたします。</p>
       </div>
 
-      <div class="service-card service-card--photo fade-in">
+      <div class="service-card service-card--photo scale-in">
         <img src="ハートフルクリーンサイト画像/stock/adobestock-504843647-tatami-room.jpg" alt="特殊清掃の作業風景" loading="lazy" width="600" height="400">
         <div class="service-card__overlay">
           <h3 class="service-card__name">特殊清掃</h3>
@@ -2229,7 +2276,7 @@ body { padding-bottom: 72px; }
         </div>
       </div>
 
-      <div class="service-card service-card--photo fade-in">
+      <div class="service-card service-card--photo scale-in">
         <img src="ハートフルクリーンサイト画像/before-after/case-room-before.png" alt="不用品が積み上がった部屋" loading="lazy" width="600" height="400">
         <div class="service-card__overlay">
           <h3 class="service-card__name">ゴミ屋敷清掃</h3>
@@ -2237,7 +2284,7 @@ body { padding-bottom: 72px; }
         </div>
       </div>
 
-      <div class="service-card service-card--photo fade-in">
+      <div class="service-card service-card--photo scale-in">
         <img src="ハートフルクリーンサイト画像/stock/adobestock-1444199279-moving-furniture.jpg" alt="不用品回収の現場" loading="lazy" width="600" height="400">
         <div class="service-card__overlay">
           <h3 class="service-card__name">不用品回収</h3>
@@ -2245,7 +2292,7 @@ body { padding-bottom: 72px; }
         </div>
       </div>
 
-      <div class="service-card fade-in">
+      <div class="service-card scale-in">
         <div class="service-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
         </div>
@@ -2253,7 +2300,7 @@ body { padding-bottom: 72px; }
         <p class="service-card__desc">家財一斉撤去・残置物処分。不動産会社様からの直接依頼も承ります。</p>
       </div>
 
-      <div class="service-card fade-in">
+      <div class="service-card scale-in">
         <div class="service-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
         </div>
@@ -2261,7 +2308,7 @@ body { padding-bottom: 72px; }
         <p class="service-card__desc">仏壇・写真・人形等の合同供養を手配。手放す罪悪感を和らげます。</p>
       </div>
 
-      <div class="service-card service-card--photo fade-in">
+      <div class="service-card service-card--photo scale-in">
         <img src="ハートフルクリーンサイト画像/stock/adobestock-1604432173-sorting-valuables.jpg" alt="貴金属の買取査定" loading="lazy" width="600" height="400">
         <div class="service-card__overlay">
           <h3 class="service-card__name">買取査定</h3>
@@ -2324,7 +2371,7 @@ body { padding-bottom: 72px; }
         <p class="pricing__note fade-in">※上記は目安です。物量により料金は異なります。現地確認後、明確なお見積りをご提示いたします。</p>
       </div>
 
-      <div class="pricing__sidebar fade-in">
+      <div class="pricing__sidebar reveal-right">
         <p class="pricing__sidebar-heading">お見積りは完全無料です。</p>
         <div class="pricing__sidebar-phone"><a href="tel:0742268496">0742-26-8496</a></div>
         <p class="pricing__sidebar-hours">7時〜22時（年中無休）</p>
@@ -2349,35 +2396,35 @@ body { padding-bottom: 72px; }
     </div>
 
     <div class="flow__steps">
-      <div class="flow__step fade-in">
+      <div class="flow__step slide-up-strong">
         <div class="flow__step-num">1</div>
         <div>
           <h3 class="flow__step-title">お問い合わせ（電話・LINE）</h3>
           <p class="flow__step-desc">ささいなご相談もどうぞ。相談は無料です。「何から始めればいいかわからない」という段階でも構いません。</p>
         </div>
       </div>
-      <div class="flow__step fade-in">
+      <div class="flow__step slide-up-strong">
         <div class="flow__step-num">2</div>
         <div>
           <h3 class="flow__step-title">現地訪問・無料見積り</h3>
           <p class="flow__step-desc">遺品整理のプロが直接お伺いし、お部屋の状況を確認。その場で明確な金額をお出しします。</p>
         </div>
       </div>
-      <div class="flow__step fade-in">
+      <div class="flow__step slide-up-strong">
         <div class="flow__step-num">3</div>
         <div>
           <h3 class="flow__step-title">ご契約・日程調整</h3>
           <p class="flow__step-desc">納得いただいてから正式契約です。決断を急かすことはありません。即日・土日祝も対応できます。</p>
         </div>
       </div>
-      <div class="flow__step fade-in">
+      <div class="flow__step slide-up-strong">
         <div class="flow__step-num">4</div>
         <div>
           <h3 class="flow__step-title">作業実施（立ち会い不要）</h3>
           <p class="flow__step-desc">仕分け・貴重品探索・搬出・清掃をプロが担当します。お立ち会いは不要。事前のご指示だけで進められます。</p>
         </div>
       </div>
-      <div class="flow__step fade-in">
+      <div class="flow__step slide-up-strong">
         <div class="flow__step-num">5</div>
         <div>
           <h3 class="flow__step-title">完了・ご精算</h3>
@@ -2405,7 +2452,7 @@ body { padding-bottom: 72px; }
     </div>
 
     <div class="testimonials__grid">
-      <div class="testimonial-card fade-in">
+      <div class="testimonial-card scale-in">
         <div class="testimonial-card__stars star-rating" aria-label="5つ星">
           <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2417,7 +2464,7 @@ body { padding-bottom: 72px; }
         <p class="testimonial-card__meta">— Google口コミより</p>
       </div>
 
-      <div class="testimonial-card fade-in">
+      <div class="testimonial-card scale-in">
         <div class="testimonial-card__stars star-rating" aria-label="5つ星">
           <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
           <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2435,7 +2482,7 @@ body { padding-bottom: 72px; }
         他のお客様の声を見る（6件）
       </button>
       <div class="testimonials__accordion-body" id="testimonialsAccordionBody" role="region" aria-labelledby="testimonialsAccordionBtn">
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2446,7 +2493,7 @@ body { padding-bottom: 72px; }
           <p class="testimonial-card__text">即対応していただきとても助かりました。またご縁があれば利用させて頂きたいです。ありがとうございました。</p>
           <p class="testimonial-card__meta">— Google口コミより</p>
         </div>
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2457,7 +2504,7 @@ body { padding-bottom: 72px; }
           <p class="testimonial-card__text">迅速に作業終了してもらい ありがとうございました。</p>
           <p class="testimonial-card__meta">— Google口コミより</p>
         </div>
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2468,7 +2515,7 @@ body { padding-bottom: 72px; }
           <p class="testimonial-card__text">母の介護施設入所に伴い、団地の家財道具の処分や仏壇の引取り供養をお願いしました。急な依頼にも関わらず、年末の30日に作業していただきました。荷物は少なかったのですが、30分もかからなかったです。</p>
           <p class="testimonial-card__meta">— Google口コミより</p>
         </div>
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2479,7 +2526,7 @@ body { padding-bottom: 72px; }
           <p class="testimonial-card__text">不用品回収をお願いしました。量も多く、大変な中嫌な顔一つなく終始笑顔で親切に対応してくださり助かりました。</p>
           <p class="testimonial-card__meta">— Google口コミより</p>
         </div>
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2490,7 +2537,7 @@ body { padding-bottom: 72px; }
           <p class="testimonial-card__text">不用品回収をお願いしました! 違う場所からソファの運びもしてくださって助かりました! これからも何かあれば頼もうと思います!</p>
           <p class="testimonial-card__meta">— Google口コミより</p>
         </div>
-        <div class="testimonial-card fade-in">
+        <div class="testimonial-card scale-in">
           <div class="testimonial-card__stars star-rating" aria-label="5つ星">
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
             <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
@@ -2708,23 +2755,25 @@ body { padding-bottom: 72px; }
 
   setTimeout(function() {
     var observer = new IntersectionObserver(function(entries) {
-      /* scroll observer delayed until opening completes */
       entries.forEach(function(entry) {
         if (entry.isIntersecting) {
           var el = entry.target;
-          var delay = el.dataset.delay || 0;
+          var delay = parseInt(el.dataset.delay, 10) || 0;
           setTimeout(function() { el.classList.add('visible'); }, delay);
           observer.unobserve(el);
         }
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
 
-    document.querySelectorAll('.fade-in:not(.visible), .reveal-up:not(.visible), .mask-in:not(.visible)').forEach(function(el) {
-      var parent = el.closest('.problem__list, .services__grid, .testimonials__grid, .faq__list, .reasons__grid, .flow__steps, .representative__text');
+    var selector = '.fade-in:not(.visible), .reveal-up:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible), .scale-in:not(.visible), .slide-up-strong:not(.visible), .mask-in:not(.visible)';
+    var staggerParents = '.problem__list, .services__grid, .testimonials__grid, .faq__list, .reasons__grid, .flow__steps, .representative__text, .pricing__main, .company__table-wrap';
+    var staggerSelectors = '.fade-in, .reveal-up, .reveal-left, .reveal-right, .scale-in, .slide-up-strong, .mask-in';
+    document.querySelectorAll(selector).forEach(function(el) {
+      var parent = el.closest(staggerParents);
       if (parent) {
-        var siblings = Array.from(parent.querySelectorAll('.fade-in, .reveal-up, .mask-in'));
+        var siblings = Array.from(parent.querySelectorAll(staggerSelectors));
         var idx = siblings.indexOf(el);
-        if (idx >= 0) el.dataset.delay = idx * 80;
+        if (idx >= 0) el.dataset.delay = idx * 70;
       }
       observer.observe(el);
     });
