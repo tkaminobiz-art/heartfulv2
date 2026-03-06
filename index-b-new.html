@@ -7,30 +7,34 @@
 <meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Shippori+Mincho:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<!-- プロスタッフ準拠: カラー・フォントは遺品整理プロスタッフサイトと同じ -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --primary: #5C6B5E;
-  --primary-dark: #2C3D32;
-  --bg: #FAFAF8;
-  --bg-alt: #F5F3EF;
-  --text: #1A1A1A;
-  --text-light: #8A8480;
+  /* プロスタッフ配色: 濃い青・明るい青・黄 */
+  --primary: #0066CC;
+  --primary-dark: #004C99;
+  --primary-light: #3399FF;
+  --bg: #FFFFFF;
+  --bg-alt: #F5F8FA;
+  --text: #333333;
+  --text-light: #666666;
   --text-on-dark: #FFFFFF;
-  --border: #E8E4DE;
+  --border: #E0E5E9;
   --radius: 8px;
   --radius-lg: 16px;
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
   --content-max: 1200px;
   --side-padding: clamp(20px, 5vw, 64px);
   --section-gap: 144px;
-  --font-heading: 'Shippori Mincho', 'Noto Serif JP', serif;
+  /* プロスタッフ: 見出し・数字は太字サンセリフ、本文は通常サンセリフ */
+  --font-heading: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
   --font-body: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
-  --cta-yellow: #C4A84A;
-  --card1: #5C6B5E;
-  --card2: #6B7B6E;
-  --card3: #4A5B4E;
-  --card4: #7A8B7E;
+  --cta-yellow: #FFD800;
+  --card1: #0066CC;
+  --card2: #0080CC;
+  --card3: #0052A3;
+  --card4: #0077CC;
 }
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-padding-top: 120px; }
@@ -97,7 +101,7 @@ ul, ol { list-style: none; }
   min-height: 44px;
   padding: 0 24px;
   background: var(--cta-yellow);
-  color: var(--primary-dark);
+  color: #333333;
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--radius);
@@ -150,7 +154,7 @@ ul, ol { list-style: none; }
   right: -15%;
   width: 75%;
   height: 90%;
-  background: var(--primary);
+  background: var(--primary-light);
   border-radius: 55% 45% 50% 50% / 40% 50% 30% 60%;
   transform: rotate(-8deg);
   z-index: 0;
@@ -173,8 +177,8 @@ ul, ol { list-style: none; }
   top: 0.1em;
   font-family: var(--font-heading);
   font-size: 12vw;
-  font-weight: 400;
-  color: rgba(92, 107, 94, 0.08);
+  font-weight: 700;
+  color: rgba(0, 102, 204, 0.08);
   line-height: 1;
   pointer-events: none;
 }
@@ -190,8 +194,8 @@ ul, ol { list-style: none; }
   font-size: 13px;
   border-radius: 999px;
 }
-.b-hero__title1 { font-family: var(--font-heading); font-size: clamp(18px, 2vw, 22px); font-weight: 400; color: var(--primary); margin-top: 24px; letter-spacing: 0.06em; }
-.b-hero__title2 { font-family: var(--font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 400; color: var(--primary); margin-top: 4px; letter-spacing: 0.05em; line-height: 1.25; }
+.b-hero__title1 { font-family: var(--font-heading); font-size: clamp(18px, 2vw, 22px); font-weight: 700; color: var(--primary); margin-top: 24px; letter-spacing: 0.06em; }
+.b-hero__title2 { font-family: var(--font-heading); font-size: clamp(28px, 3.5vw, 40px); font-weight: 700; color: var(--primary); margin-top: 4px; letter-spacing: 0.05em; line-height: 1.25; }
 .b-hero__price {
   display: flex;
   align-items: baseline;
@@ -231,7 +235,7 @@ ul, ol { list-style: none; }
   right: 0;
   width: 30%;
   height: 30%;
-  background: var(--primary);
+  background: var(--primary-light);
   border-radius: 100% 0 0 0;
   z-index: 0;
 }
@@ -267,14 +271,14 @@ ul, ol { list-style: none; }
 .b-lead__title {
   font-family: var(--font-heading);
   font-size: clamp(22px, 2.8vw, 32px);
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.4;
   color: var(--text);
   margin-bottom: 20px;
 }
 .b-lead__title strong { color: var(--primary); }
 .b-lead__p { font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 16px; }
-.b-lead__highlight { background: rgba(196, 168, 74, 0.15); padding: 2px 6px; }
+.b-lead__highlight { background: rgba(255, 216, 0, 0.2); padding: 2px 6px; }
 @media (max-width: 768px) { .b-lead__inner { grid-template-columns: 1fr; } .b-lead__img { order: -1; } }
 
 /* ===== 6. サービス流れ＋CTA ===== */
@@ -359,7 +363,7 @@ ul, ol { list-style: none; }
   margin: 0 auto;
   text-align: center;
 }
-.b-cta-band__title { font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; margin-bottom: 8px; }
+.b-cta-band__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; margin-bottom: 8px; }
 .b-cta-band__sub { font-size: 15px; opacity: 0.9; margin-bottom: 24px; }
 .b-cta-band__bubbles {
   display: flex;
@@ -414,13 +418,13 @@ ul, ol { list-style: none; }
   cursor: pointer;
   transition: opacity 0.3s var(--ease);
 }
-.b-cta-band__btns .btn--yellow { background: var(--cta-yellow); color: var(--primary-dark); }
+.b-cta-band__btns .btn--yellow { background: var(--cta-yellow); color: #333333; }
 .b-cta-band__btns .btn--line { background: #06C755; color: #fff; }
 
 /* ===== 9. お家の整理 4カード ===== */
 .b-cards-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
 .b-cards-sec__title1 { font-size: 14px; color: var(--text-light); text-align: center; margin-bottom: 8px; }
-.b-cards-sec__title2 { font-family: var(--font-heading); font-size: clamp(24px, 2.8vw, 32px); font-weight: 400; text-align: center; color: var(--text); margin-bottom: 48px; }
+.b-cards-sec__title2 { font-family: var(--font-heading); font-size: clamp(24px, 2.8vw, 32px); font-weight: 700; text-align: center; color: var(--text); margin-bottom: 48px; }
 .b-cards-four {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -465,7 +469,7 @@ ul, ol { list-style: none; }
 
 /* ===== 10. メディア ===== */
 .b-media-sec { padding: var(--section-gap) 0; background: linear-gradient(180deg, rgba(92, 107, 94, 0.05) 0%, var(--bg) 100%); }
-.b-media-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 16px; color: var(--text); }
+.b-media-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 16px; color: var(--text); }
 .b-media-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 40px; }
 .b-media-sec__inner {
   display: grid;
@@ -501,7 +505,7 @@ ul, ol { list-style: none; }
 
 /* ===== 12. 基本6本 ===== */
 .b-basic-sec { padding: var(--section-gap) 0; background: var(--bg); }
-.b-basic-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 12px; color: var(--text); }
+.b-basic-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 12px; color: var(--text); }
 .b-basic-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 48px; }
 .b-basic-grid {
   display: grid;
@@ -540,7 +544,7 @@ ul, ol { list-style: none; }
 
 /* ===== 13. オプション ===== */
 .b-option-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
-.b-option-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 12px; color: var(--text); }
+.b-option-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 12px; color: var(--text); }
 .b-option-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 40px; }
 .b-option-grid {
   display: grid;
@@ -565,7 +569,7 @@ ul, ol { list-style: none; }
 
 /* ===== 15. 料金例 ===== */
 .b-price-sec { padding: var(--section-gap) 0; background: var(--bg); }
-.b-price-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-price-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 48px; color: var(--text); }
 .b-price-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -590,7 +594,7 @@ ul, ol { list-style: none; }
 
 /* ===== 16. 3つのよりそい ===== */
 .b-pillars-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
-.b-pillars-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-pillars-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 48px; color: var(--text); }
 .b-pillars-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -611,7 +615,7 @@ ul, ol { list-style: none; }
 
 /* ===== 17. 初めての不安 ===== */
 .b-first-sec { padding: var(--section-gap) 0; background: var(--bg); }
-.b-first-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 32px; color: var(--text); }
+.b-first-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 32px; color: var(--text); }
 .b-first-sec__links {
   display: flex;
   flex-wrap: wrap;
@@ -632,11 +636,11 @@ ul, ol { list-style: none; }
   color: var(--primary);
   transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
-.b-first-sec__links a:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(92, 107, 94, 0.1); }
+.b-first-sec__links a:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1); }
 
 /* ===== 18. 流れ4ステップ ===== */
 .b-flow4-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
-.b-flow4-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-flow4-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 48px; color: var(--text); }
 .b-flow4-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -672,7 +676,7 @@ ul, ol { list-style: none; }
 
 /* ===== 19. FAQ ===== */
 .b-faq-sec { padding: var(--section-gap) 0; background: var(--bg); }
-.b-faq-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 400; text-align: center; margin-bottom: 40px; color: var(--text); }
+.b-faq-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 700; text-align: center; margin-bottom: 40px; color: var(--text); }
 .b-faq-list { max-width: 720px; margin: 0 auto; padding: 0 var(--side-padding); }
 .b-faq-item {
   background: #fff;
@@ -729,7 +733,7 @@ ul, ol { list-style: none; }
   text-orientation: mixed;
   padding: 20px 14px;
   background: var(--cta-yellow);
-  color: var(--primary-dark);
+  color: #333333;
   font-size: 14px;
   font-weight: 500;
   border-radius: var(--radius);
@@ -742,7 +746,7 @@ ul, ol { list-style: none; }
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(92, 107, 94, 0.85);
+  background: var(--primary-light);
   color: var(--text-on-dark);
   display: flex;
   align-items: center;
