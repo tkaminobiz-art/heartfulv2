@@ -914,92 +914,6 @@ ul, ol { list-style: none; }
 }
 
 /* ========================================
-   PROMISE
-======================================== */
-.promise {
-  padding: clamp(64px, 8vw, 120px) 0;
-  background: var(--bg);
-}
-
-.promise__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.promise__lead {
-  grid-column: 1 / -1;
-  font-family: 'Inter', sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--primary);
-  margin-bottom: 8px;
-  text-align: center;
-}
-
-.promise__card {
-  background: #fff;
-  padding: clamp(28px, 3.5vw, 40px);
-  border-radius: var(--radius-card-md);
-  box-shadow: var(--shadow);
-  text-align: center;
-  border-top: 3px solid var(--primary);
-}
-
-.promise__number {
-  font-family: 'Inter', sans-serif;
-  font-size: clamp(52px, 8vw, 80px);
-  font-weight: 300;
-  color: var(--primary);
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.02em;
-}
-
-.promise__arrow {
-  font-size: 0.45em;
-  vertical-align: middle;
-  margin: 0 4px;
-  opacity: 0.4;
-}
-
-.promise__unit {
-  font-size: 0.35em;
-  vertical-align: middle;
-  margin-left: 2px;
-}
-
-.promise__icon {
-  color: var(--primary);
-  margin-bottom: 12px;
-  opacity: 0.6;
-}
-
-.promise__title {
-  font-size: 15px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  margin-bottom: 10px;
-  line-height: 1.5;
-  text-wrap: pretty;
-}
-
-.promise__desc {
-  font-size: 13px;
-  color: var(--text-light);
-  line-height: 1.7;
-  text-wrap: pretty;
-}
-
-@media (max-width: 520px) {
-  .promise__grid { grid-template-columns: 1fr; }
-}
-
-/* ========================================
    SUPPORT（関西の顔・狩野恵輔選手）
 ======================================== */
 .support {
@@ -1705,8 +1619,31 @@ ul, ol { list-style: none; }
 
 .representative__content .section-label { margin-bottom: 12px; }
 
+.representative__signature {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.representative__role {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-light);
+}
+
+.representative__signature .representative__name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 0;
+}
+
 .representative__text {
-  margin-top: 28px;
+  margin-top: 0;
   font-size: 15px;
   line-height: 2;
   color: var(--text);
@@ -1718,36 +1655,11 @@ ul, ol { list-style: none; }
 }
 .representative__text .mask-in { display: block; }
 
-.representative__name {
-  margin-top: 32px;
-  font-size: 14px;
-  color: var(--text-light);
-}
-
-.representative__name strong {
-  display: block;
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(18px, 2vw, 22px);
-  font-weight: 400;
-  color: var(--text);
+.representative__signature-end {
+  margin-top: 40px;
+  font-size: 13px;
   letter-spacing: 0.08em;
-  margin-top: 4px;
-}
-
-.representative__bio {
-  margin-top: 24px;
-  padding: 20px 24px;
-  background: var(--badge-bg);
-  border-radius: var(--radius);
-  font-size: 14px;
-  line-height: 1.8;
   color: var(--text-light);
-}
-
-.representative__bio-title {
-  font-weight: 500;
-  color: var(--text);
-  margin-bottom: 8px;
 }
 
 @media (max-width: 768px) {
@@ -2311,17 +2223,22 @@ body { padding-bottom: 72px; }
   </div>
 </section>
 
-<!-- ====== REPRESENTATIVE（信頼の核心・料金の前に配置） ====== -->
+<!-- ====== REPRESENTATIVE（代表者からの挨拶） ====== -->
 <section class="representative" id="message">
   <div class="wrapper">
     <div class="representative__inner">
       <div class="representative__photo fade-in">
-        <img src="heartful画像/打ち合わせ.jpeg" alt="お客様との打ち合わせ風景" loading="eager" width="400" height="533">
+        <img src="藤田社長写真.jpg" alt="代表・藤田宗一郎" loading="eager" width="400" height="533">
       </div>
 
       <div class="representative__content">
         <p class="section-label fade-in">Message</p>
         <h2 class="section-heading fade-in">なぜ、元警察官が<br class="br-lg">遺品整理を始めたのか。</h2>
+
+        <div class="representative__signature fade-in">
+          <span class="representative__role">ハートフルクリーン 代表</span>
+          <span class="representative__name">藤田 宗一郎</span>
+        </div>
 
         <div class="representative__text">
           <p class="mask-in">大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。</p>
@@ -2333,36 +2250,7 @@ body { padding-bottom: 72px; }
           <p class="mask-in">迷っているなら、何度でもご相談ください。</p>
         </div>
 
-        <div class="representative__name fade-in">
-          ハートフルクリーン 代表
-          <strong>藤田 宗一郎</strong>
-        </div>
-
-        <div class="representative__bio fade-in">
-          <p class="representative__bio-title">スタッフ 神津 直和</p>
-          <p>前職は料理人。「人に喜んでもらう仕事」という点で、この仕事と通じるものを感じました。藤田の「お客様の心に向き合う」という姿勢に共感し、参画しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== PROMISE (礼節とスピード・見出しなしで数字メイン) ====== -->
-<section class="promise">
-  <div class="wrapper">
-    <div class="promise__grid">
-      <p class="promise__lead reveal-up" aria-hidden="true">礼節とスピード。</p>
-      <div class="promise__card reveal-up">
-        <div class="promise__number">3<span class="promise__arrow">→</span>1<span class="promise__unit">日</span></div>
-        <h3 class="promise__title">他社3日の現場を、1日で完了。</h3>
-        <p class="promise__desc">丁寧さを犠牲にしない。スピードは、お客様の負担を減らすためのものです。</p>
-      </div>
-      <div class="promise__card reveal-up">
-        <div class="promise__icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        </div>
-        <h3 class="promise__title">「土足でいい」と言われても、<br class="br-lg">必ず靴を脱ぎます。</h3>
-        <p class="promise__desc">故人の家への敬意。言葉遣い、遺品の扱い、すべてに礼節を尽くします。</p>
+        <p class="representative__signature-end fade-in">代表 藤田 宗一郎</p>
       </div>
     </div>
   </div>
@@ -2961,32 +2849,6 @@ body { padding-bottom: 72px; }
       }
     });
   });
-
-  var countEl = document.querySelector('.promise__number');
-  if (countEl) {
-    var counted = false;
-    var countObserver = new IntersectionObserver(function(entries) {
-      if (entries[0].isIntersecting && !counted) {
-        counted = true;
-        var start = 3;
-        var end = 1;
-        var duration = 800;
-        var startTime = null;
-        function animateCount(timestamp) {
-          if (!startTime) startTime = timestamp;
-          var progress = Math.min((timestamp - startTime) / duration, 1);
-          var eased = 1 - Math.pow(1 - progress, 3);
-          var current = Math.round(start - (start - end) * eased);
-          countEl.innerHTML = current + '<span class="promise__arrow">\u2192</span>' + end + '<span class="promise__unit">\u65e5</span>';
-          if (progress >= 1) countEl.innerHTML = '3<span class="promise__arrow">\u2192</span>1<span class="promise__unit">\u65e5</span>';
-          if (progress < 1) requestAnimationFrame(animateCount);
-        }
-        requestAnimationFrame(animateCount);
-        countObserver.unobserve(countEl);
-      }
-    }, { threshold: 0.5 });
-    countObserver.observe(countEl);
-  }
 
   var floating = document.getElementById('floatingCta');
   var header = document.querySelector('.header');
