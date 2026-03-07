@@ -22,7 +22,7 @@
   --primary-dark: #153d6e;
   --primary-light: #2a6bb5;
   --accent: #E6B800;
-  --header-bg-right: #EEF2F7;
+  --header-bg-right: #F5F6F8;
   /* 角丸: 小4 / 中8 / 大12（999px禁止） */
   --radius-sm: 4px;
   --radius: 8px;
@@ -185,9 +185,10 @@ ul, ol { list-style: none; }
   position: absolute;
   bottom: -25%;
   right: -15%;
-  width: 75%;
-  height: 90%;
+  width: 60%;
+  height: 75%;
   background: var(--primary-light);
+  opacity: 0.88;
   border-radius: 55% 45% 50% 50% / 40% 50% 30% 60%;
   transform: rotate(-8deg);
   z-index: 0;
@@ -196,7 +197,7 @@ ul, ol { list-style: none; }
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
+  grid-template-columns: 1.25fr 0.75fr;
   gap: clamp(32px, 5vw, 64px);
   align-items: center;
   max-width: var(--content-max);
@@ -287,6 +288,19 @@ ul, ol { list-style: none; }
   z-index: 0;
 }
 .b-hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+.b-hero__img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 24px 16px 12px;
+  letter-spacing: 0.05em;
+}
 @media (max-width: 768px) {
   .b-hero__inner { grid-template-columns: 1fr; text-align: center; }
   .b-hero__right { order: -1; }
@@ -338,6 +352,32 @@ ul, ol { list-style: none; }
   .b-lead__inner { grid-template-columns: 1fr; }
   .b-lead__img { order: -1; margin-left: 0; max-width: 100%; border-radius: var(--radius-lg); }
 }
+
+/* ===== 5.5 想い（見出し＋長文のみ・カードなし） ===== */
+.b-message {
+  padding: var(--section-gap) 0;
+  background: var(--bg);
+}
+.b-message__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+  text-align: center;
+}
+.b-message__title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+.b-message__body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text);
+}
+.b-message__body p { margin: 0; }
 
 /* ===== 6. サービス流れ＋CTA ===== */
 .b-flow-cta {
@@ -884,7 +924,7 @@ ul, ol { list-style: none; }
 
 <!-- 1. トップバー -->
 <div class="b-topbar">
-  <p class="b-topbar__text">奈良の遺品整理は、追加料金なし。ハートフルクリーン。</p>
+  <p class="b-topbar__text">元警察官が代表。奈良の遺品整理｜追加料金なし・見積り無料。</p>
 </div>
 
 <!-- 2. メインヘッダー（プロスタッフ準拠: 左白・右薄青） -->
@@ -930,7 +970,7 @@ ul, ol { list-style: none; }
     <div class="b-hero__inner">
       <div class="b-hero__left">
         <span class="b-hero__watermark" aria-hidden="true">H</span>
-        <p class="b-hero__quote">「元警察官が代表の会社なので、安心してお任せしました。」</p>
+        <p class="b-hero__quote">代表は元警察官だから、安心してお任せください。</p>
         <p class="b-hero__sub">奈良の遺品整理・生前整理｜見積り無料・追加料金なし</p>
         <p class="b-hero__trust">Googleの口コミ ★5.0</p>
         <h1 class="b-hero__title">遺品・生前整理</h1>
@@ -943,6 +983,7 @@ ul, ol { list-style: none; }
       <div class="b-hero__right">
         <div class="b-hero__img-wrap">
           <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表・藤田宗一郎" loading="eager" width="480" height="640">
+          <p class="b-hero__img-caption">代表・元大阪府警察官 藤田宗一郎</p>
         </div>
       </div>
     </div>
@@ -960,6 +1001,16 @@ ul, ol { list-style: none; }
         <p class="b-lead__p">「自分たちでやりたいけれど、できない。」その気持ち、そのままに。</p>
         <p class="b-lead__p">ハートフルクリーンは、モノの処分だけで終わりにしません。<span class="b-lead__highlight">ご遺族の想いと事情に沿って</span>、整理します。</p>
         <p class="b-lead__p">片付いたお家を見て、「頼んでよかった」と言っていただけることを、何より大切にしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.5 想い（カードなし・見出し＋長文のみでリズム差） -->
+  <section class="b-message">
+    <div class="b-message__inner scroll-reveal">
+      <h2 class="b-message__title">安心して、任せていただくために。</h2>
+      <div class="b-message__body">
+        <p>遺品整理は、ご家族の大切な思い出と向き合う作業です。私たちは、見積り後の追加請求を一切いたしません。代表は元大阪府警察官。曲がったことが嫌いな性分を、そのまま会社のルールにしています。まずはお電話一本で、無料お見積りからご相談ください。</p>
       </div>
     </div>
   </section>
@@ -986,8 +1037,8 @@ ul, ol { list-style: none; }
   <section class="b-cert">
     <div class="b-cert__inner scroll-reveal">
       <div class="b-cert__card">
-        <h3>信頼の体制</h3>
-        <p>元大阪府警察官が代表を務めています。曲がったことが嫌いな性分です。見積り後の追加料金は、一切いただきません。</p>
+        <h3>代表は元大阪府警察官</h3>
+        <p>曲がったことが嫌いな性分です。見積り後の追加料金は、一切いただきません。</p>
       </div>
       <div class="b-cert__card">
         <h3>Googleの口コミ ★5.0</h3>
