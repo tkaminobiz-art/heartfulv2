@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ハートフルクリーン｜奈良の遺品整理・不用品回収・特殊清掃（新B案）</title>
+<meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 静寂デザイン（Exhale）・2026トレンド準拠 -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* aesthetics.md 準拠: #007BFF 禁止 → 落ち着いたブルー #1E56A0、背景は白系＋交互 #F7F8FA */
+  --bg: #FAFAF7;
+  --bg-alt: #F2F2EF;
+  --text: #1C1C1C;
+  --text-light: #5C5C5C;
+  --text-on-dark: #FFFFFF;
+  --border: #E0E0DC;
+  --primary: #1E56A0;
+  --primary-dark: #153d6e;
+  --primary-light: #2a6bb5;
+  --accent: #E6B800;
+  --header-bg-right: #F5F6F8;
+  /* 角丸: 小4 / 中8 / 大12（999px禁止） */
+  --radius-sm: 4px;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --content-max: 1200px;
+  --side-padding: clamp(20px, 5vw, 64px);
+  --section-gap: 120px;
+  --font-heading: 'Noto Serif JP', 'Noto Sans JP', serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: 120px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { font-family: var(--font-body); font-size: 15px; line-height: 1.8; letter-spacing: 0.04em; color: var(--text); background: var(--bg); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+.wrapper { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--side-padding); }
+
+/* ===== 1. トップバー ===== */
+.b-topbar {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 8px var(--side-padding);
+}
+.b-topbar__text { font-size: 12px; color: var(--text-light); }
+
+/* ===== 2. メインヘッダー（プロスタッフ準拠: 左白・右薄青） ===== */
+.b-header {
+  display: flex;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--border);
+}
+.b-header__left {
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  padding: 12px var(--side-padding) 12px var(--side-padding);
+  min-height: 64px;
+}
+.b-header__logo {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+}
+.b-header__logo img { height: 44px; width: auto; object-fit: contain; }
+.b-header__right {
+  flex: 1;
+  min-width: 280px;
+  background: var(--header-bg-right);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 20px;
+  padding: 12px var(--side-padding);
+}
+.b-header__phone-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 16px;
+}
+.b-header__toll-free {
+  background: var(--primary);
+  color: var(--text-on-dark);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.b-header__phone-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+.b-header__phone-num {
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.b-header__phone-num a { color: inherit; }
+.b-header__phone-time { font-size: 12px; color: var(--text-light); }
+.b-header__year-round {
+  background: var(--primary);
+  color: var(--text-on-dark);
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+.b-header__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0 24px;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.b-header__cta-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.b-header__cta-btn:active { transform: translateY(0) scale(0.98); }
+.b-header__cta-icon { display: inline-flex; flex-shrink: 0; }
+.b-header__cta-icon svg { display: block; }
+
+/* ===== 3. グローバルナビ（プロスタッフ準拠: 薄青背景） ===== */
+.b-nav {
+  background: var(--header-bg-right);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  padding: 0 var(--side-padding);
+}
+.b-nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  max-width: var(--content-max);
+  margin: 0 auto;
+}
+.b-nav__inner a {
+  font-size: 13px;
+  color: var(--text);
+  padding: 14px 16px;
+  position: relative;
+}
+.b-nav__inner a:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 14px;
+  background: rgba(0,0,0,0.15);
+}
+.b-nav__inner a:hover { color: var(--primary); }
+
+/* ===== 4. ヒーロー（2カラム・カーブシェイプ） ===== */
+.b-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+.b-hero__shape {
+  position: absolute;
+  bottom: -25%;
+  right: -15%;
+  width: 60%;
+  height: 75%;
+  background: var(--primary-light);
+  opacity: 0.88;
+  border-radius: 55% 45% 50% 50% / 40% 50% 30% 60%;
+  transform: rotate(-8deg);
+  z-index: 0;
+}
+.b-hero__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-hero__left { position: relative; }
+.b-hero__watermark {
+  position: absolute;
+  left: -0.1em;
+  top: 0.1em;
+  font-family: var(--font-heading);
+  font-size: 12vw;
+  font-weight: 500;
+  color: rgba(30, 86, 160, 0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+.b-hero__quote {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.b-hero__sub {
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+.b-hero__trust {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.b-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
+}
+.b-hero__cta-wrap { margin-top: 8px; }
+.b-hero__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(24px, 2.5vw, 28px);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.b-hero__phone a { color: var(--primary); }
+.b-hero__time { font-size: 13px; color: var(--text-light); margin-top: 4px; }
+.b-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 48px;
+  padding: 0 28px;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.b-hero__btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+.b-hero__btn:active { transform: translateY(0) scale(0.98); }
+.b-hero__right { position: relative; }
+.b-hero__img-wrap {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 3/4;
+  max-height: 75vh;
+}
+.b-hero__img-wrap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: 30%;
+  background: var(--primary-light);
+  border-radius: 100% 0 0 0;
+  z-index: 0;
+}
+.b-hero__img-wrap img { width: 100%; height: 100%; object-fit: cover; position: relative; z-index: 1; }
+.b-hero__img-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: linear-gradient(transparent, rgba(0,0,0,0.6));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 24px 16px 12px;
+  letter-spacing: 0.05em;
+}
+@media (max-width: 768px) {
+  .b-hero__inner { grid-template-columns: 1fr; text-align: center; }
+  .b-hero__right { order: -1; }
+  .b-hero__watermark { left: 50%; transform: translateX(-50%); }
+  .b-hero__cta-wrap { display: flex; flex-direction: column; align-items: center; }
+}
+
+/* ===== 5. リード＋共感（法則3: 1箇所は写真がグリッドを破る＝左フルブリード） ===== */
+.b-lead {
+  padding: var(--section-gap) 0;
+  background: var(--bg);
+  overflow: hidden;
+}
+.b-lead__inner {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: center;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-lead__img {
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  margin-left: calc(-1 * var(--side-padding));
+  max-width: calc(100% + var(--side-padding));
+}
+.b-lead__img img { width: 100%; height: 100%; object-fit: cover; }
+.b-lead__problem {
+  font-size: 15px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  font-style: normal;
+}
+.b-lead__title {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+.b-lead__title strong { color: var(--primary); }
+.b-lead__p { font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 16px; }
+.b-lead__highlight { background: rgba(230, 184, 0, 0.15); padding: 2px 6px; }
+@media (max-width: 768px) {
+  .b-lead__inner { grid-template-columns: 1fr; }
+  .b-lead__img { order: -1; margin-left: 0; max-width: 100%; border-radius: var(--radius-lg); }
+}
+
+/* ===== 5.5 想い（見出し＋長文のみ・カードなし） ===== */
+.b-message {
+  padding: var(--section-gap) 0;
+  background: var(--bg);
+}
+.b-message__inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+  text-align: center;
+}
+.b-message__title {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+.b-message__body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text);
+}
+.b-message__body p { margin: 0; }
+
+/* ===== 6. サービス流れ＋CTA ===== */
+.b-flow-cta {
+  padding: var(--section-gap) 0;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-alt) 100%);
+}
+.b-flow-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 48px;
+  align-items: start;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-flow-cta__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.b-flow-cta__step {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 500;
+}
+.b-flow-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  min-height: 48px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.b-flow-cta__btn:hover { background: var(--primary); color: var(--text-on-dark); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,102,204,0.2); }
+.b-flow-cta__btn:active { transform: translateY(0) scale(0.98); }
+@media (max-width: 768px) { .b-flow-cta__inner { grid-template-columns: 1fr; } }
+
+/* ===== 7. 認定2ブロック ===== */
+.b-cert {
+  padding: var(--section-gap) 0;
+  background: var(--bg);
+}
+.b-cert__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-cert__card {
+  background: var(--bg-alt);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+.b-cert__card h3 { font-size: 18px; font-weight: 500; color: var(--primary); margin-bottom: 12px; line-height: 1.4; }
+.b-cert__card p { font-size: 14px; line-height: 1.8; color: var(--text); margin-bottom: 12px; }
+.b-cert__card .stars { font-weight: 500; color: var(--primary); }
+@media (max-width: 768px) { .b-cert__inner { grid-template-columns: 1fr; } }
+
+/* ===== 8. CTAバンド（青帯は最終1本のみ。他はライト版で面積5〜8%に） ===== */
+.b-cta-band {
+  background: var(--primary);
+  color: var(--text-on-dark);
+  padding: 40px var(--side-padding);
+  position: relative;
+}
+.b-cta-band--light {
+  background: var(--bg-alt);
+  color: var(--text);
+}
+.b-cta-band--light .b-cta-band__title { color: var(--primary); }
+.b-cta-band--light .b-cta-band__sub { color: var(--text-light); }
+.b-cta-band--light .b-cta-band__bubble {
+  background: var(--bg);
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+.b-cta-band__inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  text-align: center;
+}
+.b-cta-band__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; margin-bottom: 8px; }
+.b-cta-band__sub { font-size: 15px; opacity: 0.9; margin-bottom: 24px; }
+.b-cta-band__bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.b-cta-band__bubble {
+  background: rgba(255,255,255,0.95);
+  color: var(--primary);
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-size: 14px;
+  font-weight: 500;
+}
+.b-cta-band__card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+}
+.b-cta-band--light .b-cta-band__card { border: 1px solid var(--border); box-shadow: none; }
+.b-cta-band--light .b-cta-band__phone-wrap { border-color: var(--primary); }
+.b-cta-band--light .b-cta-band__phone-num a { color: var(--primary); }
+.b-cta-band__phone-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 24px;
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+}
+.b-cta-band__phone-label { font-size: 12px; color: var(--text-light); }
+.b-cta-band__phone-num { font-family: 'Inter', sans-serif; font-size: 24px; font-weight: 500; }
+.b-cta-band__phone-num a { color: var(--primary); }
+.b-cta-band__btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.b-cta-band__btns .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 24px;
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s var(--ease);
+}
+.b-cta-band__btns .btn--yellow { background: var(--accent); color: var(--text); }
+.b-cta-band__btns .btn--line { background: #06C755; color: #fff; }
+.b-cta-band__btns .btn {
+  transition: transform 0.2s var(--ease), box-shadow 0.2s var(--ease);
+}
+.b-cta-band__btns .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+.b-cta-band__btns .btn:active { transform: translateY(0) scale(0.98); }
+
+/* ===== 9. お家の整理 4カード ===== */
+.b-cards-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
+.b-cards-sec__title1 { font-size: 14px; color: var(--text-light); text-align: center; margin-bottom: 8px; }
+.b-cards-sec__title2 { font-family: var(--font-heading); font-size: clamp(24px, 2.8vw, 32px); font-weight: 500; text-align: center; color: var(--text); margin-bottom: 48px; }
+.b-cards-four {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 14px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-card-four {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-card-four:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.b-card-four--wide { grid-column: span 2; }
+.b-card-four--tall { grid-row: span 2; }
+.b-card-four__img { aspect-ratio: 4/3; overflow: hidden; }
+.b-card-four__img img { width: 100%; height: 100%; object-fit: cover; }
+.b-card-four__body { padding: 24px; }
+.b-card-four--1 .b-card-four__body { border-top: 4px solid var(--primary); }
+.b-card-four--2 .b-card-four__body { border-top: 4px solid var(--primary); }
+.b-card-four--3 .b-card-four__body { border-top: 4px solid var(--primary); }
+.b-card-four--4 .b-card-four__body { border-top: 4px solid var(--primary); }
+.b-card-four__title { font-size: 18px; font-weight: 500; color: var(--text); margin-bottom: 8px; }
+.b-card-four__catch { font-size: 14px; line-height: 1.6; color: var(--text-light); margin-bottom: 16px; }
+.b-card-four__pill {
+  display: inline-block;
+  background: var(--primary);
+  color: var(--text-on-dark);
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 12px;
+}
+.b-card-four__list { font-size: 14px; line-height: 1.8; color: var(--text); }
+.b-card-four__list li { padding-left: 1.2em; position: relative; }
+.b-card-four__list li::before { content: '・'; position: absolute; left: 0; }
+.b-card-four__link { display: inline-block; margin-top: 16px; font-size: 14px; font-weight: 500; color: var(--primary); }
+.b-card-four__link:hover { text-decoration: underline; }
+@media (max-width: 900px) { .b-cards-four { grid-template-columns: repeat(2, 1fr); } .b-card-four--wide { grid-column: span 2; } .b-card-four--tall { grid-row: span 1; } }
+@media (max-width: 520px) { .b-cards-four { grid-template-columns: 1fr; } .b-card-four--wide { grid-column: span 1; } }
+
+/* ===== 10. メディア ===== */
+.b-media-sec { padding: var(--section-gap) 0; background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%); }
+.b-media-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 16px; color: var(--text); }
+.b-media-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 40px; }
+.b-media-sec__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-media-sec__img { border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 16/10; }
+.b-media-sec__img img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 768px) { .b-media-sec__inner { grid-template-columns: 1fr; } }
+
+/* ===== 11. 対応エリア ===== */
+.b-area-sec {
+  padding: var(--section-gap) 0;
+  background: var(--primary);
+  color: var(--text-on-dark);
+}
+.b-area-sec__inner { max-width: var(--content-max); margin: 0 auto; padding: 0 var(--side-padding); }
+.b-area-sec__title { font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; margin-bottom: 24px; }
+.b-area-sec__badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: var(--radius); font-size: 14px; margin-bottom: 24px; }
+.b-area-sec__groups { margin-bottom: 24px; }
+.b-area-sec__group-title { font-size: 14px; opacity: 0.9; margin-bottom: 12px; }
+.b-area-sec__list { display: flex; flex-wrap: wrap; gap: 10px; }
+.b-area-sec__list span {
+  background: rgba(255,255,255,0.2);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  font-size: 14px;
+}
+
+/* ===== 12. 基本6本 ===== */
+.b-basic-sec { padding: var(--section-gap) 0; background: var(--bg); }
+.b-basic-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 12px; color: var(--text); }
+.b-basic-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 48px; }
+.b-basic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-basic-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  background: var(--bg);
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-basic-item:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.b-basic-item__num {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-on-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b-basic-item__title { font-size: 17px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+.b-basic-item__text { font-size: 14px; line-height: 1.75; color: var(--text-light); }
+@media (max-width: 768px) { .b-basic-grid { grid-template-columns: 1fr; } }
+
+/* ===== 13. オプション ===== */
+.b-option-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
+.b-option-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 12px; color: var(--text); }
+.b-option-sec__sub { text-align: center; font-size: 15px; color: var(--text-light); margin-bottom: 40px; }
+.b-option-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-option-card {
+  background: var(--bg);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-option-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.b-option-card h3 { font-size: 16px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+.b-option-card p { font-size: 14px; line-height: 1.7; color: var(--text-light); }
+.b-option-card a { font-size: 13px; color: var(--primary); font-weight: 500; margin-top: 8px; display: inline-block; }
+
+/* ===== 14. 第2CTAバンド ===== */
+/* 8と同様 .b-cta-band を再利用 */
+
+/* ===== 15. 料金例 ===== */
+.b-price-sec { padding: var(--section-gap) 0; background: var(--bg); }
+.b-price-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-price-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-price-card {
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-price-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.b-price-card__imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.b-price-card__imgs img { width: 100%; height: 180px; object-fit: cover; }
+.b-price-card__body { padding: 24px; }
+.b-price-card__title { font-size: 17px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+.b-price-card__price { font-family: 'Inter', sans-serif; font-size: 20px; font-weight: 500; color: var(--primary); margin-bottom: 8px; }
+.b-price-card__meta { font-size: 13px; color: var(--text-light); }
+@media (max-width: 768px) { .b-price-cards { grid-template-columns: 1fr; } }
+
+/* ===== 16. 3つのよりそい ===== */
+.b-pillars-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
+.b-pillars-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-pillar-card {
+  background: var(--bg);
+  padding: 32px 28px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-pillar-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.b-pillar-card h3 { font-size: 18px; font-weight: 500; color: var(--primary); margin-bottom: 16px; }
+.b-pillar-card p { font-size: 15px; line-height: 1.8; color: var(--text); }
+@media (max-width: 768px) { .b-pillars-grid { grid-template-columns: 1fr; } }
+
+/* ===== 17. 初めての不安 ===== */
+.b-first-sec { padding: var(--section-gap) 0; background: var(--bg); }
+.b-first-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 32px; color: var(--text); }
+.b-first-sec__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-first-sec__links a {
+  display: block;
+  padding: 20px 32px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary);
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease), transform 0.2s var(--ease);
+}
+.b-first-sec__links a:hover { border-color: var(--primary); box-shadow: 0 4px 12px rgba(0, 102, 204, 0.1); transform: translateY(-2px); }
+.b-first-sec__links a:active { transform: translateY(0) scale(0.98); }
+
+/* ===== 18. 流れ4ステップ ===== */
+.b-flow4-sec { padding: var(--section-gap) 0; background: var(--bg-alt); }
+.b-flow4-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 48px; color: var(--text); }
+.b-flow4-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+.b-flow4-step {
+  text-align: center;
+  padding: 28px 20px;
+  background: var(--bg);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+}
+.b-flow4-step:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.b-flow4-step__num {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--text-on-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+.b-flow4-step__title { font-size: 15px; font-weight: 500; margin-bottom: 8px; color: var(--text); }
+.b-flow4-step__desc { font-size: 13px; line-height: 1.7; color: var(--text-light); }
+@media (max-width: 768px) { .b-flow4-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .b-flow4-grid { grid-template-columns: 1fr; } }
+
+/* ===== 19. FAQ ===== */
+.b-faq-sec { padding: var(--section-gap) 0; background: var(--bg); }
+.b-faq-sec__title { font-family: var(--font-heading); font-size: clamp(22px, 2.5vw, 28px); font-weight: 500; text-align: center; margin-bottom: 40px; color: var(--text); }
+.b-faq-list { max-width: 720px; margin: 0 auto; padding: 0 var(--side-padding); }
+.b-faq-item {
+  background: var(--bg);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.b-faq-q {
+  width: 100%;
+  padding: 20px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.b-faq-q::before { content: 'Q'; flex-shrink: 0; width: 28px; height: 28px; background: var(--primary); color: var(--text-on-dark); border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 13px; }
+.b-faq-a { padding: 0 24px 20px 60px; font-size: 14px; line-height: 1.8; color: var(--text-light); display: none; }
+.b-faq-item.open .b-faq-a { display: block; }
+
+/* ===== 21. フッター ===== */
+.b-footer {
+  padding: 40px var(--side-padding);
+  background: var(--primary-dark);
+  color: var(--text-on-dark);
+  text-align: center;
+}
+.b-footer__copy { font-size: 12px; opacity: 0.7; }
+.b-footer__links { margin-top: 16px; }
+.b-footer__links a { color: rgba(255,255,255,0.8); margin: 0 8px; }
+.b-footer__links a:hover { color: #fff; }
+
+/* ===== 22. 追従CTA ===== */
+.b-fixed-cta {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px 8px;
+}
+.b-fixed-cta__main {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  padding: 20px 14px;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: var(--radius);
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.b-fixed-cta__top {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+@media (max-width: 768px) { .b-fixed-cta { display: none; } }
+
+/* ===== 2026トレンド: スクロールプログレス・ノイズ・リベール ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: var(--scroll-pct, 0%);
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  z-index: 9999;
+  transition: width 0.1s linear;
+}
+.noise-overlay { position: relative; }
+.noise-overlay::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- 1. トップバー -->
+<div class="b-topbar">
+  <p class="b-topbar__text">元警察官が代表。奈良の遺品整理｜追加料金なし・見積り無料。</p>
+</div>
+
+<!-- 2. メインヘッダー（プロスタッフ準拠: 左白・右薄青） -->
+<header class="b-header">
+  <div class="b-header__left">
+    <a href="index.html" class="b-header__logo" aria-label="ハートフルクリーン トップへ">
+      <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン" width="160" height="48" loading="eager">
+    </a>
+  </div>
+  <div class="b-header__right">
+    <div class="b-header__phone-wrap">
+      <span class="b-header__toll-free">通話 無料</span>
+      <div class="b-header__phone-block">
+        <span class="b-header__phone-num"><a href="tel:0742268496">0742-26-8496</a></span>
+        <span class="b-header__phone-time">受付時間 7:00〜22:00</span>
+      </div>
+      <span class="b-header__year-round">年中無休</span>
+    </div>
+    <a href="#contact" class="b-header__cta-btn"><span class="b-header__cta-icon" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4M14 14h2"/></svg></span>無料お見積り</a>
+  </div>
+</header>
+
+<!-- 3. グローバルナビ -->
+<nav class="b-nav">
+  <div class="b-nav__inner">
+    <a href="#first">初めての方</a>
+    <a href="#services">遺品整理</a>
+    <a href="#services">生前・福祉整理</a>
+    <a href="#services">ゴミ屋敷</a>
+    <a href="#services">空き家整理</a>
+    <a href="#price">料金</a>
+    <a href="#voice">お客様の声</a>
+    <a href="#about">当社について</a>
+  </div>
+</nav>
+
+<div class="scroll-progress" aria-hidden="true"></div>
+
+<main class="noise-overlay">
+  <!-- 4. ヒーロー -->
+  <section class="b-hero">
+    <div class="b-hero__shape" aria-hidden="true"></div>
+    <div class="b-hero__inner">
+      <div class="b-hero__left">
+        <span class="b-hero__watermark" aria-hidden="true">H</span>
+        <p class="b-hero__quote">代表は元警察官だから、安心してお任せください。</p>
+        <p class="b-hero__sub">奈良の遺品整理・生前整理｜見積り無料・追加料金なし</p>
+        <p class="b-hero__trust">Googleの口コミ ★5.0</p>
+        <h1 class="b-hero__title">遺品・生前整理</h1>
+        <div class="b-hero__cta-wrap">
+          <p class="b-hero__phone"><a href="tel:0742268496">0742-26-8496</a></p>
+          <p class="b-hero__time">受付 7:00〜22:00 年中無休</p>
+          <a href="#contact" class="b-hero__btn">無料お見積り</a>
+        </div>
+      </div>
+      <div class="b-hero__right">
+        <div class="b-hero__img-wrap">
+          <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表・藤田宗一郎" loading="eager" width="480" height="640">
+          <p class="b-hero__img-caption">代表・元大阪府警察官 藤田宗一郎</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. リード＋共感 -->
+  <section class="b-lead" id="first">
+    <div class="b-lead__inner scroll-reveal">
+      <div class="b-lead__img">
+        <img src="ハートフルクリーンサイト画像/stock/adobestock-480320612-consultation.jpg" alt="スタッフとご相談の様子" loading="lazy" width="600" height="450">
+      </div>
+      <div>
+        <p class="b-lead__problem">自分たちでは手に負えない。でも、誰に頼めばいいかわからない。</p>
+        <h2 class="b-lead__title">よかったねと、<strong>家族で満足できる整理です。</strong></h2>
+        <p class="b-lead__p">「自分たちでやりたいけれど、できない。」その気持ち、そのままに。</p>
+        <p class="b-lead__p">ハートフルクリーンは、モノの処分だけで終わりにしません。<span class="b-lead__highlight">ご遺族の想いと事情に沿って</span>、整理します。</p>
+        <p class="b-lead__p">片付いたお家を見て、「頼んでよかった」と言っていただけることを、何より大切にしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5.5 想い（カードなし・見出し＋長文のみでリズム差） -->
+  <section class="b-message">
+    <div class="b-message__inner scroll-reveal">
+      <h2 class="b-message__title">安心して、任せていただくために。</h2>
+      <div class="b-message__body">
+        <p>遺品整理は、ご家族の大切な思い出と向き合う作業です。私たちは、見積り後の追加請求を一切いたしません。代表は元大阪府警察官。曲がったことが嫌いな性分を、そのまま会社のルールにしています。まずはお電話一本で、無料お見積りからご相談ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. サービス流れ＋CTA -->
+  <section class="b-flow-cta">
+    <div class="b-flow-cta__inner">
+      <div class="b-flow-cta__steps">
+        <div class="b-flow-cta__step">仕分け・貴重品探索</div>
+        <div class="b-flow-cta__step">搬出</div>
+        <div class="b-flow-cta__step">遺品の買取</div>
+        <div class="b-flow-cta__step">簡易清掃</div>
+        <div class="b-flow-cta__step">不用品の処分</div>
+        <div class="b-flow-cta__step">遺品の合同供養</div>
+      </div>
+      <div>
+        <p style="margin-bottom:16px;font-size:15px;color:var(--text);">多くのお客様が片付いたお家を見て、肩の荷が降りたように微笑まれます。<br>電話1本で無料お見積り。まずはお気軽にご相談ください。</p>
+        <a href="#contact" class="b-flow-cta__btn">初めての方へ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. 認定2ブロック -->
+  <section class="b-cert">
+    <div class="b-cert__inner scroll-reveal">
+      <div class="b-cert__card">
+        <h3>代表は元大阪府警察官</h3>
+        <p>曲がったことが嫌いな性分です。見積り後の追加料金は、一切いただきません。</p>
+      </div>
+      <div class="b-cert__card">
+        <h3>Googleの口コミ ★5.0</h3>
+        <p>早い・安いだけが当社の強みではありません。<span class="stars">丁寧な仕事だったと喜んでいただいています。</span>ご依頼主様の声を、信頼の証として大切にしています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. 第1CTAバンド（ライト版：青面積を抑える） -->
+  <section class="b-cta-band b-cta-band--light">
+    <div class="b-cta-band__inner">
+      <h2 class="b-cta-band__title">まずは無料お見積り</h2>
+      <p class="b-cta-band__sub">お電話1本で、即日対応します。</p>
+      <div class="b-cta-band__bubbles">
+        <span class="b-cta-band__bubble">最短到着 60分</span>
+        <span class="b-cta-band__bubble">見積り無料・追加料金なし</span>
+      </div>
+      <div class="b-cta-band__card">
+        <div class="b-cta-band__phone-wrap">
+          <span class="b-cta-band__phone-label">通話・見積り無料</span>
+          <span class="b-cta-band__phone-num"><a href="tel:0742268496">0742-26-8496</a></span>
+          <span style="font-size:12px;color:var(--text-light);">7:00〜22:00 年中無休</span>
+        </div>
+        <div class="b-cta-band__btns">
+          <a href="tel:0742268496" class="btn btn--yellow">電話で無料お見積り</a>
+          <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">LINEでご相談</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. お家の整理 4カード -->
+  <section class="b-cards-sec" id="services">
+    <p class="b-cards-sec__title1">ハートフルクリーンが届ける</p>
+    <h2 class="b-cards-sec__title2 scroll-reveal">お家の整理</h2>
+    <div class="b-cards-four scroll-reveal">
+      <article class="b-card-four b-card-four--1 b-card-four--wide">
+        <div class="b-card-four__img">
+          <img src="heartful画像/遺品整理.jpeg" alt="遺品整理" loading="lazy" width="400" height="300">
+        </div>
+        <div class="b-card-four__body">
+          <h3 class="b-card-four__title">遺品整理</h3>
+          <p class="b-card-four__catch">故人様とご遺族様を想い、心を込めて丁寧に整理します。</p>
+          <span class="b-card-four__pill">こんな方におすすめです</span>
+          <ul class="b-card-four__list">
+            <li>家財の量が多すぎて片付かない</li>
+            <li>貴重品や重要書類を探してほしい</li>
+            <li>すぐに部屋を退去する必要がある</li>
+          </ul>
+          <a href="#contact" class="b-card-four__link">遺品整理を詳しく →</a>
+        </div>
+      </article>
+      <article class="b-card-four b-card-four--2 b-card-four--tall">
+        <div class="b-card-four__img">
+          <img src="ハートフルクリーンサイト画像/stock/adobestock-450606546-woman-room.jpg" alt="生前・福祉整理" loading="lazy" width="400" height="300">
+        </div>
+        <div class="b-card-four__body">
+          <h3 class="b-card-four__title">生前・福祉整理</h3>
+          <p class="b-card-four__catch">これからを楽しむための、前向きな整理をお手伝いします。</p>
+          <span class="b-card-four__pill">こんな方におすすめです</span>
+          <ul class="b-card-four__list">
+            <li>福祉施設に移るので整理したい</li>
+            <li>家財を整理して老後を楽しみたい</li>
+            <li>両親の介護環境を整えたい</li>
+          </ul>
+          <a href="#contact" class="b-card-four__link">生前・福祉整理を詳しく →</a>
+        </div>
+      </article>
+      <article class="b-card-four b-card-four--3">
+        <div class="b-card-four__img">
+          <img src="heartful画像/ゴミ屋敷.jpeg" alt="ゴミ屋敷" loading="lazy" width="400" height="300">
+        </div>
+        <div class="b-card-four__body">
+          <h3 class="b-card-four__title">ゴミ屋敷</h3>
+          <p class="b-card-four__catch">どんな状態のゴミ屋敷でも、トラブルなく片付けます。</p>
+          <span class="b-card-four__pill">こんな方におすすめです</span>
+          <ul class="b-card-four__list">
+            <li>ゴミ屋敷状態を早急に解消したい</li>
+            <li>害虫・害獣や悪臭が発生している</li>
+            <li>ゴミ屋敷化した遺品整理を頼みたい</li>
+          </ul>
+          <a href="#contact" class="b-card-four__link">ゴミ屋敷を詳しく →</a>
+        </div>
+      </article>
+      <article class="b-card-four b-card-four--4">
+        <div class="b-card-four__img">
+          <img src="ハートフルクリーンサイト画像/stock/adobestock-504843647-tatami-room.jpg" alt="空き家" loading="lazy" width="400" height="300">
+        </div>
+        <div class="b-card-four__body">
+          <h3 class="b-card-four__title">空き家</h3>
+          <p class="b-card-four__catch">空き家の片付けから、売却・活用までお任せください。</p>
+          <span class="b-card-four__pill">こんな方におすすめです</span>
+          <ul class="b-card-four__list">
+            <li>空き家を有効活用したい</li>
+            <li>空き家を片付けて売却したい</li>
+            <li>立ち会い不要で済ませたい</li>
+          </ul>
+          <a href="#contact" class="b-card-four__link">空き家を詳しく →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 10. メディア -->
+  <section class="b-media-sec">
+    <h2 class="b-media-sec__title">メディア掲載</h2>
+    <p class="b-media-sec__sub">関西で活躍される方々に、ハートフルクリーンを応援いただいています。</p>
+    <div class="b-media-sec__inner">
+      <div class="b-media-sec__img">
+        <img src="support-kano.png" alt="元阪神タイガース・狩野恵輔さん インタビュー時" loading="lazy" width="600" height="375">
+      </div>
+      <div>
+        <p style="font-size:15px;line-height:1.8;color:var(--text);">元阪神タイガースの狩野恵輔さんをはじめ、関西で活躍される方々に取材・応援いただきました。スタッフの思いや現場の様子を、ぜひご覧ください。</p>
+        <p style="margin-top:16px;"><a href="#voice" style="color:var(--primary);font-weight:500;">Googleの口コミをもっと見る →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. 対応エリア -->
+  <section class="b-area-sec">
+    <div class="b-area-sec__inner">
+      <h2 class="b-area-sec__title">サービス対応エリア</h2>
+      <span class="b-area-sec__badge">最短到着 60分</span>
+      <div class="b-area-sec__groups">
+        <p class="b-area-sec__group-title">関西</p>
+        <div class="b-area-sec__list">
+          <span>奈良</span><span>大阪</span><span>京都</span><span>兵庫</span><span>滋賀</span><span>和歌山</span>
+        </div>
+      </div>
+      <p style="font-size:14px;opacity:0.9;">奈良・大阪を中心に近畿一円に対応しています。まずはお電話でご相談ください。</p>
+    </div>
+  </section>
+
+  <!-- 12. 基本6本 -->
+  <section class="b-basic-sec">
+    <h2 class="b-basic-sec__title">基本サービス内容</h2>
+    <p class="b-basic-sec__sub">片付けからご供養まで、一通りの遺品整理が行えます。</p>
+    <div class="b-basic-grid">
+      <div class="b-basic-item"><span class="b-basic-item__num">01</span><div><h3 class="b-basic-item__title">仕分け</h3><p class="b-basic-item__text">お手元に残すもの、形見分けするもの、不要なものに手早く仕分けします。</p></div></div>
+      <div class="b-basic-item"><span class="b-basic-item__num">02</span><div><h3 class="b-basic-item__title">貴重品の探索</h3><p class="b-basic-item__text">貴重品や重要書類を、仕分けと並行して探し出します。</p></div></div>
+      <div class="b-basic-item"><span class="b-basic-item__num">03</span><div><h3 class="b-basic-item__title">搬出</h3><p class="b-basic-item__text">小さなものから大型家財まで、安全に運び出します。</p></div></div>
+      <div class="b-basic-item"><span class="b-basic-item__num">04</span><div><h3 class="b-basic-item__title">簡易清掃</h3><p class="b-basic-item__text">作業終了後に掃き掃除でチリやホコリを取り除きます。</p></div></div>
+      <div class="b-basic-item"><span class="b-basic-item__num">05</span><div><h3 class="b-basic-item__title">不用品の処分</h3><p class="b-basic-item__text">買取でリユース。買取額を作業費用に充てて負担を軽減できます。</p></div></div>
+      <div class="b-basic-item"><span class="b-basic-item__num">06</span><div><h3 class="b-basic-item__title">遺品のご供養</h3><p class="b-basic-item__text">お仏壇・故人様の愛用品のご供養。形見分けの配送にも対応します。</p></div></div>
+    </div>
+  </section>
+
+  <!-- 13. オプション -->
+  <section class="b-option-sec">
+    <h2 class="b-option-sec__title">オプションサービス</h2>
+    <p class="b-option-sec__sub">ご事情に合わせて、きめ細かに対応します。</p>
+    <div class="b-option-grid">
+      <div class="b-option-card"><h3>買取</h3><p>ご遺品を高価買取。買取額分を作業費用に充てられます。</p><a href="#contact">詳しく見る</a></div>
+      <div class="b-option-card"><h3>遺品の配送</h3><p>形見分けするご遺品を全国各地に配送。</p><a href="#contact">詳しく見る</a></div>
+      <div class="b-option-card"><h3>特殊清掃</h3><p>孤独死後の消臭・除菌・原状回復。</p><a href="#contact">詳しく見る</a></div>
+      <div class="b-option-card"><h3>仏壇のご供養・処分</h3><p>魂抜きから引取り後の処分までお任せください。</p><a href="#contact">詳しく見る</a></div>
+    </div>
+  </section>
+
+  <!-- 14. 第2CTAバンド（ライト版：青面積を抑える） -->
+  <section class="b-cta-band b-cta-band--light">
+    <div class="b-cta-band__inner">
+      <h2 class="b-cta-band__title">まずは無料お見積り</h2>
+      <p class="b-cta-band__sub">お電話1本で、即日対応します。</p>
+      <div class="b-cta-band__bubbles">
+        <span class="b-cta-band__bubble">最短到着 60分</span>
+        <span class="b-cta-band__bubble">見積り無料・追加料金なし</span>
+      </div>
+      <div class="b-cta-band__card">
+        <div class="b-cta-band__phone-wrap">
+          <span class="b-cta-band__phone-label">通話・見積り無料</span>
+          <span class="b-cta-band__phone-num"><a href="tel:0742268496">0742-26-8496</a></span>
+        </div>
+        <div class="b-cta-band__btns">
+          <a href="tel:0742268496" class="btn btn--yellow">電話で無料お見積り</a>
+          <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">LINEでご相談</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 15. 料金例 -->
+  <section class="b-price-sec" id="price">
+    <h2 class="b-price-sec__title">作業料金例</h2>
+    <div class="b-price-cards">
+      <div class="b-price-card">
+        <div class="b-price-card__imgs">
+          <img src="ハートフルクリーンサイト画像/before-after/case-room-before.png" alt="Before" loading="lazy">
+          <img src="ハートフルクリーンサイト画像/before-after/case-room-after.png" alt="After" loading="lazy">
+        </div>
+        <div class="b-price-card__body">
+          <p class="b-price-card__title">遺品整理 3K</p>
+          <p class="b-price-card__price">お見積り時にご提示</p>
+          <p class="b-price-card__meta">物量により異なります。現地確認後、明確なお見積りをご提示いたします。</p>
+        </div>
+      </div>
+      <div class="b-price-card">
+        <div class="b-price-card__imgs">
+          <img src="ハートフルクリーンサイト画像/before-after/case-room-before-01.jpg" alt="Before" loading="lazy">
+          <img src="ハートフルクリーンサイト画像/before-after/case-room-after-01.jpg" alt="After" loading="lazy">
+        </div>
+        <div class="b-price-card__body">
+          <p class="b-price-card__title">遺品整理 別ケース</p>
+          <p class="b-price-card__price">お見積り時にご提示</p>
+          <p class="b-price-card__meta">※上記は目安です。追加料金は一切ありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 16. 3つのよりそい -->
+  <section class="b-pillars-sec">
+    <h2 class="b-pillars-sec__title">ハートフルクリーンの3つ</h2>
+    <div class="b-pillars-grid">
+      <div class="b-pillar-card">
+        <h3>丁寧な対応</h3>
+        <p>遺品整理も生前整理も、丁寧さと誠実さを大切にしています。ご遺族様に代わって手となり足となりサポートします。</p>
+      </div>
+      <div class="b-pillar-card">
+        <h3>安心の料金</h3>
+        <p>お見積り後の追加料金は一切ありません。見積り額＝最終請求額。明朗会計で、ご安心ください。</p>
+      </div>
+      <div class="b-pillar-card">
+        <h3>サポート充実</h3>
+        <p>お見積り・ご相談は無料。見積り後のキャンセルも無料です。7時〜22時・年中無休でお電話を受け付けています。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. 初めての不安 -->
+  <section class="b-first-sec">
+    <h2 class="b-first-sec__title">初めての整理の不安に、おこたえします</h2>
+    <div class="b-first-sec__links">
+      <a href="#first">初めての方へ</a>
+      <a href="#flow">遺品整理の流れ</a>
+      <a href="#faq">よくあるご質問</a>
+    </div>
+  </section>
+
+  <!-- 18. 流れ4ステップ -->
+  <section class="b-flow4-sec" id="flow">
+    <h2 class="b-flow4-sec__title">遺品整理の流れ</h2>
+    <div class="b-flow4-grid">
+      <div class="b-flow4-step">
+        <span class="b-flow4-step__num">1</span>
+        <h3 class="b-flow4-step__title">無料お見積り</h3>
+        <p class="b-flow4-step__desc">お電話1本で即日対応。現地で明確な金額をご提示します。</p>
+      </div>
+      <div class="b-flow4-step">
+        <span class="b-flow4-step__num">2</span>
+        <h3 class="b-flow4-step__title">遺品整理・買取</h3>
+        <p class="b-flow4-step__desc">ご希望日に仕分け・搬出・買取を行います。</p>
+      </div>
+      <div class="b-flow4-step">
+        <span class="b-flow4-step__num">3</span>
+        <h3 class="b-flow4-step__title">簡易清掃・ご確認</h3>
+        <p class="b-flow4-step__desc">搬出後の掃き掃除で、すっきりしたお部屋をご確認いただきます。</p>
+      </div>
+      <div class="b-flow4-step">
+        <span class="b-flow4-step__num">4</span>
+        <h3 class="b-flow4-step__title">お支払い・完了</h3>
+        <p class="b-flow4-step__desc">お見積り通りの金額でお支払い。追加料金はありません。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 19. FAQ -->
+  <section class="b-faq-sec" id="faq">
+    <h2 class="b-faq-sec__title">よくあるご質問</h2>
+    <div class="b-faq-list">
+      <div class="b-faq-item">
+        <button type="button" class="b-faq-q" aria-expanded="false">土日祝でも作業は可能ですか？</button>
+        <div class="b-faq-a">はい。土日祝も営業しています。ご都合のよい日時をご相談ください。</div>
+      </div>
+      <div class="b-faq-item">
+        <button type="button" class="b-faq-q" aria-expanded="false">立ち会いは必ず必要ですか？</button>
+        <div class="b-faq-a">いいえ。鍵をお預かりしての作業も対応しています。まずはご相談ください。</div>
+      </div>
+      <div class="b-faq-item">
+        <button type="button" class="b-faq-q" aria-expanded="false">見積り後に追加料金は発生しますか？</button>
+        <div class="b-faq-a">いいえ。お見積り後の追加料金は一切ありません。見積り額がそのまま最終請求額です。</div>
+      </div>
+      <div class="b-faq-item">
+        <button type="button" class="b-faq-q" aria-expanded="false">見積り後にキャンセルできますか？</button>
+        <div class="b-faq-a">はい。お見積り後のキャンセルは無料です。ご契約前にご納得いただいてから進めます。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- お客様の声 -->
+  <section class="b-pillars-sec" id="voice" style="padding-top: 0;">
+    <h2 class="b-pillars-sec__title">お客様の声</h2>
+    <p style="text-align:center;margin-bottom:32px;font-size:15px;color:var(--text-light);">Googleの口コミで★5.0。安心してお任せいただいています。</p>
+    <div class="wrapper" style="max-width:700px;">
+      <div class="b-cert__card" style="margin-bottom:16px;">
+        <p>見積もりの段階から、細かな案内をしていただき、素人の私からは安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。</p>
+        <p style="font-size:13px;color:var(--text-light);">— Google口コミより</p>
+      </div>
+      <div class="b-cert__card">
+        <p>今回は遺品整理をお願いしました。処分するものが多く何をすればいいかわからなかったですが、丁寧でスムーズに対応していただき助かりました。</p>
+        <p style="font-size:13px;color:var(--text-light);">— Google口コミより</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 最終CTA -->
+  <section class="b-cta-band" id="contact">
+    <div class="b-cta-band__inner">
+      <h2 class="b-cta-band__title">まずは、ご相談ください</h2>
+      <p class="b-cta-band__sub">ささいなことでも構いません。遺品整理のプロがていねいにお答えします。</p>
+      <p class="b-cta-band__phone-num" style="margin:16px 0;"><a href="tel:0742268496" style="color:var(--text-on-dark);font-size:28px;">0742-26-8496</a></p>
+      <p style="font-size:14px;opacity:0.9;">7時〜22時（年中無休）｜ 相談・お見積り無料</p>
+      <div class="b-cta-band__btns" style="margin-top:24px;">
+        <a href="tel:0742268496" class="btn btn--yellow">電話で相談する</a>
+        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">LINEでご相談</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="b-footer" id="about">
+  <p class="b-footer__copy">&copy; 2026 ハートフルクリーン（株式会社和）All Rights Reserved.</p>
+  <p class="b-footer__links">
+    <a href="index.html">メイン版</a>
+    <a href="index-b-new.html">新B案</a>
+    <a href="index-e.html">E案</a>
+  </p>
+</footer>
+
+<!-- 22. 追従CTA -->
+<div class="b-fixed-cta" aria-hidden="true">
+  <a href="tel:0742268496" class="b-fixed-cta__main">無料お見積り</a>
+  <button type="button" class="b-fixed-cta__top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="ページトップへ">↑</button>
+</div>
+
+<script>
+(function() {
+  var scrollProgress = document.querySelector('.scroll-progress');
+  if (scrollProgress) {
+    function updateProgress() {
+      var scrolled = window.scrollY || document.documentElement.scrollTop;
+      var total = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = total > 0 ? Math.min(100, (scrolled / total) * 100) : 0;
+      document.documentElement.style.setProperty('--scroll-pct', pct + '%');
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('load', updateProgress);
+  }
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.scroll-reveal').forEach(function(el) { revealObs.observe(el); });
+})();
+(function() {
+  document.querySelectorAll('.b-faq-q').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = this.closest('.b-faq-item');
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.b-faq-item.open').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.b-faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,2890 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>ハートフルクリーン｜奈良の遺品整理・不用品回収・特殊清掃</title>
+<meta name="description" content="元大阪府警察官が代表を務める奈良の遺品整理専門会社。お見積り後の追加料金一切なし。立ち会い不要。Google口コミ★5.0。遺品整理・生前整理・特殊清掃・不用品回収なら、ハートフルクリーンへ。">
+<!-- Google tag (gtag.js) — 測定IDはお持ちのG-XXXXXXXXXXに差し替えてください -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@400;500&family=Shippori+Mincho:wght@400;500&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* 静寂モダン：アクセント1色（彩度を落とした緑） */
+  --accent: #5C6B5E;
+  --accent-dark: #2C3D32;
+  --primary: #5C6B5E;
+  --primary-dark: #2C3D32;
+  --bg: #FAFAF8;
+  --bg-alt: #F5F3EF;
+  --bg-dark: #2C3D32;
+  --text: #1A1A1A;
+  --text-light: #8A8480;
+  --text-muted: #8A8480;
+  --text-on-dark: #FFFFFF;
+  --text-on-dark-sub: rgba(255,255,255,0.75);
+  --badge-bg: rgba(92, 107, 94, 0.08);
+  --border: #E8E4DE;
+  --shadow: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-lg: 0 1px 3px rgba(0,0,0,0.05);
+  --border-card: 1px solid rgba(92, 107, 94, 0.1);
+  --radius: 8px;
+  --radius-card-sm: 8px;
+  --radius-card-md: 8px;
+  --radius-card-lg: 8px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --content-width: 960px;
+  --side-padding: clamp(20px, 5vw, 64px);
+  --font-heading: 'Shippori Mincho', 'Noto Serif JP', serif;
+  --font-body: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 80px;
+  -webkit-tap-highlight-color: rgba(92, 107, 94, 0.12);
+}
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  background-color: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  overflow-wrap: break-word;
+  word-break: normal;
+  font-feature-settings: 'palt' 1;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+
+.wrapper {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+/* ===== Typography ===== */
+.br-lg { display: inline; }
+@media (max-width: 768px) {
+  .br-lg { display: none; }
+}
+
+.section-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 16px;
+}
+
+.section-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.4;
+  color: var(--text);
+  text-wrap: balance;
+  word-break: auto-phrase;
+  margin-bottom: 48px;
+}
+
+.section-heading--light {
+  color: var(--text-on-dark);
+}
+
+.section-sub {
+  font-size: clamp(14px, 1vw, 16px);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-top: 20px;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 40px;
+  min-height: 48px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  border: none;
+  transition: all 400ms var(--ease);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 500;
+  transition: opacity 0.4s var(--ease);
+}
+.btn--primary:hover {
+  opacity: 0.88;
+}
+
+.btn--outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1.5px solid var(--accent);
+  transition: opacity 0.4s var(--ease);
+}
+.btn--outline:hover {
+  opacity: 0.8;
+}
+
+.btn--white {
+  background: #fff;
+  color: var(--accent);
+  border: 1px solid var(--border);
+  transition: opacity 0.4s var(--ease);
+}
+.btn--white:hover {
+  opacity: 0.9;
+}
+
+.btn--line {
+  background: #06C755;
+  color: #fff;
+  transition: opacity 0.4s var(--ease);
+}
+.btn--line:hover {
+  opacity: 0.9;
+}
+
+.btn--phone {
+  background: var(--accent);
+  color: #fff;
+  transition: opacity 0.4s var(--ease);
+}
+.btn--phone:hover {
+  opacity: 0.88;
+}
+
+.microcopy {
+  font-size: 12px;
+  color: var(--text-light);
+  margin-top: 8px;
+  text-align: center;
+  text-wrap: pretty;
+}
+
+/* ===== Noise Texture — 紙・インクのザラザラ感（全ページ） ===== */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .noise-overlay { opacity: 0.025; }
+}
+
+/* ===== Opening Animation — Cinematic Typography Reveal ===== */
+.opening {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--accent-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  will-change: opacity;
+}
+
+.opening__glow {
+  display: none;
+}
+
+.opening__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: op-fade-up 700ms cubic-bezier(0.22, 1, 0.36, 1) 300ms forwards;
+}
+
+.opening__logo-wrap {
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: scale(0.92);
+  animation: op-logo-in 1000ms cubic-bezier(0.22, 1, 0.36, 1) 400ms forwards;
+}
+
+.opening__logo {
+  display: block;
+  height: clamp(56px, 10vw, 80px);
+  width: auto;
+  max-width: min(280px, 70vw);
+  object-fit: contain;
+  opacity: 0.98;
+  /* 画像の黒背景を透過させる：lightenで黒は下地の緑になる */
+  mix-blend-mode: lighten;
+}
+
+.opening__divider {
+  width: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.25);
+  margin: 24px 0;
+  animation: op-divider 800ms cubic-bezier(0.16, 1, 0.3, 1) 1300ms forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.opening__tagline {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.14em;
+  line-height: 1.8;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: op-fade-up 800ms cubic-bezier(0.22, 1, 0.36, 1) 1600ms forwards;
+  position: relative;
+  z-index: 1;
+}
+
+.opening__bottom-line {
+  position: absolute;
+  bottom: clamp(24px, 4vh, 48px);
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+  opacity: 0;
+  animation: op-fade-up 600ms ease 500ms forwards;
+  z-index: 1;
+}
+
+.opening__skip {
+  position: absolute;
+  bottom: clamp(16px, 3vh, 28px);
+  right: clamp(20px, 4vw, 40px);
+  z-index: 2;
+  padding: 10px 20px;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 200ms ease, background 200ms ease, border-color 200ms ease;
+  opacity: 0;
+  animation: op-fade-up 500ms ease 800ms forwards;
+}
+.opening__skip:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.35);
+}
+.opening__skip:focus {
+  outline: 2px solid rgba(255,255,255,0.5);
+  outline-offset: 2px;
+}
+
+.opening.phase-exit .opening__label,
+.opening.phase-exit .opening__logo-wrap,
+.opening.phase-exit .opening__divider,
+.opening.phase-exit .opening__tagline,
+.opening.phase-exit .opening__bottom-line {
+  animation: op-content-fade 500ms ease-in forwards;
+}
+
+.opening.phase-exit .opening__glow {
+  animation: op-glow-out 800ms ease-in forwards;
+}
+
+.opening.phase-circle {
+  animation: op-circle-shrink 1000ms cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes op-glow {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes op-glow-out {
+  to { opacity: 0; transform: scale(1.5); }
+}
+@keyframes op-logo-in {
+  0% { opacity: 0; transform: scale(0.92); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes op-divider {
+  0% { width: 0; }
+  100% { width: clamp(60px, 8vw, 100px); }
+}
+@keyframes op-fade-up {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes op-content-fade {
+  0% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-12px); }
+}
+@keyframes op-circle-shrink {
+  0% { clip-path: circle(100% at 50% 50%); transform: scale(1); }
+  100% { clip-path: circle(0% at 50% 50%); transform: scale(1.06); }
+}
+
+/* ===== Scroll Animation ===== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1.05s var(--ease), transform 1.05s var(--ease);
+}
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.mask-in {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: opacity 100ms ease, clip-path 900ms var(--ease);
+}
+.mask-in.visible {
+  opacity: 1;
+  clip-path: inset(0 0% 0 0);
+}
+
+/* ===== セクション別スクロールアニメーション（心地よいヌルヌル感） ===== */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity 1.15s var(--ease), transform 1.15s var(--ease);
+}
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity 1.15s var(--ease), transform 1.15s var(--ease);
+}
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scale-in {
+  opacity: 0;
+  transform: scale(0.96) translateY(12px);
+  transition: opacity 1.1s var(--ease), transform 1.1s var(--ease);
+}
+.scale-in.visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.slide-up-strong {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+.slide-up-strong.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .reveal-up, .reveal-left, .reveal-right, .scale-in, .slide-up-strong { opacity: 1; transform: none; transition: none; }
+  .mask-in { opacity: 1; clip-path: none; transition: none; }
+  .opening { display: none !important; }
+  .opening__logo-wrap { opacity: 1; transform: none; animation: none; }
+}
+
+/* ========================================
+   HEADER（コーポレートカラー統一）
+======================================== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--accent-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: box-shadow 400ms var(--ease);
+}
+.header.is-scrolled {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--side-padding);
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px 10px 0;
+  margin: 0 -8px 0 0;
+  min-height: 44px;
+  min-width: 180px;
+}
+
+.header__logo img {
+  display: block;
+  height: 42px;
+  width: auto;
+  max-width: 160px;
+  object-fit: contain;
+  opacity: 0.98;
+  /* 暗いヘッダー上でロゴを白く表示 */
+  filter: brightness(0) invert(1);
+}
+.header__logo:hover img {
+  opacity: 1;
+}
+
+/* ロゴ画像が読めない場合も社名でブランドを表示（フォールバック） */
+.header__logo-text {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.header__nav a {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 300ms var(--ease);
+  position: relative;
+}
+.header__nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 400ms var(--ease);
+}
+.header__nav a:hover { color: #fff; }
+.header__nav a:hover::after { width: 100%; }
+
+.header__cta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.header__phone a {
+  color: inherit;
+}
+
+.header__phone-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+@media (max-width: 768px) {
+  .header__nav { display: none; }
+  .header__phone-sub { display: none; }
+  .header__inner { padding-left: 12px; padding-right: 12px; }
+  .header__logo { min-width: 0; }
+  .header__logo img { max-width: 120px; }
+}
+@media (max-width: 380px) {
+  .header__phone { font-size: 15px; letter-spacing: 0.02em; }
+}
+
+/* ========================================
+   FIRST VIEW（2カラム：左＝代表写真、右＝コピー）
+======================================== */
+.fv {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.fv__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 64px) var(--side-padding);
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+
+/* 左カラム：代表写真 */
+.fv__visual {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 3 / 4;
+  max-height: 80vh;
+}
+
+.fv__visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.fv__identity {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.fv__identity svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.fv__heading-sub {
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+
+.fv__authority {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-dark);
+  letter-spacing: 0.04em;
+  margin-bottom: 20px;
+}
+
+.fv__badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.fv__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--badge-bg);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+}
+.fv__badge--text {
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+.fv__badge--star {
+  background: transparent;
+  border: 1px solid rgba(92, 107, 94, 0.3);
+  color: var(--accent-dark);
+}
+.fv__badge svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.fv__heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.5vw, 44px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin-bottom: 28px;
+  text-wrap: balance;
+  word-break: auto-phrase;
+}
+
+@media (max-width: 768px) {
+  .fv__heading {
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.35;
+  }
+}
+
+.fv__sub {
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 20px;
+  max-width: 480px;
+  text-wrap: pretty;
+}
+
+.fv__authority-line {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary-dark);
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+  opacity: 0.95;
+}
+
+.fv__microcopy-main {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-light);
+  letter-spacing: 0.04em;
+  margin-bottom: 14px;
+}
+
+.fv__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fv__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* スマホ：1カラムで画像を上に */
+@media (max-width: 768px) {
+  .fv {
+    min-height: 0;
+    padding: 0 0 clamp(48px, 8vw, 64px);
+  }
+  .fv__inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: clamp(24px, 5vw, 48px) var(--side-padding);
+  }
+  .fv__visual {
+    order: -1;
+    max-height: 50vh;
+    aspect-ratio: 4 / 3;
+  }
+  .fv__authority { text-align: center; }
+  .fv__microcopy-main { text-align: center; }
+  .fv__cta { justify-content: center; }
+}
+
+/* ========================================
+   PROBLEM SECTION
+======================================== */
+.problem {
+  padding: clamp(120px, 14vw, 180px) 0;
+  background: var(--bg);
+}
+
+.problem__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.problem__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.problem__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: #fff;
+  padding: 20px 24px;
+  border-radius: var(--radius-card-lg);
+  border: var(--border-card);
+  box-shadow: none;
+  font-size: 15px;
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.problem__num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background: rgba(92, 107, 94, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
+
+.problem__transition {
+  text-align: center;
+  margin-top: clamp(40px, 5vw, 64px);
+}
+
+.problem__transition-text {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 400;
+  color: var(--primary);
+  letter-spacing: 0.06em;
+}
+
+/* ========================================
+   3 REASONS
+======================================== */
+.reasons {
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: var(--bg-alt);
+}
+
+.reasons__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.reasons__grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3vw, 32px);
+}
+
+.reason-card {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: clamp(20px, 3vw, 40px);
+  background: #fff;
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius-card-md);
+  border: var(--border-card);
+  border-top: 3px solid var(--primary);
+  box-shadow: none;
+}
+
+.reason-card__number {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(48px, 5vw, 64px);
+  font-weight: 300;
+  color: var(--primary);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  opacity: 0.25;
+}
+
+.reason-card__title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.reason-card__body {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-light);
+  text-wrap: pretty;
+}
+
+.reason-card__body p + p {
+  margin-top: 8px;
+}
+
+@media (max-width: 600px) {
+  .reason-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .reason-card__number { font-size: 40px; }
+}
+
+/* ========================================
+   SUPPORT（関西の顔・狩野恵輔選手）
+======================================== */
+.support {
+  padding: 0 0 clamp(64px, 8vw, 96px);
+  background: var(--bg-alt);
+}
+
+.support__image-wrap {
+  width: 100%;
+  line-height: 0;
+}
+
+.support__image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.support .wrapper {
+  padding-top: clamp(32px, 4vw, 48px);
+}
+
+.support__heading-area {
+  margin-bottom: 0;
+  text-align: left;
+}
+.support__heading-area .section-label { display: block; }
+.support__heading-area .section-heading { text-align: left; }
+
+.support__intro {
+  margin-top: 12px;
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--text-light);
+  text-wrap: pretty;
+}
+
+.support__name {
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 500;
+  margin-top: 20px;
+  letter-spacing: 0.04em;
+}
+
+/* ========================================
+   CTA BAND (中間CTA)
+======================================== */
+.cta-band {
+  padding: clamp(48px, 6vw, 80px) 0;
+  background: var(--bg-dark);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(92,107,94,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-band__heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 400;
+  color: var(--text-on-dark);
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.cta-band__sub {
+  font-size: 14px;
+  color: var(--text-on-dark-sub);
+  margin-bottom: 24px;
+}
+
+.cta-band__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 300;
+  color: var(--text-on-dark);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.cta-band__phone a { color: inherit; }
+
+.cta-band__hours {
+  font-size: 13px;
+  color: var(--text-on-dark-sub);
+  margin-bottom: 24px;
+}
+
+.cta-band__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .cta-band__buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .cta-band__buttons .btn {
+    width: 100%;
+    min-height: 48px;
+  }
+}
+
+/* ========================================
+   SERVICES
+======================================== */
+.services {
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: var(--bg);
+}
+
+.services__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 20px;
+}
+
+.services__grid .service-card:not(.service-card--photo) {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+}
+
+.services__grid .service-card:nth-child(1) { grid-column: span 2; }
+.services__grid .service-card:nth-child(3) { grid-column: span 2; }
+.services__grid .service-card:nth-child(5) { grid-row: span 2; min-height: 0; }
+.services__grid .service-card:nth-child(5).service-card--photo { min-height: 100%; }
+.services__grid .service-card:nth-child(5).service-card--photo img { object-position: center 30%; }
+
+@media (max-width: 900px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+  .services__grid .service-card:nth-child(1),
+  .services__grid .service-card:nth-child(3) { grid-column: span 1; }
+  .services__grid .service-card:nth-child(5) { grid-row: span 1; }
+}
+@media (max-width: 520px) {
+  .services__grid { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  background: #fff;
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: var(--radius-card-sm);
+  border: var(--border-card);
+  box-shadow: none;
+  transition: transform 300ms var(--ease), border-color 200ms ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(45, 90, 61, 0.18);
+  box-shadow: var(--shadow);
+}
+
+.service-card__icon {
+  width: 40px;
+  height: 40px;
+  background: var(--badge-bg);
+  border-radius: var(--radius-card-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.service-card__icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary);
+}
+
+.service-card__name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.service-card__desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.service-card--photo {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.service-card--photo img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms var(--ease);
+}
+
+.service-card--photo:hover img {
+  transform: scale(1.04);
+}
+
+.service-card--photo .service-card__overlay {
+  position: relative;
+  z-index: 1;
+  padding: clamp(20px, 3vw, 28px);
+  background: rgba(44, 61, 50, 0.88);
+  color: #fff;
+}
+
+.service-card--photo .service-card__name {
+  color: #fff;
+}
+
+.service-card--photo .service-card__desc {
+  color: rgba(255,255,255,0.8);
+}
+
+/* ========================================
+   PRICING
+======================================== */
+.pricing {
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: var(--bg-alt);
+}
+
+.pricing__heading-area {
+  text-align: left;
+  margin-bottom: 0;
+}
+
+.pricing__summary {
+  font-size: clamp(14px, 1.2vw, 16px);
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-top: 12px;
+  max-width: 640px;
+  text-wrap: pretty;
+}
+
+.pricing__summary-item {
+  white-space: nowrap;
+}
+
+.pricing__summary-sep {
+  white-space: nowrap;
+  margin: 0 0.15em;
+}
+
+.pricing__summary-note {
+  white-space: normal;
+}
+
+.pricing__summary strong {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@media (max-width: 480px) {
+  .pricing__summary {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+  .pricing__summary-item {
+    white-space: normal;
+  }
+  .pricing__summary-sep {
+    margin: 0 0.2em;
+  }
+}
+
+.pricing__layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 56px);
+  align-items: start;
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  .pricing__layout { grid-template-columns: 1fr; gap: 32px; }
+}
+
+.pricing__table-wrap {
+  background: #fff;
+  border-radius: var(--radius);
+  border: var(--border-card);
+  box-shadow: none;
+  overflow: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pricing__sidebar {
+  position: sticky;
+  top: 96px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: clamp(32px, 4vw, 48px) clamp(28px, 3.5vw, 40px);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: var(--shadow);
+}
+
+.pricing__sidebar-heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(17px, 1.8vw, 20px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.pricing__sidebar-phone {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.pricing__sidebar-phone a { color: inherit; text-decoration: none; }
+
+.pricing__sidebar-hours {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+.pricing__sidebar .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.pricing__sidebar .btn:last-of-type { margin-bottom: 0; }
+.pricing__sidebar-notes {
+  font-size: 12px;
+  color: rgba(255,255,255,0.6);
+  margin-top: 20px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+.pricing__table {
+  width: 100%;
+  min-width: 320px;
+  border-collapse: collapse;
+}
+
+.pricing__table thead {
+  background: var(--primary);
+  color: #fff;
+}
+
+.pricing__table th {
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  letter-spacing: 0.04em;
+}
+
+.pricing__table td {
+  padding: 16px 20px;
+  font-size: 15px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing__table .price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: var(--primary);
+}
+
+@media (max-width: 480px) {
+  .pricing__table th,
+  .pricing__table td {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+  .pricing__table .price { font-size: 16px; }
+}
+
+.pricing__note {
+  font-size: 13px;
+  color: var(--text-light);
+  text-align: left;
+  margin-top: 24px;
+  line-height: 1.8;
+  max-width: 520px;
+  text-wrap: pretty;
+}
+
+.pricing__cta {
+  text-align: center;
+  margin-top: 32px;
+}
+
+/* ========================================
+   FLOW
+======================================== */
+.flow {
+  padding: clamp(100px, 12vw, 160px) 0;
+  background: var(--bg);
+}
+
+.flow__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.flow__steps {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.flow__step {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 20px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.flow__step:last-child { padding-bottom: 0; }
+
+.flow__step::before {
+  content: '';
+  position: absolute;
+  left: 27px;
+  top: 56px;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.flow__step:last-child::before { display: none; }
+
+.flow__step-num {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.flow__step-title {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+  padding-top: 4px;
+}
+
+.flow__step-desc {
+  font-size: 14px;
+  color: var(--text-light);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+@media (max-width: 480px) {
+  .flow__step {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+    padding-bottom: 32px;
+  }
+  .flow__step-num {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+  .flow__step::before {
+    left: 23px;
+    top: 48px;
+  }
+  .flow__step-title { font-size: 16px; }
+  .flow__step-desc { font-size: 13px; }
+}
+
+/* ========================================
+   TESTIMONIALS
+======================================== */
+.testimonials {
+  padding: clamp(80px, 10vw, 160px) 0;
+  background: var(--bg-alt);
+}
+
+.testimonials__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+/* Google風★：SVGで確実に表示（文字★は環境で消えることがある） */
+.star-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+.star-rating svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.testimonials__stars {
+  color: #F4B400;
+  font-size: 20px;
+  letter-spacing: 4px;
+  margin-bottom: 4px;
+}
+.testimonials__stars.star-rating {
+  width: 120px;
+  height: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 6px;
+}
+.testimonials__stars.star-rating svg {
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+}
+
+.testimonials__rating {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-light);
+  margin-bottom: 12px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+}
+
+.testimonial-card {
+  background: #fff;
+  padding: clamp(24px, 3vw, 32px);
+  border-radius: var(--radius);
+  border: var(--border-card);
+  box-shadow: none;
+}
+
+.testimonial-card__stars {
+  color: #F4B400;
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+.testimonial-card__stars.star-rating {
+  width: 80px;
+  height: 16px;
+  margin-bottom: 12px;
+}
+.testimonial-card__stars.star-rating svg {
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.testimonial-card__text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text);
+  margin-bottom: 16px;
+  text-wrap: pretty;
+}
+
+.testimonial-card__meta {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.testimonials__accordion-wrap {
+  margin-top: 24px;
+  max-width: 100%;
+}
+
+.testimonials__accordion-trigger {
+  width: 100%;
+  padding: 18px 24px;
+  min-height: 52px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  -webkit-tap-highlight-color: transparent;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  letter-spacing: 0.04em;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.testimonials__accordion-trigger:hover {
+  background: var(--badge-bg);
+  border-color: var(--primary);
+}
+.testimonials__accordion-trigger::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  margin-top: -4px;
+  transition: transform 300ms var(--ease);
+}
+.testimonials__accordion-wrap.open .testimonials__accordion-trigger::after {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.testimonials__accordion-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 500ms var(--ease);
+}
+.testimonials__accordion-wrap.open .testimonials__accordion-body {
+  max-height: 2000px;
+}
+
+.testimonials__google-wrap {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.testimonials__google-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 250ms var(--ease), box-shadow 250ms var(--ease), color 250ms var(--ease);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+.testimonials__google-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 1px 4px rgba(45, 90, 61, 0.08);
+}
+.testimonials__google-btn svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+}
+
+/* ========================================
+   REPRESENTATIVE
+======================================== */
+.representative {
+  padding: clamp(100px, 12vw, 140px) 0;
+  background: var(--bg);
+}
+
+.representative__inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: start;
+}
+
+@media (min-width: 769px) {
+  .representative__photo { position: sticky; top: 96px; }
+}
+
+.representative__photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: var(--border-card);
+  box-shadow: var(--shadow);
+}
+
+.representative__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.representative__content .section-label { margin-bottom: 12px; }
+
+.representative__signature {
+  margin-top: 24px;
+  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.representative__role {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-light);
+}
+
+.representative__signature .representative__name {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(20px, 2.2vw, 26px);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  margin: 0;
+}
+
+.representative__text {
+  margin-top: 0;
+  font-size: 15px;
+  line-height: 2;
+  color: var(--text);
+  text-wrap: pretty;
+}
+
+.representative__text p + p {
+  margin-top: 16px;
+}
+.representative__text .fade-in { display: block; }
+
+.representative__signature-end {
+  margin-top: 40px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .representative__inner {
+    grid-template-columns: 1fr;
+  }
+  .representative__photo {
+    aspect-ratio: 16 / 9;
+    max-height: 240px;
+  }
+}
+
+/* ========================================
+   AREA
+======================================== */
+.area {
+  padding: clamp(64px, 8vw, 120px) 0;
+  background: var(--bg-dark);
+  color: var(--text-on-dark);
+  text-align: center;
+}
+
+.area .section-label { color: rgba(255,255,255,0.5); }
+
+.area__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.area__item {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+}
+
+/* ========================================
+   FAQ
+======================================== */
+.faq {
+  padding: clamp(80px, 10vw, 160px) 0;
+  background: var(--bg);
+}
+
+.faq__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.faq__list {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  background: #fff;
+  border-radius: var(--radius);
+  border: var(--border-card);
+  box-shadow: none;
+  overflow: hidden;
+}
+
+.faq__question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 24px;
+  min-height: 56px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: inherit;
+  line-height: 1.6;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.faq__question::before {
+  content: 'Q';
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.faq__question::after {
+  content: '+';
+  margin-left: auto;
+  font-size: 20px;
+  color: var(--text-light);
+  transition: transform 300ms var(--ease);
+  flex-shrink: 0;
+}
+
+.faq__item.open .faq__question::after {
+  transform: rotate(45deg);
+}
+
+.faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 400ms var(--ease);
+}
+
+.faq__item.open .faq__answer {
+  max-height: 300px;
+}
+
+.faq__answer-inner {
+  padding: 0 24px 20px 68px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-light);
+  text-wrap: pretty;
+}
+
+@media (max-width: 768px) {
+  .faq__answer-inner {
+    padding: 0 16px 16px 52px;
+    font-size: 14px;
+  }
+}
+/* ======================================== */
+.final-cta {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: var(--bg-dark);
+  text-align: center;
+  color: var(--text-on-dark);
+  position: relative;
+  overflow: hidden;
+}
+.final-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(90vmax, 800px);
+  height: min(90vmax, 800px);
+  margin: calc(- min(90vmax, 800px) / 2) 0 0 calc(- min(90vmax, 800px) / 2);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.06);
+  pointer-events: none;
+}
+
+.final-cta .section-label { color: rgba(255,255,255,0.5); }
+
+.final-cta .wrapper { position: relative; z-index: 1; }
+
+.final-cta__heading {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+
+.final-cta__sub {
+  font-size: 15px;
+  color: var(--text-on-dark-sub);
+  margin-bottom: 32px;
+}
+
+.final-cta__phone {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.final-cta__phone a { color: inherit; }
+
+.final-cta__hours {
+  font-size: 14px;
+  color: var(--text-on-dark-sub);
+  margin-bottom: 32px;
+}
+
+.final-cta__buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.final-cta__buttons .btn--white {
+  width: 100%;
+  max-width: 360px;
+  padding: 20px 40px;
+  font-size: 17px;
+}
+.final-cta__line-link {
+  font-size: 15px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 300ms var(--ease);
+}
+.final-cta__line-link:hover { color: #fff; }
+
+.final-cta__line-qr {
+  margin-top: 32px;
+}
+
+.final-cta__line-qr img {
+  width: 140px;
+  margin: 0 auto 8px;
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 8px;
+}
+
+.final-cta__line-qr p {
+  font-size: 13px;
+  color: var(--text-on-dark-sub);
+}
+
+/* ========================================
+   COMPANY
+======================================== */
+.company {
+  padding: clamp(80px, 10vw, 120px) 0;
+  background: var(--bg);
+}
+
+.company__heading-area {
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.company__table-wrap {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.company__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.company__table th,
+.company__table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+
+.company__table th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--primary);
+  width: 35%;
+  letter-spacing: 0.04em;
+}
+
+.company__table td {
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .company__table th,
+  .company__table td {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: none;
+  }
+  .company__table th {
+    padding-top: 16px;
+    padding-bottom: 0;
+  }
+  .company__table tr {
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.footer {
+  padding: 32px 0;
+  background: var(--primary-dark);
+  text-align: center;
+}
+
+.footer__copy {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.04em;
+}
+.footer__pattern { margin-top: 12px; }
+.footer__pattern a { color: rgba(255,255,255,0.6); text-decoration: underline; }
+.footer__pattern a:hover { color: #fff; }
+
+/* ========================================
+   FLOATING CTA（スマホ・PC両方で追従）
+======================================== */
+.floating-cta {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border);
+  padding: 8px 16px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom));
+  box-shadow: 0 -1px 8px rgba(0,0,0,0.05);
+}
+
+.floating-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.floating-cta__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 14px 12px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  min-height: 48px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.floating-cta__btn--phone {
+  background: var(--primary);
+  color: #fff;
+}
+
+.floating-cta__btn--line {
+  background: #06C755;
+  color: #fff;
+}
+
+/* 追従バー分の余白（コンテンツが隠れないように・ノッチ対応） */
+body { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+
+@media (min-width: 769px) {
+  .floating-cta__inner {
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body { padding-bottom: 68px; }
+}
+
+/* ========================================
+   SVG ICON HELPER
+======================================== */
+.icon { display: inline-flex; align-items: center; justify-content: center; }
+</style>
+</head>
+<body>
+
+<!-- ====== OPENING（ロゴ＋タグライン） ====== -->
+<div class="opening" id="opening">
+  <div class="opening__glow"></div>
+  <p class="opening__label">奈良の遺品整理・特殊清掃</p>
+  <div class="opening__logo-wrap">
+    <img src="./logo-header-transparent.png" alt="ハートフルクリーン" class="opening__logo" width="240" height="72" loading="eager">
+  </div>
+  <div class="opening__divider"></div>
+  <p class="opening__tagline">溢れるものも、溢れる想いも<br>丁寧に片付ける。</p>
+  <p class="opening__bottom-line">Heartful Clean — Est. 2025</p>
+  <button type="button" class="opening__skip" id="openingSkip" aria-label="オープニングをスキップ">スキップ</button>
+</div>
+
+<div class="noise-overlay" aria-hidden="true"></div>
+<main>
+
+<!-- ====== HEADER ====== -->
+<header class="header">
+  <div class="header__inner">
+    <a href="#top" class="header__logo" aria-label="ハートフルクリーン トップへ">
+      <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン" width="160" height="48" loading="eager">
+      <span class="header__logo-text">ハートフルクリーン</span>
+    </a>
+    <nav class="header__nav">
+      <a href="#reasons">選ばれる理由</a>
+      <a href="#services">サービス</a>
+      <a href="#pricing">料金</a>
+      <a href="#flow">ご利用の流れ</a>
+      <a href="#company">会社概要</a>
+    </nav>
+    <div class="header__cta">
+      <div style="text-align: right;">
+        <div class="header__phone"><a href="tel:0742268496">0742-26-8496</a></div>
+        <div class="header__phone-sub">7時〜22時（年中無休）</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====== FIRST VIEW（2カラム：左＝代表写真、右＝コピー） ====== -->
+<section class="fv" id="top">
+  <div class="fv__inner">
+    <div class="fv__visual fade-in">
+      <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表・藤田宗一郎" loading="eager" fetchpriority="high" width="480" height="640">
+    </div>
+    <div class="fv__content">
+      <h1 class="fv__heading mask-in">
+        元警察官が行う<br class="br-lg">生前・遺品整理。
+      </h1>
+      <p class="fv__heading-sub fade-in">見積り後の金額で、その日じゅうに。追加請求は、ゼロ。</p>
+
+      <p class="fv__sub fade-in">
+        立ち会いが難しくても、その日に片づく。後から請求が増えることはありません。
+      </p>
+
+      <p class="fv__authority fade-in">Googleの口コミ ★5.0</p>
+
+      <p class="fv__microcopy-main fade-in">相談・お見積りは無料です。秘密厳守。</p>
+      <div class="fv__cta fade-in">
+        <a href="tel:0742268496" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          電話で相談する（無料）
+        </a>
+        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで状況を送る（無料）
+        </a>
+      </div>
+      <p class="microcopy fade-in">奈良・大阪を中心に近畿一円対応</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PROBLEM ====== -->
+<section class="problem" id="problem">
+  <div class="wrapper">
+    <div class="problem__heading-area fade-in">
+      <p class="section-label">Your Concerns</p>
+      <h2 class="section-heading">はじめての遺品整理。<br class="br-lg">不安は、当然です。</h2>
+    </div>
+
+    <div class="problem__list">
+      <div class="problem__item fade-in">
+        <span class="problem__num">1</span>
+        突然のことで、何から手をつけていいかわからない
+      </div>
+      <div class="problem__item fade-in">
+        <span class="problem__num">2</span>
+        どこの業者に頼めば安心か、判断がつかない
+      </div>
+      <div class="problem__item fade-in">
+        <span class="problem__num">3</span>
+        見積りの後に、高額な追加料金を請求されないか不安
+      </div>
+      <div class="problem__item fade-in">
+        <span class="problem__num">4</span>
+        仕事で何日も休めず、立ち会いが難しい
+      </div>
+      <div class="problem__item fade-in">
+        <span class="problem__num">5</span>
+        故人の遺品を、粗末に扱われたくない
+      </div>
+      <div class="problem__item fade-in">
+        <span class="problem__num">6</span>
+        作業に何日もかかるのは困る。できるだけ早く終わらせたい
+      </div>
+    </div>
+
+    <div class="problem__transition fade-in">
+      <p class="problem__transition-text">その不安、すべてお引き受けします。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== 3 REASONS ====== -->
+<section class="reasons" id="reasons">
+  <div class="wrapper">
+    <div class="reasons__heading-area fade-in">
+      <p class="section-label">3 Reasons</p>
+      <h2 class="section-heading">ハートフルクリーンが<br class="br-lg">選ばれる、3つの理由。</h2>
+    </div>
+
+    <div class="reasons__grid">
+      <div class="reason-card reveal-up">
+        <div class="reason-card__number">01</div>
+        <div>
+          <h3 class="reason-card__title">追加料金は、一切いただきません。</h3>
+          <div class="reason-card__body">
+            <p>遺品整理のプロが現地を確認し、明確なお見積りを提示します。その金額が、最終請求額です。</p>
+            <p>後から費用が増えることは、絶対にありません。</p>
+            <p>お見積りは完全無料。納得いかなければ、お断りいただけます。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reason-card reveal-up">
+        <div class="reason-card__number">02</div>
+        <div>
+          <h3 class="reason-card__title">礼節とスピード。どちらも、妥協しません。</h3>
+          <div class="reason-card__body">
+            <p>「土足でいい」と言われても、必ず靴を脱ぎます。言葉遣い、遺品の扱い、すべてに礼節を尽くします。</p>
+            <p>仕分けで迷われたら「決まったらご連絡ください」。決断を急かすことは、しません。</p>
+            <p>一方で、作業は迅速。他社で3日かかる現場を、1日で完了させた実績があります。</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="reason-card reveal-up">
+        <div class="reason-card__number">03</div>
+        <div>
+          <h3 class="reason-card__title">その場で買取査定。費用を抑えます。</h3>
+          <div class="reason-card__body">
+            <p>買取専門会社と連携し、価値ある遺品はその場で査定・買取を提案。作業費から相殺し、ご負担を減らします。</p>
+            <p>自社でメンテナンスし再利用するため、廃棄物も減り処分代も削減。</p>
+            <p>故人の愛用品が、どこかで誰かの役に立つ。それは、ご遺族にとっての救いにもなります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== REPRESENTATIVE（代表者からの挨拶） ====== -->
+<section class="representative" id="message">
+  <div class="wrapper">
+    <div class="representative__inner">
+      <div class="representative__photo reveal-left">
+        <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表・藤田宗一郎" loading="eager" width="400" height="533">
+      </div>
+
+      <div class="representative__content">
+        <p class="section-label fade-in">Message</p>
+        <h2 class="section-heading fade-in">なぜ、元警察官が<br class="br-lg">遺品整理を始めたのか。</h2>
+
+        <div class="representative__signature fade-in">
+          <span class="representative__role">ハートフルクリーン 代表</span>
+          <span class="representative__name">藤田 宗一郎</span>
+        </div>
+
+        <div class="representative__text">
+          <p class="fade-in">大阪府警察官として5年間勤務する中で、独居の方が亡くなった現場検証に何度も立ち会いました。</p>
+          <p class="fade-in">遺体が搬出された後に残された部屋。「この後の片付けは、誰がするのだろう」——その疑問から、遺品整理・特殊清掃という仕事の存在を知りました。</p>
+          <p class="fade-in">退職後、同業他社で3年間、現場責任者として経験を積みました。独立を前提に、徹底的に学びました。</p>
+          <p class="fade-in">しかし、そこで目の当たりにしたのは、格安で受注した回収物を不法投棄する業者の存在です。依頼者を騙し、環境を汚す。元警察官として、見過ごせませんでした。</p>
+          <p class="fade-in">曲がったことが嫌いな性分です。この業界を、もっとクリーンにしたい。屋号の「ハートフルクリーン」には、その決意を込めました。</p>
+          <p class="fade-in">私たちは、お客様に決断を急かしません。仕分けで迷われたら「決まったらご連絡ください」とお伝えします。「土足でいい」と言われても、必ず靴を脱ぎます。遺品の一つひとつを、故人の生きた証として扱います。</p>
+          <p class="fade-in">迷っているなら、何度でもご相談ください。</p>
+        </div>
+
+        <p class="representative__signature-end fade-in">代表 藤田 宗一郎</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== SUPPORT（関西の顔） ====== -->
+<section class="support">
+  <div class="support__image-wrap">
+    <img src="support-kano.png" alt="元阪神タイガース・狩野恵輔さん。インタビュー時の写真" loading="lazy" width="1200" height="800">
+  </div>
+  <div class="wrapper">
+    <div class="support__heading-area reveal-left">
+      <p class="section-label">Support</p>
+      <h2 class="section-heading">関西の顔が、私たちを取材してくれました。</h2>
+    </div>
+    <p class="support__name fade-in">元阪神タイガース　狩野　恵輔さん</p>
+    <div class="support__intro reveal-left">
+      <p>関西では誰もが知る元プロ野球選手です。インタビューを受けた際の写真です。狩野さんをはじめ、関西で活躍される方々に、ハートフルクリーンを応援いただいています。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== CTA BAND ====== -->
+<div class="cta-band">
+  <div class="wrapper">
+    <p class="cta-band__heading fade-in">まずは、ご相談ください。</p>
+    <p class="cta-band__sub fade-in">ささいなことでも構いません。遺品整理のプロがていねいにお答えします。</p>
+    <div class="cta-band__phone fade-in"><a href="tel:0742268496">0742-26-8496</a></div>
+    <p class="cta-band__hours fade-in">7時〜22時（年中無休）｜ 相談・お見積り無料</p>
+    <div class="cta-band__buttons fade-in">
+      <a href="tel:0742268496" class="btn btn--white">電話で相談する</a>
+      <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line">まずはLINEで状況を送るだけ</a>
+    </div>
+  </div>
+</div>
+
+<!-- ====== SERVICES ====== -->
+<section class="services" id="services">
+  <div class="wrapper">
+    <div class="services__heading-area fade-in">
+      <p class="section-label">Services</p>
+      <h2 class="section-heading">すべて、お任せください。</h2>
+    </div>
+
+    <div class="services__grid">
+      <div class="service-card service-card--photo scale-in">
+        <img src="ハートフルクリーンサイト画像/stock/adobestock-499923559-kimono-documents.jpg" alt="遺品を丁寧に扱うスタッフ" loading="lazy" width="600" height="400">
+        <div class="service-card__overlay">
+          <h3 class="service-card__name">遺品整理</h3>
+          <p class="service-card__desc">故人の遺品を丁寧に仕分け・搬出。貴重品の探索も徹底的に行います。</p>
+        </div>
+      </div>
+
+      <div class="service-card scale-in">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="service-card__name">生前整理</h3>
+        <p class="service-card__desc">ご本人の意向に沿った身辺整理。家具1点から対応いたします。</p>
+      </div>
+
+      <div class="service-card service-card--photo scale-in">
+        <img src="ハートフルクリーンサイト画像/stock/adobestock-504843647-tatami-room.jpg" alt="特殊清掃の作業風景" loading="lazy" width="600" height="400">
+        <div class="service-card__overlay">
+          <h3 class="service-card__name">特殊清掃</h3>
+          <p class="service-card__desc">孤独死等の現場の完全消臭・除菌・原状回復。元警察官の経験が活きる領域です。</p>
+        </div>
+      </div>
+
+      <div class="service-card service-card--photo scale-in">
+        <img src="ハートフルクリーンサイト画像/before-after/case-room-before.png" alt="不用品が積み上がった部屋" loading="lazy" width="600" height="400">
+        <div class="service-card__overlay">
+          <h3 class="service-card__name">ゴミ屋敷清掃</h3>
+          <p class="service-card__desc">大量の廃棄物の迅速搬出と徹底清掃で、居住環境を回復します。</p>
+        </div>
+      </div>
+
+      <div class="service-card service-card--photo scale-in">
+        <img src="ハートフルクリーンサイト画像/stock/adobestock-1444199279-moving-furniture.jpg" alt="不用品回収の現場" loading="lazy" width="600" height="400">
+        <div class="service-card__overlay">
+          <h3 class="service-card__name">不用品回収</h3>
+          <p class="service-card__desc">大型家具・家電もOK。即日回収・立ち会い不要にも対応します。</p>
+        </div>
+      </div>
+
+      <div class="service-card scale-in">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <h3 class="service-card__name">空き家片付け</h3>
+        <p class="service-card__desc">家財一斉撤去・残置物処分。不動産会社様からの直接依頼も承ります。</p>
+      </div>
+
+      <div class="service-card scale-in">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+        </div>
+        <h3 class="service-card__name">遺品供養</h3>
+        <p class="service-card__desc">仏壇・写真・人形等の合同供養を手配。手放す罪悪感を和らげます。</p>
+      </div>
+
+      <div class="service-card service-card--photo scale-in">
+        <img src="ハートフルクリーンサイト画像/stock/adobestock-1604432173-sorting-valuables.jpg" alt="貴金属の買取査定" loading="lazy" width="600" height="400">
+        <div class="service-card__overlay">
+          <h3 class="service-card__name">買取査定</h3>
+          <p class="service-card__desc">家電・貴金属等を適正査定。買取額を作業費から相殺し、ご負担を軽減します。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== PRICING ====== -->
+<section class="pricing" id="pricing">
+  <div class="wrapper">
+    <div class="pricing__heading-area fade-in">
+      <p class="section-label">Price</p>
+      <h2 class="section-heading">料金の目安。</h2>
+      <p class="pricing__summary"><span class="pricing__summary-item">1K <strong>25,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">1DK <strong>35,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">2DK <strong>45,000円〜</strong></span><span class="pricing__summary-sep">／</span><span class="pricing__summary-item">3DK以上 <strong>80,000円〜</strong></span><span class="pricing__summary-note">（目安・物量により変動）</span></p>
+    </div>
+
+    <div class="pricing__layout">
+      <div>
+        <div class="pricing__table-wrap">
+          <table class="pricing__table">
+            <thead>
+              <tr>
+                <th>間取り</th>
+                <th>料金目安</th>
+                <th>備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1K</td>
+                <td><span class="price">25,000</span>円〜</td>
+                <td>単身者の生前整理等に</td>
+              </tr>
+              <tr>
+                <td>1DK</td>
+                <td><span class="price">35,000</span>円〜</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>2DK</td>
+                <td><span class="price">45,000</span>円〜</td>
+                <td>物量により変動</td>
+              </tr>
+              <tr>
+                <td>3DK以上</td>
+                <td><span class="price">80,000</span>円〜</td>
+                <td>一軒家も対応可</td>
+              </tr>
+              <tr>
+                <td>2tトラック積み放題</td>
+                <td><span class="price">60,000</span>円〜</td>
+                <td>不用品回収向け</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="pricing__note fade-in">※上記は目安です。物量により料金は異なります。現地確認後、明確なお見積りをご提示いたします。</p>
+      </div>
+
+      <div class="pricing__sidebar reveal-right">
+        <p class="pricing__sidebar-heading">お見積りは完全無料です。</p>
+        <div class="pricing__sidebar-phone"><a href="tel:0742268496">0742-26-8496</a></div>
+        <p class="pricing__sidebar-hours">7時〜22時（年中無休）</p>
+        <a href="tel:0742268496" class="btn btn--white">
+          30秒で完了！無料見積り
+        </a>
+        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--line" style="width:100%;">
+          まずはLINEで状況を送るだけ
+        </a>
+        <p class="pricing__sidebar-notes">見積り後のキャンセルも無料です</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FLOW ====== -->
+<section class="flow" id="flow">
+  <div class="wrapper">
+    <div class="flow__heading-area fade-in">
+      <p class="section-label">Flow</p>
+      <h2 class="section-heading">ご利用の流れ。</h2>
+    </div>
+
+    <div class="flow__steps">
+      <div class="flow__step slide-up-strong">
+        <div class="flow__step-num">1</div>
+        <div>
+          <h3 class="flow__step-title">お問い合わせ（電話・LINE）</h3>
+          <p class="flow__step-desc">ささいなご相談もどうぞ。相談は無料です。「何から始めればいいかわからない」という段階でも構いません。</p>
+        </div>
+      </div>
+      <div class="flow__step slide-up-strong">
+        <div class="flow__step-num">2</div>
+        <div>
+          <h3 class="flow__step-title">現地訪問・無料見積り</h3>
+          <p class="flow__step-desc">遺品整理のプロが直接お伺いし、お部屋の状況を確認。その場で明確な金額をお出しします。</p>
+        </div>
+      </div>
+      <div class="flow__step slide-up-strong">
+        <div class="flow__step-num">3</div>
+        <div>
+          <h3 class="flow__step-title">ご契約・日程調整</h3>
+          <p class="flow__step-desc">納得いただいてから正式契約です。決断を急かすことはありません。即日・土日祝も対応できます。</p>
+        </div>
+      </div>
+      <div class="flow__step slide-up-strong">
+        <div class="flow__step-num">4</div>
+        <div>
+          <h3 class="flow__step-title">作業実施（立ち会い不要）</h3>
+          <p class="flow__step-desc">仕分け・貴重品探索・搬出・清掃をプロが担当します。お立ち会いは不要。事前のご指示だけで進められます。</p>
+        </div>
+      </div>
+      <div class="flow__step slide-up-strong">
+        <div class="flow__step-num">5</div>
+        <div>
+          <h3 class="flow__step-title">完了・ご精算</h3>
+          <p class="flow__step-desc">お見積り通りの金額でお支払い。追加料金はありません。現金・クレジットカード・PayPayに対応。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== TESTIMONIALS ====== -->
+<section class="testimonials" id="voice">
+  <div class="wrapper">
+    <div class="testimonials__heading-area fade-in">
+      <p class="section-label">Voice</p>
+      <div class="testimonials__stars star-rating" aria-label="5つ星">
+        <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="testimonials__rating">Googleの口コミ 5.0</div>
+      <h2 class="section-heading">お客様の声。</h2>
+    </div>
+
+    <div class="testimonials__grid">
+      <div class="testimonial-card scale-in">
+        <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-card__text">見積もりの段階から、細かな案内をしていただき、素人の私からは安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。</p>
+        <p class="testimonial-card__meta">— Google口コミより</p>
+      </div>
+
+      <div class="testimonial-card scale-in">
+        <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <p class="testimonial-card__text">今回は遺品整理をお願いしました。処分するものが多く何をすればいいかわからなかったですが、丁寧でスムーズに対応していただき助かりました！また買取もしていただき満足です！ありがとうございました。</p>
+        <p class="testimonial-card__meta">— Google口コミより</p>
+      </div>
+    </div>
+
+    <div class="testimonials__accordion-wrap" id="testimonialsAccordion">
+      <button type="button" class="testimonials__accordion-trigger" id="testimonialsAccordionBtn" aria-expanded="false" aria-controls="testimonialsAccordionBody">
+        他のお客様の声を見る（6件）
+      </button>
+      <div class="testimonials__accordion-body" id="testimonialsAccordionBody" role="region" aria-labelledby="testimonialsAccordionBtn">
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">即対応していただきとても助かりました。またご縁があれば利用させて頂きたいです。ありがとうございました。</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">迅速に作業終了してもらい ありがとうございました。</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">母の介護施設入所に伴い、団地の家財道具の処分や仏壇の引取り供養をお願いしました。急な依頼にも関わらず、年末の30日に作業していただきました。荷物は少なかったのですが、30分もかからなかったです。</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">不用品回収をお願いしました。量も多く、大変な中嫌な顔一つなく終始笑顔で親切に対応してくださり助かりました。</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">不用品回収をお願いしました! 違う場所からソファの運びもしてくださって助かりました! これからも何かあれば頼もうと思います!</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+        <div class="testimonial-card scale-in">
+          <div class="testimonial-card__stars star-rating" aria-label="5つ星">
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#F4B400" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <p class="testimonial-card__text">不用品回収をお願いしました！分別が大変な上に重たい物もたくさんあったのですが、丁寧に対応していただきありがとうございました。</p>
+          <p class="testimonial-card__meta">— Google口コミより</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonials__google-wrap fade-in">
+      <a href="https://share.google/d97pnTt7q5e1iUEy7" target="_blank" rel="noopener noreferrer" class="testimonials__google-btn">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+        Googleの口コミをもっと見る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ====== AREA ====== -->
+<section class="area" id="area">
+  <div class="wrapper">
+    <p class="section-label fade-in">Area</p>
+    <h2 class="section-heading section-heading--light fade-in">奈良・大阪を中心に、<br class="br-lg">近畿一円に対応。</h2>
+    <div class="area__list fade-in">
+      <span class="area__item">奈良県</span>
+      <span class="area__item">大阪府</span>
+      <span class="area__item">京都府</span>
+      <span class="area__item">兵庫県</span>
+      <span class="area__item">三重県</span>
+      <span class="area__item">滋賀県</span>
+      <span class="area__item">和歌山県</span>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FAQ ====== -->
+<section class="faq" id="faq" role="region" aria-labelledby="faq-heading">
+  <div class="wrapper">
+    <div class="faq__heading-area fade-in">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-heading" id="faq-heading">よくあるご質問。</h2>
+    </div>
+
+    <div class="faq__list">
+      <div class="faq__item fade-in">
+        <button class="faq__question">見積り後に追加料金は発生しますか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">一切発生しません。遺品整理のプロが現地を確認した上でお出しした見積り金額が、最終請求額です。作業中に追加費用が発生することは絶対にありません。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">立ち会いは必要ですか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">不要です。事前に「残すもの」「処分するもの」のご指示をいただければ、お立ち会いなしで作業を進められます。遠方の方やお仕事で来られない方にも多くご利用いただいています。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">家具1点だけでも依頼できますか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">はい、1点から承ります。「タンスだけ」「冷蔵庫だけ」といったご依頼も歓迎です。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">即日対応は可能ですか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">スケジュールに空きがあれば、即日対応も可能です。土日祝日も対応しておりますので、まずはお電話ください。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">対応エリアはどこまでですか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">奈良・大阪を中心に、京都・兵庫・三重・滋賀・和歌山まで近畿一円に対応しています。詳しくはお問い合わせください。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">支払い方法は何がありますか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">現金、クレジットカード、PayPayに対応しています。作業完了後のお支払いです。</div>
+        </div>
+      </div>
+
+      <div class="faq__item fade-in">
+        <button class="faq__question">遺品の供養はしてもらえますか？</button>
+        <div class="faq__answer">
+          <div class="faq__answer-inner">はい。仏壇、写真、人形など、そのまま処分することに抵抗がある品は、合同供養の手配が可能です。別途ご相談ください。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FINAL CTA ====== -->
+<section class="final-cta" id="contact">
+  <div class="wrapper">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="final-cta__heading fade-in">まずは、ご相談ください。</h2>
+    <p class="final-cta__sub fade-in">ささいなことでも構いません。遺品整理のプロが、ていねいにお答えします。</p>
+
+    <div class="final-cta__phone fade-in"><a href="tel:0742268496">0742-26-8496</a></div>
+    <p class="final-cta__hours fade-in">7時〜22時（年中無休）｜ 相談・お見積り無料</p>
+
+    <div class="final-cta__buttons fade-in">
+      <a href="tel:0742268496" class="btn btn--white">電話で相談する</a>
+      <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="final-cta__line-link">状況をLINEで送るだけ</a>
+    </div>
+    <p class="microcopy fade-in" style="color:rgba(255,255,255,0.5);">※時間外も電話相談に対応できる場合がございます</p>
+
+    <div class="final-cta__line-qr fade-in">
+      <img src="ハートクリーンLINE.png" alt="LINE QRコード" loading="lazy">
+      <p>LINEでもご相談いただけます</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====== COMPANY ====== -->
+<section class="company" id="company">
+  <div class="wrapper">
+    <div class="company__heading-area fade-in">
+      <p class="section-label">Company</p>
+      <h2 class="section-heading">会社概要。</h2>
+    </div>
+
+    <div class="company__table-wrap fade-in">
+      <table class="company__table">
+        <tr><th>屋号</th><td>ハートフルクリーン</td></tr>
+        <tr><th>運営法人</th><td>株式会社和（なごみ）</td></tr>
+        <tr><th>代表者</th><td>藤田 宗一郎</td></tr>
+        <tr><th>所在地</th><td>〒630-8145 奈良県奈良市八条5-498-1</td></tr>
+        <tr><th>電話</th><td><a href="tel:0742268496" style="color:var(--primary)">0742-26-8496</a></td></tr>
+        <tr><th>営業時間</th><td>7時〜22時（年中無休・土日祝も対応）</td></tr>
+        <tr><th>対応エリア</th><td>奈良・大阪を中心に近畿一円（京都・兵庫・三重・滋賀・和歌山）</td></tr>
+        <tr><th>お支払い方法</th><td>現金 / クレジットカード / PayPay</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer">
+  <p class="footer__copy">&copy; 2026 ハートフルクリーン（株式会社和）All Rights Reserved.</p>
+  <p class="footer__pattern"><a href="index-b-new.html">新B案</a> ｜ <a href="index-e.html">E案</a></p>
+</footer>
+</main>
+
+<!-- ====== FLOATING CTA (MOBILE) ====== -->
+<div class="floating-cta" id="floatingCta">
+  <div class="floating-cta__inner">
+    <a href="tel:0742268496" class="floating-cta__btn floating-cta__btn--phone">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      電話で相談
+    </a>
+    <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="floating-cta__btn floating-cta__btn--line">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで状況を送る
+    </a>
+  </div>
+</div>
+
+<!-- ====== SCRIPTS ====== -->
+<script>
+(function() {
+  var opening = document.getElementById('opening');
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var OPENING_TOTAL = prefersReduced ? 0 : 2600;
+
+  if (prefersReduced && opening) {
+    opening.style.display = 'none';
+  }
+
+  function triggerFvAnimations() {
+    var fvEls = document.querySelectorAll('.fv .fade-in, .fv .mask-in, .fv .reveal-up');
+    var base = 0;
+    fvEls.forEach(function(el) {
+      setTimeout(function() { el.classList.add('visible'); }, base);
+      base += 220;
+    });
+  }
+
+  if (opening && !prefersReduced) {
+    var t1 = setTimeout(function() { opening.classList.add('phase-exit'); }, 1800);
+    var t2 = setTimeout(function() { opening.classList.add('phase-circle'); }, 2200);
+    var t3 = setTimeout(function() { triggerFvAnimations(); }, 2600);
+
+    opening.addEventListener('animationend', function(e) {
+      if (e.animationName === 'op-circle-shrink') {
+        opening.style.display = 'none';
+      }
+    });
+
+    var skipBtn = document.getElementById('openingSkip');
+    if (skipBtn) {
+      skipBtn.addEventListener('click', function() {
+        clearTimeout(t1);
+        clearTimeout(t2);
+        clearTimeout(t3);
+        triggerFvAnimations();
+        opening.classList.add('phase-exit');
+        setTimeout(function() {
+          opening.classList.add('phase-circle');
+        }, 500);
+      });
+    }
+  } else {
+    setTimeout(triggerFvAnimations, 100);
+  }
+
+  setTimeout(function() {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var delay = parseInt(el.dataset.delay, 10) || 0;
+          setTimeout(function() { el.classList.add('visible'); }, delay);
+          observer.unobserve(el);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+    var selector = '.fade-in:not(.visible), .reveal-up:not(.visible), .reveal-left:not(.visible), .reveal-right:not(.visible), .scale-in:not(.visible), .slide-up-strong:not(.visible), .mask-in:not(.visible)';
+    var staggerParents = '.problem__list, .services__grid, .testimonials__grid, .faq__list, .reasons__grid, .flow__steps, .representative__text, .pricing__main, .company__table-wrap';
+    var staggerSelectors = '.fade-in, .reveal-up, .reveal-left, .reveal-right, .scale-in, .slide-up-strong, .mask-in';
+    document.querySelectorAll(selector).forEach(function(el) {
+      var parent = el.closest(staggerParents);
+      if (parent) {
+        var siblings = Array.from(parent.querySelectorAll(staggerSelectors));
+        var idx = siblings.indexOf(el);
+        if (idx >= 0) el.dataset.delay = idx * 70;
+      }
+      observer.observe(el);
+    });
+  }, OPENING_TOTAL + 200);
+
+  var testimonialsAccordionBtn = document.getElementById('testimonialsAccordionBtn');
+  var testimonialsAccordionWrap = document.getElementById('testimonialsAccordion');
+  if (testimonialsAccordionBtn && testimonialsAccordionWrap) {
+    testimonialsAccordionBtn.addEventListener('click', function() {
+      var isOpen = testimonialsAccordionWrap.classList.toggle('open');
+      testimonialsAccordionBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        var body = document.getElementById('testimonialsAccordionBody');
+        if (body) body.querySelectorAll('.testimonial-card').forEach(function(c) { c.classList.add('visible'); });
+      }
+    });
+  }
+
+  document.querySelectorAll('.faq__question').forEach(function(btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq__item.open').forEach(function(i) {
+        i.classList.remove('open');
+        i.querySelector('.faq__question').setAttribute('aria-expanded', 'false');
+      });
+      if (!wasOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  var floating = document.getElementById('floatingCta');
+  var header = document.querySelector('.header');
+
+  window.addEventListener('scroll', function() {
+    var y = window.scrollY;
+    if (floating) {
+      if (y > 400) {
+        floating.style.transform = 'translateY(0)';
+      } else {
+        floating.style.transform = 'translateY(100%)';
+      }
+    }
+    if (header) {
+      header.classList.toggle('is-scrolled', y > 60);
+    }
+  }, { passive: true });
+  if (floating) {
+    floating.style.transform = 'translateY(100%)';
+    floating.style.transition = 'transform 300ms cubic-bezier(0.16,1,0.3,1)';
+  }
+})();
+</script>
+
+</body>
+</html>
