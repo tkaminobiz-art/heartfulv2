@@ -163,24 +163,22 @@
         /* Hero Section (FV) */
         .fv {
             position: relative;
-            background: var(--bg-gray);
-            /* Once image is generated, this will be replaced */
-            padding: 50px 0 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 0 80px;
             overflow: hidden;
         }
 
-        .fv__bg {
+        /* FV Background Decoration */
+        .fv::before {
+            content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('b_hero_bg.webp') center/cover no-repeat;
-            opacity: 0.2;
-            /* Subdued background for readability */
+            top: -20%;
+            right: -10%;
+            width: 60%;
+            height: 140%;
+            background: rgba(255, 140, 0, 0.05);
+            border-radius: 50%;
+            transform: rotate(-15deg);
             z-index: 0;
         }
 
@@ -189,42 +187,25 @@
             z-index: 1;
             max-width: var(--max-width);
             width: 100%;
-            text-align: center;
+            margin: 0 auto;
             padding: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
         }
 
-        .fv__catch-box {
-            margin-bottom: 30px;
-            display: inline-block;
-        }
-
-        .fv__catch {
-            font-size: 32px;
-            font-weight: 900;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            color: #111;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
-            background: rgba(255, 255, 255, 0.7);
-            padding: 10px 20px;
-            border-radius: 8px;
-        }
-
-        .fv__sub {
-            font-size: 16px;
-            font-weight: 700;
-            background: rgba(255, 255, 255, 0.9);
-            display: inline-block;
-            padding: 8px 16px;
-            border-radius: 40px;
-            border: 1px solid #ddd;
+        /* FV Left (Text Area) */
+        .fv__left {
+            flex: 1;
+            max-width: 600px;
         }
 
         .fv__badges {
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
             gap: 12px;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
         }
 
         .fv__badge {
@@ -235,15 +216,14 @@
             border-radius: 40px;
             display: flex;
             align-items: center;
-            gap: 6px;
-            font-size: 16px;
+            gap: 8px;
+            font-size: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
             border: 1px solid #eee;
         }
 
         .fv__badge span {
-            color: var(--orange);
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .fv__badge--gold {
@@ -251,16 +231,61 @@
             border: 1px solid #e6c86e;
         }
 
+        .fv__badge--shield {
+            background: linear-gradient(to right, #f4f6f9, #eef2f5);
+            border: 1px solid #d0d7df;
+        }
+
+        .fv__catch-box {
+            margin-bottom: 30px;
+        }
+
+        .fv__catch {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #222;
+        }
+
+        .fv__sub {
+            font-size: 17px;
+            font-weight: 700;
+            color: #444;
+            line-height: 1.7;
+            padding-left: 15px;
+            border-left: 4px solid var(--orange);
+        }
+
+        /* FV Right (Image Area) */
+        .fv__right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            position: relative;
+        }
+
+        .fv__person-img {
+            max-width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+            border-bottom: 4px solid var(--orange);
+        }
+
         /* CTA Area in FV */
         .cta-box {
             background: #fff;
             border: 4px solid var(--green);
             border-radius: 12px;
-            padding: 30px;
+            padding: 30px 30px 20px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: var(--max-width);
+            margin: -40px auto 30px;
             position: relative;
+            z-index: 10;
         }
 
         .cta-box__title {
@@ -301,6 +326,14 @@
         .cta-box__phone svg {
             width: 40px;
             height: 40px;
+        }
+
+        .cta-micro-copy {
+            text-align: center;
+            font-size: 14px;
+            font-weight: 700;
+            color: #d32f2f;
+            margin-bottom: 10px;
         }
 
         .cta-box__time {
@@ -809,6 +842,41 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            .fv__inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .fv__left {
+                max-width: 100%;
+            }
+
+            .fv__badges {
+                justify-content: center;
+            }
+
+            .fv__sub {
+                text-align: left;
+                padding-left: 10px;
+            }
+
+            .cta-box {
+                margin-top: 20px;
+                padding: 30px 20px 20px;
+            }
+
+            .cta-box__phone {
+                font-size: 36px;
+            }
+
+            .cta-micro-copy {
+                font-size: 12px;
+            }
+
+            .cta-box__btn {
+                font-size: 18px;
+            }
+
             .profile-box {
                 flex-direction: column;
                 text-align: center;
@@ -927,38 +995,59 @@
     </header>
 
     <main>
-        <!-- FV (Hero) -->
+        <!-- Hero Section (FV) -->
         <section class="fv">
-            <div class="fv__bg"></div>
             <div class="fv__inner">
-                <div class="fv__badges">
-                    <div class="fv__badge"><span>👑</span> ご相談・お見積り無料</div>
-                    <div class="fv__badge fv__badge--gold"><span>🏅</span> Google口コミ評価 ★5.0</div>
-                </div>
-
-                <div class="fv__catch-box">
-                    <h1 class="fv__catch">膨大な時間がかかる遺品整理。<br>おひとりで悩まず、プロにご相談ください。</h1>
-                    <p class="fv__sub">ハートフルクリーンは実績豊富。仕分け、買取、回収も丸ごとお任せ。</p>
-                </div>
-
-                <div class="cta-box">
-                    <div class="text-center">
-                        <div class="cta-box__title">今すぐ<span class="text-yellow bold">無料電話</span>で相談する</div>
-                        <a href="tel:0742268496" class="cta-box__phone">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                            0742-26-8496
-                        </a>
-                        <div class="cta-box__time">受付時間 7:00〜22:00（年中無休）</div>
-                        <a href="https://line.me/R/ti/p/@195brsjr" class="cta-box__btn">
-                            写真を撮って送るだけ！💬 LINE無料見積り
-                        </a>
+                <!-- Left: Text Content -->
+                <div class="fv__left">
+                    <div class="fv__badges">
+                        <div class="fv__badge fv__badge--gold"><span>🏅</span> Google口コミ評価 ★5.0</div>
+                        <div class="fv__badge fv__badge--shield"><span>🛡️</span> <b>安心</b> コンプライアンス徹底</div>
                     </div>
+
+                    <div class="fv__catch-box">
+                        <h1 class="fv__catch">
+                            遠方で片付けに行けない。<br>
+                            荷物が多すぎて手がつけられない…<br>
+                            そのご負担、<strong class="text-orange">元警察官</strong>の私たちが<br>
+                            すべて背負います。
+                        </h1>
+                        <p class="fv__sub">
+                            仕分けから不用品の買取、搬出、清掃まで、すべて丸投げでOK。<br>徹底した秘密厳守と法令遵守で、ご遺族の心に寄り添う遺品整理をお約束します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right: Profile Image -->
+                <div class="fv__right">
+                    <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="元警察官の代表 藤田" class="fv__person-img">
                 </div>
             </div>
         </section>
+
+        <!-- CTA Box (Overlapping FV and next section) -->
+        <div class="container">
+            <div class="cta-box">
+                <div class="text-center">
+                    <div class="cta-box__title">今すぐ<span class="text-yellow bold">無料電話</span>で相談する</div>
+                    <div class="cta-micro-copy">※お見積り後の追加料金は【一切】発生いたしません！</div>
+                    <div class="cta-micro-copy">※どんなに散らかっていてもそのままの状態で大丈夫です</div>
+                    <a href="tel:0742268496" class="cta-box__phone">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        0742-26-8496
+                    </a>
+                    <div class="cta-box__time">受付時間 7:00〜22:00（年中無休）</div>
+                    <div class="cta-micro-copy" style="color: #666; margin-bottom: 5px; font-weight: 500;">
+                        無理な勧誘はいたしません。相見積もりも大歓迎です！</div>
+                    <a href="https://line.me/R/ti/p/@195brsjr" class="cta-box__btn">
+                        写真を撮って送るだけ！最短15分で概算見積り💬 無料LINE相談
+                    </a>
+                </div>
+            </div>
+        </div>
 
         <!-- Profile Section -->
         <section class="sec-profile">
