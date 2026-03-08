@@ -2,2336 +2,1143 @@
 <html lang="ja">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>ハートフルクリーン｜奈良の遺品整理・生前整理・特殊清掃</title>
-  <meta name="description" content="元警察官が代表を務める奈良の遺品整理・生前整理・特殊清掃。追加料金ゼロ、Google口コミ★5.0。奈良・大阪を中心に近畿一円対応。">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;600&family=Inter:wght@300;400;600;700&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --c-main: #2A8C82;
-      --c-main-light: #E8F6F4;
-      --c-main-dark: #1E6B63;
-      --c-accent: #F67B2F;
-      --c-accent-hover: #E06A1F;
-      --c-green: #06C755;
-      --c-green-hover: #05b04b;
-      --c-gold: #E8B931;
-      --bg: #FAFCFB;
-      --bg-white: #FFF;
-      --bg-soft: #F0F5F3;
-      --text: #2D3436;
-      --text-sub: #637074;
-      --text-light: #99A5A8;
-      --border: rgba(0, 0, 0, .06);
-      --r: 10px;
-      --r-lg: 18px;
-      --shadow: 0 4px 24px rgba(42, 140, 130, .08);
-      --shadow-lg: 0 12px 40px rgba(0, 0, 0, .1);
-      --fh: 'Noto Serif JP', serif;
-      --fb: 'Noto Sans JP', sans-serif;
-      --fn: 'Inter', sans-serif;
-      --ease: cubic-bezier(.16, 1, .3, 1);
-      --max: 1080px;
-      --pad: clamp(20px, 5vw, 56px);
-    }
-
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 72px
-    }
-
-    body {
-      font-family: var(--fb);
-      font-size: 16px;
-      line-height: 1.8;
-      color: var(--text);
-      background: var(--bg);
-      -webkit-font-smoothing: antialiased;
-      padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px))
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block
-    }
-
-    .w {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad)
-    }
-
-    /* ---------- HEADER ---------- */
-    .hd {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, .92);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      height: 64px;
-      transition: box-shadow .3s
-    }
-
-    .hd.scrolled {
-      box-shadow: 0 2px 20px rgba(0, 0, 0, .06)
-    }
-
-    .hd__in {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 var(--pad);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 100%
-    }
-
-    .hd__logo img {
-      height: 36px
-    }
-
-    .hd__r {
-      display: flex;
-      align-items: center;
-      gap: 16px
-    }
-
-    .hd__tel {
-      font-family: var(--fn);
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 700;
-      color: var(--c-main);
-      letter-spacing: .02em
-    }
-
-    .hd__tel a {
-      color: inherit
-    }
-
-    .hd__sub {
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-top: -2px
-    }
-
-    .hd__btns {
-      display: flex;
-      gap: 6px
-    }
-
-    .hd__btn {
-      width: 42px;
-      height: 42px;
-      border-radius: var(--r);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background .3s
-    }
-
-    .hd__btn--tel {
-      background: var(--c-accent);
-      color: #fff
-    }
-
-    .hd__btn--line {
-      background: var(--c-green);
-      color: #fff
-    }
-
-    .hd__btn:hover {
-      opacity: .85
-    }
-
-    /* ---------- HERO ---------- */
-    .hero {
-      margin-top: 64px;
-      position: relative;
-      overflow: hidden
-    }
-
-    .hero__img {
-      width: 100%;
-      max-width: 960px;
-      margin: 0 auto;
-      display: block
-    }
-
-    .hero__badges {
-      position: absolute;
-      top: 5%;
-      left: 5%;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 2;
-    }
-
-    .hero__badge-item {
-      background: linear-gradient(135deg, #FFDF73, #D4AF37);
-      color: #333;
-      padding: 8px 16px;
-      border-radius: 50px;
-      font-weight: 700;
-      font-size: 14px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      border: 2px solid #fff;
-    }
-
-    .hero__microcopy {
-      color: #fff;
-      font-size: 12px;
-      text-align: center;
-      margin-bottom: 8px;
-      font-weight: 700;
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
-      letter-spacing: 0.05em;
-    }
-
-    .hero__cta-wrap {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 24px var(--pad);
-      background: linear-gradient(to top, rgba(0, 0, 0, .7) 0%, transparent 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-    }
-
-    .hero__cta-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      width: 100%;
-    }
-
-    .hero__cta-btns .btn {
-      min-width: 220px;
-    }
-
-    @media(max-width:600px) {
-      .hero__badges {
-        top: 3%;
-        left: 3%;
-        transform: scale(0.9);
-        transform-origin: top left;
-      }
-
-      .hero__cta-wrap {
-        display: none;
-      }
-
-      .hero__cta-btns {
-        flex-direction: column;
-      }
-
-      .hero__cta-btns .btn {
-        width: 100%;
-        min-width: auto;
-      }
-    }
-
-    /* ---------- BUTTONS ---------- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 16px 32px;
-      border-radius: 50px;
-      font-family: var(--fb);
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: all .3s var(--ease);
-      min-height: 52px;
-      letter-spacing: .03em
-    }
-
-    .btn--accent {
-      background: var(--c-accent);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(246, 123, 47, .35)
-    }
-
-    .btn--accent:hover {
-      background: var(--c-accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 28px rgba(246, 123, 47, .4)
-    }
-
-    .btn--green {
-      background: var(--c-green);
-      color: #fff;
-      box-shadow: 0 4px 20px rgba(6, 199, 85, .3)
-    }
-
-    .btn--green:hover {
-      background: var(--c-green-hover);
-      transform: translateY(-2px)
-    }
-
-    .btn--white {
-      background: #fff;
-      color: var(--c-main);
-      border: 2px solid var(--c-main)
-    }
-
-    .btn--white:hover {
-      background: var(--c-main);
-      color: #fff
-    }
-
-    .btn--lg {
-      padding: 20px 40px;
-      font-size: 18px
-    }
-
-    /* ---------- SECTION COMMON ---------- */
-    .sec {
-      padding: clamp(56px, 8vw, 100px) 0
-    }
-
-    .sec--white {
-      background: var(--bg-white)
-    }
-
-    .sec--soft {
-      background: var(--bg-soft)
-    }
-
-    .sec--main {
-      background: var(--c-main);
-      color: #fff
-    }
-
-    .sec--photo {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      color: #fff
-    }
-
-    .sec--photo::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, .55)
-    }
-
-    .sec--photo>.w {
-      position: relative;
-      z-index: 1
-    }
-
-    .sec-label {
-      display: inline-block;
-      font-family: var(--fn);
-      font-size: 12px;
-      letter-spacing: .2em;
-      text-transform: uppercase;
-      color: var(--c-main);
-      background: var(--c-main-light);
-      padding: 6px 20px;
-      border-radius: 30px;
-      margin-bottom: 12px
-    }
-
-    .sec-label--light {
-      color: #fff;
-      background: rgba(255, 255, 255, .15)
-    }
-
-    .sec-title {
-      font-family: var(--fh);
-      font-size: clamp(26px, 4vw, 40px);
-      font-weight: 600;
-      line-height: 1.35;
-      letter-spacing: .05em;
-      margin-bottom: 8px
-    }
-
-    .sec-sub {
-      font-size: 15px;
-      color: var(--text-sub);
-      max-width: 560px
-    }
-
-    .sec-head {
-      text-align: center;
-      margin-bottom: clamp(32px, 5vw, 56px)
-    }
-
-    .sec-head .sec-sub {
-      margin: 0 auto
-    }
-
-    .sec--main .sec-label {
-      color: var(--c-main);
-      background: #fff
-    }
-
-    .sec--main .sec-sub {
-      color: rgba(255, 255, 255, .7)
-    }
-
-    /* ---------- BADGES ---------- */
-    .badges {
-      display: flex;
-      justify-content: center;
-      gap: clamp(16px, 3vw, 32px);
-      flex-wrap: wrap;
-      padding: clamp(32px, 5vw, 56px) 0;
-      background: var(--bg-white)
-    }
-
-    .badge {
-      text-align: center;
-      flex: 0 0 130px
-    }
-
-    .badge__icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 10px;
-      background: linear-gradient(145deg, #f7d96e, #e8b931);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 16px rgba(232, 185, 49, .3);
-      position: relative
-    }
-
-    .badge__icon::after {
-      content: '';
-      position: absolute;
-      inset: 3px;
-      border: 2px solid rgba(255, 255, 255, .4);
-      border-radius: 50%
-    }
-
-    .badge__icon svg {
-      width: 28px;
-      height: 28px;
-      color: #5a4000
-    }
-
-    .badge__label {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-      line-height: 1.35
-    }
-
-    .badge__sub {
-      font-size: 11px;
-      color: var(--text-sub);
-      margin-top: 2px
-    }
-
-    /* ---------- PROBLEM ---------- */
-    .problem__list {
-      max-width: 640px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px
-    }
-
-    .problem__item {
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      padding: 16px 20px;
-      background: var(--bg-white);
-      border-radius: var(--r);
-      font-size: 15px;
-      border-left: 3px solid var(--c-main);
-      box-shadow: 0 1px 8px rgba(0, 0, 0, .04)
-    }
-
-    .problem__num {
-      font-family: var(--fn);
-      font-size: 12px;
-      font-weight: 700;
-      color: #fff;
-      width: 22px;
-      height: 22px;
-      background: var(--c-main);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0
-    }
-
-    .problem__close {
-      text-align: center;
-      margin-top: 32px
-    }
-
-    .problem__close-text {
-      font-family: var(--fh);
-      font-size: clamp(18px, 2.5vw, 26px);
-      color: var(--c-main);
-      font-weight: 600
-    }
-
-    /* ---------- REASONS ---------- */
-    .reasons__grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      max-width: 900px;
-      margin: 0 auto
-    }
-
-    .rc {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 0 24px;
-      background: var(--bg-white);
-      border-radius: var(--r-lg);
-      padding: clamp(24px, 3vw, 40px);
-      box-shadow: var(--shadow);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden
-    }
-
-    .rc::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      width: 5px;
-      background: var(--c-main)
-    }
-
-    .rc__n {
-      font-family: var(--fn);
-      font-size: clamp(44px, 6vw, 64px);
-      font-weight: 700;
-      color: var(--c-main-light);
-      line-height: 1;
-      grid-row: 1/3;
-      align-self: start
-    }
-
-    .rc__t {
-      font-family: var(--fh);
-      font-size: clamp(17px, 2vw, 22px);
-      font-weight: 600;
-      color: var(--text);
-      margin-bottom: 8px;
-      line-height: 1.4
-    }
-
-    .rc__b {
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text-sub)
-    }
-
-    .rc__b p+p {
-      margin-top: 6px
-    }
-
-    @media(max-width:600px) {
-      .rc {
-        grid-template-columns: 1fr;
-        gap: 16px
-      }
-
-      .rc__n {
-        grid-row: auto;
-        font-size: 32px
-      }
-
-      .rc__img>div {
-        height: auto !important;
-        aspect-ratio: 16/9;
-      }
-    }
-
-    /* ---------- CTA BAND ---------- */
-    .cta-band {
-      padding: clamp(40px, 6vw, 72px) 0;
-      text-align: center
-    }
-
-    .cta-band__tel {
-      font-family: var(--fn);
-      font-size: clamp(28px, 5vw, 44px);
-      font-weight: 300;
-      letter-spacing: .04em;
-      margin-bottom: 4px
-    }
-
-    .cta-band__tel a {
-      color: inherit
-    }
-
-    .cta-band__hours {
-      font-size: 14px;
-      margin-bottom: 24px
-    }
-
-    .cta-band__btns {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px
-    }
-
-    .cta-band__btns .btn {
-      width: 100%;
-      max-width: 360px
-    }
-
-    /* ---------- REPRESENTATIVE ---------- */
-    .rep__in {
-      display: grid;
-      grid-template-columns: 240px 1fr;
-      gap: 40px;
-      align-items: start;
-      max-width: 860px;
-      margin: 0 auto
-    }
-
-    .rep__photo img {
-      width: 100%;
-      border-radius: 50%;
-      aspect-ratio: 1;
-      object-fit: cover;
-      box-shadow: var(--shadow)
-    }
-
-    .rep__label {
-      font-family: var(--fn);
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 10px
-    }
-
-    .rep__heading {
-      font-family: var(--fh);
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 600;
-      color: var(--text);
-      line-height: 1.4;
-      margin-bottom: 20px
-    }
-
-    .rep__sig {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-bottom: 20px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border)
-    }
-
-    .rep__role {
-      font-size: 12px;
-      color: var(--text-sub)
-    }
-
-    .rep__name {
-      font-family: var(--fh);
-      font-size: 18px;
-      font-weight: 600;
-      color: var(--c-main)
-    }
-
-    .rep__text p {
-      font-size: 15px;
-      line-height: 1.9;
-      margin-bottom: 10px
-    }
-
-    @media(max-width:768px) {
-      .rep__in {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 24px
-      }
-
-      .rep__photo img,
-      .rep__photo>div {
-        max-width: 240px;
-        height: auto !important;
-        aspect-ratio: 1;
-        margin: 0 auto;
-      }
-
-      .rep__sig {
-        justify-content: center
-      }
-    }
-
-    /* ---------- SERVICES ---------- */
-    .sv__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 16px;
-      max-width: 960px;
-      margin: 0 auto
-    }
-
-    .sv-card {
-      background: var(--bg-white);
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, .05);
-      transition: transform .4s var(--ease), box-shadow .4s var(--ease);
-      border: 1px solid var(--border)
-    }
-
-    .sv-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-lg)
-    }
-
-    .sv-card__img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover
-    }
-
-    .sv-card__body {
-      padding: 18px
-    }
-
-    .sv-card__name {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 6px
-    }
-
-    .sv-card__desc {
-      font-size: 13px;
-      color: var(--text-sub);
-      line-height: 1.6
-    }
-
-    @media(max-width:500px) {
-      .sv__grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px
-      }
-
-      .sv-card__img {
-        height: 110px
-      }
-
-      .sv-card__body {
-        padding: 12px
-      }
-
-      .sv-card__name {
-        font-size: 14px
-      }
-    }
-
-    /* ---------- PRICING ---------- */
-    .price-table {
-      max-width: 640px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      width: 100%
-    }
-
-    .price-table th,
-    .price-table td {
-      padding: 14px 16px;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border);
-      text-align: left
-    }
-
-    .price-table th {
-      font-weight: 500;
-      color: var(--c-main);
-      background: var(--c-main-light)
-    }
-
-    .price-table .pv {
-      font-family: var(--fn);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--c-main)
-    }
-
-    .price-note {
-      font-size: 13px;
-      color: var(--text-sub);
-      text-align: center;
-      margin-top: 16px
-    }
-
-    /* ---------- TESTIMONIALS ---------- */
-    .tg {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-      max-width: 900px;
-      margin: 0 auto
-    }
-
-    .tc {
-      background: var(--bg-white);
-      border-radius: var(--r-lg);
-      padding: 24px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, .04);
-      border: 1px solid var(--border)
-    }
-
-    .tc__stars {
-      display: flex;
-      gap: 2px;
-      margin-bottom: 10px
-    }
-
-    .tc__stars svg {
-      width: 16px;
-      height: 16px
-    }
-
-    .tc__text {
-      font-size: 14px;
-      line-height: 1.8;
-      margin-bottom: 8px
-    }
-
-    .tc__meta {
-      font-size: 12px;
-      color: var(--text-light)
-    }
-
-    /* ---------- FLOW ---------- */
-    .fl__steps {
-      max-width: 680px;
-      margin: 0 auto
-    }
-
-    .fl__step {
-      display: grid;
-      grid-template-columns: 52px 1fr;
-      gap: 18px;
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-      align-items: start
-    }
-
-    .fl__step:last-child {
-      border-bottom: none
-    }
-
-    .fl__n {
-      width: 44px;
-      height: 44px;
-      background: var(--c-main);
-      color: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--fn);
-      font-size: 17px;
-      font-weight: 700
-    }
-
-    .fl__t {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 4px
-    }
-
-    .fl__d {
-      font-size: 14px;
-      color: var(--text-sub);
-      line-height: 1.7
-    }
-
-    /* ---------- FAQ ---------- */
-    .fq__list {
-      max-width: 680px;
-      margin: 0 auto
-    }
-
-    .fq__item {
-      border-bottom: 1px solid var(--border)
-    }
-
-    .fq__q {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 18px 4px;
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--text);
-      background: none;
-      border: none;
-      cursor: pointer;
-      text-align: left;
-      font-family: var(--fb);
-      line-height: 1.6
-    }
-
-    .fq__q::after {
-      content: '+';
-      font-size: 22px;
-      font-weight: 300;
-      color: var(--c-main);
-      transition: transform .3s var(--ease);
-      flex-shrink: 0
-    }
-
-    .fq__item.open .fq__q::after {
-      transform: rotate(45deg)
-    }
-
-    .fq__a {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height .4s var(--ease)
-    }
-
-    .fq__item.open .fq__a {
-      max-height: 300px
-    }
-
-    .fq__a-in {
-      padding: 0 4px 18px;
-      font-size: 14px;
-      line-height: 1.8;
-      color: var(--text-sub)
-    }
-
-    /* ---------- COMPANY ---------- */
-    .co-table {
-      max-width: 640px;
-      margin: 0 auto;
-      width: 100%;
-      border-collapse: collapse
-    }
-
-    .co-table th,
-    .co-table td {
-      padding: 12px 14px;
-      font-size: 14px;
-      border-bottom: 1px solid var(--border);
-      text-align: left
-    }
-
-    .co-table th {
-      width: 120px;
-      font-weight: 500;
-      color: var(--c-main);
-      background: var(--c-main-light)
-    }
-
-    /* ---------- FOOTER ---------- */
-    .ft {
-      padding: 24px 0;
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-light);
-      background: var(--bg-white);
-      border-top: 1px solid var(--border)
-    }
-
-    /* ---------- FLOATING CTA ---------- */
-    .float {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 99;
-      background: rgba(255, 255, 255, .96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-top: 1px solid var(--border);
-      padding: 8px 16px;
-      padding-bottom: max(8px, env(safe-area-inset-bottom));
-      box-shadow: 0 -2px 12px rgba(0, 0, 0, .05);
-      transform: translateY(100%);
-      transition: transform .3s var(--ease)
-    }
-
-    .float__in {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-      max-width: 420px;
-      margin: 0 auto
-    }
-
-    .float__btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 12px;
-      border-radius: 50px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      min-height: 46px
-    }
-
-    .float__btn--tel {
-      background: var(--c-accent)
-    }
-
-    .float__btn--line {
-      background: var(--c-green)
-    }
-
-    /* ---------- ANIMATION ---------- */
-    .fi {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease)
-    }
-
-    .fi.v {
-      opacity: 1;
-      transform: translateY(0)
-    }
-
-    /* ---------- A. MARQUEE ---------- */
-    .marquee {
-      overflow: hidden;
-      background: var(--c-main);
-      padding: 10px 0;
-      white-space: nowrap
-    }
-
-    .marquee__track {
-      display: inline-flex;
-      animation: marquee 20s linear infinite
-    }
-
-    .marquee__item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 0 32px;
-      font-size: 14px;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: .05em
-    }
-
-    .marquee__item svg {
-      width: 16px;
-      height: 16px;
-      flex-shrink: 0;
-      fill: #FFD700
-    }
-
-    @keyframes marquee {
-      0% {
-        transform: translateX(0)
-      }
-
-      100% {
-        transform: translateX(-50%)
-      }
-    }
-
-    /* ---------- B. GRADIENT TEXT ---------- */
-    .grad-text {
-      background: linear-gradient(135deg, var(--c-main) 0%, #3A86B5 50%, var(--c-main-dark) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text
-    }
-
-    /* ---------- C. FLOATING BLOBS ---------- */
-    .blob-wrap {
-      position: relative;
-      overflow: hidden
-    }
-
-    .blob {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(80px);
-      opacity: .15;
-      pointer-events: none;
-      z-index: 0
-    }
-
-    .blob--1 {
-      width: 400px;
-      height: 400px;
-      background: var(--c-main);
-      top: -100px;
-      right: -100px;
-      animation: blobFloat 12s ease-in-out infinite
-    }
-
-    .blob--2 {
-      width: 300px;
-      height: 300px;
-      background: #3A86B5;
-      bottom: -80px;
-      left: -80px;
-      animation: blobFloat 16s ease-in-out infinite reverse
-    }
-
-    .blob--3 {
-      width: 250px;
-      height: 250px;
-      background: var(--c-gold);
-      top: 40%;
-      left: 60%;
-      animation: blobFloat 14s ease-in-out infinite 3s
-    }
-
-    @keyframes blobFloat {
-
-      0%,
-      100% {
-        transform: translate(0, 0) scale(1)
-      }
-
-      33% {
-        transform: translate(30px, -20px) scale(1.05)
-      }
-
-      66% {
-        transform: translate(-20px, 15px) scale(.95)
-      }
-    }
-
-    .blob-wrap>.w {
-      position: relative;
-      z-index: 1
-    }
-
-    /* ---------- D. PARALLAX ---------- */
-    .parallax-hero {
-      background-attachment: fixed;
-      background-size: cover;
-      background-position: center
-    }
-
-    @media(max-width:768px) {
-      .parallax-hero {
-        background-attachment: scroll
-      }
-    }
-
-    /* ---------- E. ANIMATION VARIANTS ---------- */
-    .fi-l {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease)
-    }
-
-    .fi-r {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease)
-    }
-
-    .fi-s {
-      opacity: 0;
-      transform: scale(.85);
-      transition: opacity .6s var(--ease), transform .6s var(--ease)
-    }
-
-    .fi-l.v,
-    .fi-r.v,
-    .fi-s.v {
-      opacity: 1;
-      transform: none
-    }
-
-    /* ---------- F. GLOW CARD BORDER ---------- */
-    .glow-card {
-      position: relative;
-      border: 1px solid transparent;
-      background: var(--bg-white);
-      transition: all .4s var(--ease)
-    }
-
-    .glow-card::before {
-      content: '';
-      position: absolute;
-      inset: -1px;
-      border-radius: inherit;
-      background: conic-gradient(from 0deg, var(--c-main), #3A86B5, var(--c-gold), var(--c-main));
-      opacity: 0;
-      transition: opacity .4s var(--ease);
-      z-index: -1;
-      padding: 2px;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude
-    }
-
-    .glow-card:hover::before {
-      opacity: 1
-    }
-
-    .glow-card:hover {
-      box-shadow: 0 8px 32px rgba(42, 140, 130, .15);
-      transform: translateY(-4px)
-    }
-
-    /* ---------- 2. COUNTER ---------- */
-    .counters {
-      display: flex;
-      justify-content: center;
-      gap: clamp(24px, 4vw, 48px);
-      flex-wrap: wrap;
-      padding: clamp(40px, 6vw, 72px) 0
-    }
-
-    .counter {
-      text-align: center;
-      flex: 0 0 140px
-    }
-
-    .counter__val {
-      font-family: var(--fn);
-      font-size: clamp(36px, 5vw, 56px);
-      font-weight: 700;
-      line-height: 1.1
-    }
-
-    .counter__unit {
-      font-size: clamp(14px, 2vw, 20px);
-      font-weight: 400
-    }
-
-    .counter__label {
-      font-size: 13px;
-      color: var(--text-sub);
-      margin-top: 4px
-    }
-
-    /* ---------- 3. BEFORE/AFTER SLIDER ---------- */
-    .ba {
-      max-width: 700px;
-      margin: 0 auto
-    }
-
-    .ba__wrap {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--r-lg);
-      box-shadow: var(--shadow-lg);
-      aspect-ratio: 16/10;
-      background: #eee
-    }
-
-    .ba__img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover
-    }
-
-    .ba__before {
-      clip-path: inset(0 50% 0 0)
-    }
-
-    .ba__slider {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      width: 4px;
-      background: #fff;
-      cursor: ew-resize;
-      z-index: 2;
-      transform: translateX(-50%)
-    }
-
-    .ba__slider::after {
-      content: '⇔';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .2)
-    }
-
-    .ba__labels {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 12px
-    }
-
-    .ba__label {
-      font-size: 13px;
-      font-weight: 600;
-      color: var(--text-sub);
-      letter-spacing: .08em
-    }
-
-    /* ---------- 4. COMPARE TABLE ---------- */
-    .cmp {
-      max-width: 700px;
-      margin: 0 auto;
-      border-collapse: collapse;
-      width: 100%;
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow)
-    }
-
-    .cmp th,
-    .cmp td {
-      padding: 14px 16px;
-      font-size: 14px;
-      text-align: center;
-      border-bottom: 1px solid var(--border)
-    }
-
-    .cmp thead th {
-      background: var(--c-main);
-      color: #fff;
-      font-weight: 600
-    }
-
-    .cmp thead th:first-child {
-      background: var(--bg-soft);
-      color: var(--text)
-    }
-
-    .cmp .cmp-hl {
-      background: var(--c-main-light);
-      font-weight: 700;
-      color: var(--c-main)
-    }
-
-    .cmp .good {
-      color: var(--c-main);
-      font-weight: 700
-    }
-
-    .cmp .bad {
-      color: var(--text-light)
-    }
-
-    .cmp tbody tr:last-child td,
-    .cmp tbody tr:last-child th {
-      border-bottom: none
-    }
-
-    /* ---------- 5. URGENCY BADGE ---------- */
-    .urgency {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #fff;
-      border: 2px solid var(--c-main);
-      border-radius: 50px;
-      padding: 10px 24px;
-      box-shadow: var(--shadow);
-      animation: urgencyPulse 2s ease-in-out infinite
-    }
-
-    .urgency__dot {
-      width: 10px;
-      height: 10px;
-      background: var(--c-green);
-      border-radius: 50%;
-      animation: dotPulse 1.5s ease-in-out infinite
-    }
-
-    .urgency__text {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text)
-    }
-
-    @keyframes urgencyPulse {
-
-      0%,
-      100% {
-        box-shadow: 0 4px 24px rgba(42, 140, 130, .08)
-      }
-
-      50% {
-        box-shadow: 0 4px 24px rgba(42, 140, 130, .2)
-      }
-    }
-
-    @keyframes dotPulse {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .4
-      }
-    }
-
-    /* ---------- 1. ALTERNATING LAYOUT ---------- */
-    .alt-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: center;
-      max-width: 900px;
-      margin: 0 auto
-    }
-
-    .alt-grid--rev {
-      direction: rtl
-    }
-
-    .alt-grid--rev>* {
-      direction: ltr
-    }
-
-    .alt-grid__img {
-      border-radius: var(--r-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow)
-    }
-
-    .alt-grid__img img {
-      width: 100%;
-      display: block
-    }
-
-    @media(max-width:768px) {
-
-      .alt-grid,
-      .alt-grid--rev {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        direction: ltr
-      }
-    }
-
-    @media(prefers-reduced-motion:reduce) {
-
-      .fi,
-      .fi-l,
-      .fi-r,
-      .fi-s {
-        opacity: 1;
-        transform: none;
-        transition: none
-      }
-
-      .marquee__track {
-        animation: none
-      }
-
-      .blob {
-        animation: none
-      }
-
-      .urgency {
-        animation: none
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遺品整理 | 関西地域密着 | ハートフルクリーン (B-Pattern)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        /* CSS Variables & Resets */
+        :root {
+            --orange: #f37b2d;
+            --orange-dark: #e0691d;
+            --green: #008f00;
+            /* おうち整理士に寄せた濃いめの緑 */
+            --green-light: #25b425;
+            --yellow: #fff33f;
+            --text: #333333;
+            --bg-gray: #f5f5f5;
+            --bg-light: #fef9f2;
+            --bg-accent: #f0f8ff;
+            --font-base: 'Noto Sans JP', sans-serif;
+            --max-width: 1000px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-base);
+            color: var(--text);
+            line-height: 1.6;
+            background-color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .text-orange {
+            color: var(--orange);
+        }
+
+        .text-green {
+            color: var(--green);
+        }
+
+        .bold {
+            font-weight: 700;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+            padding: 10px 0;
+        }
+
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo img {
+            height: 46px;
+        }
+
+        .header__contact {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header__tel {
+            text-align: right;
+        }
+
+        .header__tel-num {
+            font-size: 26px;
+            font-weight: 900;
+            color: var(--green);
+            line-height: 1;
+            margin-bottom: 2px;
+            letter-spacing: 0.05em;
+        }
+
+        .header__tel-time {
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            gap: 6px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn--orange {
+            background: var(--orange);
+        }
+
+        .btn--orange:hover {
+            background: var(--orange-dark);
+            color: #fff;
+        }
+
+        .btn--green {
+            background: var(--green-light);
+        }
+
+        .btn--green:hover {
+            background: var(--green);
+            color: #fff;
+        }
+
+        /* Main Content Padding for Header */
+        main {
+            padding-top: 70px;
+        }
+
+        /* Hero Section (FV) */
+        .fv {
+            position: relative;
+            background: var(--bg-gray);
+            /* Once image is generated, this will be replaced */
+            padding: 50px 0 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .fv__bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('b_hero_bg.webp') center/cover no-repeat;
+            opacity: 0.2;
+            /* Subdued background for readability */
+            z-index: 0;
+        }
+
+        .fv__inner {
+            position: relative;
+            z-index: 1;
+            max-width: var(--max-width);
+            width: 100%;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .fv__catch-box {
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .fv__catch {
+            font-size: 32px;
+            font-weight: 900;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #111;
+            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+        }
+
+        .fv__sub {
+            font-size: 16px;
+            font-weight: 700;
+            background: rgba(255, 255, 255, 0.9);
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid #ddd;
+        }
+
+        .fv__badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .fv__badge {
+            background: #fff;
+            color: var(--text);
+            font-weight: 700;
+            padding: 8px 16px;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 16px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
+
+        .fv__badge span {
+            color: var(--orange);
+            font-size: 20px;
+        }
+
+        .fv__badge--gold {
+            background: linear-gradient(to right, #fffdf2, #fff4cc);
+            border: 1px solid #e6c86e;
+        }
+
+        /* CTA Area in FV */
+        .cta-box {
+            background: #fff;
+            border: 4px solid var(--green);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .cta-box__title {
+            background: var(--green);
+            color: #fff;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 8px 24px;
+            text-align: center;
+            border-radius: 40px;
+            margin-bottom: 20px;
+            display: inline-block;
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        .cta-box__phone {
+            font-size: 56px;
+            font-weight: 900;
+            color: var(--green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            line-height: 1;
+            margin-bottom: 15px;
+            margin-top: 15px;
+            transition: opacity 0.3s;
+        }
+
+        .cta-box__phone:hover {
+            opacity: 0.8;
+        }
+
+        .cta-box__phone svg {
+            width: 40px;
+            height: 40px;
+        }
+
+        .cta-box__time {
+            font-size: 16px;
+            font-weight: 700;
+            color: #555;
+            margin-bottom: 24px;
+        }
+
+        .cta-box__btn {
+            display: block;
+            background: var(--orange);
+            color: #fff;
+            font-size: 24px;
+            font-weight: 900;
+            text-align: center;
+            padding: 18px;
+            border-radius: 8px;
+            box-shadow: 0 6px 0 var(--orange-dark);
+            transition: all 0.2s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box__btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg);
+            animation: shine 3s infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            20% {
+                left: 200%;
+            }
+
+            100% {
+                left: 200%;
+            }
+        }
+
+        .cta-box__btn:hover {
+            transform: translateY(3px);
+            box-shadow: 0 3px 0 var(--orange-dark);
+            color: #fff;
+        }
+
+        /* Appraiser Section Skeleton */
+        .sec-appraiser {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .sec-title {
+            font-size: 32px;
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+
+        .sec-title span {
+            color: var(--orange);
+        }
+
+        .appraiser-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .appraiser-grid img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+        }
+
+        .appraiser-text {
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.8;
+            display: inline-block;
+            margin: 0 auto;
+        }
+
+        .appraiser-text span {
+            background: linear-gradient(transparent 70%, #fff4cc 70%);
+            padding: 0 4px;
+        }
+
+        .sec-appraiser .container {
+            text-align: center;
+        }
+
+        /* Category Section */
+        .sec-category {
+            background: var(--bg-gray);
+            padding: 60px 0;
+        }
+
+        .category-sub {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .cat-item {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .cat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cat-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        /* Reason Section */
+        .sec-reason {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .reason-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .reason-card {
+            border: 2px solid var(--orange);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .reason-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .reason-card__text {
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            flex-grow: 1;
+            position: relative;
+        }
+
+        .reason-card__num {
+            background: var(--orange);
+            color: #fff;
+            font-weight: 900;
+            font-size: 14px;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            letter-spacing: 0.1em;
+        }
+
+        .reason-card__text h3 {
+            margin: 15px 0 0;
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        /* Pricing Section */
+        .sec-price {
+            background: var(--bg-light);
+            padding: 60px 0;
+        }
+
+        .price-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .price-card {
+            background: #fff;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            text-align: center;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .price-card__head {
+            background: #333;
+            color: #fff;
+            font-weight: 700;
+            padding: 15px;
+            font-size: 20px;
+        }
+
+        .price-card__body {
+            padding: 30px 20px;
+            color: var(--orange);
+        }
+
+        .price-num {
+            font-size: 44px;
+            font-weight: 900;
+            font-family: Arial, sans-serif;
+            letter-spacing: -2px;
+        }
+
+        .price-yen {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        /* Flow Section */
+        .sec-flow {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .flow-steps {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 20px;
+            border-left: 3px solid var(--orange);
+            position: relative;
+        }
+
+        .flow-step {
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .flow-step::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 25px;
+            width: 20px;
+            height: 20px;
+            background: var(--orange);
+            border-radius: 50%;
+            border: 4px solid #fff;
+        }
+
+        .flow-step__num {
+            color: var(--orange);
+            font-weight: 900;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .flow-step h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+
+        .flow-step p {
+            margin: 0;
+            color: #555;
+        }
+
+        /* Voice Section */
+        .sec-voice {
+            background: var(--bg-accent);
+            padding: 60px 0;
+        }
+
+        .voice-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .voice-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .voice-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .voice-card__body {
+            padding: 25px;
+        }
+
+        .voice-card__rating {
+            color: var(--yellow);
+            font-size: 24px;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .voice-card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+            line-height: 1.4;
+            color: var(--text);
+        }
+
+        .voice-card p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .sec-faq {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-q {
+            background: #f9f9f9;
+            padding: 20px 20px 20px 50px;
+            font-weight: 700;
+            font-size: 18px;
+            position: relative;
+            color: var(--text);
+        }
+
+        .faq-q::before {
+            content: 'Q';
+            position: absolute;
+            left: 15px;
+            top: 18px;
+            color: var(--orange);
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .faq-a {
+            padding: 20px 20px 20px 50px;
+            background: #fff;
+            position: relative;
+            color: #555;
+        }
+
+        .faq-a::before {
+            content: 'A';
+            position: absolute;
+            left: 15px;
+            top: 18px;
+            color: var(--green);
+            font-size: 24px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        /* Floating CTA */
+        .floating-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .floating-cta .btn {
+            flex: 1;
+            max-width: 400px;
+            padding: 15px;
+            font-size: 18px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: #fff;
+            padding: 40px 0 20px;
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .footer__logo {
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+        }
+
+        .footer__info {
+            font-size: 14px;
+            color: #bbb;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .footer__copy {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .appraiser-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .appraiser-text {
+                font-size: 16px;
+                text-align: left;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .reason-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .price-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .price-num {
+                font-size: 36px;
+            }
+
+            .voice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .floating-cta .btn {
+                font-size: 14px;
+                padding: 12px 10px;
+            }
+
+            .header__contact {
+                display: none;
+            }
+
+            .fv__catch {
+                font-size: 22px;
+            }
+
+            .fv__badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+
+            .cta-box {
+                padding: 30px 15px 20px;
+            }
+
+            .cta-box__title {
+                font-size: 16px;
+                padding: 6px 16px;
+                top: -18px;
+            }
+
+            .cta-box__phone {
+                font-size: 32px;
+            }
+
+            .cta-box__phone svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .cta-box__btn {
+                font-size: 18px;
+                padding: 15px;
+            }
+
+            .sec-title {
+                font-size: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="hd" id="hd">
-    <div class="hd__in">
-      <a href="#top" class="hd__logo"><img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-whitebg.jpg" alt="ハートフルクリーン"
-          height="36"></a>
-      <div class="hd__r">
-        <div>
-          <div class="hd__tel"><a href="tel:0742268496">0742-26-8496</a></div>
-          <div class="hd__sub">7時〜22時 年中無休</div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__inner">
+            <div class="header__logo">
+                <a href="#"><img src="logo-header.png" alt="ハートフルクリーン"></a>
+            </div>
+            <div class="header__contact">
+                <div class="header__tel">
+                    <div class="header__tel-time">7時〜22時 年中無休</div>
+                    <div class="header__tel-num">0742-26-8496</div>
+                </div>
+                <a href="tel:0742268496" class="btn btn--orange">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    電話で相談
+                </a>
+                <a href="https://line.me/R/ti/p/@195brsjr" class="btn btn--green">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                    </svg>
+                    LINE相談
+                </a>
+            </div>
         </div>
-        <div class="hd__btns">
-          <a href="tel:0742268496" class="hd__btn hd__btn--tel" aria-label="電話"><svg width="18" height="18"
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path
-                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-            </svg></a>
-          <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="hd__btn hd__btn--line"
-            aria-label="LINE"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-              <path
-                d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-            </svg></a>
+    </header>
+
+    <main>
+        <!-- FV (Hero) -->
+        <section class="fv">
+            <div class="fv__bg"></div>
+            <div class="fv__inner">
+                <div class="fv__badges">
+                    <div class="fv__badge"><span>👑</span> ご相談・お見積り無料</div>
+                    <div class="fv__badge fv__badge--gold"><span>🏅</span> Google口コミ評価 ★5.0</div>
+                </div>
+
+                <div class="fv__catch-box">
+                    <h1 class="fv__catch">膨大な時間がかかる遺品整理。<br>おひとりで悩まず、プロにご相談ください。</h1>
+                    <p class="fv__sub">ハートフルクリーンは実績豊富。仕分け、買取、回収も丸ごとお任せ。</p>
+                </div>
+
+                <div class="cta-box">
+                    <div class="text-center">
+                        <div class="cta-box__title">今すぐ<span class="text-yellow bold">無料電話</span>で相談する</div>
+                        <a href="tel:0742268496" class="cta-box__phone">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
+                            0742-26-8496
+                        </a>
+                        <div class="cta-box__time">受付時間 7:00〜22:00（年中無休）</div>
+                        <a href="https://line.me/R/ti/p/@195brsjr" class="cta-box__btn">
+                            写真を撮って送るだけ！💬 LINE無料見積り
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appraiser Section -->
+        <section class="sec-appraiser">
+            <div class="container">
+                <h2 class="sec-title"><span>経験豊富な鑑定士</span>による査定！</h2>
+                <div class="appraiser-grid">
+                    <img src="b_appraiser_watch.png" alt="時計やブランド品の査定">
+                    <img src="b_appraiser_antique.png" alt="骨董品や美術品の査定">
+                </div>
+                <p class="appraiser-text">
+                    <span>骨董品、着物、ブランド品、腕時計、宝石など<br>
+                        の専門知識が必要な商材は、鑑定士がお伺いして査定します。</span><br>
+                    鑑定眼と買取金額は、専門店に決して負けません。
+                </p>
+            </div>
+        </section>
+
+        <!-- Category Section -->
+        <section class="sec-category">
+            <div class="container">
+                <h2 class="sec-title"><span>どんなモノでも</span>買取査定！</h2>
+                <p class="category-sub">ご家庭にある家具、日用雑貨、オーディオ、楽器などを幅広く買取査定できます。</p>
+                <div class="category-grid">
+                    <div class="cat-item">
+                        <img src="b_cat_furniture.png" alt="家具/家電">
+                        <div class="cat-name">家具/家電</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_camera.png" alt="カメラ/パソコン">
+                        <div class="cat-name">カメラ/パソコン</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_instrument.png" alt="楽器">
+                        <div class="cat-name">楽器</div>
+                    </div>
+                    <!-- Additional items will be generated and inserted here -->
+                    <div class="cat-item">
+                        <img src="b_cat_brand.png" alt="ブランド/貴金属">
+                        <div class="cat-name">ブランド/貴金属</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_kimono.png" alt="着物">
+                        <div class="cat-name">着物</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_books.png" alt="骨物/書籍">
+                        <div class="cat-name">古物/書籍</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_audio.png" alt="オーディオ">
+                        <div class="cat-name">オーディオ</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_sports.png" alt="スポーツ用品">
+                        <div class="cat-name">スポーツ用品</div>
+                    </div>
+                    <div class="cat-item">
+                        <img src="b_cat_toys.png" alt="おもちゃ/日用品">
+                        <div class="cat-name">おもちゃ/日用品</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reason Section -->
+        <section class="sec-reason">
+            <div class="container">
+                <h2 class="sec-title"><span>忙しい方でも</span>ご利用しやすい！</h2>
+                <div class="reason-grid">
+                    <div class="reason-card">
+                        <img src="b_reason_1.png" alt="遺品整理士">
+                        <div class="reason-card__text">
+                            <div class="reason-card__num">POINT 01</div>
+                            <h3>経験豊かな<br><span class="text-orange">プロ</span>が対応！</h3>
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <img src="b_reason_2.png" alt="即日・365日対応">
+                        <div class="reason-card__text">
+                            <div class="reason-card__num">POINT 02</div>
+                            <h3>お急ぎでも安心<br><span class="text-orange">即日・365日</span>対応</h3>
+                        </div>
+                    </div>
+                    <div class="reason-card">
+                        <img src="b_reason_3.png" alt="早朝・夜間対応">
+                        <div class="reason-card__text">
+                            <div class="reason-card__num">POINT 03</div>
+                            <h3>ご都合に合わせて<br><span class="text-orange">早朝・夜間</span>でも対応</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="sec-price">
+            <div class="container">
+                <h2 class="sec-title"><span>業界最安水準！</span>安心の明朗会計</h2>
+                <div class="price-cards">
+                    <div class="price-card">
+                        <div class="price-card__head">1K / 1DK</div>
+                        <div class="price-card__body">
+                            <span class="price-num">27,500</span><span class="price-yen">円〜</span>
+                        </div>
+                    </div>
+                    <div class="price-card">
+                        <div class="price-card__head">1LDK / 2DK</div>
+                        <div class="price-card__body">
+                            <span class="price-num">50,000</span><span class="price-yen">円〜</span>
+                        </div>
+                    </div>
+                    <div class="price-card">
+                        <div class="price-card__head">2LDK / 3DK</div>
+                        <div class="price-card__body">
+                            <span class="price-num">80,000</span><span class="price-yen">円〜</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Section -->
+        <section class="sec-flow">
+            <div class="container">
+                <h2 class="sec-title"><span>ご相談から遺品整理</span>までの流れ</h2>
+                <div class="flow-steps">
+                    <div class="flow-step">
+                        <div class="flow-step__num">STEP. 1</div>
+                        <h3>お問い合わせ</h3>
+                        <p>まずはお電話・LINEでご相談ください。365日受付中です。</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">STEP. 2</div>
+                        <h3>無料お見積り</h3>
+                        <p>経験豊富なスタッフが現地へお伺いし、正確なお見積り金額をご提示します。追加料金は一切かかりません。</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">STEP. 3</div>
+                        <h3>ご契約・お打ち合わせ</h3>
+                        <p>お見積りにご納得いただけましたら、ご契約となります。作業日程やご要望をお伺いします。</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">STEP. 4</div>
+                        <h3>仕分け・搬出・清掃</h3>
+                        <p>プロのスタッフが丁寧に遺品の仕分け、買取査定、搬出を行います。作業後の清掃も徹底します。</p>
+                    </div>
+                    <div class="flow-step">
+                        <div class="flow-step__num">STEP. 5</div>
+                        <h3>ご確認・お支払い</h3>
+                        <p>作業完了後、お客様にご確認いただき、ご精算となります。買取金額がある場合は作業代金から相殺します。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Voice Section -->
+        <section class="sec-voice">
+            <div class="container">
+                <h2 class="sec-title"><span>お客様から</span>感謝の声が続々！</h2>
+                <div class="voice-grid">
+                    <div class="voice-card">
+                        <img src="b_voice_1.png" alt="お客様の声1">
+                        <div class="voice-card__body">
+                            <div class="voice-card__rating">★★★★★</div>
+                            <h3>「丁寧な対応で、安心してお任せできました」</h3>
+                            <p>遠方からの依頼で不安でしたが、スタッフの方がとても親身になって相談に乗ってくれました。買取可能なものもしっかり査定していただき、費用も安く抑えられて本当に助かりました。</p>
+                        </div>
+                    </div>
+                    <div class="voice-card">
+                        <img src="b_voice_2.png" alt="お客様の声2">
+                        <div class="voice-card__body">
+                            <div class="voice-card__rating">★★★★★</div>
+                            <h3>「素早い作業と気配りに感謝しています」</h3>
+                            <p>急ぎの依頼だったにも関わらず、すぐに駆けつけて対応してくれました。自分では手がつけられなかった大量の荷物を、あっという間に綺麗に整理していただき感動しました。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="sec-faq">
+            <div class="container">
+                <h2 class="sec-title"><span>よくある</span>ご質問</h2>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-q">見積もり後にキャンセルはできますか？</div>
+                        <div class="faq-a">はい、もちろん可能です。お見積り金額や内容にご納得いただけない場合は、キャンセル料金は一切かかりませんのでご安心ください。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">作業当日に立ち会えなくても大丈夫ですか？</div>
+                        <div class="faq-a">はい、問題ありません。鍵をお預かりして作業を進めさせていただくことも可能です。遠方にお住まいの方など、立ち会いが難しい場合は事前にお気軽にご相談ください。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-q">追加料金が発生することはありますか？</div>
+                        <div class="faq-a">
+                            お見積りで提示した金額から、不当な追加料金が発生することは一切ございません。もし作業内容の追加・変更がある場合は、事前に再度お見積りをご提示し、ご了承を得てから作業いたします。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__logo">ハートフルクリーン</div>
+            <div class="footer__info">
+                〒630-8114 奈良県奈良市芝辻町4-2-1<br>
+                古物商許可番号：第641010002931号<br>
+                遺品整理士認定番号：第IS26084号
+            </div>
+            <div class="footer__copy">&copy; Heartful Clean. All Rights Reserved.</div>
         </div>
-      </div>
+    </footer>
+
+    <!-- Floating CTA -->
+    <div class="floating-cta">
+        <a href="tel:0742268496" class="btn btn--orange">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            無料電話相談
+        </a>
+        <a href="https://line.me/R/ti/p/@195brsjr" class="btn btn--green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+            </svg>
+            LINE無料見積り
+        </a>
     </div>
-  </header>
 
-  <!-- HERO -->
-  <section class="hero" id="top">
-    <div class="hero__badges fi">
-      <div class="hero__badge-item">👑 ご相談・お見積り無料</div>
-      <div class="hero__badge-item">🏅 Google口コミ評価 ★5.0</div>
-    </div>
-    <img class="hero__img" src="fv-hero.jpg" alt="ハートフルクリーン — 元警察官が経営する生前・遺品整理" loading="eager">
-    <div class="hero__cta-wrap fi">
-      <div class="hero__microcopy">＼ お見積り後の追加料金は一切ありません！無理な営業も致しません ／</div>
-      <div class="hero__cta-btns">
-        <a href="tel:0742268496" class="btn btn--accent btn--lg"><svg width="20" height="20" viewBox="0 0 24 24"
-            fill="none" stroke="currentColor" stroke-width="2">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-          </svg>まずは電話で相談</a>
-        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--green btn--lg"><svg
-            width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-          </svg>LINEで写真を送る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- BADGES -->
-  <div class="badges">
-    <div class="badge fi">
-      <div class="badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg></div>
-      <div class="badge__label">Google口コミ<br>★ 5.0</div>
-      <div class="badge__sub">全件5つ星</div>
-    </div>
-    <div class="badge fi">
-      <div class="badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-        </svg></div>
-      <div class="badge__label">追加料金<br>ゼロ</div>
-      <div class="badge__sub">見積り＝最終額</div>
-    </div>
-    <div class="badge fi">
-      <div class="badge__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="10" />
-          <polyline points="12 6 12 12 16 14" />
-        </svg></div>
-      <div class="badge__label">即日対応<br>年中無休</div>
-      <div class="badge__sub">土日祝もOK</div>
-    </div>
-  </div>
-
-  <!-- A. MARQUEE -->
-  <div class="marquee">
-    <div class="marquee__track">
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>Google口コミ ★5.0</span>
-      <span class="marquee__item">追加料金ゼロ宣言</span>
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>元警察官が代表</span>
-      <span class="marquee__item">即日対応 年中無休</span>
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>近畿一円対応</span>
-      <span class="marquee__item">見積り無料</span>
-      <!-- duplicate for seamless loop -->
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>Google口コミ ★5.0</span>
-      <span class="marquee__item">追加料金ゼロ宣言</span>
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>元警察官が代表</span>
-      <span class="marquee__item">即日対応 年中無休</span>
-      <span class="marquee__item"><svg viewBox="0 0 24 24">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-        </svg>近畿一円対応</span>
-      <span class="marquee__item">見積り無料</span>
-    </div>
-  </div>
-
-  <!-- 2. COUNTERS -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="counters">
-        <div class="counter fi-s">
-          <div class="counter__val grad-text"><span data-count="800">0</span><span class="counter__unit">件</span></div>
-          <div class="counter__label">累計ご依頼件数</div>
-        </div>
-        <div class="counter fi-s">
-          <div class="counter__val grad-text"><span data-count="100">0</span><span class="counter__unit">%</span></div>
-          <div class="counter__label">お客様満足度</div>
-        </div>
-        <div class="counter fi-s">
-          <div class="counter__val grad-text"><span data-count="30">0</span><span class="counter__unit">分</span></div>
-          <div class="counter__label">最短到着時間</div>
-        </div>
-        <div class="counter fi-s">
-          <div class="counter__val grad-text"><span data-count="5.0" data-decimal="true">0</span></div>
-          <div class="counter__label">Google口コミ評価</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROBLEM -->
-  <section class="sec sec--soft blob-wrap">
-    <div class="blob blob--1"></div>
-    <div class="blob blob--2"></div>
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">For the first time</div>
-        <h2 class="sec-title fi"><span class="grad-text">はじめての遺品整理、<br>不安で当然です。</span></h2>
-        <p class="sec-sub fi">でも、ひとりで抱え込まなくて大丈夫。</p>
-      </div>
-      <div class="problem__list">
-        <div class="problem__item fi"><span class="problem__num">1</span>突然のことで、何から手をつけていいかわからない</div>
-        <div class="problem__item fi"><span class="problem__num">2</span>どこの業者に頼めば安心か、判断がつかない</div>
-        <div class="problem__item fi"><span class="problem__num">3</span>見積りの後に、高額な追加料金を請求されないか不安</div>
-        <div class="problem__item fi"><span class="problem__num">4</span>仕事で何日も休めず、立ち会いが難しい</div>
-        <div class="problem__item fi"><span class="problem__num">5</span>故人の遺品を、粗末に扱われたくない</div>
-        <div class="problem__item fi"><span class="problem__num">6</span>作業に何日もかかるのは困る。早く終わらせたい</div>
-      </div>
-      <div class="problem__close fi">
-        <p class="problem__close-text">その不安、ぜんぶ引き受けます。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 3 REASONS -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Why Heartful Clean?</div>
-        <h2 class="sec-title fi"><span class="grad-text">選ばれる、3つの理由。</span></h2>
-      </div>
-      <div class="reasons__grid">
-        <div class="rc glow-card fi-l">
-          <div class="rc__n" style="display:flex; align-items:center; gap:8px;">01 <span
-              style="font-size:24px;">🚫</span></div>
-          <h3 class="rc__t">追加料金は、一切いただきません。</h3>
-          <div class="rc__img">
-            <div
-              style="width:100%; height:180px; background:#e2e8f0; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-size:14px; font-weight:700; margin-bottom:16px;">
-              [見積書を説明する写真]</div>
-          </div>
-          <div class="rc__b">
-            <p>遺品整理のプロが現地を確認し、明確なお見積りを提示。その金額が最終請求額です。後から費用が増えることは、絶対にありません。</p>
-          </div>
-        </div>
-        <div class="rc glow-card fi-r">
-          <div class="rc__n" style="display:flex; align-items:center; gap:8px;">02 <span
-              style="font-size:24px;">🤝</span></div>
-          <h3 class="rc__t">靴を脱ぐ。急かさない。それが当たり前。</h3>
-          <div class="rc__img">
-            <div
-              style="width:100%; height:180px; background:#e2e8f0; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-size:14px; font-weight:700; margin-bottom:16px;">
-              [靴を脱いで上がる写真]</div>
-          </div>
-          <div class="rc__b">
-            <p>「土足でいい」と言われても、必ず靴を脱ぎます。言葉遣い、遺品の扱い、すべてに礼節を尽くしながら、他社3日の現場を1日で完了させた実績あり。</p>
-          </div>
-        </div>
-        <div class="rc glow-card fi-l">
-          <div class="rc__n" style="display:flex; align-items:center; gap:8px;">03 <span
-              style="font-size:24px;">💰</span></div>
-          <h3 class="rc__t">その場で買取査定。費用を、もっと軽く。</h3>
-          <div class="rc__img">
-            <div
-              style="width:100%; height:180px; background:#e2e8f0; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#64748b; font-size:14px; font-weight:700; margin-bottom:16px;">
-              [買取査定中の写真]</div>
-          </div>
-          <div class="rc__b">
-            <p>買取専門会社と連携し、価値ある遺品はその場で査定。作業費から相殺して、ご負担を減らします。故人の愛用品が、誰かの手で生き続ける。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4. COMPARE TABLE -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Compare</div>
-        <h2 class="sec-title fi"><span class="grad-text">なぜ、ハートフルクリーンなのか。</span></h2>
-        <p class="sec-sub fi">他社と比べてみてください。</p>
-      </div>
-      <div class="fi-s" style="overflow-x:auto">
-        <table class="cmp">
-          <thead>
-            <tr>
-              <th></th>
-              <th>ハートフルクリーン</th>
-              <th>A社</th>
-              <th>B社</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>追加料金</td>
-              <td class="cmp-hl">なし（宣言）</td>
-              <td class="bad">あり</td>
-              <td class="bad">あり</td>
-            </tr>
-            <tr>
-              <td>見積り</td>
-              <td class="cmp-hl">現地で確定</td>
-              <td>電話概算</td>
-              <td>電話概算</td>
-            </tr>
-            <tr>
-              <td>即日対応</td>
-              <td class="cmp-hl">◎ 年中無休</td>
-              <td>△ 平日のみ</td>
-              <td class="bad">× 要予約</td>
-            </tr>
-            <tr>
-              <td>立ち会い</td>
-              <td class="cmp-hl">不要OK</td>
-              <td class="bad">必須</td>
-              <td>応相談</td>
-            </tr>
-            <tr>
-              <td>買取査定</td>
-              <td class="cmp-hl">◎ その場で</td>
-              <td class="bad">× 非対応</td>
-              <td>△ 別日</td>
-            </tr>
-            <tr>
-              <td>口コミ</td>
-              <td class="cmp-hl">★ 5.0</td>
-              <td>★ 3.8</td>
-              <td>★ 4.1</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA 1 -->
-  <section class="sec sec--main cta-band">
-    <div class="w">
-      <div class="fi" style="text-align:center;margin-bottom:20px">
-        <div class="urgency"><span class="urgency__dot"></span><span class="urgency__text">本日の対応空き状況：◎</span></div>
-      </div>
-      <h2 class="sec-title fi" style="color:#fff">まずは、話してみませんか。</h2>
-      <p class="sec-sub fi" style="color:rgba(255,255,255,.7);margin:0 auto 20px">ささいなことでも構いません。何から始めればいいか、一緒に考えます。</p>
-      <div class="cta-band__tel fi"><a href="tel:0742268496" style="color:#fff">0742-26-8496</a></div>
-      <p class="cta-band__hours fi" style="color:rgba(255,255,255,.6)">7時〜22時（年中無休）｜ 相談・お見積り無料</p>
-
-      <div class="hero__microcopy fi" style="margin-top:24px;">＼ ご相談・お見積りは完全無料！しつこい営業は一切いたしません ／</div>
-      <div class="cta-band__btns fi">
-        <a href="tel:0742268496" class="btn btn--accent btn--lg">電話で相談する（無料）</a>
-        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener"
-          class="btn btn--green btn--lg">LINEで写真を送る（無料）</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- LINE ESTIMATE SECTION (NEW) -->
-  <section class="sec sec--bg"
-    style="background:#F0FDF4; border-top:1px solid #DCFCE7; border-bottom:1px solid #DCFCE7; padding-top:60px; padding-bottom:60px;">
-    <div class="w" style="max-width:800px; text-align:center;">
-      <h2 class="sec-title fi" style="color:#166534;"><span class="grad-text"
-          style="background:linear-gradient(135deg, #16A34A, #15803D); -webkit-background-clip: text; color: transparent;">スマホで撮って送るだけ！<br>最短15分でLINE概算お見積り</span>
-      </h2>
-      <p class="sec-sub fi" style="margin-bottom:30px; color:#14532D; font-weight:700;">
-        「部屋が散らかっていて見せるのが恥ずかしい…」<br>そんな方でも大丈夫です！ありのままの現場写真をLINEでお送りください。</p>
-
-      <div class="fi" style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-bottom:40px;">
-        <div
-          style="background:#fff; padding:24px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); text-align:center; flex:1; min-width:220px;">
-          <div style="font-size:48px; margin-bottom:12px;">📱</div>
-          <div style="font-weight:700; color:#166534; margin-bottom:8px; font-size:16px;">STEP 1</div>
-          <p style="font-size:14px; margin:0; font-weight:700;">全体の様子がわかるように<br>スマホでパシャリと撮影。</p>
-        </div>
-        <div
-          style="background:#fff; padding:24px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); text-align:center; flex:1; min-width:220px;">
-          <div style="font-size:48px; margin-bottom:12px;">✉️</div>
-          <div style="font-weight:700; color:#166534; margin-bottom:8px; font-size:16px;">STEP 2</div>
-          <p style="font-size:14px; margin:0; font-weight:700;">ハートフルクリーンの<br>公式LINEへ画像を送信。</p>
-        </div>
-        <div
-          style="background:#fff; padding:24px; border-radius:12px; box-shadow:0 10px 25px rgba(0,0,0,0.05); text-align:center; flex:1; min-width:220px;">
-          <div style="font-size:48px; margin-bottom:12px;">✨</div>
-          <div style="font-weight:700; color:#166534; margin-bottom:8px; font-size:16px;">STEP 3</div>
-          <p style="font-size:14px; margin:0; font-weight:700;">現状からの概算お見積り・<br>買取可能かをお伝えします！</p>
-        </div>
-      </div>
-
-      <div class="fi">
-        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="btn btn--green btn--lg"
-          style="box-shadow: 0 8px 25px rgba(22, 163, 74, 0.4); transform: scale(1.05); margin-top:10px;"><svg
-            width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-          </svg>今すぐLINEで見積り画像を送信する</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- REPRESENTATIVE -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="rep__in">
-        <div class="rep__photo fi">
-          <div
-            style="width:100%; height:400px; background:#e2e8f0; border-radius:12px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#64748b; margin-bottom:16px; border:2px dashed #cbd5e1;">
-            <div style="font-size:32px; margin-bottom:8px;">📸</div>
-            <div style="font-size:14px; font-weight:700; text-align:center;">[社長の作業着姿、<br>または笑顔のポートレート写真]</div>
-          </div>
-        </div>
-        <div>
-          <p class="rep__label fi">Message from CEO</p>
-          <h2 class="rep__heading fi">なぜ、元警察官が<br>遺品整理を始めたのか。</h2>
-          <div class="rep__sig fi"><span class="rep__role">ハートフルクリーン 代表</span><span class="rep__name">藤田 宗一郎</span>
-          </div>
-          <div class="rep__text">
-            <p class="fi">大阪府警察官として5年。独居の方が亡くなった現場検証に、何度も立ち会いました。</p>
-            <p class="fi">退職後、別の会社で3年間、現場責任者として働きました。そこで見たのは、格安受注した回収物を不法投棄する業者の姿。元警察官として、見過ごせませんでした。</p>
-            <p class="fi">「ハートフルクリーン」という屋号は、この業界をクリーンにするという決意そのものです。迷っているなら、まず電話をください。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="sec sec--soft">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Services</div>
-        <h2 class="sec-title fi">ぜんぶ、お任せください。</h2>
-        <p class="sec-sub fi">遺品整理だけではありません。お家にまつわる「困った」に、ワンストップで対応します。</p>
-      </div>
-      <div class="sv__grid">
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/遺品整理.jpeg" alt="遺品整理"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">遺品整理</h3>
-            <p class="sv-card__desc">故人の遺品を丁寧に仕分け・搬出。貴重品の探索も徹底。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="生前整理"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">生前整理</h3>
-            <p class="sv-card__desc">ご本人の意向に沿った身辺整理。1点から対応。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/特殊清掃.jpeg" alt="特殊清掃"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">特殊清掃</h3>
-            <p class="sv-card__desc">孤独死等の完全消臭・除菌・原状回復。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/ゴミ屋敷.jpeg" alt="ゴミ屋敷"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">ゴミ屋敷清掃</h3>
-            <p class="sv-card__desc">大量の廃棄物を迅速搬出。居住環境を回復。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/不用品.jpeg" alt="不用品回収"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">不用品回収</h3>
-            <p class="sv-card__desc">大型家具・家電もOK。即日・立ち会い不要に対応。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/清掃.jpeg" alt="空き家片付け"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">空き家片付け</h3>
-            <p class="sv-card__desc">家財一斉撤去。不動産会社様からの直接依頼も。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/供養.jpeg" alt="遺品供養"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">遺品供養</h3>
-            <p class="sv-card__desc">仏壇・写真・人形等の合同供養を手配。</p>
-          </div>
-        </div>
-        <div class="sv-card glow-card fi"><img class="sv-card__img" src="ハートフルクリーンサイト画像/heartful画像/買取査定.jpeg" alt="買取査定"
-            loading="lazy">
-          <div class="sv-card__body">
-            <h3 class="sv-card__name">買取査定</h3>
-            <p class="sv-card__desc">家電・貴金属を適正査定。作業費から相殺。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Price</div>
-        <h2 class="sec-title fi">料金の目安。</h2>
-        <p class="sec-sub fi">正確な金額は、現地確認後にお伝えします。追加は一切ありません。</p>
-      </div>
-      <div class="fi" style="overflow-x:auto">
-        <table class="price-table">
-          <thead>
-            <tr>
-              <th>間取り</th>
-              <th>料金目安</th>
-              <th>備考</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1K</td>
-              <td><span class="pv">25,000</span>円〜</td>
-              <td>単身者向け</td>
-            </tr>
-            <tr>
-              <td>1DK</td>
-              <td><span class="pv">35,000</span>円〜</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>2DK</td>
-              <td><span class="pv">45,000</span>円〜</td>
-              <td>物量により変動</td>
-            </tr>
-            <tr>
-              <td>3DK〜</td>
-              <td><span class="pv">80,000</span>円〜</td>
-              <td>一軒家も対応</td>
-            </tr>
-            <tr>
-              <td>2t積み放題</td>
-              <td><span class="pv">60,000</span>円〜</td>
-              <td>不用品回収向け</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="price-note fi">※物量により料金は異なります。現地確認後に明確なお見積りをご提示。</p>
-    </div>
-  </section>
-
-  <!-- CTA 2 (photo BG) -->
-  <section class="sec sec--photo parallax-hero" style="background-image:url('ハートフルクリーンサイト画像/heartful画像/打ち合わせ風景.jpeg')">
-    <div class="w" style="text-align:center">
-      <h2 class="sec-title fi" style="color:#fff">お見積りは完全に無料です。</h2>
-      <p class="fi" style="color:rgba(255,255,255,.7);margin-bottom:20px">キャンセルも無料。決断を急かすことは、ありません。</p>
-      <div class="cta-band__tel fi"><a href="tel:0742268496" style="color:#fff">0742-26-8496</a></div>
-      <p class="fi" style="color:rgba(255,255,255,.5);font-size:14px;margin-bottom:24px">7時〜22時（年中無休）</p>
-
-      <div class="hero__microcopy fi" style="margin-top:24px;">＼ 買取のみの事前査定も歓迎！お気軽にご連絡ください ／</div>
-      <div class="cta-band__btns fi" style="justify-content:center">
-        <a href="tel:0742268496" class="btn btn--accent btn--lg">電話で相談する</a>
-        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener"
-          class="btn btn--green btn--lg">LINEで写真を送る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TESTIMONIALS -->
-  <section class="sec sec--soft">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Voice</div>
-        <p class="fi"
-          style="font-family:var(--fn);font-size:18px;font-weight:700;color:var(--c-gold);margin-bottom:8px">Google口コミ ★
-          5.0</p>
-        <h2 class="sec-title fi">お客様の声。</h2>
-      </div>
-      <div class="tg">
-        <div class="tc fi">
-          <div
-            style="width:100%; height:160px; background:#f8fafc; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:13px; font-weight:700; margin-bottom:16px; border:1px solid #e2e8f0;">
-            [お客様との2ショット や 直筆アンケート画像]</div>
-          <div class="tc__stars"><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg></div>
-          <p class="tc__text">見積もりの段階から細かな案内で安心できました。追加料金も一切なく、最後の清掃までしてくださり、妻は感激してました。</p>
-          <p class="tc__meta">— Google口コミ</p>
-        </div>
-        <div class="tc fi">
-          <div
-            style="width:100%; height:160px; background:#f8fafc; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:13px; font-weight:700; margin-bottom:16px; border:1px solid #e2e8f0;">
-            [お客様との2ショット や 直筆アンケート画像]</div>
-          <div class="tc__stars"><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg></div>
-          <p class="tc__text">処分するものが多く何から始めればいいかわからなかったのですが、丁寧でスムーズ。買取もしていただき満足です！</p>
-          <p class="tc__meta">— Google口コミ</p>
-        </div>
-        <div class="tc fi">
-          <div
-            style="width:100%; height:160px; background:#f8fafc; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#94a3b8; font-size:13px; font-weight:700; margin-bottom:16px; border:1px solid #e2e8f0;">
-            [お客様との2ショット や 直筆アンケート画像]</div>
-          <div class="tc__stars"><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg><svg viewBox="0 0 24 24" fill="#E8B931">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg></div>
-          <p class="tc__text">母の介護施設入所に伴い、年末30日に急遽対応してくださいました。量も多く大変だったと思いますが、終始笑顔で親切でした。</p>
-          <p class="tc__meta">— Google口コミ</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLOW -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Flow</div>
-        <h2 class="sec-title fi">ご利用の流れ。</h2>
-        <p class="sec-sub fi">お電話1本で、あとはすべてお任せください。</p>
-      </div>
-      <div class="fl__steps">
-        <div class="fl__step fi">
-          <div class="fl__n">1</div>
-          <div>
-            <h3 class="fl__t">お問い合わせ</h3>
-            <p class="fl__d">電話・LINEでOK。「何から始めれば？」で大丈夫です。</p>
-          </div>
-        </div>
-        <div class="fl__step fi">
-          <div class="fl__n">2</div>
-          <div>
-            <h3 class="fl__t">現地訪問・無料見積り</h3>
-            <p class="fl__d">プロが直接お伺いし、その場で明確な金額をお出しします。</p>
-          </div>
-        </div>
-        <div class="fl__step fi">
-          <div class="fl__n">3</div>
-          <div>
-            <h3 class="fl__t">ご契約・日程調整</h3>
-            <p class="fl__d">納得してから。即日・土日祝もOK。急かしません。</p>
-          </div>
-        </div>
-        <div class="fl__step fi">
-          <div class="fl__n">4</div>
-          <div>
-            <h3 class="fl__t">作業実施</h3>
-            <p class="fl__d">立ち会い不要。仕分け・搬出・清掃まで、すべてプロにお任せ。</p>
-          </div>
-        </div>
-        <div class="fl__step fi">
-          <div class="fl__n">5</div>
-          <div>
-            <h3 class="fl__t">完了・ご精算</h3>
-            <p class="fl__d">見積り通りの金額。現金・カード・PayPay対応。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="sec sec--soft">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">FAQ</div>
-        <h2 class="sec-title fi">よくあるご質問。</h2>
-      </div>
-      <div class="fq__list">
-        <div class="fq__item fi"><button class="fq__q">見積り後に追加料金は発生しますか？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">一切発生しません。見積り金額が最終請求額です。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">立ち会いは必要ですか？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">不要です。事前にご指示いただければ、お立ち会いなしで作業できます。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">家具1点だけでも頼めますか？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">はい。タンス1つ、冷蔵庫1台から承ります。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">即日対応はできますか？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">空きがあれば即日OK。土日祝も対応しています。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">対応エリアは？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">奈良・大阪を中心に、京都・兵庫・三重・滋賀・和歌山まで近畿一円。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">支払い方法は？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">現金・クレジットカード・PayPay。作業完了後のお支払いです。</div>
-          </div>
-        </div>
-        <div class="fq__item fi"><button class="fq__q">遺品の供養はしてもらえますか？</button>
-          <div class="fq__a">
-            <div class="fq__a-in">はい。仏壇・写真・人形等の合同供養を手配できます。</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FINAL CTA -->
-  <section class="sec sec--main cta-band">
-    <div class="w">
-      <h2 class="sec-title fi" style="color:#fff">迷っているなら、まず電話を。</h2>
-      <p class="fi" style="color:rgba(255,255,255,.7);margin-bottom:20px">相談は何度でも無料。何から始めればいいか、一緒に考えます。</p>
-      <div class="cta-band__tel fi"><a href="tel:0742268496" style="color:#fff">0742-26-8496</a></div>
-      <p class="cta-band__hours fi" style="color:rgba(255,255,255,.5)">7時〜22時（年中無休）</p>
-      <div class="cta-band__btns fi">
-        <a href="tel:0742268496" class="btn btn--accent btn--lg">電話で相談する（無料）</a>
-        <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener"
-          class="btn btn--green btn--lg">LINEで写真を送る（無料）</a>
-      </div>
-      <div class="fi" style="margin-top:28px"><img src="ハートクリーンLINE.png" alt="LINE QR"
-          style="width:120px;margin:0 auto;border-radius:12px;border:3px solid rgba(255,255,255,.3)">
-        <p style="font-size:13px;color:rgba(255,255,255,.5);margin-top:8px">LINEでもご相談いただけます</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- COMPANY -->
-  <section class="sec sec--white">
-    <div class="w">
-      <div class="sec-head">
-        <div class="sec-label fi">Company</div>
-        <h2 class="sec-title fi">会社概要。</h2>
-      </div>
-      <div class="fi" style="overflow-x:auto">
-        <table class="co-table">
-          <tr>
-            <th>屋号</th>
-            <td>ハートフルクリーン</td>
-          </tr>
-          <tr>
-            <th>運営法人</th>
-            <td>株式会社和（なごみ）</td>
-          </tr>
-          <tr>
-            <th>代表者</th>
-            <td>藤田 宗一郎</td>
-          </tr>
-          <tr>
-            <th>所在地</th>
-            <td>〒630-8145 奈良県奈良市八条5-498-1</td>
-          </tr>
-          <tr>
-            <th>電話</th>
-            <td><a href="tel:0742268496" style="color:var(--c-main);font-weight:600">0742-26-8496</a></td>
-          </tr>
-          <tr>
-            <th>営業時間</th>
-            <td>7時〜22時（年中無休）</td>
-          </tr>
-          <tr>
-            <th>対応エリア</th>
-            <td>奈良・大阪を中心に近畿一円</td>
-          </tr>
-          <tr>
-            <th>お支払い</th>
-            <td>現金 / クレジットカード / PayPay</td>
-          </tr>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="ft">
-    <p>&copy; 2026 ハートフルクリーン（株式会社和）</p>
-  </footer>
-
-  <!-- FLOATING CTA -->
-  <div class="float" id="float">
-    <div class="float__in">
-      <a href="tel:0742268496" class="float__btn float__btn--tel"><svg width="16" height="16" viewBox="0 0 24 24"
-          fill="none" stroke="currentColor" stroke-width="2">
-          <path
-            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-        </svg>電話で相談</a>
-      <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" class="float__btn float__btn--line"><svg
-          width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path
-            d="M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
-        </svg>LINEで送る</a>
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      var hd = document.getElementById('hd'), fl = document.getElementById('float');
-
-      /* Scroll animation observer – handles .fi, .fi-l, .fi-r, .fi-s */
-      var ob = new IntersectionObserver(function (en) {
-        en.forEach(function (e) {
-          if (e.isIntersecting) {
-            var d = parseInt(e.target.dataset.d, 10) || 0;
-            setTimeout(function () { e.target.classList.add('v') }, d);
-            ob.unobserve(e.target);
-          }
-        })
-      }, { threshold: .08, rootMargin: '0px 0px -5% 0px' });
-
-      document.querySelectorAll('.fi,.fi-l,.fi-r,.fi-s').forEach(function (el) {
-        var p = el.closest('.badges,.problem__list,.reasons__grid,.sv__grid,.tg,.fl__steps,.fq__list,.counters');
-        if (p) {
-          var s = Array.from(p.querySelectorAll('.fi,.fi-l,.fi-r,.fi-s'));
-          var i = s.indexOf(el);
-          if (i >= 0) el.dataset.d = i * 80;
-        }
-        ob.observe(el);
-      });
-
-      /* FAQ accordion */
-      document.querySelectorAll('.fq__q').forEach(function (b) {
-        b.setAttribute('aria-expanded', 'false');
-        b.addEventListener('click', function () {
-          var it = b.parentElement, was = it.classList.contains('open');
-          document.querySelectorAll('.fq__item.open').forEach(function (i) {
-            i.classList.remove('open');
-            i.querySelector('.fq__q').setAttribute('aria-expanded', 'false');
-          });
-          if (!was) { it.classList.add('open'); b.setAttribute('aria-expanded', 'true'); }
-        });
-      });
-
-      /* Counter animation */
-      var counted = false;
-      var counterOb = new IntersectionObserver(function (en) {
-        en.forEach(function (e) {
-          if (e.isIntersecting && !counted) {
-            counted = true;
-            document.querySelectorAll('[data-count]').forEach(function (el) {
-              var target = parseFloat(el.dataset.count);
-              var isDecimal = el.dataset.decimal === 'true';
-              var duration = 1600, start = performance.now();
-              function tick(now) {
-                var p = Math.min((now - start) / duration, 1);
-                var ease = 1 - Math.pow(1 - p, 3);
-                var val = ease * target;
-                el.textContent = isDecimal ? val.toFixed(1) : Math.floor(val).toLocaleString();
-                if (p < 1) requestAnimationFrame(tick);
-              }
-              requestAnimationFrame(tick);
-            });
-            counterOb.unobserve(e.target);
-          }
-        });
-      }, { threshold: .3 });
-      var cSec = document.querySelector('.counters');
-      if (cSec) counterOb.observe(cSec);
-
-      /* Before/After slider */
-      document.querySelectorAll('.ba__wrap').forEach(function (wrap) {
-        var slider = wrap.querySelector('.ba__slider');
-        var before = wrap.querySelector('.ba__before');
-        if (!slider || !before) return;
-        function move(x) {
-          var rect = wrap.getBoundingClientRect();
-          var pct = Math.max(0, Math.min(1, (x - rect.left) / rect.width));
-          slider.style.left = (pct * 100) + '%';
-          before.style.clipPath = 'inset(0 ' + ((1 - pct) * 100) + '% 0 0)';
-        }
-        slider.addEventListener('mousedown', function (e) {
-          e.preventDefault();
-          function onMove(ev) { move(ev.clientX); }
-          function onUp() { document.removeEventListener('mousemove', onMove); document.removeEventListener('mouseup', onUp); }
-          document.addEventListener('mousemove', onMove);
-          document.addEventListener('mouseup', onUp);
-        });
-        slider.addEventListener('touchstart', function (e) {
-          e.preventDefault();
-          function onMove(ev) { move(ev.touches[0].clientX); }
-          function onEnd() { document.removeEventListener('touchmove', onMove); document.removeEventListener('touchend', onEnd); }
-          document.addEventListener('touchmove', onMove, { passive: false });
-          document.addEventListener('touchend', onEnd);
-        }, { passive: false });
-      });
-
-      /* Scroll: floating CTA + header shadow */
-      window.addEventListener('scroll', function () {
-        if (fl) fl.style.transform = window.scrollY > 300 ? 'translateY(0)' : 'translateY(100%)';
-        if (hd) hd.classList.toggle('scrolled', window.scrollY > 30);
-      }, { passive: true });
-    })();
-  </script>
 </body>
 
 </html>
