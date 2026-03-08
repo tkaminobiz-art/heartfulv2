@@ -734,6 +734,75 @@
             font-size: 14px;
         }
 
+        /* Area Section */
+        .sec-area {
+            background: #fff;
+            padding: 80px 0;
+        }
+
+        .area-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .area-main {
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .area-badge {
+            display: inline-block;
+            background: var(--orange);
+            color: #fff;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 4px 16px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+        }
+
+        .area-main h3 {
+            font-size: 28px;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .area-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 0;
+            margin-top: 15px;
+            margin-bottom: 0;
+        }
+
+        .area-list li {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            color: #444;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+            transition: all 0.2s ease;
+        }
+
+        .area-list li:hover {
+            border-color: var(--green);
+            color: var(--green);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
         /* FAQ Section */
         .sec-faq {
             padding: 60px 0;
@@ -882,6 +951,23 @@
                 text-align: center;
                 padding: 20px;
                 gap: 20px;
+            }
+
+            .area-box {
+                padding: 25px 15px;
+            }
+
+            .area-main h3 {
+                font-size: 22px;
+            }
+
+            .area-list {
+                gap: 10px;
+            }
+
+            .area-list li {
+                font-size: 14px;
+                padding: 8px 15px;
             }
 
             .appraiser-grid {
@@ -1239,6 +1325,33 @@
                             <h3>「素早い作業と気配りに感謝しています」</h3>
                             <p>急ぎの依頼だったにも関わらず、すぐに駆けつけて対応してくれました。自分では手がつけられなかった大量の荷物を、あっという間に綺麗に整理していただき感動しました。</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Area Section -->
+        <section class="sec-area">
+            <div class="container">
+                <h2 class="sec-title"><span>近畿一円スピーディに対応！</span>対応エリア</h2>
+                <p class="text-center" style="margin-bottom: 30px; font-weight: 500; color: #444;">
+                    奈良・大阪を中心に、近畿全域へ出張お見積りに伺います！<br>下記以外のエリアでも、まずはお気軽にご相談ください。</p>
+
+                <div class="area-box">
+                    <div class="area-main">
+                        <div class="area-badge">最短即日お伺いエリア</div>
+                        <h3>奈良県・大阪府（全域）</h3>
+                    </div>
+                    <div class="area-sub">
+                        <div class="area-badge" style="background: #e2e8f0; color: #333; margin-bottom: 5px;">その他対応エリア
+                        </div>
+                        <ul class="area-list">
+                            <li>京都府</li>
+                            <li>兵庫県</li>
+                            <li>三重県</li>
+                            <li>滋賀県</li>
+                            <li>和歌山県</li>
+                        </ul>
                     </div>
                 </div>
             </div>
