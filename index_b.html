@@ -197,16 +197,20 @@
         }
         .header_area .logo {
             float: none;
+            display: block;
+            min-width: 0;
             max-width: 55%;
             max-height: 64px;
         }
         .header_area .logo img {
-            height: 56px;
+            display: block;
+            height: auto;
+            max-height: 56px;
             width: auto;
             max-width: 100%;
-            display: block;
             object-fit: contain;
             object-position: left center;
+            vertical-align: middle;
         }
         .header_area .tel_btn {
             float: none;
@@ -643,7 +647,7 @@
         <header class="header_area">
             <div class="header_inner">
             <a href="#" class="logo">
-                <img src="./ハートフルクリーンサイト画像/header-banner.png" alt="ハートフルクリーン">
+                <img src="./ハートフルクリーンサイト画像/header-banner.png" alt="ハートフルクリーン" width="300" height="100" loading="eager" onerror="this.onerror=null; this.src='./ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png';">
             </a>
             <a href="tel:0742268496" class="tel_btn">
                 <span class="num">0742-26-8496</span>
