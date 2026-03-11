@@ -7,7 +7,7 @@
     <meta name="description" content="元大阪府警の代表がお約束する、不正のない遺品整理。他社の約1/3の時間で丁寧・正確に。奈良・関西エリア。無料見積り・相談だけでも費用ゼロ。">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         /* ===== おうち整理士カラーパレット模倣 ===== */
         :root {
@@ -32,25 +32,47 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { font-size: 62.5%; }
         body {
-            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans JP", sans-serif;
+            font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             font-size: 1.6rem;
-            line-height: 1.6;
+            line-height: 1.75;
             color: #333;
             background: #F5F5F5;
             -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.02em;
         }
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
-        .lp-container { max-width: 750px; margin: 0 auto; overflow: hidden; position: relative; background: #fff; }
+        .lp-container { width: 100%; max-width: none; margin: 0; overflow: hidden; position: relative; background: #fff; }
+        /* 3カラム: 左 | 中央(750px) | 右。セクションごとに左右の色を変更 */
+        .section-row {
+            display: grid;
+            grid-template-columns: 1fr minmax(0, 750px) 1fr;
+        }
+        .col-side {
+            background: var(--section-bg, transparent);
+        }
+        .col-center {
+            min-width: 0;
+        }
+        @media (max-width: 768px) {
+            .section-row { grid-template-columns: 1fr; }
+            .col-side { display: none; }
+        }
         section { width: 100%; padding: 40px 20px; }
 
         /* ===== ヘッダー ===== */
         .header_area {
-            max-width: 750px;
+            max-width: none;
+            width: 100%;
             margin: 0 auto;
             background: var(--bg-header);
             padding: 10px 20px 12px;
+            overflow: hidden;
+        }
+        .header_area .header_inner {
+            max-width: 750px;
+            margin: 0 auto;
             overflow: hidden;
         }
         .header_area .logo {
@@ -320,6 +342,12 @@
             margin: 10px auto 0;
             border-radius: 2px;
         }
+        /* 見出し: Noto Serif JP */
+        h1, h2, h3, .section_title h2 {
+            font-family: "Noto Serif JP", "Noto Sans JP", serif;
+            font-weight: 600;
+        }
+        .kv_inner .main_copy h1 { font-weight: 700; }
 
         /* ===== フッター ===== */
         .footer_area {
@@ -431,6 +459,7 @@
     <div class="lp-container">
         <!-- ヘッダー -->
         <header class="header_area">
+            <div class="header_inner">
             <a href="#" class="logo">
                 <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン">
             </a>
@@ -439,9 +468,13 @@
                 <span class="num">0742-26-8496</span>
                 <span class="note">土日祝も営業（7時〜22時）</span>
             </a>
+            </div>
         </header>
 
         <!-- KV（ファーストビュー） -->
+        <div class="section-row" style="--section-bg: #F5EFE3;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="kv_inner">
             <div class="kv_tags">
                 <span class="kv_tag">遺品整理</span>
@@ -464,8 +497,14 @@
             </div>
             <a href="https://line.me/R/ti/p/@195brsjr" class="line_btn">LINE かんたん見積もり</a>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 即日・夜間 -->
+        <div class="section-row" style="--section-bg: #EFEFEF;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="under_kv_speed">
             <p class="head">関西密着だから実現</p>
             <p class="big green">即日・翌日スピード訪問！</p>
@@ -473,8 +512,14 @@
             <p class="big blue">18時以降のご訪問もOK！</p>
             <p class="note">即日対応・18時以降のご訪問は、たくさんご依頼をいただいております。ご予約が埋まりやすいので、お早めにご相談ください。</p>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 実績バッジ3つ -->
+        <div class="section-row" style="--section-bg: #F5EFE3;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="under_kv_badges">
             <div class="badge_circle">
                 <span class="num">元警察官</span>
@@ -489,8 +534,14 @@
                 <span class="label">奈良・大阪・京都対応</span>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 料金タイトル -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="under_kv_price_title">
             <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田" class="thumb">
             <div>
@@ -498,7 +549,6 @@
                 <p class="sub">作業内容に合わせて最適なプランを格安でご提案します。</p>
             </div>
         </section>
-
         <!-- 料金表 -->
         <div class="price_table_wrap">
             <table class="price_table">
@@ -527,8 +577,14 @@
             <span class="svc_tag">荷物の運び出し</span>
             <span class="svc_tag">簡易清掃</span>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- CTA 1回目 -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="cta_block">
             <a href="tel:0742268496" class="cta_tel">
                 <span class="badge">タッチして電話をかける</span><br>
@@ -539,12 +595,19 @@
             <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
             <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- こんな不安ありませんか？（Problem） -->
+        <div class="section-row" style="--section-bg: #EFEFEF;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section id="anxiety" style="background: var(--bg-light-gray);">
             <div class="section_title">
                 <h2>こんな不安ありませんか？</h2>
             </div>
+            <p style="text-align: center; margin-bottom: 16px;"><img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子" style="width: 100%; max-width: 400px; margin: 0 auto; border-radius: 8px;"></p>
             <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px;">親が亡くなって、四十九日が過ぎてから何から手をつければ…。40〜50代のご遺族から、こんなお声を多くいただきます。</p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px; max-width: 750px; margin: 0 auto;">
                 <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">どこに頼めばいいかわからない</div>
@@ -557,8 +620,14 @@
                 <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">遺品に敬意を払ってくれる業者か</div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 業者選びを間違えると（Agitation） -->
+        <div class="section-row" style="--section-bg: #fff5f5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section id="agitation" style="background: #fff5f5;">
             <div class="section_title">
                 <h2 style="color: var(--red-main);">業者選びを間違えると</h2>
@@ -583,13 +652,23 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- なぜ元警察官だと安心できるのか？（Solution・強み4枚） -->
+        <div class="section-row" style="--section-bg: #1A3A6E;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section id="solution" style="background: #1A3A6E; color: #fff; padding: 48px 20px;">
             <div class="section_title">
                 <h2 style="color: var(--gold);">なぜ元警察官だと安心できるのか？</h2>
             </div>
             <div style="max-width: 750px; margin: 0 auto;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 20px;">
+                    <div><img src="ハートフルクリーンサイト画像/reason1_new.jpg" alt="不正ができない体質" style="width: 100%; border-radius: 8px; border: 1px solid rgba(201,166,64,0.5);"></div>
+                    <div><img src="ハートフルクリーンサイト画像/reason2_new.jpg" alt="守秘義務の徹底" style="width: 100%; border-radius: 8px; border: 1px solid rgba(201,166,64,0.5);"></div>
+                </div>
                 <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
                     <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">不正ができない体質</h3>
                     <p style="font-size: 1.5rem; line-height: 1.7;">警察官時代に培った法令遵守の精神で、不正・ごまかしは一切しません。</p>
@@ -598,6 +677,7 @@
                     <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">守秘義務の徹底</h3>
                     <p style="font-size: 1.5rem; line-height: 1.7;">ご家族の事情やお住まいの情報は、厳重に守ります。</p>
                 </div>
+                <div style="margin-bottom: 20px;"><img src="ハートフルクリーンサイト画像/reason3_new.jpg" alt="遺族の悲しみに寄り添う" style="width: 100%; max-width: 400px; margin: 0 auto; display: block; border-radius: 8px; border: 1px solid rgba(201,166,64,0.5);"></div>
                 <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
                     <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">遺族の悲しみに寄り添える</h3>
                     <p style="font-size: 1.5rem; line-height: 1.7;">多くの悲しみの現場に立ち会ってきたからこそ、ご遺族の気持ちに寄り添った対応をお約束します。</p>
@@ -608,23 +688,36 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- サービス一覧（強み6項目に拡張） -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: var(--bg-cream);">
             <div class="section_title">
                 <h2>選ばれる6つの強み</h2>
             </div>
+            <p style="text-align: center; margin-bottom: 20px;"><img src="ハートフルクリーンサイト画像/heartful画像/遺品整理.jpeg" alt="遺品整理の作業風景" style="width: 100%; max-width: 500px; margin: 0 auto; border-radius: 8px;"></p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px;">
                 <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>分かりやすい料金のお見積り</strong><br><span style="font-size: 1.3rem;">追加費用なし</span></div>
                 <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>落ち着いてじっくりご検討</strong><br><span style="font-size: 1.3rem;">押し売りしません</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><img src="ハートフルクリーンサイト画像/heartful画像/供養.jpeg" alt="供養サービス" style="width: 100%; height: 100px; object-fit: cover; border-radius: 6px; margin-bottom: 8px;"><strong>供養サービスあり</strong><br><span style="font-size: 1.3rem;">提携寺院で遺品供養</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><img src="ハートフルクリーンサイト画像/heartful画像/買取査定.jpeg" alt="買取査定" style="width: 100%; height: 100px; object-fit: cover; border-radius: 6px; margin-bottom: 8px;"><strong>買取で費用を削減</strong><br><span style="font-size: 1.3rem;">査定額を整理費用から差し引き</span></div>
                 <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>現金・貴重品は必ずご報告</strong><br><span style="font-size: 1.3rem;">元警察官の徹底</span></div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>供養サービスあり</strong><br><span style="font-size: 1.3rem;">提携寺院で遺品供養</span></div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>買取で費用を削減</strong><br><span style="font-size: 1.3rem;">査定額を整理費用から差し引き</span></div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>他社の約1/3の時間で完了</strong><br><span style="font-size: 1.3rem;">経験豊富なスタッフが担当</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><img src="ハートフルクリーンサイト画像/heartful画像/清掃.jpeg" alt="丁寧でスピーディーな作業" style="width: 100%; height: 100px; object-fit: cover; border-radius: 6px; margin-bottom: 8px;"><strong>他社の約1/3の時間で完了</strong><br><span style="font-size: 1.3rem;">経験豊富なスタッフが担当</span></div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- お客様の声 -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: var(--bg-cream);">
             <div class="section_title">
                 <h2>お客様の声</h2>
@@ -640,8 +733,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 代表プロフィール・元警察官 -->
+        <div class="section-row" style="--section-bg: #fff;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: #fff;">
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
                 <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
@@ -652,8 +751,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- Before/After -->
+        <div class="section-row" style="--section-bg: #F5EFE3;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: var(--bg-cream2);">
             <div class="section_title">
                 <h2>作業のご案内</h2>
@@ -661,19 +766,49 @@
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
                     <div>
-                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">Before</p>
-                        <img src="ハートフルクリーンサイト画像/before-after/ケース１ビフォア.png" alt="作業前の部屋" style="width: 100%; border-radius: 8px;">
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース1 Before</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース１ビフォア.png" alt="作業前の部屋（ケース1）" style="width: 100%; border-radius: 8px;">
                     </div>
                     <div>
-                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">After</p>
-                        <img src="ハートフルクリーンサイト画像/before-after/ケース１アフター.png" alt="作業後の部屋" style="width: 100%; border-radius: 8px;">
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース1 After</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース１アフター.png" alt="作業後の部屋（ケース1）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース2 Before</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース２ビフォア.png" alt="作業前の部屋（ケース2）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース2 After</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース２アフター.png" alt="作業後の部屋（ケース2）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース3 Before</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース３ビフォア.JPG" alt="作業前の部屋（ケース3）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース3 After</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース３アフター.JPG" alt="作業後の部屋（ケース3）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース4 Before</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース４ビフォア.jpeg" alt="作業前の部屋（ケース4）" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">ケース4 After</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース４アフター.jpeg" alt="作業後の部屋（ケース4）" style="width: 100%; border-radius: 8px;">
                     </div>
                 </div>
                 <p style="text-align: center; font-size: 1.4rem; margin-top: 16px;">丁寧で正確な作業で、ご依頼者様にご安心いただいております。</p>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 3つのお約束 -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: var(--bg-cream);">
             <div class="section_title">
                 <h2><span style="color: var(--red-main);">3</span>つのお約束</h2>
@@ -693,8 +828,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 忙しい方でも -->
+        <div class="section-row" style="--section-bg: #fff;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: #fff;">
             <div style="background: var(--orange-main); color: #fff; padding: 20px 24px; margin: 0 20px 24px;">
                 <h2 style="font-size: 2.4rem; font-weight: 900;">忙しい方でもご利用しやすい</h2>
@@ -718,8 +859,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- 対応エリア -->
+        <div class="section-row" style="--section-bg: #F5EFE3;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: var(--bg-cream2);">
             <div class="section_title">
                 <h2>無料出張お見積りの対応エリア</h2>
@@ -729,12 +876,19 @@
             <p style="text-align: center; font-size: 1.6rem; font-weight: 700; margin-top: 16px;">即日・翌日対応OK</p>
             <p style="text-align: center; font-size: 1.3rem; color: #666; margin-top: 8px;">※ご予約が埋まっている場合もございます。お早めにご相談ください。</p>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- ご相談から遺品整理までの流れ -->
+        <div class="section-row" style="--section-bg: #fff;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: #fff;">
             <div class="section_title">
                 <h2 style="color: var(--red-main);">ご相談から遺品整理までの流れ</h2>
             </div>
+            <p style="text-align: center; margin-bottom: 24px;"><img src="ハートフルクリーンサイト画像/heartful画像/打ち合わせ.jpeg" alt="打ち合わせ・ご相談の流れ" style="width: 100%; max-width: 480px; margin: 0 auto; border-radius: 8px;"></p>
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
                 <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
                     <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">① お問い合わせ</div>
@@ -754,8 +908,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- CTA 2回目 -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="cta_block">
             <p style="text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">まだ迷っていても大丈夫です</p>
             <a href="tel:0742268496" class="cta_tel">
@@ -764,11 +924,18 @@
             </a>
             <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- お問い合わせフォーム -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section id="contact" class="form_section">
             <div class="form_inner">
                 <div class="section_title"><h2>お問い合わせ</h2></div>
+                <p style="text-align: center; margin-bottom: 16px;"><img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="お気軽にご相談ください" style="width: 100%; max-width: 360px; margin: 0 auto; border-radius: 8px;"></p>
                 <p class="form_lead">ご相談・お見積りは無料です。お気軽にご入力ください。</p>
                 <form id="contact_form" action="#" method="post">
                     <label>お名前 <span class="required">必須</span></label>
@@ -784,8 +951,14 @@
                 <p class="form_thanks">送信いただきありがとうございます。<br>内容を確認のうえ、ご連絡いたします。</p>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- よくある質問 -->
+        <div class="section-row" style="--section-bg: #fff;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section style="background: #fff;">
             <div class="section_title">
                 <h2>よくあるご質問</h2>
@@ -817,8 +990,14 @@
                 </div>
             </div>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- CTA 3回目 -->
+        <div class="section-row" style="--section-bg: #FAF9F5;">
+            <div class="col-side col-side--left" aria-hidden="true"></div>
+            <div class="col-center">
         <section class="cta_block">
             <a href="tel:0742268496" class="cta_tel">
                 <span class="number">0742-26-8496</span>
@@ -828,6 +1007,9 @@
             <a href="#contact" style="display: block; background: #fff; color: var(--orange-main); border: 2px solid var(--orange-main); padding: 16px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 1.6rem; margin-top: 12px;">フォームで相談する</a>
             <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
         </section>
+            </div>
+            <div class="col-side col-side--right" aria-hidden="true"></div>
+        </div>
 
         <!-- フッター -->
         <footer class="footer_area">
