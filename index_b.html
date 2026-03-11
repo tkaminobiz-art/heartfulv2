@@ -38,6 +38,18 @@
             --radius-card: 8px;
             --shadow-card: 0 2px 12px rgba(0,0,0,.06);
             --shadow-card-hover: 0 8px 24px rgba(0,0,0,.1);
+            /* Pigmentパレット（左右カラム用） */
+            --pigment-pale-yellow: #F9F7D0;
+            --pigment-peach: #F2D7A9;
+            --pigment-lavender: #EFC9E3;
+            --pigment-taupe: #AA826C;
+            --pigment-warm-gray: #C9C4BF;
+            --pigment-muted-taupe: #807162;
+            --pigment-deep-brown: #5B3C34;
+            --pigment-gold-ochre: #DEA250;
+            --pigment-teal: #1FE49C;
+            --pigment-medium-blue: #186DB4;
+            --pigment-dark-green: #082218;
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { font-size: 62.5%; }
@@ -73,13 +85,18 @@
             overflow: visible;
             background: #fff;
         }
-        /* セクションごとの左・右カラム色（メリハリ用） */
-        .section-row--cream { --section-bg: #FAF9F5; }
-        .section-row--cream2 { --section-bg: #F5EFE3; }
-        .section-row--white { --section-bg: #ffffff; }
-        .section-row--gray { --section-bg: #EFEFEF; }
-        .section-row--navy { --section-bg: #1A3A6E; }
-        .section-row--pale { --section-bg: #F8F6F2; }
+        /* セクションごとの左・右カラム色（Pigmentパレットでメリハリ） */
+        .section-row--pale-yellow { --section-bg: var(--pigment-pale-yellow); }
+        .section-row--peach { --section-bg: var(--pigment-peach); }
+        .section-row--lavender { --section-bg: var(--pigment-lavender); }
+        .section-row--taupe { --section-bg: var(--pigment-taupe); }
+        .section-row--warm-gray { --section-bg: var(--pigment-warm-gray); }
+        .section-row--muted-taupe { --section-bg: var(--pigment-muted-taupe); }
+        .section-row--deep-brown { --section-bg: var(--pigment-deep-brown); }
+        .section-row--gold-ochre { --section-bg: var(--pigment-gold-ochre); }
+        .section-row--teal { --section-bg: var(--pigment-teal); }
+        .section-row--medium-blue { --section-bg: var(--pigment-medium-blue); }
+        .section-row--dark-green { --section-bg: var(--pigment-dark-green); }
         /* 中央列がネイビーになるセクションのみ */
         .col-center > section#solution {
             background: #1A3A6E;
@@ -550,7 +567,7 @@
         </header>
 
         <!-- KV（ファーストビュー） -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--pale-yellow">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="kv_inner">
@@ -580,7 +597,7 @@
         </div>
 
         <!-- 即日・夜間 -->
-        <div class="section-row section-row--gray">
+        <div class="section-row section-row--warm-gray">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_speed">
@@ -595,7 +612,7 @@
         </div>
 
         <!-- 実績バッジ3つ -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--peach">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_badges">
@@ -617,7 +634,7 @@
         </div>
 
         <!-- 料金タイトル -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--lavender">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_price_title">
@@ -660,7 +677,7 @@
         </div>
 
         <!-- CTA 1回目 -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--taupe">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
@@ -678,7 +695,7 @@
         </div>
 
         <!-- こんな不安ありませんか？（Problem） -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--gold-ochre">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="anxiety" class="bg-cream">
@@ -703,7 +720,7 @@
         </div>
 
         <!-- 業者選びを間違えると（Agitation） -->
-        <div class="section-row section-row--pale">
+        <div class="section-row section-row--teal">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="agitation" class="bg-cream">
@@ -735,7 +752,7 @@
         </div>
 
         <!-- なぜ元警察官だと安心できるのか？（Solution・強み4枚） -->
-        <div class="section-row section-row--navy">
+        <div class="section-row section-row--medium-blue">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="solution" style="background: #1A3A6E; color: #fff; padding: 48px 20px;">
@@ -771,7 +788,7 @@
         </div>
 
         <!-- サービス一覧（強み6項目に拡張） -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--muted-taupe">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -793,7 +810,7 @@
         </div>
 
         <!-- お客様の声 -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--deep-brown">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -816,7 +833,7 @@
         </div>
 
         <!-- 代表プロフィール・元警察官 -->
-        <div class="section-row section-row--white">
+        <div class="section-row section-row--peach">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -834,7 +851,7 @@
         </div>
 
         <!-- Before/After -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--warm-gray">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream2);">
@@ -884,7 +901,7 @@
         </div>
 
         <!-- 3つのお約束 -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--lavender">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -911,7 +928,7 @@
         </div>
 
         <!-- 忙しい方でも -->
-        <div class="section-row section-row--white">
+        <div class="section-row section-row--taupe">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -942,7 +959,7 @@
         </div>
 
         <!-- 対応エリア -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--gold-ochre">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream2);">
@@ -959,7 +976,7 @@
         </div>
 
         <!-- ご相談から遺品整理までの流れ -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--pale-yellow">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -991,7 +1008,7 @@
         </div>
 
         <!-- CTA 2回目 -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--muted-taupe">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
@@ -1007,7 +1024,7 @@
         </div>
 
         <!-- お問い合わせフォーム -->
-        <div class="section-row section-row--cream2">
+        <div class="section-row section-row--deep-brown">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="contact" class="form_section">
@@ -1034,7 +1051,7 @@
         </div>
 
         <!-- よくある質問 -->
-        <div class="section-row section-row--white">
+        <div class="section-row section-row--peach">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -1073,7 +1090,7 @@
         </div>
 
         <!-- CTA 3回目 -->
-        <div class="section-row section-row--cream">
+        <div class="section-row section-row--warm-gray">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
