@@ -252,12 +252,13 @@
         }
         .kv_inner .kv_visual {
             margin-top: var(--space-32);
-            text-align: right;
+            width: 100%;
         }
         .kv_inner .kv_visual img {
-            max-height: 280px;
-            width: auto;
-            margin-left: auto;
+            width: 100%;
+            max-height: 360px;
+            object-fit: cover;
+            object-position: center;
             border-radius: var(--radius-card);
         }
         .kv_inner .line_btn {
@@ -447,7 +448,7 @@
         }
         .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
         .profile-hero { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-32); }
-        .profile-hero__img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .profile-hero__img { max-width: 280px; width: 100%; max-height: 320px; height: auto; object-fit: cover; object-position: top center; border-radius: var(--radius-card); flex-shrink: 0; }
         .testimonial--featured { padding: var(--space-32); font-size: 1.7rem; }
         /* 見出し: Noto Serif JP */
         h1, h2, h3, .section_title h2 {
@@ -635,7 +636,7 @@
                 <span class="promise_badge">現金・貴重品は必ずご報告</span>
             </div>
             <div class="kv_visual">
-                <img src="./ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官">
+                <img src="./バナー/FVセクションバナー.png" alt="代表 藤田 元大阪府警察官（ご自宅訪問・相談のイメージ）" onerror="this.style.display='none'">
             </div>
             <a href="https://line.me/R/ti/p/@195brsjr" class="line_btn">LINE かんたん見積もり</a>
         </section>
@@ -885,7 +886,7 @@
             <div class="col-center">
         <section style="background: #fff;">
             <div class="content-inner profile-hero" style="padding: var(--space-48) var(--space-24);">
-                <img src="./ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" class="profile-hero__img" loading="lazy">
+                <img src="./バナー/和室バナー.jpeg" alt="代表 藤田 元大阪府警察官（和室にて）" class="profile-hero__img" loading="lazy" onerror="this.style.display='none'">
                 <div style="flex: 1; min-width: 280px;">
                     <h2 style="font-size: 2rem; font-weight: 700; color: var(--red-main); margin-bottom: 12px;">元警察官の代表が、安心をお約束します</h2>
                     <p style="font-size: 1.5rem; line-height: 1.8;">遺品整理の現場では、ご遺族の足元を見る悪質な業者も存在します。私は長年、大阪府警の警察官として多くの悲しみの現場に立ち会ってきました。前職の大手遺品整理会社では、遺品整理部門の現場責任者として年間数百件以上の案件を統括してきました。「現場のプロが、正直にやれる会社をつくりたい」という思いから独立し、ハートフルクリーンを設立。徹底した法令遵守と守秘義務を守り、不正のない丁寧な作業をお約束します。</p>
@@ -1030,7 +1031,7 @@
             <div class="section_title section_title--primary">
                 <h2 style="color: var(--red-main);">ご相談から遺品整理までの流れ</h2>
             </div>
-            <div class="section-hero-img" style="margin-bottom: 24px;"><img src="./ハートフルクリーンサイト画像/heartful画像/打ち合わせ.jpeg" alt="打ち合わせ・ご相談の流れ" onerror="this.style.display='none'" loading="lazy"></div>
+            <div class="section-hero-img" style="margin-bottom: 24px;"><img src="./バナー/エントランスホールバナー.png" alt="ご自宅への訪問・見積り・作業の流れ" onerror="this.style.display='none'" loading="lazy"></div>
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
                 <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
                     <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">① お問い合わせ</div>
