@@ -43,7 +43,7 @@
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
-        .lp-container { width: 100%; max-width: none; margin: 0; overflow: visible; position: relative; background: #1A3A6E; }
+        .lp-container { width: 100%; max-width: none; margin: 0; overflow: visible; position: relative; background: #000000; }
         /* 左右ネイビーで挟む: 中央750px・その外側はネイビー一色（グリッド＋ブロック両対応） */
         .section-row {
             display: grid;
@@ -51,7 +51,7 @@
             width: 100%;
         }
         .col-side {
-            background: #1A3A6E;
+            background: #000000;
             min-width: 0;
         }
         .col-center {
@@ -60,7 +60,7 @@
             overflow: visible;
             background: #fff;
         }
-        /* 中央列がネイビーになるセクションのみ上書き */
+        /* 中央列がネイビーになるセクションのみ上書き（左右は実黒のため、ここだけ濃紺でメリハリ） */
         .col-center > section#solution {
             background: #1A3A6E;
         }
