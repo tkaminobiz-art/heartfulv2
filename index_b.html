@@ -85,10 +85,37 @@
             flex-wrap: nowrap;
             width: 100%;
         }
+            --pigment-dark-green: #082218;
+        }
+        /* 左右カラム：一色統一・和紙風テクスチャ（コードで生成） */
         .col-side {
             flex: 1 1 0%;
             min-width: 0;
-            background: var(--section-bg, var(--bg-cream));
+            /* ベース：温かみのある和紙色（淡い生成り） */
+            background-color: #F2EDE5;
+            /* 和紙テクスチャ：SVG feTurbulence で繊維状ノイズを生成し、薄く重ねる */
+            background-image:
+                linear-gradient(165deg, rgba(255,252,248,0.5) 0%, transparent 45%, rgba(228,222,212,0.2) 100%),
+                linear-gradient(90deg, rgba(255,255,255,0.2) 0%, transparent 25%, transparent 75%, rgba(238,233,226,0.15) 100%),
+                url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='w'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.035 0.04' numOctaves='3' result='t'/%3E%3CfeColorMatrix in='t' type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.06' intercept='0.52'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' fill='%23ddd' filter='url(%23w)'/%3E%3C/svg%3E");
+            background-size: 100% 100%, 100% 100%, 256px 256px;
+            background-position: 0 0, 0 0, 0 0;
+            background-repeat: no-repeat, no-repeat, repeat;
+            background-blend-mode: normal, normal, overlay;
+        }
+        /* セクションごとの色分けは廃止し、すべて上記和紙背景で統一 */
+        .section-row--pale-yellow,
+        .section-row--peach,
+        .section-row--lavender,
+        .section-row--taupe,
+        .section-row--warm-gray,
+        .section-row--muted-taupe,
+        .section-row--deep-brown,
+        .section-row--gold-ochre,
+        .section-row--teal,
+        .section-row--medium-blue,
+        .section-row--dark-green {
+            /* 色分けなし・和紙一色で統一 */
         }
         .col-center {
             flex: 0 0 750px;
@@ -98,18 +125,6 @@
             overflow: visible;
             background: #fff;
         }
-        /* セクションごとの左・右カラム色（Pigmentパレットでメリハリ） */
-        .section-row--pale-yellow { --section-bg: var(--pigment-pale-yellow); }
-        .section-row--peach { --section-bg: var(--pigment-peach); }
-        .section-row--lavender { --section-bg: var(--pigment-lavender); }
-        .section-row--taupe { --section-bg: var(--pigment-taupe); }
-        .section-row--warm-gray { --section-bg: var(--pigment-warm-gray); }
-        .section-row--muted-taupe { --section-bg: var(--pigment-muted-taupe); }
-        .section-row--deep-brown { --section-bg: var(--pigment-deep-brown); }
-        .section-row--gold-ochre { --section-bg: var(--pigment-gold-ochre); }
-        .section-row--teal { --section-bg: var(--pigment-teal); }
-        .section-row--medium-blue { --section-bg: var(--pigment-medium-blue); }
-        .section-row--dark-green { --section-bg: var(--pigment-dark-green); }
         /* 中央列がネイビーになるセクションのみ */
         .col-center > section#solution {
             background: #1A3A6E;
