@@ -28,6 +28,16 @@
             --gold: #C9A640;
             --highlight-yellow: #FFFF88;
             --border-orange: #FFAA44;
+            /* 余白トークン（8px倍数） */
+            --space-24: 24px;
+            --space-32: 32px;
+            --space-48: 48px;
+            --space-64: 64px;
+            --space-96: 96px;
+            --space-120: 120px;
+            --radius-card: 8px;
+            --shadow-card: 0 2px 12px rgba(0,0,0,.06);
+            --shadow-card-hover: 0 8px 24px rgba(0,0,0,.1);
         }
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         html { font-size: 62.5%; }
@@ -102,7 +112,13 @@
             min-height: 200px;
             object-fit: cover;
         }
-        section { width: 100%; padding: 40px 20px; }
+        section { width: 100%; padding: var(--space-48) var(--space-24); }
+        .section--tight { padding: var(--space-32) var(--space-24); }
+        .section--wide { padding: var(--space-64) var(--space-24); }
+        .section--hero { padding: var(--space-96) var(--space-24); }
+        .content-inner { max-width: 750px; margin: 0 auto; padding: 0 var(--space-24); }
+        .bg-cream { background: var(--bg-cream); }
+        .bg-white { background: #fff; }
 
         /* ===== ヘッダー ===== */
         .header_area {
@@ -142,14 +158,14 @@
         .kv_inner {
             position: relative;
             min-height: 420px;
-            padding: 24px 20px 32px;
-            background: linear-gradient(180deg, #F5EFE3 0%, #FAF9F5 100%);
+            padding: var(--space-64) var(--space-24) var(--space-48);
+            background: linear-gradient(180deg, var(--bg-cream2) 0%, var(--bg-cream) 100%);
         }
         .kv_inner .kv_tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            margin-bottom: 20px;
+            margin-bottom: var(--space-24);
         }
         .kv_inner .kv_tag {
             background: var(--orange-main);
@@ -160,68 +176,70 @@
             font-weight: 700;
         }
         .kv_inner .main_copy {
-            margin-bottom: 16px;
+            margin-bottom: var(--space-24);
         }
         .kv_inner .main_copy .lead {
-            font-size: 1.8rem;
-            color: #333;
+            font-size: 1.6rem;
+            color: #555;
             margin-bottom: 8px;
         }
         .kv_inner .main_copy h1 {
-            font-size: clamp(2.4rem, 5vw, 3.6rem);
-            font-weight: 900;
-            line-height: 1.35;
+            font-size: clamp(3rem, 6vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.3;
             color: #1A3A6E;
+            letter-spacing: -0.02em;
         }
         .kv_inner .main_copy h1 .accent { color: var(--orange-main); }
         .kv_inner .main_copy .sub {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: #333;
-            margin-top: 12px;
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #555;
+            margin-top: 16px;
         }
         .kv_inner .kv_promises {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin: 20px 0;
+            margin: var(--space-24) 0;
         }
         .kv_inner .promise_badge {
             background: #fff;
             border: 2px solid var(--gold);
             color: #333;
             padding: 10px 14px;
-            border-radius: 8px;
+            border-radius: var(--radius-card);
             font-size: 1.3rem;
             font-weight: 700;
         }
         .kv_inner .kv_visual {
-            margin-top: 24px;
+            margin-top: var(--space-32);
             text-align: right;
         }
         .kv_inner .kv_visual img {
             max-height: 280px;
             width: auto;
             margin-left: auto;
-            border-radius: 8px;
+            border-radius: var(--radius-card);
         }
         .kv_inner .line_btn {
             display: inline-block;
             background: var(--green-line);
             color: #fff;
-            padding: 14px 24px;
-            border-radius: 8px;
+            padding: 18px 32px;
+            border-radius: var(--radius-card);
             font-weight: 700;
-            font-size: 1.8rem;
-            margin-top: 20px;
-            transition: opacity .3s;
+            font-size: 2rem;
+            margin-top: var(--space-24);
+            transition: transform .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 14px rgba(6,199,85,.35);
         }
-        .kv_inner .line_btn:hover { opacity: .9; }
+        .kv_inner .line_btn:hover { opacity: 1; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6,199,85,.45); }
 
         /* ===== 即日・夜間 ===== */
         .under_kv_speed {
-            background: var(--bg-light-gray);
-            padding: 32px 20px;
+            background: var(--bg-cream);
+            padding: var(--space-48) var(--space-24);
         }
         .under_kv_speed .head {
             font-size: 1.8rem;
@@ -246,8 +264,8 @@
 
         /* ===== 実績バッジ3つ ===== */
         .under_kv_badges {
-            background: var(--bg-cream2);
-            padding: 30px 20px;
+            background: var(--bg-cream);
+            padding: var(--space-48) var(--space-24);
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -349,42 +367,50 @@
             font-weight: 700;
             font-size: 1.8rem;
             margin-bottom: 16px;
+            transition: transform .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 14px rgba(45,168,53,.35);
         }
-        .cta_block .cta_tel .badge {
-            display: inline-block;
-            background: #FFDD00;
-            color: #333;
-            padding: 4px 12px;
-            border-radius: 6px;
-            font-size: 1.3rem;
-            margin-bottom: 8px;
-        }
-        .cta_block .cta_tel .number { font-size: 2.8rem; letter-spacing: 0.05em; }
-        .cta_block .cta_tel .note { font-size: 1.3rem; display: block; margin-top: 4px; }
+        .cta_block .cta_tel:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(45,168,53,.45); }
         .cta_block .cta_line {
             display: block;
             background: var(--green-line);
             color: #fff;
             padding: 18px;
-            border-radius: 8px;
+            border-radius: var(--radius-card);
             text-align: center;
             font-weight: 700;
             font-size: 1.8rem;
+            transition: transform .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 14px rgba(6,199,85,.25);
         }
+        .cta_block .cta_line:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6,199,85,.35); }
         .cta_block .micro { font-size: 1.3rem; color: #666; text-align: center; margin-top: 12px; }
 
         /* ===== セクションタイトル共通 ===== */
-        .section_title { text-align: center; margin-bottom: 24px; }
-        .section_title h2 { font-size: 2.6rem; font-weight: 700; color: var(--orange-main); }
+        .section_title { text-align: center; margin-bottom: var(--space-32); }
+        .section_title h2 { font-size: 2rem; font-weight: 700; color: var(--orange-main); }
+        .section_title--primary h2 { font-size: clamp(2.4rem, 4vw, 3rem); font-weight: 700; }
         .section_title h2::after {
             content: "";
             display: block;
             width: 60px;
             height: 4px;
             background: var(--orange-main);
-            margin: 10px auto 0;
+            margin: 12px auto 0;
             border-radius: 2px;
         }
+        /* カード・代表・お客様の声のスタイル */
+        .card {
+            background: #fff;
+            border-radius: var(--radius-card);
+            padding: var(--space-24);
+            box-shadow: var(--shadow-card);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .card:hover { box-shadow: 0 8px 24px rgba(0,0,0,.1); transform: translateY(-2px); }
+        .profile-hero { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-32); }
+        .profile-hero__img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; flex-shrink: 0; }
+        .testimonial--featured { padding: var(--space-32); font-size: 1.7rem; }
         /* 見出し: Noto Serif JP */
         h1, h2, h3, .section_title h2 {
             font-family: "Noto Serif JP", "Noto Sans JP", serif;
@@ -481,13 +507,14 @@
             background: var(--orange-main);
             color: #fff;
             border: none;
-            border-radius: 8px;
+            border-radius: var(--radius-card);
             font-size: 1.8rem;
             font-weight: 700;
             cursor: pointer;
-            transition: opacity .3s;
+            transition: transform .2s ease, box-shadow .2s ease;
+            box-shadow: 0 4px 14px rgba(255,108,0,.25);
         }
-        .form_section .form_btn:hover { opacity: .9; }
+        .form_section .form_btn:hover { opacity: 1; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255,108,0,.35); }
         .form_section .form_thanks { display: none; text-align: center; padding: 40px 20px; font-size: 1.6rem; color: var(--orange-main); font-weight: 700; }
         .form_section.submitted .form_inner form { display: none; }
         .form_section.submitted .form_thanks { display: block; }
@@ -646,21 +673,21 @@
         <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
-        <section id="anxiety" style="background: var(--bg-light-gray);">
-            <div class="section_title">
+        <section id="anxiety" class="bg-cream">
+            <div class="section_title section_title--primary">
                 <h2>こんな不安ありませんか？</h2>
             </div>
             <div class="section-hero-img" style="margin-bottom: 16px;"><img src="./ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子" onerror="this.style.display='none'"></div>
             <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px;">親が亡くなって、四十九日が過ぎてから何から手をつければ…。40〜50代のご遺族から、こんなお声を多くいただきます。</p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px; max-width: 750px; margin: 0 auto;">
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">どこに頼めばいいかわからない</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">費用がいくらかかるか不安</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">不法投棄されないか心配</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">押し売りや追加請求されないか</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">いつ・どのタイミングで頼むべきかわからない</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">作業中に見つかった現金・貴重品をこっそり持ち帰られないか不安</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">時間がかかりすぎないか</div>
-                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">遺品に敬意を払ってくれる業者か</div>
+                <div class="card card--border" style="font-size: 1.4rem;">どこに頼めばいいかわからない</div>
+                <div class="card card--border" style="font-size: 1.4rem;">費用がいくらかかるか不安</div>
+                <div class="card card--border" style="font-size: 1.4rem;">不法投棄されないか心配</div>
+                <div class="card card--border" style="font-size: 1.4rem;">押し売りや追加請求されないか</div>
+                <div class="card card--border" style="font-size: 1.4rem;">いつ・どのタイミングで頼むべきかわからない</div>
+                <div class="card card--border" style="font-size: 1.4rem;">作業中に見つかった現金・貴重品をこっそり持ち帰られないか不安</div>
+                <div class="card card--border" style="font-size: 1.4rem;">時間がかかりすぎないか</div>
+                <div class="card card--border" style="font-size: 1.4rem;">遺品に敬意を払ってくれる業者か</div>
             </div>
         </section>
             </div>
@@ -671,25 +698,25 @@
         <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
-        <section id="agitation" style="background: #fff5f5;">
+        <section id="agitation" class="bg-cream">
             <div class="section_title">
                 <h2 style="color: var(--red-main);">業者選びを間違えると</h2>
             </div>
             <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px; padding: 0 20px;">見つかった現金を黙って持ち帰られた、当日来たのは素人バイトで作業が雑だった——。遺品整理業者には資格・免許が不要なため、悪質な業者でも簡単に参入できるのが実態です。</p>
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
-                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                <div class="card card--border-red" style="margin-bottom: 16px;">
                     <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">見積り後に次々と追加費用を請求された</h3>
                     <p style="font-size: 1.4rem; line-height: 1.7;">「これも処分費がかかります」と、当日になってから追加請求されるトラブルが後を絶ちません。</p>
                 </div>
-                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                <div class="card card--border-red" style="margin-bottom: 16px;">
                     <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">不法投棄が発覚した</h3>
                     <p style="font-size: 1.4rem; line-height: 1.7;">「適正に処分します」と言いながら、実際には不法投棄。依頼者が責任を問われるケースもあります。</p>
                 </div>
-                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                <div class="card card--border-red" style="margin-bottom: 16px;">
                     <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">買い叩かれた・貴重品が返ってこない</h3>
                     <p style="font-size: 1.4rem; line-height: 1.7;">現金や貴金属を見つけても報告せず、不当に安い査定で買い取る悪質業者も存在します。</p>
                 </div>
-                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                <div class="card card--border-red" style="margin-bottom: 16px;">
                     <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">大手を名乗る業者に依頼したが、当日来たのはアルバイトばかり</h3>
                     <p style="font-size: 1.4rem; line-height: 1.7;">電話対応は丁寧だったのに、現場に来たのは当日募集したアルバイトスタッフばかり。遺品の扱いが雑で、形見の品が傷ついた——そんなお声もいただきます。</p>
                 </div>
@@ -740,7 +767,7 @@
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
-            <div class="section_title">
+            <div class="section_title section_title--primary">
                 <h2>選ばれる6つの強み</h2>
             </div>
             <div class="section-hero-img" style="margin-bottom: 20px;"><img src="./ハートフルクリーンサイト画像/heartful画像/遺品整理.jpeg" alt="遺品整理の作業風景" onerror="this.style.display='none'"></div>
@@ -766,11 +793,11 @@
                 <h2>お客様の声</h2>
             </div>
             <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
-                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 20px; margin-bottom: 16px;">
+                <div class="card testimonial--featured" style="margin-bottom: 16px;">
                     <p style="font-size: 1.4rem; color: #666; margin-bottom: 8px;">奈良県 50代 女性</p>
-                    <p style="font-size: 1.6rem; line-height: 1.7;">遠方からでも安心して任せられました。電話の対応が一番親切で決めました。買取可能なものもしっかり査定していただき、費用も抑えられて助かりました。（Google口コミより）</p>
+                    <p style="line-height: 1.8;">遠方からでも安心して任せられました。電話の対応が一番親切で決めました。買取可能なものもしっかり査定していただき、費用も抑えられて助かりました。（Google口コミより）</p>
                 </div>
-                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 20px;">
+                <div class="card" style="padding: 20px;">
                     <p style="font-size: 1.4rem; color: #666; margin-bottom: 8px;">大阪府 40代 男性</p>
                     <p style="font-size: 1.6rem; line-height: 1.7;">急な依頼にも関わらず迅速に対応していただきました。料金も見積もり通りで安心でした。（Google口コミより）</p>
                 </div>
@@ -785,8 +812,8 @@
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
-            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
-                <img src="./ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+            <div class="content-inner profile-hero" style="padding: var(--space-48) var(--space-24);">
+                <img src="./ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" class="profile-hero__img">
                 <div style="flex: 1; min-width: 280px;">
                     <h2 style="font-size: 2rem; font-weight: 700; color: var(--red-main); margin-bottom: 12px;">元警察官の代表が、安心をお約束します</h2>
                     <p style="font-size: 1.5rem; line-height: 1.8;">遺品整理の現場では、ご遺族の足元を見る悪質な業者も存在します。私は長年、大阪府警の警察官として多くの悲しみの現場に立ち会ってきました。前職の大手遺品整理会社では、遺品整理部門の現場責任者として年間数百件以上の案件を統括してきました。「現場のプロが、正直にやれる会社をつくりたい」という思いから独立し、ハートフルクリーンを設立。徹底した法令遵守と守秘義務を守り、不正のない丁寧な作業をお約束します。</p>
@@ -928,7 +955,7 @@
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
-            <div class="section_title">
+            <div class="section_title section_title--primary">
                 <h2 style="color: var(--red-main);">ご相談から遺品整理までの流れ</h2>
             </div>
             <div class="section-hero-img" style="margin-bottom: 24px;"><img src="./ハートフルクリーンサイト画像/heartful画像/打ち合わせ.jpeg" alt="打ち合わせ・ご相談の流れ" onerror="this.style.display='none'"></div>
@@ -977,7 +1004,7 @@
             <div class="col-center">
         <section id="contact" class="form_section">
             <div class="form_inner">
-                <div class="section_title"><h2>お問い合わせ</h2></div>
+                <div class="section_title section_title--primary"><h2>お問い合わせ</h2></div>
                 <div class="section-hero-img" style="margin-bottom: 16px;"><img src="./ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="お気軽にご相談ください" onerror="this.style.display='none'"></div>
                 <p class="form_lead">ご相談・お見積りは無料です。お気軽にご入力ください。</p>
                 <form id="contact_form" action="#" method="post">
