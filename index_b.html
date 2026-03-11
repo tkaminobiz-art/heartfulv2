@@ -81,16 +81,18 @@
         .col-center > section#solution {
             background: #1A3A6E;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 767px) {
             .section-row { grid-template-columns: 1fr; }
             .col-center { max-width: none; }
             .col-side { display: none; }
         }
-        /* 769px以上で確実に3カラムを見せるため、中央列を明示 */
-        @media (min-width: 769px) {
+        /* 768px以上で3カラム表示（タブレット含む） */
+        @media (min-width: 768px) {
             .section-row {
+                display: grid;
                 grid-template-columns: 1fr 750px 1fr;
             }
+            .col-side { display: block; }
         }
         /* セクション単位の画像は中央カラムに合わせる */
         .section-hero-img {
