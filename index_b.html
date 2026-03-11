@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遺品整理ならハートフルクリーン｜元警察官・奈良・関西対応</title>
+    <meta name="description" content="元大阪府警の代表がお約束する、不正のない遺品整理。他社の約1/3の時間で丁寧・正確に。奈良・関西エリア。無料見積り・相談だけでも費用ゼロ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* ===== おうち整理士カラーパレット模倣 ===== */
+        :root {
+            --orange-main: #FF6C00;
+            --orange-sub: #FDA825;
+            --orange-cta: #FB5E29;
+            --green-cta: #2EA835;
+            --green-line: #06C755;
+            --green-speed: #1B9E3E;
+            --blue-speed: #1A6FBF;
+            --red-main: #DF0D1B;
+            --red-title: #E8380D;
+            --bg-header: #F4ECE3;
+            --bg-cream: #FAF9F5;
+            --bg-cream2: #F5EFE3;
+            --bg-light-gray: #EFEFEF;
+            --bg-yellow-box: #FFFDE8;
+            --gold: #C9A640;
+            --highlight-yellow: #FFFF88;
+            --border-orange: #FFAA44;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 62.5%; }
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, "Noto Sans JP", sans-serif;
+            font-size: 1.6rem;
+            line-height: 1.6;
+            color: #333;
+            background: #F5F5F5;
+            -webkit-font-smoothing: antialiased;
+        }
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+
+        .lp-container { max-width: 750px; margin: 0 auto; overflow: hidden; position: relative; background: #fff; }
+        section { width: 100%; padding: 40px 20px; }
+
+        /* ===== ヘッダー ===== */
+        .header_area {
+            max-width: 750px;
+            margin: 0 auto;
+            background: var(--bg-header);
+            padding: 10px 20px 12px;
+            overflow: hidden;
+        }
+        .header_area .logo {
+            float: left;
+            max-width: 48%;
+            max-height: 60px;
+        }
+        .header_area .logo img { height: 50px; width: auto; }
+        .header_area .tel_btn {
+            float: right;
+            display: block;
+            background: linear-gradient(#D4621A, #A03A00);
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.6rem;
+            text-align: center;
+        }
+        .header_area .tel_btn .num { font-size: 2rem; letter-spacing: 0.05em; }
+        .header_area .tel_btn .note { font-size: 1.1rem; display: block; margin-top: 2px; opacity: .95; }
+
+        /* ===== KV（ファーストビュー） ===== */
+        .kv_inner {
+            position: relative;
+            min-height: 420px;
+            padding: 24px 20px 32px;
+            background: linear-gradient(180deg, #F5EFE3 0%, #FAF9F5 100%);
+        }
+        .kv_inner .kv_tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+        .kv_inner .kv_tag {
+            background: var(--orange-main);
+            color: #fff;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-size: 1.4rem;
+            font-weight: 700;
+        }
+        .kv_inner .main_copy {
+            margin-bottom: 16px;
+        }
+        .kv_inner .main_copy .lead {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .kv_inner .main_copy h1 {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 900;
+            line-height: 1.35;
+            color: #1A3A6E;
+        }
+        .kv_inner .main_copy h1 .accent { color: var(--orange-main); }
+        .kv_inner .main_copy .sub {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #333;
+            margin-top: 12px;
+        }
+        .kv_inner .kv_promises {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .kv_inner .promise_badge {
+            background: #fff;
+            border: 2px solid var(--gold);
+            color: #333;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .kv_inner .kv_visual {
+            margin-top: 24px;
+            text-align: right;
+        }
+        .kv_inner .kv_visual img {
+            max-height: 280px;
+            width: auto;
+            margin-left: auto;
+            border-radius: 8px;
+        }
+        .kv_inner .line_btn {
+            display: inline-block;
+            background: var(--green-line);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-top: 20px;
+            transition: opacity .3s;
+        }
+        .kv_inner .line_btn:hover { opacity: .9; }
+
+        /* ===== 即日・夜間 ===== */
+        .under_kv_speed {
+            background: var(--bg-light-gray);
+            padding: 32px 20px;
+        }
+        .under_kv_speed .head {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+        }
+        .under_kv_speed .big {
+            font-size: clamp(2.4rem, 5vw, 3.6rem);
+            font-weight: 900;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        .under_kv_speed .big.green { color: var(--green-speed); }
+        .under_kv_speed .big.blue { color: var(--blue-speed); }
+        .under_kv_speed .note {
+            font-size: 1.4rem;
+            color: #666;
+            text-align: center;
+            line-height: 1.7;
+        }
+
+        /* ===== 実績バッジ3つ ===== */
+        .under_kv_badges {
+            background: var(--bg-cream2);
+            padding: 30px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .under_kv_badges .badge_circle {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid var(--gold);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 16px;
+        }
+        .under_kv_badges .badge_circle .num {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--gold);
+            font-style: italic;
+        }
+        .under_kv_badges .badge_circle .label { font-size: 1.3rem; font-weight: 700; color: #333; }
+
+        /* ===== 料金タイトル ===== */
+        .under_kv_price_title {
+            padding: 32px 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .under_kv_price_title .thumb {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .under_kv_price_title h2 {
+            font-size: 2.6rem;
+            font-weight: 900;
+            color: #333;
+        }
+        .under_kv_price_title .sub { font-size: 1.6rem; color: #444; margin-top: 8px; }
+
+        /* ===== 料金表 ===== */
+        .price_table_wrap { padding: 0 20px 32px; }
+        .price_table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #ddd;
+        }
+        .price_table th {
+            background: var(--orange-main);
+            color: #fff;
+            padding: 14px 12px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        .price_table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid #ddd;
+            font-size: 1.5rem;
+        }
+        .price_table .price_num { font-size: 2.4rem; font-weight: 900; color: var(--orange-main); }
+
+        /* ===== 作業内容タグ ===== */
+        .under_kv_services {
+            padding: 24px 20px 32px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+        .under_kv_services .svc_tag {
+            background: var(--orange-main);
+            color: #fff;
+            padding: 16px 20px;
+            border-radius: 4px;
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        /* ===== CTAブロック（繰り返し用） ===== */
+        .cta_block {
+            padding: 40px 20px;
+            background: var(--bg-cream);
+        }
+        .cta_block .cta_tel {
+            display: block;
+            background: linear-gradient(to bottom, #3DB84A, #237A2D);
+            color: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+        }
+        .cta_block .cta_tel .badge {
+            display: inline-block;
+            background: #FFDD00;
+            color: #333;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        .cta_block .cta_tel .number { font-size: 2.8rem; letter-spacing: 0.05em; }
+        .cta_block .cta_tel .note { font-size: 1.3rem; display: block; margin-top: 4px; }
+        .cta_block .cta_line {
+            display: block;
+            background: var(--green-line);
+            color: #fff;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+        .cta_block .micro { font-size: 1.3rem; color: #666; text-align: center; margin-top: 12px; }
+
+        /* ===== セクションタイトル共通 ===== */
+        .section_title { text-align: center; margin-bottom: 24px; }
+        .section_title h2 { font-size: 2.6rem; font-weight: 700; color: var(--orange-main); }
+        .section_title h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--orange-main);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* ===== フッター ===== */
+        .footer_area {
+            background: #333;
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer_area .logo img { max-width: 180px; margin: 0 auto 20px; }
+        .footer_area .company { font-size: 1.4rem; margin-bottom: 8px; }
+        .footer_area .tel { font-size: 1.6rem; font-weight: 700; }
+        .footer_area .links { margin-top: 20px; font-size: 1.2rem; color: #ccc; }
+        .footer_area .links a { text-decoration: underline; }
+        .footer_area .copy { font-size: 1.1rem; margin-top: 20px; color: #999; }
+
+        /* ===== フローティングバー ===== */
+        #floating {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 100%);
+            width: 100%;
+            max-width: 750px;
+            height: 72px;
+            background: linear-gradient(135deg, var(--orange-main), var(--orange-sub));
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-shadow: 0 -4px 12px rgba(0,0,0,.15);
+            transition: transform .3s ease;
+        }
+        #floating.visible { transform: translate(-50%, 0); }
+        #floating .float_text { color: #fff; font-size: 1.6rem; font-weight: 700; }
+        #floating .float_btns { display: flex; gap: 12px; }
+        #floating .float_btns a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 20px;
+            height: 44px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.4rem;
+        }
+        #floating .float_tel { background: var(--green-cta); }
+        #floating .float_line { background: var(--green-line); }
+        body.has_floating { padding-bottom: 80px; }
+
+        @media (min-width: 769px) {
+            #floating { display: none; }
+            body.has_floating { padding-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="lp-container">
+        <!-- ヘッダー -->
+        <header class="header_area">
+            <a href="#" class="logo">
+                <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン">
+            </a>
+            <a href="tel:0742268496" class="tel_btn">
+                <span class="num">0742-26-8496</span>
+                <span class="note">土日祝も営業（7時〜22時）</span>
+            </a>
+        </header>
+
+        <!-- KV（ファーストビュー） -->
+        <section class="kv_inner">
+            <div class="kv_tags">
+                <span class="kv_tag">遺品整理</span>
+                <span class="kv_tag">生前整理</span>
+                <span class="kv_tag">不用品回収</span>
+                <span class="kv_tag">供養</span>
+            </div>
+            <div class="main_copy">
+                <p class="lead">遺品整理、誰に頼めばいいか迷っていませんか？</p>
+                <h1>元大阪府警の代表が<br><span class="accent">不正のない遺品整理</span>を<br>お約束します</h1>
+                <p class="sub">他社のおよそ3分の1の時間で、丁寧で正確な作業を。現金・貴重品は必ずご報告。</p>
+            </div>
+            <div class="kv_promises">
+                <span class="promise_badge">元大阪府警の代表が対応</span>
+                <span class="promise_badge">他社の約1/3の時間で完了</span>
+                <span class="promise_badge">現金・貴重品は必ずご報告</span>
+            </div>
+            <div class="kv_visual">
+                <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官">
+            </div>
+            <a href="https://line.me/R/ti/p/@195brsjr" class="line_btn">LINE かんたん見積もり</a>
+        </section>
+
+        <!-- 即日・夜間 -->
+        <section class="under_kv_speed">
+            <p class="head">関西密着だから実現</p>
+            <p class="big green">即日・翌日スピード訪問！</p>
+            <p class="head">仕事終わりに来てほしいも大歓迎</p>
+            <p class="big blue">18時以降のご訪問もOK！</p>
+            <p class="note">即日対応・18時以降のご訪問は、たくさんご依頼をいただいております。ご予約が埋まりやすいので、お早めにご相談ください。</p>
+        </section>
+
+        <!-- 実績バッジ3つ -->
+        <section class="under_kv_badges">
+            <div class="badge_circle">
+                <span class="num">元警察官</span>
+                <span class="label">コンプライアンス徹底</span>
+            </div>
+            <div class="badge_circle">
+                <span class="num">1/3</span>
+                <span class="label">他社より短い時間で完了</span>
+            </div>
+            <div class="badge_circle">
+                <span class="num">関西</span>
+                <span class="label">奈良・大阪・京都対応</span>
+            </div>
+        </section>
+
+        <!-- 料金タイトル -->
+        <section class="under_kv_price_title">
+            <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田" class="thumb">
+            <div>
+                <h2>料金の目安 格安でご提案</h2>
+                <p class="sub">作業内容に合わせて最適なプランを格安でご提案します。</p>
+            </div>
+        </section>
+
+        <!-- 料金表 -->
+        <div class="price_table_wrap">
+            <table class="price_table">
+                <thead>
+                    <tr>
+                        <th>お部屋の広さ</th>
+                        <th>作業時間の目安</th>
+                        <th>料金（税込）</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>1K〜1DK</td><td>1時間〜</td><td><span class="price_num">27,500</span>円〜</td></tr>
+                    <tr><td>1LDK〜2DK</td><td>1.5時間〜</td><td><span class="price_num">55,000</span>円〜</td></tr>
+                    <tr><td>2LDK〜3DK</td><td>2時間〜</td><td><span class="price_num">88,000</span>円〜</td></tr>
+                    <tr><td>3LDK〜4LDK</td><td>4時間〜</td><td><span class="price_num">132,000</span>円〜</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 作業内容タグ -->
+        <section class="under_kv_services">
+            <span class="svc_tag">遺品整理</span>
+            <span class="svc_tag">不用品お片付け</span>
+            <span class="svc_tag">買取査定</span>
+            <span class="svc_tag">荷物の運び出し</span>
+            <span class="svc_tag">簡易清掃</span>
+        </section>
+
+        <!-- CTA 1回目 -->
+        <section class="cta_block">
+            <a href="tel:0742268496" class="cta_tel">
+                <span class="badge">タッチして電話をかける</span><br>
+                今すぐ無料で電話相談する！<br>
+                <span class="number">0742-26-8496</span>
+                <span class="note">9:00-19:00 / 土日祝も受付中</span>
+            </a>
+            <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
+            <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
+        </section>
+
+        <!-- サービス一覧 -->
+        <section style="background: var(--bg-cream);">
+            <div class="section_title">
+                <h2>遺品整理・特殊清掃のことならお任せください</h2>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px;">どんなお悩みにも対応できるサービスをご用意しています。お気軽にご相談ください。</p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px;">
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">遺品整理</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">生前整理</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">不用品回収</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">買取査定</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">遺品供養</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">特殊清掃</div>
+            </div>
+        </section>
+
+        <!-- お客様の声 -->
+        <section style="background: var(--bg-cream);">
+            <div class="section_title">
+                <h2>お客様の声</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 20px; margin-bottom: 16px;">
+                    <p style="font-size: 1.4rem; color: #666; margin-bottom: 8px;">奈良県 50代 女性</p>
+                    <p style="font-size: 1.6rem; line-height: 1.7;">遠方からでも安心して任せられました。電話の対応が一番親切で決めました。買取可能なものもしっかり査定していただき、費用も抑えられて助かりました。（Google口コミより）</p>
+                </div>
+                <div style="background: #fff; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.08); padding: 20px;">
+                    <p style="font-size: 1.4rem; color: #666; margin-bottom: 8px;">大阪府 40代 男性</p>
+                    <p style="font-size: 1.6rem; line-height: 1.7;">急な依頼にも関わらず迅速に対応していただきました。料金も見積もり通りで安心でした。（Google口コミより）</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 代表プロフィール・元警察官 -->
+        <section style="background: #fff;">
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px;">
+                <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+                <div style="flex: 1; min-width: 280px;">
+                    <h2 style="font-size: 2rem; font-weight: 700; color: var(--red-main); margin-bottom: 12px;">元警察官の代表が、安心をお約束します</h2>
+                    <p style="font-size: 1.5rem; line-height: 1.8;">遺品整理の現場では、ご遺族の足元を見る悪質な業者も存在します。私は長年、大阪府警の警察官として多くの悲しみの現場に立ち会ってきました。だからこそ、徹底した法令遵守と守秘義務を守り、不正のない丁寧な作業をお約束します。</p>
+                    <p style="margin-top: 12px; font-weight: 700;">代表取締役 藤田</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Before/After -->
+        <section style="background: var(--bg-cream2);">
+            <div class="section_title">
+                <h2>作業のご案内</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">Before</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース１ビフォア.png" alt="作業前の部屋" style="width: 100%; border-radius: 8px;">
+                    </div>
+                    <div>
+                        <p style="font-size: 1.3rem; font-weight: 700; margin-bottom: 6px;">After</p>
+                        <img src="ハートフルクリーンサイト画像/before-after/ケース１アフター.png" alt="作業後の部屋" style="width: 100%; border-radius: 8px;">
+                    </div>
+                </div>
+                <p style="text-align: center; font-size: 1.4rem; margin-top: 16px;">丁寧で正確な作業で、ご依頼者様にご安心いただいております。</p>
+            </div>
+        </section>
+
+        <!-- 3つのお約束 -->
+        <section style="background: var(--bg-cream);">
+            <div class="section_title">
+                <h2><span style="color: var(--red-main);">3</span>つのお約束</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px;">
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 20px; margin-bottom: 12px; border-radius: 8px;">
+                    <h3 style="color: var(--orange-main); font-size: 1.6rem; margin-bottom: 8px;">お約束1 分かりやすい料金のお見積り</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">お見積りの金額に、当日追加で費用がかかることはありません。料金を明示した見積書をお渡ししますので、ご安心ください。</p>
+                </div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 20px; margin-bottom: 12px; border-radius: 8px;">
+                    <h3 style="color: var(--orange-main); font-size: 1.6rem; margin-bottom: 8px;">お約束2 落ち着いてじっくりご検討</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">ご利用のご検討をいただく際、お電話・対面を問わず、こちらからご契約を迫るようなことは絶対にありません。</p>
+                </div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 20px; margin-bottom: 12px; border-radius: 8px;">
+                    <h3 style="color: var(--orange-main); font-size: 1.6rem; margin-bottom: 8px;">お約束3 現金・貴重品は必ずご報告</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">元警察官の代表が、コンプライアンスを徹底。現金や貴金属などはすべてご報告し、丁寧で正確な作業をお約束します。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 忙しい方でも -->
+        <section style="background: #fff;">
+            <div style="background: var(--orange-main); color: #fff; padding: 20px 24px; margin: 0 20px 24px;">
+                <h2 style="font-size: 2.4rem; font-weight: 900;">忙しい方でもご利用しやすい</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div style="border: 2px solid var(--border-orange); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.6rem; margin-bottom: 8px;">立ち会い不要 鍵のお預かり</h3>
+                    <p style="font-size: 1.5rem;">遠方で現地に行けない、忙しくて立ち会いができない場合も、鍵をお預かりしてのご対応を承ります。</p>
+                </div>
+                <div style="border: 2px solid var(--border-orange); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.6rem; margin-bottom: 8px;">即日・翌日対応</h3>
+                    <p style="font-size: 1.5rem;">お急ぎの場合も柔軟に対応いたします。お気軽にお申し付けください。</p>
+                </div>
+                <div style="border: 2px solid var(--border-orange); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.6rem; margin-bottom: 8px;">年中無休</h3>
+                    <p style="font-size: 1.5rem;">土日祝はもちろん、お盆や年末年始でもご訪問いたします。</p>
+                </div>
+                <div style="border: 2px solid var(--border-orange); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.6rem; margin-bottom: 8px;">早朝・夜間もOK</h3>
+                    <p style="font-size: 1.5rem;">日中は都合がつかない方のために、早朝・夜間でも対応しております。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 対応エリア -->
+        <section style="background: var(--bg-cream2);">
+            <div class="section_title">
+                <h2>無料出張お見積りの対応エリア</h2>
+            </div>
+            <p style="text-align: center; font-size: 2.2rem; font-weight: 900; margin-bottom: 8px;">関西地域密着</p>
+            <p style="text-align: center; font-size: 1.8rem; font-weight: 700;">大阪府、京都府、兵庫県、奈良県、滋賀県</p>
+            <p style="text-align: center; font-size: 1.6rem; font-weight: 700; margin-top: 16px;">即日・翌日対応OK</p>
+            <p style="text-align: center; font-size: 1.3rem; color: #666; margin-top: 8px;">※ご予約が埋まっている場合もございます。お早めにご相談ください。</p>
+        </section>
+
+        <!-- ご相談から遺品整理までの流れ -->
+        <section style="background: #fff;">
+            <div class="section_title">
+                <h2 style="color: var(--red-main);">ご相談から遺品整理までの流れ</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                    <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">① お問い合わせ</div>
+                    <div style="padding: 16px; font-size: 1.5rem;">お電話またはLINEでお困りごとをお聞きします。目安の料金・見積りのご希望日時もお伝えください。</div>
+                </div>
+                <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                    <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">② 見積り訪問</div>
+                    <div style="padding: 16px; font-size: 1.5rem;">お客様宅に訪問し、無料でお見積りします。出張費も無料です。</div>
+                </div>
+                <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                    <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">③ 作業日時の決定</div>
+                    <div style="padding: 16px; font-size: 1.5rem;">お見積り内容・料金にご納得いただければ、作業日時を確定します。キャンセル料は不要です。</div>
+                </div>
+                <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
+                    <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">④ 作業・お支払い</div>
+                    <div style="padding: 16px; font-size: 1.5rem;">お見積り内容で作業します。買取がある場合は作業料金から差し引くことも可能です。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 2回目 -->
+        <section class="cta_block">
+            <p style="text-align: center; font-size: 1.8rem; font-weight: 700; margin-bottom: 16px;">まだ迷っていても大丈夫です</p>
+            <a href="tel:0742268496" class="cta_tel">
+                <span class="number">0742-26-8496</span>
+                <span class="note">相談だけでも費用ゼロ</span>
+            </a>
+            <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
+        </section>
+
+        <!-- よくある質問 -->
+        <section style="background: #fff;">
+            <div class="section_title">
+                <h2>よくあるご質問</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">見積もりだけでもお願いできますか？</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">はい、お見積りは無料です。出張費もかかりません。お見積り後にキャンセルされても費用は一切発生しません。</div>
+                </div>
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">追加費用はかかりますか？</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">いいえ、お見積りの金額に当日追加で費用がかかることはありません。</div>
+                </div>
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">立ち会いが難しいのですが</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">鍵をお預かりしての対応を承っています。遠方の方でもご安心ください。</div>
+                </div>
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">買取もしてもらえますか？</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">はい、買取も行っております。買取金額は作業料金から差し引くことも可能です。</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA 3回目 -->
+        <section class="cta_block">
+            <a href="tel:0742268496" class="cta_tel">
+                <span class="number">0742-26-8496</span>
+                <span class="note">今すぐ無料で電話相談</span>
+            </a>
+            <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
+            <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
+        </section>
+
+        <!-- フッター -->
+        <footer class="footer_area">
+            <a href="#" class="logo"><img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-whitebg.jpg" alt="ハートフルクリーン"></a>
+            <p class="company">ハートフルクリーン</p>
+            <p class="tel"><a href="tel:0742268496" style="color:#fff;">0742-26-8496</a></p>
+            <p>受付時間 7:00〜22:00（年中無休）</p>
+            <div class="links">
+                <a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a>
+            </div>
+            <p class="copy">Copyright (C) ハートフルクリーン All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <!-- フローティングバー -->
+    <div id="floating">
+        <span class="float_text">まずは無料相談</span>
+        <div class="float_btns">
+            <a href="tel:0742268496" class="float_tel" aria-label="電話する">0742-26-8496</a>
+            <a href="https://line.me/R/ti/p/@195brsjr" class="float_line" aria-label="LINEで相談">LINE</a>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var floating = document.getElementById('floating');
+            if (floating) {
+                function check() {
+                    if (window.pageYOffset > 200) {
+                        floating.classList.add('visible');
+                        document.body.classList.add('has_floating');
+                    } else {
+                        floating.classList.remove('visible');
+                        document.body.classList.remove('has_floating');
+                    }
+                }
+                window.addEventListener('scroll', check);
+                check();
+            }
+            document.querySelectorAll('.faq_q').forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    var open = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !open);
+                    var panel = this.nextElementSibling;
+                    panel.style.display = open ? 'none' : 'block';
+                });
+            });
+        })();
+    </script>
+</body>
+</html>
