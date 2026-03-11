@@ -235,7 +235,26 @@
         .header_area .tel_btn .num { font-size: 1.9rem; letter-spacing: 0.04em; }
         .header_area .tel_btn .note { font-size: 1.05rem; display: block; margin-top: 2px; opacity: .95; }
 
-        /* ===== KV（ファーストビュー） ===== */
+        /* ヘッダー：LP案切り替えリンク */
+        .header_area .header_lp_links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.15rem;
+            flex-shrink: 0;
+        }
+        .header_area .header_lp_links a {
+            color: var(--pigment-muted-taupe);
+            text-decoration: underline;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+        .header_area .header_lp_links a:hover {
+            color: var(--pigment-deep-brown);
+        }
+        @media (max-width: 600px) {
+            .header_area .header_lp_links { font-size: 1rem; gap: 6px; }
+        }
         .kv_inner {
             position: relative;
             min-height: 420px;
@@ -649,6 +668,10 @@
             <a href="#" class="logo">
                 <img src="./header-banner.png" alt="ハートフルクリーン" width="300" height="100" loading="eager" onerror="this.onerror=null; this.src='./ハートフルクリーンサイト画像/header-banner.png';">
             </a>
+            <div class="header_lp_links">
+                <a href="index.html">A案のLPを見る</a>
+                <a href="ihin-seiri.html">C案のLPを見る</a>
+            </div>
             <a href="tel:0742268496" class="tel_btn">
                 <span class="num">0742-26-8496</span>
                 <span class="note">土日祝も営業（7時〜22時）</span>

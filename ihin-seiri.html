@@ -102,6 +102,22 @@ img { max-width: 100%; height: auto; display: block; }
 }
 .header-contact-btn:hover { background: var(--orange-dark); }
 
+/* LP案切り替え（ヘッダー） */
+.header-lp-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.header-lp-links a {
+  color: var(--gray);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.header-lp-links a:hover { color: var(--green); }
+
 /* NAV */
 .header-nav {
   background: #fff; border-top: 1px solid #eee;
@@ -537,6 +553,10 @@ img { max-width: 100%; height: auto; display: block; }
     <a href="#contact" class="header-contact-btn">
       ✉ 問い合わせ ›
     </a>
+    <div class="header-lp-links">
+      <a href="index.html">A案のLPを見る</a>
+      <a href="index_b.html">B案のLPを見る</a>
+    </div>
   </div>
 
   <!-- Navigation -->
