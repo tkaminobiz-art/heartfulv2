@@ -375,6 +375,56 @@
             #floating { display: none; }
             body.has_floating { padding-bottom: 0; }
         }
+
+        /* ===== 問い合わせフォーム ===== */
+        .form_section { background: var(--bg-cream); padding: 48px 20px; }
+        .form_section .form_inner { max-width: 560px; margin: 0 auto; }
+        .form_section .form_title { font-size: 2rem; font-weight: 700; color: #333; margin-bottom: 8px; }
+        .form_section .form_lead { font-size: 1.4rem; color: #666; margin-bottom: 28px; }
+        .form_section label { display: block; font-size: 1.4rem; font-weight: 700; margin-bottom: 6px; color: #333; }
+        .form_section label .required { color: var(--red-main); margin-left: 4px; }
+        .form_section input[type="text"],
+        .form_section input[type="tel"],
+        .form_section input[type="email"],
+        .form_section textarea {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 1.6rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+        .form_section input:focus,
+        .form_section textarea:focus {
+            outline: none;
+            border-color: var(--orange-main);
+            box-shadow: 0 0 0 3px rgba(255,108,0,0.15);
+        }
+        .form_section textarea { min-height: 140px; resize: vertical; }
+        .form_section .form_btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: var(--orange-main);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity .3s;
+        }
+        .form_section .form_btn:hover { opacity: .9; }
+        .form_section .form_thanks { display: none; text-align: center; padding: 40px 20px; font-size: 1.6rem; color: var(--orange-main); font-weight: 700; }
+        .form_section.submitted .form_inner form { display: none; }
+        .form_section.submitted .form_thanks { display: block; }
+
+        /* 会社情報テーブル */
+        .company_table { width: 100%; max-width: 560px; margin: 0 auto; border-collapse: collapse; font-size: 1.4rem; }
+        .company_table th { text-align: left; padding: 12px 16px; background: var(--bg-cream2); font-weight: 700; width: 36%; }
+        .company_table td { padding: 12px 16px; border-bottom: 1px solid #eee; }
     </style>
 </head>
 <body>
@@ -385,6 +435,7 @@
                 <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン">
             </a>
             <a href="tel:0742268496" class="tel_btn">
+                <span style="display: inline-block; background: #2EA835; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 1.1rem; margin-bottom: 4px;">無料相談</span><br>
                 <span class="num">0742-26-8496</span>
                 <span class="note">土日祝も営業（7時〜22時）</span>
             </a>
@@ -399,8 +450,8 @@
                 <span class="kv_tag">供養</span>
             </div>
             <div class="main_copy">
-                <p class="lead">遺品整理、誰に頼めばいいか迷っていませんか？</p>
-                <h1>元大阪府警の代表が<br><span class="accent">不正のない遺品整理</span>を<br>お約束します</h1>
+                <p class="lead">四十九日が過ぎて、そろそろ片付けないといけないけど——</p>
+                <h1>誰に頼めばいいかわからない。<br>費用は？業者は信頼できる？<br><span class="accent">元警察官の代表が、</span><br>正直に・丁寧に・スピーディーに解決します。</h1>
                 <p class="sub">他社のおよそ3分の1の時間で、丁寧で正確な作業を。現金・貴重品は必ずご報告。</p>
             </div>
             <div class="kv_promises">
@@ -465,6 +516,7 @@
                     <tr><td>3LDK〜4LDK</td><td>4時間〜</td><td><span class="price_num">132,000</span>円〜</td></tr>
                 </tbody>
             </table>
+            <p style="font-size: 1.3rem; color: #666; padding: 0 20px 16px;">お支払い方法：現金・PayPay・各種クレジットカード（作業完了後）</p>
         </div>
 
         <!-- 作業内容タグ -->
@@ -488,19 +540,87 @@
             <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
         </section>
 
-        <!-- サービス一覧 -->
+        <!-- こんな不安ありませんか？（Problem） -->
+        <section id="anxiety" style="background: var(--bg-light-gray);">
+            <div class="section_title">
+                <h2>こんな不安ありませんか？</h2>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px;">親が亡くなって、四十九日が過ぎてから何から手をつければ…。40〜50代のご遺族から、こんなお声を多くいただきます。</p>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px; max-width: 750px; margin: 0 auto;">
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">どこに頼めばいいかわからない</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">費用がいくらかかるか不安</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">不法投棄されないか心配</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">押し売りや追加請求されないか</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">いつ・どのタイミングで頼むべきかわからない</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">作業中に見つかった現金・貴重品をこっそり持ち帰られないか不安</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">時間がかかりすぎないか</div>
+                <div style="background: #fff; border: 2px solid var(--border-orange); padding: 16px; border-radius: 8px; font-size: 1.4rem;">遺品に敬意を払ってくれる業者か</div>
+            </div>
+        </section>
+
+        <!-- 業者選びを間違えると（Agitation） -->
+        <section id="agitation" style="background: #fff5f5;">
+            <div class="section_title">
+                <h2 style="color: var(--red-main);">業者選びを間違えると</h2>
+            </div>
+            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px; padding: 0 20px;">見つかった現金を黙って持ち帰られた、当日来たのは素人バイトで作業が雑だった——。遺品整理業者には資格・免許が不要なため、悪質な業者でも簡単に参入できるのが実態です。</p>
+            <div style="max-width: 750px; margin: 0 auto; padding: 0 20px 32px;">
+                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">見積り後に次々と追加費用を請求された</h3>
+                    <p style="font-size: 1.4rem; line-height: 1.7;">「これも処分費がかかります」と、当日になってから追加請求されるトラブルが後を絶ちません。</p>
+                </div>
+                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">不法投棄が発覚した</h3>
+                    <p style="font-size: 1.4rem; line-height: 1.7;">「適正に処分します」と言いながら、実際には不法投棄。依頼者が責任を問われるケースもあります。</p>
+                </div>
+                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">買い叩かれた・貴重品が返ってこない</h3>
+                    <p style="font-size: 1.4rem; line-height: 1.7;">現金や貴金属を見つけても報告せず、不当に安い査定で買い取る悪質業者も存在します。</p>
+                </div>
+                <div style="background: #fff; border: 2px solid var(--red-main); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--red-main); font-size: 1.5rem; margin-bottom: 8px;">大手を名乗る業者に依頼したが、当日来たのはアルバイトばかり</h3>
+                    <p style="font-size: 1.4rem; line-height: 1.7;">電話対応は丁寧だったのに、現場に来たのは当日募集したアルバイトスタッフばかり。遺品の扱いが雑で、形見の品が傷ついた——そんなお声もいただきます。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- なぜ元警察官だと安心できるのか？（Solution・強み4枚） -->
+        <section id="solution" style="background: #1A3A6E; color: #fff; padding: 48px 20px;">
+            <div class="section_title">
+                <h2 style="color: var(--gold);">なぜ元警察官だと安心できるのか？</h2>
+            </div>
+            <div style="max-width: 750px; margin: 0 auto;">
+                <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">不正ができない体質</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">警察官時代に培った法令遵守の精神で、不正・ごまかしは一切しません。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">守秘義務の徹底</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">ご家族の事情やお住まいの情報は、厳重に守ります。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">遺族の悲しみに寄り添える</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">多くの悲しみの現場に立ち会ってきたからこそ、ご遺族の気持ちに寄り添った対応をお約束します。</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); border: 1px solid var(--gold); padding: 20px; margin-bottom: 16px; border-radius: 8px;">
+                    <h3 style="color: var(--gold); font-size: 1.6rem; margin-bottom: 8px;">他社の3倍速い、圧倒的な作業スピード</h3>
+                    <p style="font-size: 1.5rem; line-height: 1.7;">多くの業者は当日に求人アプリでアルバイトを集めて現場に送り込みます。ハートフルクリーンは、遺品整理専門の経験豊富なスタッフが毎回担当。「他社に3日と言われた3LDKが、1日で終わった」というお声を多数いただいています。スピードが速いことは、ご遺族への最大の思いやりだと考えています。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- サービス一覧（強み6項目に拡張） -->
         <section style="background: var(--bg-cream);">
             <div class="section_title">
-                <h2>遺品整理・特殊清掃のことならお任せください</h2>
+                <h2>選ばれる6つの強み</h2>
             </div>
-            <p style="text-align: center; font-size: 1.5rem; margin-bottom: 24px;">どんなお悩みにも対応できるサービスをご用意しています。お気軽にご相談ください。</p>
             <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 0 20px 32px;">
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">遺品整理</div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">生前整理</div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">不用品回収</div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">買取査定</div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">遺品供養</div>
-                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;">特殊清掃</div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>分かりやすい料金のお見積り</strong><br><span style="font-size: 1.3rem;">追加費用なし</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>落ち着いてじっくりご検討</strong><br><span style="font-size: 1.3rem;">押し売りしません</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>現金・貴重品は必ずご報告</strong><br><span style="font-size: 1.3rem;">元警察官の徹底</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>供養サービスあり</strong><br><span style="font-size: 1.3rem;">提携寺院で遺品供養</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>買取で費用を削減</strong><br><span style="font-size: 1.3rem;">査定額を整理費用から差し引き</span></div>
+                <div style="background: #fff; border: 1px solid var(--border-orange); padding: 16px; border-radius: 8px;"><strong>他社の約1/3の時間で完了</strong><br><span style="font-size: 1.3rem;">経験豊富なスタッフが担当</span></div>
             </div>
         </section>
 
@@ -527,7 +647,7 @@
                 <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
                 <div style="flex: 1; min-width: 280px;">
                     <h2 style="font-size: 2rem; font-weight: 700; color: var(--red-main); margin-bottom: 12px;">元警察官の代表が、安心をお約束します</h2>
-                    <p style="font-size: 1.5rem; line-height: 1.8;">遺品整理の現場では、ご遺族の足元を見る悪質な業者も存在します。私は長年、大阪府警の警察官として多くの悲しみの現場に立ち会ってきました。だからこそ、徹底した法令遵守と守秘義務を守り、不正のない丁寧な作業をお約束します。</p>
+                    <p style="font-size: 1.5rem; line-height: 1.8;">遺品整理の現場では、ご遺族の足元を見る悪質な業者も存在します。私は長年、大阪府警の警察官として多くの悲しみの現場に立ち会ってきました。前職の大手遺品整理会社では、遺品整理部門の現場責任者として年間数百件以上の案件を統括してきました。「現場のプロが、正直にやれる会社をつくりたい」という思いから独立し、ハートフルクリーンを設立。徹底した法令遵守と守秘義務を守り、不正のない丁寧な作業をお約束します。</p>
                     <p style="margin-top: 12px; font-weight: 700;">代表取締役 藤田</p>
                 </div>
             </div>
@@ -630,7 +750,7 @@
                 </div>
                 <div style="border: 2px solid var(--orange-main); border-radius: 6px; overflow: hidden; margin-bottom: 16px;">
                     <div style="background: var(--orange-main); color: #fff; padding: 12px 16px; font-weight: 700;">④ 作業・お支払い</div>
-                    <div style="padding: 16px; font-size: 1.5rem;">お見積り内容で作業します。買取がある場合は作業料金から差し引くことも可能です。</div>
+                    <div style="padding: 16px; font-size: 1.5rem;">お見積り内容で作業します。お支払い方法は現金・PayPay・各種クレジットカード。作業完了後のお支払いです。買取がある場合は作業料金から差し引くことも可能です。</div>
                 </div>
             </div>
         </section>
@@ -643,6 +763,26 @@
                 <span class="note">相談だけでも費用ゼロ</span>
             </a>
             <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
+        </section>
+
+        <!-- お問い合わせフォーム -->
+        <section id="contact" class="form_section">
+            <div class="form_inner">
+                <div class="section_title"><h2>お問い合わせ</h2></div>
+                <p class="form_lead">ご相談・お見積りは無料です。お気軽にご入力ください。</p>
+                <form id="contact_form" action="#" method="post">
+                    <label>お名前 <span class="required">必須</span></label>
+                    <input type="text" name="name" required placeholder="例）山田 太郎">
+                    <label>お電話番号 <span class="required">必須</span></label>
+                    <input type="tel" name="tel" required placeholder="例）090-1234-5678">
+                    <label>メールアドレス</label>
+                    <input type="email" name="email" placeholder="例）example@email.com">
+                    <label>ご相談内容</label>
+                    <textarea name="message" placeholder="遺品整理の見積りをご希望の住所・部屋の広さ・ご希望日など、お書きください。"></textarea>
+                    <button type="submit" class="form_btn">送信する</button>
+                </form>
+                <p class="form_thanks">送信いただきありがとうございます。<br>内容を確認のうえ、ご連絡いたします。</p>
+            </div>
         </section>
 
         <!-- よくある質問 -->
@@ -667,6 +807,14 @@
                     <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">買取もしてもらえますか？</button>
                     <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">はい、買取も行っております。買取金額は作業料金から差し引くことも可能です。</div>
                 </div>
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">いつ頃依頼すればよいですか？タイミングがわかりません。</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">多くの方が「四十九日が終わってから」を目安にされています。賃貸の場合は退去期限にご注意を。気持ちが整う前のご相談も大歓迎です。急かすことは一切しません。</div>
+                </div>
+                <div class="faq_item" style="border-bottom: 1px solid #ddd;">
+                    <button type="button" class="faq_q" aria-expanded="false" style="width: 100%; padding: 16px 0; text-align: left; background: none; border: none; font-size: 1.6rem; font-weight: 700; cursor: pointer;">支払い方法を教えてください。</button>
+                    <div class="faq_a" style="display: none; padding-bottom: 16px; font-size: 1.5rem; line-height: 1.7;">現金・PayPay・各種クレジットカードに対応しています。作業完了後のお支払いです。</div>
+                </div>
             </div>
         </section>
 
@@ -677,6 +825,7 @@
                 <span class="note">今すぐ無料で電話相談</span>
             </a>
             <a href="https://line.me/R/ti/p/@195brsjr" class="cta_line">LINE お友達登録して相談する</a>
+            <a href="#contact" style="display: block; background: #fff; color: var(--orange-main); border: 2px solid var(--orange-main); padding: 16px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 1.6rem; margin-top: 12px;">フォームで相談する</a>
             <p class="micro">相談だけでも費用ゼロ。押し売りなし。</p>
         </section>
 
@@ -684,9 +833,12 @@
         <footer class="footer_area">
             <a href="#" class="logo"><img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-whitebg.jpg" alt="ハートフルクリーン"></a>
             <p class="company">ハートフルクリーン</p>
-            <p class="tel"><a href="tel:0742268496" style="color:#fff;">0742-26-8496</a></p>
-            <p>受付時間 7:00〜22:00（年中無休）</p>
-            <div class="links">
+            <table class="company_table" style="margin-top: 16px; color: #fff; border: 1px solid #555;">
+                <tr><th style="color: #ccc; background: rgba(255,255,255,0.08); padding: 12px 16px;">電話</th><td style="border-bottom: 1px solid #555;"><a href="tel:0742268496" style="color:#fff;">0742-26-8496</a></td></tr>
+                <tr><th style="color: #ccc; background: rgba(255,255,255,0.08); padding: 12px 16px;">受付時間</th><td style="border-bottom: 1px solid #555;">7:00〜22:00（年中無休）</td></tr>
+                <tr><th style="color: #ccc; background: rgba(255,255,255,0.08); padding: 12px 16px;">サービス</th><td style="border-bottom: 1px solid #555;">遺品整理・生前整理・不用品回収・買取査定・遺品供養・特殊清掃・供養手配</td></tr>
+            </table>
+            <div class="links" style="margin-top: 24px;">
                 <a href="#">プライバシーポリシー</a> | <a href="#">特定商取引法に基づく表記</a>
             </div>
             <p class="copy">Copyright (C) ハートフルクリーン All Rights Reserved.</p>
@@ -726,6 +878,13 @@
                     panel.style.display = open ? 'none' : 'block';
                 });
             });
+            var form = document.getElementById('contact_form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    document.querySelector('.form_section').classList.add('submitted');
+                });
+            }
         })();
     </script>
 </body>
