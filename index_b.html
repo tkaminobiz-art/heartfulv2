@@ -171,7 +171,7 @@
         .bg-cream { background: var(--bg-cream); }
         .bg-white { background: #fff; }
 
-        /* ===== ヘッダー（ヘッダーバナー + 2026トレンド：sticky・ミニマル・明確な階層） ===== */
+        /* ===== ヘッダー（ヘッダーバナーをロゴとして配置・2026トレンド：sticky・ミニマル） ===== */
         .header_area {
             position: sticky;
             top: 0;
@@ -181,27 +181,14 @@
             margin: 0 auto;
             padding: 0;
             overflow: hidden;
-            /* ヘッダーバナー画像を全幅背景に配置 */
-            background-image: url("./ハートフルクリーンサイト画像/header-banner.png");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-color: var(--bg-header);
+            background: var(--bg-header);
             box-shadow: 0 1px 0 rgba(0,0,0,0.06);
-        }
-        .header_area::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(90deg, rgba(255,255,255,0.94) 0%, rgba(255,250,245,0.92) 50%, rgba(255,255,255,0.94) 100%);
-            pointer-events: none;
         }
         .header_area .header_inner {
             position: relative;
-            z-index: 1;
             max-width: 750px;
             margin: 0 auto;
-            padding: 16px 20px 18px;
+            padding: 12px 20px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -210,13 +197,16 @@
         }
         .header_area .logo {
             float: none;
-            max-width: 42%;
-            max-height: 52px;
+            max-width: 55%;
+            max-height: 64px;
         }
         .header_area .logo img {
-            height: 48px;
+            height: 56px;
             width: auto;
+            max-width: 100%;
             display: block;
+            object-fit: contain;
+            object-position: left center;
         }
         .header_area .tel_btn {
             float: none;
@@ -653,7 +643,7 @@
         <header class="header_area">
             <div class="header_inner">
             <a href="#" class="logo">
-                <img src="./ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン">
+                <img src="./ハートフルクリーンサイト画像/header-banner.png" alt="ハートフルクリーン">
             </a>
             <a href="tel:0742268496" class="tel_btn">
                 <span class="num">0742-26-8496</span>
