@@ -43,32 +43,40 @@
         img { max-width: 100%; height: auto; display: block; }
         a { text-decoration: none; color: inherit; }
 
-        .lp-container { width: 100%; max-width: none; margin: 0; overflow: visible; position: relative; background: #fff; }
-        /* 3カラム: 左 | 中央(750px) | 右。セクションごとに左右の色を変更 */
+        .lp-container { width: 100%; max-width: none; margin: 0; overflow: visible; position: relative; background: #1A3A6E; }
+        /* 左右ネイビーで挟む: 中央750px・その外側はネイビー一色（グリッド＋ブロック両対応） */
         .section-row {
             display: grid;
             grid-template-columns: minmax(0, 1fr) 750px minmax(0, 1fr);
             width: 100%;
         }
         .col-side {
-            background: var(--section-bg, transparent);
+            background: #1A3A6E;
             min-width: 0;
         }
         .col-center {
             min-width: 0;
             max-width: 750px;
+            overflow: visible;
         }
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .section-row { grid-template-columns: 1fr; }
             .col-center { max-width: none; }
             .col-side { display: none; }
         }
+        /* 769px以上で確実に3カラムを見せるため、中央列を明示 */
+        @media (min-width: 769px) {
+            .section-row {
+                grid-template-columns: 1fr 750px 1fr;
+            }
+        }
         /* セクション単位の画像をフルスクリーン表示（メリハリ用） */
         .section-hero-img {
             width: 100vw;
-            max-width: 100vw;
+            max-width: none;
             margin-left: calc(50% - 50vw);
             margin-right: calc(50% - 50vw);
+            box-sizing: content-box;
             overflow: hidden;
         }
         .section-hero-img img {
@@ -502,7 +510,7 @@
         </header>
 
         <!-- KV（ファーストビュー） -->
-        <div class="section-row" style="--section-bg: #F5EFE3;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="kv_inner">
@@ -532,7 +540,7 @@
         </div>
 
         <!-- 即日・夜間 -->
-        <div class="section-row" style="--section-bg: #EFEFEF;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_speed">
@@ -547,7 +555,7 @@
         </div>
 
         <!-- 実績バッジ3つ -->
-        <div class="section-row" style="--section-bg: #F5EFE3;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_badges">
@@ -569,7 +577,7 @@
         </div>
 
         <!-- 料金タイトル -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="under_kv_price_title">
@@ -612,7 +620,7 @@
         </div>
 
         <!-- CTA 1回目 -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
@@ -630,7 +638,7 @@
         </div>
 
         <!-- こんな不安ありませんか？（Problem） -->
-        <div class="section-row" style="--section-bg: #EFEFEF;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="anxiety" style="background: var(--bg-light-gray);">
@@ -655,7 +663,7 @@
         </div>
 
         <!-- 業者選びを間違えると（Agitation） -->
-        <div class="section-row" style="--section-bg: #fff5f5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="agitation" style="background: #fff5f5;">
@@ -687,7 +695,7 @@
         </div>
 
         <!-- なぜ元警察官だと安心できるのか？（Solution・強み4枚） -->
-        <div class="section-row" style="--section-bg: #1A3A6E;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="solution" style="background: #1A3A6E; color: #fff; padding: 48px 20px;">
@@ -723,7 +731,7 @@
         </div>
 
         <!-- サービス一覧（強み6項目に拡張） -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -745,7 +753,7 @@
         </div>
 
         <!-- お客様の声 -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -768,7 +776,7 @@
         </div>
 
         <!-- 代表プロフィール・元警察官 -->
-        <div class="section-row" style="--section-bg: #fff;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -786,7 +794,7 @@
         </div>
 
         <!-- Before/After -->
-        <div class="section-row" style="--section-bg: #F5EFE3;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream2);">
@@ -836,7 +844,7 @@
         </div>
 
         <!-- 3つのお約束 -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream);">
@@ -863,7 +871,7 @@
         </div>
 
         <!-- 忙しい方でも -->
-        <div class="section-row" style="--section-bg: #fff;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -894,7 +902,7 @@
         </div>
 
         <!-- 対応エリア -->
-        <div class="section-row" style="--section-bg: #F5EFE3;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: var(--bg-cream2);">
@@ -911,7 +919,7 @@
         </div>
 
         <!-- ご相談から遺品整理までの流れ -->
-        <div class="section-row" style="--section-bg: #fff;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -943,7 +951,7 @@
         </div>
 
         <!-- CTA 2回目 -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
@@ -959,7 +967,7 @@
         </div>
 
         <!-- お問い合わせフォーム -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section id="contact" class="form_section">
@@ -986,7 +994,7 @@
         </div>
 
         <!-- よくある質問 -->
-        <div class="section-row" style="--section-bg: #fff;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section style="background: #fff;">
@@ -1025,7 +1033,7 @@
         </div>
 
         <!-- CTA 3回目 -->
-        <div class="section-row" style="--section-bg: #FAF9F5;">
+        <div class="section-row">
             <div class="col-side col-side--left" aria-hidden="true"></div>
             <div class="col-center">
         <section class="cta_block">
