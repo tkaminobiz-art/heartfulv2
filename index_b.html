@@ -54,19 +54,22 @@
         a { text-decoration: none; color: inherit; }
 
         .lp-container { width: 100%; max-width: none; margin: 0; overflow: visible; position: relative; background: #f0f0f0; }
-        /* 3カラム維持。左・右カラムはセクションごとに色を変更（--section-bg） */
+        /* 3カラム: Flexboxで左・中央750px・右を確実に表示 */
         .section-row {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 750px minmax(0, 1fr);
+            display: flex;
+            flex-wrap: nowrap;
             width: 100%;
         }
         .col-side {
-            background: var(--section-bg, var(--bg-cream));
+            flex: 1 1 0%;
             min-width: 0;
+            background: var(--section-bg, var(--bg-cream));
         }
         .col-center {
-            min-width: 0;
+            flex: 0 0 750px;
+            width: 750px;
             max-width: 750px;
+            min-width: 0;
             overflow: visible;
             background: #fff;
         }
@@ -82,16 +85,12 @@
             background: #1A3A6E;
         }
         @media (max-width: 767px) {
-            .section-row { grid-template-columns: 1fr; }
-            .col-center { max-width: none; }
+            .section-row { flex-wrap: wrap; }
+            .col-center { flex: 1 1 100%; width: 100%; max-width: none; }
             .col-side { display: none; }
         }
-        /* 768px以上で3カラム表示（タブレット含む） */
+        /* 768px以上で3カラム表示 */
         @media (min-width: 768px) {
-            .section-row {
-                display: grid;
-                grid-template-columns: 1fr 750px 1fr;
-            }
             .col-side { display: block; }
         }
         /* セクション単位の画像は中央カラムに合わせる */
