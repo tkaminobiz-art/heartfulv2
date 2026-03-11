@@ -85,14 +85,14 @@
                 grid-template-columns: 1fr 750px 1fr;
             }
         }
-        /* セクション単位の画像をフルスクリーン表示（メリハリ用） */
+        /* セクション単位の画像は中央カラムに合わせる */
         .section-hero-img {
-            width: 100vw;
-            max-width: none;
-            margin-left: calc(50% - 50vw);
-            margin-right: calc(50% - 50vw);
-            box-sizing: content-box;
+            width: 100%;
+            max-width: 100%;
+            margin-left: 0;
+            margin-right: 0;
             overflow: hidden;
+            border-radius: var(--radius-card);
         }
         .section-hero-img img {
             width: 100%;
@@ -100,17 +100,17 @@
             display: block;
             object-fit: cover;
             object-position: center;
-            max-height: 55vh;
+            max-height: 50vh;
         }
         .section-hero-img--2up {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 0;
+            gap: var(--space-24);
         }
         .section-hero-img--2up img {
-            height: 45vh;
-            min-height: 200px;
+            height: 280px;
             object-fit: cover;
+            border-radius: var(--radius-card);
         }
         section { width: 100%; padding: var(--space-48) var(--space-24); }
         .section--tight { padding: var(--space-32) var(--space-24); }
