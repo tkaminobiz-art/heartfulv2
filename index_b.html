@@ -116,18 +116,20 @@
             inset: 0;
             pointer-events: none;
             opacity: 0.18;
-            mix-blend-mode: multiply;
+            /* mix-blend-mode/blur は再描画コストが高いので避ける */
+            mix-blend-mode: normal;
             background:
                 radial-gradient(1400px 900px at 20% 25%, rgba(222,162,80,0.20) 0%, transparent 60%),
                 radial-gradient(1100px 800px at 85% 70%, rgba(26,58,110,0.16) 0%, transparent 62%),
                 radial-gradient(900px 700px at 55% 15%, rgba(46,168,53,0.10) 0%, transparent 58%);
             transform: translate3d(0,0,0);
-            animation: sideDrift 18s var(--ease-in-out) infinite alternate;
+            will-change: transform, opacity;
+            animation: sideDrift 26s var(--ease-in-out) infinite alternate;
         }
         .section-row.is-active .col-side::before{ opacity: 0.32; }
         @keyframes sideDrift{
-            0%{ transform: translate3d(-1.2%, -0.8%, 0) scale(1.02); filter: blur(0px); }
-            100%{ transform: translate3d(1.6%, 1.1%, 0) scale(1.04); filter: blur(0.6px); }
+            0%{ transform: translate3d(-0.8%, -0.5%, 0) scale(1.02); }
+            100%{ transform: translate3d(1.0%, 0.7%, 0) scale(1.04); }
         }
         @media (prefers-reduced-motion: reduce){
             .col-side::before{ animation: none; }
