@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>遺品整理ならハートフルクリーン｜元警察官の代表が責任対応（アワード級プロトタイプ）</title>
+  <meta name="description" content="奈良・関西の遺品整理。元大阪府警の代表が責任を持って対応。見積無料・キャンセル無料。仕分け・搬出・清掃・供養・買取まで一括。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Reset / Base ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg-base); }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    :focus-visible { outline: 3px solid rgba(45, 183, 66, 0.45); outline-offset: 2px; }
+
+    /* ===== Tokens ===== */
+    :root{
+      --bg-base: #fafaf7;
+      --surface: #fffdf6;
+      --surface-2: #f4f4ee;
+      --text: #222222;
+      --muted: #565656;
+      --green: #2db742;
+      --green-dark: #1e9130;
+      --accent: #2db742;
+      --shadow-sm: 0 6px 20px rgba(0,0,0,0.08);
+      --shadow-md: 0 14px 36px rgba(0,0,0,0.12);
+      --r-1: 8px;
+      --r-2: 12px;
+      --r-3: 16px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+      --container: 1200px;
+      --gutter: clamp(18px, 4vw, 64px);
+    }
+
+    /* ===== Layout helpers ===== */
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+    .section { padding: clamp(56px, 8vw, 120px) 0; position: relative; }
+    .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+    .h1 { font-size: clamp(48px, 4.4vw, 72px); line-height: 1.15; font-weight: 500; letter-spacing: 0.02em; }
+    .h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.2; font-weight: 500; letter-spacing: 0.02em; }
+    .lead { font-size: clamp(15px, 1.35vw, 18px); color: var(--muted); }
+
+    /* ===== Header (award-like zones) ===== */
+    .header { position: sticky; top: 0; z-index: 1000; background: rgba(255,253,246,0.86); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .header-inner { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; padding: 12px var(--gutter); max-width: var(--container); margin: 0 auto; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .brand img { width: 128px; height: auto; }
+    .brand-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+    .brand-name { font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .brand-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .header-ctas { display: flex; align-items: center; gap: 10px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: var(--r-2); border: 1px solid rgba(0,0,0,0.08); background: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.06); font-weight: 500; transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease); }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.10); }
+    .btn-primary { background: var(--accent); color: #fff; border-color: rgba(0,0,0,0.0); }
+    .btn-primary:hover { background: var(--green-dark); }
+    .btn small { font-size: 12px; opacity: .9; }
+
+    /* ===== Hero (non-centered, full-use) ===== */
+    .hero { min-height: 100vh; display: grid; grid-template-columns: 1.08fr 0.92fr; }
+    .hero-media { position: relative; overflow: hidden; background: #dfeadd; }
+    .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4.2vw, 56px) var(--gutter); background: linear-gradient(180deg, #fffdf6 0%, #f2f6ef 100%); }
+    .hero-copy .eyebrow { margin-bottom: 12px; }
+    .hero-copy .h1 { margin-bottom: 16px; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 18px; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--r-2); background: rgba(45,183,66,0.10); color: var(--green-dark); border: 1px solid rgba(45,183,66,0.18); font-size: 13px; font-weight: 500; }
+    .hero-actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+    .hero-actions .btn { padding: 14px 18px; }
+
+    /* ===== Trust bar (left aligned) ===== */
+    .trustbar { background: var(--bg-base); border-bottom: 3px solid rgba(45,183,66,0.35); padding: 26px 0; }
+    .trustbar-inner { display: flex; justify-content: flex-start; }
+    .trustbar-block { max-width: 620px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; }
+    .trustbar-label { width: 100%; font-size: 14px; letter-spacing: 0.08em; color: var(--muted); }
+    .trustbar-rating { font-size: 24px; font-weight: 500; color: var(--green-dark); line-height: 1; }
+    .trustbar-area { font-size: 15px; color: var(--text); }
+    .trustbar-note { font-size: 13px; color: var(--muted); width: 100%; }
+
+    /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
+    .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
+    .trouble-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
+    .bubbles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 18px; }
+    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-2); padding: 26px 22px; font-size: 16px; line-height: 1.65; box-shadow: var(--shadow-sm); }
+    .bubble .hl { color: #b8e0c0; font-weight: 500; }
+    .trouble-photo { display: flex; justify-content: flex-end; }
+    .photo-card { width: min(340px, 100%); aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
+    .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* ===== Reassurance (asymmetric 60:40, story + big visual) ===== */
+    .reassure { background: linear-gradient(180deg, #e8efe6 0%, #dce8d9 100%); }
+    .reassure-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 56px); align-items: center; }
+    .reason-stack { display: grid; gap: 16px; max-width: 640px; }
+    .badge { display: inline-flex; align-items: center; gap: 10px; }
+    .badge-mark { width: 96px; height: 96px; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #f0d060, #b8860b); border: 3px solid rgba(212,160,32,0.95); box-shadow: 0 10px 26px rgba(0,0,0,0.18); display: grid; place-items: center; color: #fff; font-weight: 500; text-align: center; line-height: 1.1; }
+    .badge-mark span { display:block; font-size: 12px; opacity: .95; }
+    .badge-mark strong { display:block; font-size: 16px; font-weight: 500; }
+    .reason-copy p { color: var(--muted); font-size: 16px; }
+    .reason-copy strong { color: var(--green-dark); font-weight: 500; }
+    .tagline { display: inline-flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+    .tagline b { display:inline-block; background: var(--green); color:#fff; padding: 10px 16px; border-radius: var(--r-1); font-weight: 500; font-size: 18px; }
+    .tagline b:nth-child(2) { background: var(--green-dark); }
+    .reassure-visual { justify-self: end; width: min(360px, 100%); aspect-ratio: 4 / 5; border-radius: var(--r-3); background: var(--surface); box-shadow: var(--shadow-md); overflow: hidden; position: relative; }
+    .reassure-visual img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.98) contrast(1.03); }
+    .reassure-visual .cap { position: absolute; left: 14px; right: 14px; bottom: 14px; background: rgba(255,253,246,0.88); border: 1px solid rgba(0,0,0,0.06); border-radius: var(--r-2); padding: 10px 12px; font-size: 13px; color: var(--text); box-shadow: 0 10px 24px rgba(0,0,0,0.10); }
+    .reassure-visual .cap .k { display:inline-block; font-size: 11px; letter-spacing: .08em; color: var(--green-dark); background: rgba(45,183,66,0.10); padding: 2px 8px; border-radius: 999px; margin-bottom: 6px; }
+
+    /* ===== CTA strip (variation) ===== */
+    .cta-strip { background: var(--surface); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .cta-strip-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 22px 0; }
+    .cta-strip h3 { font-size: 20px; font-weight: 500; line-height: 1.4; }
+    .cta-strip p { font-size: 14px; color: var(--muted); }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 900px) {
+      .header-inner { grid-template-columns: 1fr; }
+      .header-ctas { justify-content: flex-start; flex-wrap: wrap; }
+      .hero { grid-template-columns: 1fr; grid-template-rows: 52vh auto; min-height: auto; }
+      .hero-copy { padding: 36px var(--gutter) 44px; text-align: left; }
+      .hero-actions .btn { width: 100%; }
+      .trouble-grid, .reassure-grid { grid-template-columns: 1fr; }
+      .trouble-photo, .reassure-visual { justify-self: center; justify-content: center; }
+      .bubbles { grid-template-columns: 1fr; }
+      .cta-strip-inner { grid-template-columns: 1fr; }
+      .cta-strip .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header" aria-label="ヘッダー">
+    <div class="header-inner">
+      <div class="brand">
+        <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン">
+        <div class="brand-meta">
+          <div class="brand-name">遺品整理・生前整理・特殊清掃</div>
+          <div class="brand-sub">奈良・大阪・京都・兵庫・滋賀（関西一円）</div>
+        </div>
+      </div>
+      <div class="header-ctas" aria-label="主要導線">
+        <a class="btn" href="tel:0120-000-000" aria-label="電話で相談する">
+          <span>電話</span><small>今すぐ相談</small>
+        </a>
+        <a class="btn" href="#contact" aria-label="LINEで相談する">
+          <span>LINE</span><small>無料見積</small>
+        </a>
+        <a class="btn btn-primary" href="#contact" aria-label="無料見積へ">
+          <span>無料見積</span><small>24h受付</small>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="top" aria-label="ファーストビュー">
+      <div class="hero-media">
+        <img src="バナー/FVセクションバナー.png" alt="遺品整理のご相談・代表のイメージ"
+             onerror="this.outerHTML='<div style=&quot;width:100%;height:100%;display:grid;place-items:center;color:#2b3; font-weight:500;&quot;>FV画像を設置してください</div>'">
+      </div>
+      <div class="hero-copy">
+        <div class="eyebrow">奈良・関西の遺品整理</div>
+        <h1 class="h1">元警察官の代表が、<br>最初から最後まで責任対応。</h1>
+        <p class="lead">ご遺族様の気持ちに寄り添い、仕分け・搬出・清掃・供養・買取まで一括で。<br>見積無料・キャンセル無料で、安心してご相談いただけます。</p>
+        <div class="hero-pills" aria-label="安心ポイント">
+          <span class="pill">見積無料・キャンセル無料</span>
+          <span class="pill">追加費用なし（明朗会計）</span>
+          <span class="pill">関西一円対応</span>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">無料で相談・見積</a>
+          <a class="btn" href="#trouble">よくあるお悩みを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TRUST BAR ===== -->
+    <section class="trustbar" aria-label="信頼バー">
+      <div class="container trustbar-inner">
+        <div class="trustbar-block">
+          <div class="trustbar-label">Google口コミ（出所明示）</div>
+          <div class="trustbar-rating">★5.0</div>
+          <div class="trustbar-area">奈良・大阪・京都・兵庫・滋賀対応</div>
+          <div class="trustbar-note">※評価はGoogleレビューを参照（数値は運用に合わせて更新）</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TROUBLE ===== -->
+    <section class="section trouble" id="trouble" aria-label="お悩み">
+      <div class="container">
+        <div class="eyebrow">このような</div>
+        <h2 class="h2" style="margin:10px 0 14px;">遺品整理で “お悩み” はありませんか？</h2>
+        <p class="lead" style="max-width: 62ch;">不安が強いタイミングだからこそ、見積無料・キャンセル無料で「まず相談できる」状態をつくります。</p>
+
+        <div style="height:28px;"></div>
+
+        <div class="trouble-grid">
+          <div class="bubbles" aria-label="よくあるお悩み">
+            <div class="bubble">まずは見積りだけ頼みたいけど<br><span class="hl">キャンセルが出来なさそう</span></div>
+            <div class="bubble">突然親族が亡くなり<br>何から始めれば<span class="hl">いいか分からない</span></div>
+            <div class="bubble">葬儀や家の処分にお金がかかるので<br><span class="hl">費用をなるべく抑えたい</span></div>
+            <div class="bubble">賃貸契約が切れるのでそれまでに<br><span class="hl">整理してほしい</span></div>
+            <div class="bubble"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</div>
+            <div class="bubble">警察から<span class="hl">孤独死</span>していると連絡がきた</div>
+          </div>
+          <div class="trouble-photo">
+            <div class="photo-card">
+              <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REASSURANCE ===== -->
+    <section class="section reassure" id="reassurance" aria-label="ご安心ください">
+      <div class="container">
+        <div class="eyebrow">ご安心ください</div>
+        <h2 class="h2" style="margin:10px 0 14px;">元警察官の代表が、誠実に対応します。</h2>
+
+        <div style="height:22px;"></div>
+
+        <div class="reassure-grid">
+          <div class="reason-stack">
+            <div class="badge">
+              <div class="badge-mark">
+                <span>遺品整理</span>
+                <strong>元警察官<br>代表</strong>
+              </div>
+              <div class="reason-copy">
+                <p>遺品整理のプロ「ハートフルクリーン」では、<strong>元大阪府警の代表が責任を持ってご対応</strong>します。<br>丁寧なヒアリングで、ご遺族様の気持ちに寄り添いながら進行します。</p>
+                <div class="tagline">
+                  <b>迅速・丁寧にあなたの</b>
+                  <b>お悩みを解決します！</b>
+                </div>
+              </div>
+            </div>
+
+            <div class="cta-strip" style="border-radius: var(--r-3); overflow:hidden;">
+              <div class="container cta-strip-inner" style="padding-left: 22px; padding-right: 22px;">
+                <div>
+                  <h3>まずは無料で、状況をお聞かせください。</h3>
+                  <p>見積無料・キャンセル無料。料金や作業内容は必ず事前にご説明します。</p>
+                </div>
+                <a class="btn btn-primary" href="#contact">無料相談へ</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="reassure-visual">
+            <img src="バナー/和室バナー.jpeg" alt="安心して相談できるイメージ"
+                 onerror="this.outerHTML='<div style=&quot;width:100%;height:100%;display:grid;place-items:center;color:#666;&quot;>安心の実写を設置してください</div>'">
+            <div class="cap">
+              <div class="k">安心の根拠</div>
+              <div>追加費用なしの明朗会計。<br>仕分け・搬出・清掃まで一括で。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT (stub) ===== -->
+    <section class="section" id="contact" aria-label="お問い合わせ">
+      <div class="container">
+        <h2 class="h2">無料相談・無料見積</h2>
+        <p class="lead" style="margin-top: 10px; max-width: 70ch;">ここは既存D案のCTA/フォーム仕様に合わせて後で統合します（電話・LINE・フォームの3導線）。</p>
+        <div style="height:18px;"></div>
+        <div style="display:grid; gap: 12px; max-width: 520px;">
+          <a class="btn btn-primary" href="tel:0120-000-000">電話で相談する</a>
+          <a class="btn" href="#">LINEで相談する（QR設置）</a>
+          <a class="btn" href="#">フォームで相談する</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
+
