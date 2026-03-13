@@ -535,7 +535,7 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
   .cta-box--strip .cta-box-inner { flex-direction: column; }
 }
 
-/* ===== TROUBLE SECTION ===== */
+/* ===== TROUBLE SECTION（非対称 60:40・左バブル2列／右画像） ===== */
 #trouble {
   padding: 60px 20px;
   background: #e8e8e0;
@@ -560,33 +560,73 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
   border-bottom: 3px solid var(--green-dark);
 }
 
-.trouble-center {
+/* 非対称 60:40 — 左にバブル2列グリッド、右に画像 */
+.trouble-content {
   position: relative; z-index: 1;
-  max-width: 900px; margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  grid-template-rows: repeat(3, auto);
-  gap: 16px;
-  align-items: center;
+  max-width: 1100px; margin: 0 auto;
+  padding: 0 5%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 32px;
 }
-.trouble-couple-photo {
-  grid-column: 2; grid-row: 1 / 4;
-  width: 240px; height: 340px;
+.trouble-bubbles-wrap {
+  flex: 1 1 58%;
+  min-width: 0;
+}
+.trouble-bubbles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px 20px;
+}
+.trouble-photo-wrap {
+  flex: 0 0 38%;
+  min-width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.trouble-photo-wrap img {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: 12px;
 }
 .trouble-bubble {
   background: #555; color: #fff;
-  border-radius: 12px; padding: 14px 16px;
-  font-size: 13px; font-weight: 500; line-height: 1.7;
+  border-radius: 12px;
+  padding: 24px 20px;
+  font-size: 15px; font-weight: 500; line-height: 1.7;
+  text-align: left;
   position: relative;
 }
-.trouble-bubble .highlight { color: #8ec8f0; font-weight: 500; }
-.trouble-bubble.left { text-align: right; }
-.trouble-bubble.center {
-  grid-column: 2; text-align: center;
-}
+.trouble-bubble .highlight { color: #b8e0c0; font-weight: 500; }
 .trouble-icon {
   position: absolute;
   width: 36px; height: 36px;
+}
+
+/* スマホ：上にバブル（2列のまま）、下に画像でスタック */
+@media (max-width: 768px) {
+  #trouble { padding: 40px 16px 48px; }
+  .trouble-content {
+    flex-direction: column;
+    padding: 0 4%;
+    gap: 28px;
+  }
+  .trouble-bubbles-wrap { flex: 1 1 auto; width: 100%; order: 1; }
+  .trouble-bubbles-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .trouble-photo-wrap {
+    flex: none; width: 100%; min-width: 0; order: 2;
+    justify-content: center;
+  }
+  .trouble-photo-wrap img { max-width: 240px; }
+  .trouble-bubble { padding: 20px 16px; font-size: 14px; }
 }
 
 /* ===== REASSURANCE SECTION ===== */
@@ -896,11 +936,9 @@ body.d-plan .voice-google-more-btn:hover { background: var(--green-dark); transf
 body.d-plan .point-photo { border-radius: 8px; }
 body.d-plan .point-item:nth-child(2) .point-photo { border-radius: 4px; }
 body.d-plan .point-item:nth-child(4) .point-photo { border-radius: 12px; }
-/* お悩みセクション：幅を利活用・歯抜け解消 */
+/* お悩みセクション：非対称 60:40・左バブル2列／右画像（D案で共通スタイル使用） */
 body.d-plan #trouble { padding: 50px 24px 56px; }
 body.d-plan #trouble .trouble-title { margin-bottom: 32px; }
-body.d-plan #trouble .trouble-content { max-width: 1100px; }
-body.d-plan #trouble .trouble-grid { grid-template-columns: 1fr 300px 1fr; gap: 24px; }
 /* ご安心セクション：3ゾーンで左右の寂しさ解消 */
 body.d-plan #reassurance { padding: 56px 24px 64px; }
 body.d-plan .reassurance-inner {
@@ -1078,51 +1116,30 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
   </div>
 </section>
 
-<!-- ===== TROUBLE / WORRY SECTION ===== -->
+<!-- ===== TROUBLE / WORRY SECTION（非対称 60:40・左バブル2列／右画像・FVと対で右に画像） ===== -->
 <section id="trouble">
   <div class="trouble-title">
     <div class="small">このような</div>
     <h2>遺品整理で<br><span class="handwritten">"お悩み"</span>はありませんか？</h2>
   </div>
 
-  <div class="trouble-content" style="max-width:1100px; margin:0 auto; position:relative; z-index:1;">
-    <div class="trouble-grid" style="display:grid; grid-template-columns:1fr 300px 1fr; grid-template-rows:auto auto auto; gap:24px; align-items:center;">
-
-      <!-- Row 1 -->
-      <div class="trouble-bubble left">
-        まずは見積りだけ<br>頼みたいけど<br><span class="highlight">キャンセルが出来なさそう</span>
+  <div class="trouble-content">
+    <!-- 左 60%：バブルを2列グリッドで規則的に配置（スマホでは上・1列） -->
+    <div class="trouble-bubbles-wrap">
+      <div class="trouble-bubbles-grid">
+        <div class="trouble-bubble">まずは見積りだけ頼みたいけど<span class="highlight">キャンセルが出来なさそう</span></div>
+        <div class="trouble-bubble">突然親族が亡くなり何から始めれば<span class="highlight">いいか分からない</span></div>
+        <div class="trouble-bubble">お葬式や家の処分にお金がかかるので<span class="highlight">費用をなるべく抑えたい</span></div>
+        <div class="trouble-bubble">賃貸契約が切れるのでそれまでに<span class="highlight">整理してほしい</span></div>
+        <div class="trouble-bubble"><span class="highlight">遠方で時間がなく、</span>遺品整理する事ができない</div>
+        <div class="trouble-bubble">警察から<span class="highlight">孤独死</span>していると連絡がきた</div>
+        <div class="trouble-bubble">遺品を丁寧に扱ってくれそうな<span class="highlight">信頼できる業者が見つからない</span></div>
       </div>
-
-      <div style="grid-row:1/4; display:flex; align-items:center; justify-content:center;">
-        <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子"
-             style="width:100%; max-width:280px; height:auto; border-radius:50%; object-fit:cover;"
-             onerror="this.outerHTML='<div class=\'photo-placeholder\' style=\'width:280px; height:360px;\'>ご相談のイメージ</div>'">
-      </div>
-
-      <div class="trouble-bubble">
-        突然親族が亡くなり<br>何から始めれば<br><span class="highlight">いいか分からない</span>
-      </div>
-
-      <!-- Row 2 -->
-      <div class="trouble-bubble left">
-        お葬式や家の処分に<br>お金がかかるので<br><span class="highlight">費用をなるべく抑えたい</span>
-      </div>
-      <div></div>
-      <div class="trouble-bubble">
-        賃貸契約が切れるので<br>それまでに<br><span class="highlight">整理してほしい</span>
-      </div>
-
-      <!-- Row 3 -->
-      <div class="trouble-bubble left">
-        <span class="highlight">遠方で時間がなく、</span><br>遺品整理する事が<br>できない
-      </div>
-      <div class="trouble-bubble" style="text-align:center;">
-        警察から<br><span class="highlight">孤独死</span>していると<br>連絡がきた
-      </div>
-      <div class="trouble-bubble">
-        遺品を<br>丁寧に扱ってくれそうな<br><span class="highlight">信頼できる業者が<br>見つからない</span>
-      </div>
-
+    </div>
+    <!-- 右 40%：画像（スマホでは下にスタック） -->
+    <div class="trouble-photo-wrap">
+      <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子"
+           onerror="this.outerHTML='<div class=\'photo-placeholder\' style=\'max-width:280px; aspect-ratio:3/4; border-radius:12px; background:#ddd; color:#666;\'>ご相談のイメージ</div>'">
     </div>
   </div>
 </section>
