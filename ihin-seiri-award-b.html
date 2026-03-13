@@ -32,6 +32,8 @@
       --orange-dark: #c94d08;
       --orange-bright: #f36b1e;
       --accent-cta: #e85c10;
+      --estimate-bg: #d8d8d4;
+      --estimate-text: #333;
       --shadow-sm: 0 6px 20px rgba(0,0,0,0.08);
       --shadow-md: 0 14px 36px rgba(0,0,0,0.12);
       --r-1: 8px;
@@ -65,15 +67,17 @@
     .brand-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .header-ctas { display: flex; align-items: center; gap: 8px; }
     .header-ctas .btn { padding: 10px 14px; font-size: 14px; }
-    .header-ctas .btn-cta small { display: none; }
+    .header-ctas .btn-cta-estimate small { display: none; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: var(--r-2); border: 1px solid rgba(0,0,0,0.08); background: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.06); font-weight: 500; transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease); }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.10); }
     .btn-primary { background: var(--accent); color: #fff; border-color: rgba(0,0,0,0.0); }
     .btn-primary:hover { background: var(--green-dark); }
-    .btn-cta { background: var(--accent-cta); color: #fff; border: none; font-weight: 500; }
-    .btn-cta:hover { background: var(--orange-dark); color: #fff; }
-    .btn-cta-green { background: var(--green); color: #fff; border: none; font-weight: 500; }
-    .btn-cta-green:hover { background: var(--green-dark); color: #fff; }
+    .btn-cta-phone { background: var(--orange); color: #fff; border: none; font-weight: 500; }
+    .btn-cta-phone:hover { background: var(--orange-dark); color: #fff; }
+    .btn-cta-line { background: var(--green); color: #fff; border: none; font-weight: 500; }
+    .btn-cta-line:hover { background: var(--green-dark); color: #fff; }
+    .btn-cta-estimate { background: var(--estimate-bg); color: var(--estimate-text); border: 1px solid rgba(0,0,0,0.12); font-weight: 500; }
+    .btn-cta-estimate:hover { background: #c8c8c4; color: var(--estimate-text); }
     .btn small { font-size: 12px; opacity: .95; }
     .header-phone-wrap { font-size: clamp(20px, 2.2vw, 24px); font-weight: 500; }
     .header-phone-wrap a { color: var(--orange); white-space: nowrap; }
@@ -119,11 +123,6 @@
     .reassure { background: linear-gradient(180deg, #e8efe6 0%, #dce8d9 100%); }
     .reassure-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 56px); align-items: center; }
     .reason-stack { display: grid; gap: 16px; max-width: 640px; }
-    .badge { display: flex; align-items: flex-start; gap: 18px; flex-wrap: nowrap; }
-    .badge-mark { flex-shrink: 0; width: 88px; min-height: 88px; padding: 12px 8px; border-radius: var(--r-2); background: var(--green); border: none; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; align-items: center; justify-content: center; color: #fff; font-weight: 500; text-align: center; line-height: 1.2; }
-    .badge-mark span { display: block; font-size: 12px; opacity: .95; margin-bottom: 4px; }
-    .badge-mark strong { display: block; font-size: 15px; font-weight: 600; }
-    .badge .reason-copy { flex: 1; min-width: 0; }
     .reason-copy p { color: var(--muted); font-size: 16px; }
     .reason-copy strong { color: var(--green-dark); font-weight: 500; }
     .tagline { display: inline-flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
@@ -229,7 +228,7 @@
     .final-cta .h2.final-cta-heading { max-width: none; }
     .final-cta-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 100%; }
     .final-cta-buttons .btn { padding: 18px 16px; font-size: 15px; font-weight: 500; border-width: 2px; }
-    .final-cta-buttons .btn-cta, .final-cta-buttons .btn-cta-green { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+    .final-cta-buttons .btn-cta-phone, .final-cta-buttons .btn-cta-line, .final-cta-buttons .btn-cta-estimate { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
     .final-cta-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
     /* ===== 道B: FV料金hint（オレンジでパキッと） ===== */
@@ -246,14 +245,9 @@
     .cta-bar-text { font-size: 16px; font-weight: 500; color: var(--text); min-width: 0; }
     .cta-bar-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .cta-bar-btns .btn { padding: 14px 22px; }
-    .cta-bar-green .btn-cta { background: #fff; color: var(--orange); }
-    .cta-bar-green .btn-cta:hover { background: #fff; color: var(--orange-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
-    .cta-bar-green .btn-cta-green { background: rgba(255,255,255,0.95); color: var(--green); border: 2px solid #fff; }
-    .cta-bar-green .btn-cta-green:hover { background: #fff; color: var(--green-dark); }
-    .cta-bar-orange .btn-cta { background: #fff; color: var(--orange); }
-    .cta-bar-orange .btn-cta:hover { background: #fff; color: var(--orange-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
-    .cta-bar-orange .btn-cta-green { background: var(--green); color: #fff; }
-    .cta-bar-orange .btn-cta-green:hover { background: var(--green-dark); color: #fff; }
+    .cta-bar-green .btn-cta-phone:hover, .cta-bar-orange .btn-cta-phone:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+    .cta-bar-green .btn-cta-line:hover, .cta-bar-orange .btn-cta-line:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
+    .cta-bar-green .btn-cta-estimate:hover, .cta-bar-orange .btn-cta-estimate:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
 
     /* ===== Footer ===== */
     .site-footer { background: #2a2a2a; color: #e0e0e0; padding: 32px var(--gutter) 24px; }
@@ -318,9 +312,9 @@
           <a href="tel:0742268496" aria-label="電話で相談する">0742-26-8496</a>
         </div>
         <div class="header-hours">7:00〜22:00（土日祝も営業）</div>
-        <a class="btn btn-cta-green" href="tel:0742268496" aria-label="電話で相談する">電話</a>
-        <a class="btn" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで相談する">LINE</a>
-        <a class="btn btn-cta" href="#contact" aria-label="無料見積へ">
+        <a class="btn btn-cta-phone" href="tel:0742268496" aria-label="電話で相談する">電話</a>
+        <a class="btn btn-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで相談する">LINE</a>
+        <a class="btn btn-cta-estimate" href="#contact" aria-label="無料見積へ">
           <span>無料見積</span><small>今すぐ</small>
         </a>
       </div>
@@ -345,8 +339,8 @@
         </div>
         <p class="hero-price-hint"><strong>料金の目安</strong>はお見積りで。1Kからご相談可能です。</p>
         <div class="hero-actions">
-          <a class="btn btn-cta" href="#contact">無料で相談・見積</a>
-          <a class="btn btn-cta-green" href="tel:0742268496">電話で相談</a>
+          <a class="btn btn-cta-estimate" href="#contact">無料で相談・見積</a>
+          <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
           <a class="btn" href="#trouble">よくあるお悩みを見る</a>
         </div>
       </div>
@@ -401,17 +395,11 @@
 
         <div class="reassure-grid">
           <div class="reason-stack">
-            <div class="badge">
-              <div class="badge-mark">
-                <span>遺品整理</span>
-                <strong>元警察官<br>代表</strong>
-              </div>
-              <div class="reason-copy">
-                <p>遺品整理のプロ「ハートフルクリーン」では、<strong>元大阪府警の代表が責任を持ってご対応</strong>します。<br>丁寧なヒアリングで、ご遺族様の気持ちに寄り添いながら進行します。</p>
-                <div class="tagline">
-                  <b>迅速・丁寧にあなたの</b>
-                  <b>お悩みを解決します！</b>
-                </div>
+            <div class="reason-copy">
+              <p>遺品整理のプロ「ハートフルクリーン」では、<strong>元大阪府警の代表が責任を持ってご対応</strong>します。<br>丁寧なヒアリングで、ご遺族様の気持ちに寄り添いながら進行します。</p>
+              <div class="tagline">
+                <b>迅速・丁寧にあなたの</b>
+                <b>お悩みを解決します！</b>
               </div>
             </div>
 
@@ -421,7 +409,7 @@
                   <h3>まずは無料で、状況をお聞かせください。</h3>
                   <p>見積無料・キャンセル無料。料金や作業内容は必ず事前にご説明します。</p>
                 </div>
-                <a class="btn btn-cta" href="#contact">無料相談へ</a>
+                <a class="btn btn-cta-estimate" href="#contact">無料相談へ</a>
               </div>
             </div>
           </div>
@@ -443,8 +431,8 @@
       <div class="cta-bar-inner">
         <p class="cta-bar-text">まずは無料でご相談ください。見積もキャンセルも無料。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta-green" href="tel:0742268496">電話で相談</a>
-          <a class="btn btn-cta" href="#contact">無料見積り</a>
+          <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
+          <a class="btn btn-cta-estimate" href="#contact">無料見積り</a>
         </div>
       </div>
     </section>
@@ -584,8 +572,8 @@
       <div class="cta-bar-inner">
         <p class="cta-bar-text">料金が知りたい方も、お気軽に。無料出張見積りに対応しています。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta-green" href="tel:0742268496">0742-26-8496</a>
-          <a class="btn btn-cta" href="#contact">無料見積りを依頼</a>
+          <a class="btn btn-cta-phone" href="tel:0742268496">0742-26-8496</a>
+          <a class="btn btn-cta-estimate" href="#contact">無料見積りを依頼</a>
         </div>
       </div>
     </section>
@@ -805,15 +793,15 @@
         </div>
         <div>
           <div class="final-cta-buttons" aria-label="3つのご相談方法">
-            <a class="btn btn-cta-green" href="tel:0742268496">
+            <a class="btn btn-cta-phone" href="tel:0742268496">
               <span>電話で相談する</span>
               <small>今すぐスタッフに繋がります</small>
             </a>
-            <a class="btn btn-cta" href="#contact">
+            <a class="btn btn-cta-estimate" href="#contact">
               <span>無料見積りを依頼</span>
               <small>フォームから24時間受付</small>
             </a>
-            <a class="btn" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
+            <a class="btn btn-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
               <span>LINEで相談する</span>
               <small>QRコードからともだち追加</small>
             </a>
