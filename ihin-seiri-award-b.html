@@ -46,7 +46,9 @@
 
     /* ===== Layout helpers ===== */
     .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
-    .section { padding: clamp(40px, 5vw, 72px) 0; position: relative; }
+    .section { padding: 48px 0; position: relative; }
+    .cta-bar + .section, .section + .cta-bar { padding-top: 32px; padding-bottom: 32px; }
+    .hero + section { padding-top: 40px; }
     .section-head { margin-bottom: clamp(26px, 4vw, 40px); text-align: left; }
     .section-head .eyebrow { margin-bottom: 10px; }
     .section-head .h2 { margin-bottom: 8px; max-width: 32ch; }
@@ -66,7 +68,7 @@
     .brand-name { font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .brand-sub { font-size: 12px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .header-ctas { display: flex; align-items: center; gap: 8px; }
-    .header-ctas .btn { padding: 10px 14px; font-size: 14px; }
+    .header-ctas .btn { padding: 10px 20px; font-size: 0.9rem; min-height: 44px; }
     .header-ctas .btn-cta-estimate small { display: none; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: var(--r-2); border: 1px solid rgba(0,0,0,0.08); background: var(--surface); box-shadow: 0 2px 10px rgba(0,0,0,0.06); font-weight: 500; transition: transform .18s var(--ease), box-shadow .18s var(--ease), background .18s var(--ease); }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.10); }
@@ -91,8 +93,8 @@
     .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4.2vw, 56px) var(--gutter); background: linear-gradient(180deg, #fffdf6 0%, #f2f6ef 100%); }
     .hero-copy .eyebrow { margin-bottom: 12px; }
-    .hero-copy .h1 { margin-bottom: 16px; max-width: 20em; line-height: 1.25; }
-    .hero-copy .hero-sub { max-width: 38ch; }
+    .hero-copy .h1 { margin-bottom: 16px; max-width: 620px; line-height: 1.3; word-break: keep-all; overflow-wrap: break-word; }
+    .hero-copy .hero-sub { max-width: 520px; font-size: 1rem; line-height: 1.8; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 18px; }
     .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: var(--r-2); font-size: 14px; font-weight: 500; border: none; color: #fff; }
     .pill.pill-green { background: var(--green); }
@@ -111,8 +113,9 @@
 
     /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
     .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
-    .trouble-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
-    .bubbles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 18px; }
+    .trouble-grid { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
+    .trouble-photo { display: none; }
+    .bubbles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 18px; }
     .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-2); padding: 26px 22px; font-size: 16px; line-height: 1.65; box-shadow: var(--shadow-sm); }
     .bubble .hl { color: var(--green-bright); font-weight: 500; }
     .trouble-photo { display: flex; align-items: center; }
@@ -189,6 +192,7 @@
     /* ===== Policy（お約束） ===== */
     .policy-section { background: var(--surface-2); }
     .policy-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; max-width: 900px; }
+    .policy-list > .policy-card:last-child { grid-column: 1 / -1; max-width: 50%; margin-left: auto; margin-right: auto; }
     .policy-card { background: #fff; border-radius: var(--r-2); padding: 18px 20px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--green); }
     .policy-card h3 { font-size: 16px; font-weight: 500; color: var(--green); margin-bottom: 6px; }
     .policy-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
@@ -226,8 +230,9 @@
     .final-cta { background: radial-gradient(circle at top left, rgba(45,183,66,0.12), transparent 55%), #fafaf7; border-top: 1px solid rgba(0,0,0,0.06); }
     .final-cta-inner { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 4vw, 32px); align-items: start; max-width: 640px; }
     .final-cta .h2.final-cta-heading { max-width: none; }
-    .final-cta-buttons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 100%; }
-    .final-cta-buttons .btn { padding: 18px 16px; font-size: 15px; font-weight: 500; border-width: 2px; }
+    .final-cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: nowrap; max-width: 100%; }
+    .final-cta-buttons .btn { min-width: 200px; padding: 20px 32px; font-size: 1.1rem; font-weight: 500; border-width: 2px; white-space: nowrap; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-direction: column; }
+    .final-cta-buttons .btn small { font-size: 0.8rem; white-space: nowrap; }
     .final-cta-buttons .btn-cta-phone, .final-cta-buttons .btn-cta-line, .final-cta-buttons .btn-cta-estimate { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
     .final-cta-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
@@ -242,7 +247,7 @@
     .cta-bar.cta-bar-orange { background: var(--orange); }
     .cta-bar.cta-bar-orange .cta-bar-text { color: #fff; }
     .cta-bar-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
-    .cta-bar-text { font-size: 16px; font-weight: 500; color: var(--text); min-width: 0; }
+    .cta-bar-text { font-size: clamp(0.85rem, 1.2vw, 1.1rem); font-weight: 500; color: var(--text); min-width: 0; white-space: nowrap; }
     .cta-bar-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
     .cta-bar-btns .btn { padding: 14px 22px; }
     .cta-bar-green .btn-cta-phone:hover, .cta-bar-orange .btn-cta-phone:hover { box-shadow: 0 4px 14px rgba(0,0,0,0.2); }
@@ -255,7 +260,7 @@
     .site-footer-name { font-size: 14px; font-weight: 500; color: #fff; margin-bottom: 8px; }
     .site-footer-addr { font-size: 12px; color: #999; margin-bottom: 4px; }
     .site-footer-note { font-size: 11px; color: #777; margin-top: 16px; margin-bottom: 20px; }
-    .site-footer-lp-link { margin-top: 16px; }
+    .site-footer-lp-link { margin-top: 16px; display: none; }
     .site-footer-lp-link a { display: inline-block; padding: 6px 12px; background: transparent; color: #888; border-radius: var(--r-1); font-size: 11px; border: 1px solid #555; transition: background .2s, color .2s; }
     .site-footer-lp-link a:hover { background: rgba(255,255,255,0.18); color: #fff; }
 
@@ -286,7 +291,8 @@
       .flow-steps { grid-template-columns: 1fr; }
       .flow-step::after { display: none; }
       .flow-step { min-height: auto; }
-      .final-cta-buttons { grid-template-columns: 1fr; }
+      .final-cta-buttons { flex-wrap: wrap; }
+      .cta-bar-text { white-space: normal; }
       .cta-bar-inner { flex-direction: column; align-items: flex-start; }
       .cta-bar-btns .btn { width: 100%; }
     }
@@ -331,7 +337,7 @@
       <div class="hero-copy">
         <div class="eyebrow">奈良・関西の遺品整理</div>
         <h1 class="h1">元警察官の代表が、<br>最初から最後まで責任対応。</h1>
-        <p class="lead hero-sub">ご遺族様の気持ちに寄り添い、仕分け・搬出・清掃・供養・買取まで一括で。<br>見積無料・キャンセル無料で、安心してご相談いただけます。</p>
+        <p class="lead hero-sub">ご遺族様の気持ちに寄り添い、<br>仕分け・搬出・清掃・供養・買取まで一括で。<br>見積無料・キャンセル無料で、安心してご相談いただけます。</p>
         <div class="hero-pills" aria-label="安心ポイント">
           <span class="pill pill-green">見積無料・キャンセル無料</span>
           <span class="pill pill-green">追加費用なし（明朗会計）</span>
@@ -677,18 +683,6 @@
                 最後にお仏壇の前で手を合わせてくださったのが印象的でした。</p>
               <div class="review-name">京都府・60代女性</div>
               <div class="review-source">※Googleの口コミより要約</div>
-            </article>
-            <article class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p>遺品整理で自分たちではどうしても進められなかった部屋が、プロの手で整理され、驚くほどきれいになりました。遺品だけでなく、心の整理もできたような気がします。本当に助かりました。</p>
-              <div class="review-name">40代 女性</div>
-              <div class="review-source">※Google口コミより</div>
-            </article>
-            <article class="review-card">
-              <div class="review-stars">★★★★★</div>
-              <p>じっくり検討したくてまずは見積もりだけをお願いしました。親切で丁寧な対応と説明に安心感があり、お願いすることにしました。作業もスムーズでハートフルクリーンさんに頼んで良かったです。</p>
-              <div class="review-name">50代 男性</div>
-              <div class="review-source">※Google口コミより</div>
             </article>
           </div>
         </div>
