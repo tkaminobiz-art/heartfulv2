@@ -61,10 +61,7 @@ img { max-width: 100%; height: auto; display: block; }
   flex-wrap: wrap;
 }
 .logo-area { display: flex; align-items: center; gap: 6px; }
-.logo-img {
-  width: 130px;
-  height: auto;
-}
+.logo-img { width: 130px; height: auto; }
 .logo-placeholder {
   display: flex; align-items: center; gap: 4px;
   font-size: 22px; font-weight: 900; color: #333; white-space: nowrap;
@@ -78,10 +75,7 @@ img { max-width: 100%; height: auto; display: block; }
   font-size: 11px; font-weight: 700; text-align: center; line-height: 1.4;
   color: #333; white-space: nowrap;
 }
-.header-cancel {
-  font-size: 12px; font-weight: 700; color: #333; white-space: nowrap;
-  line-height: 1.4;
-}
+.header-cancel { font-size: 12px; font-weight: 700; color: #333; white-space: nowrap; line-height: 1.4; }
 .header-cancel span { color: var(--green); }
 .header-phone-area { display: flex; align-items: center; gap: 8px; }
 .header-phone-label { font-size: 11px; color: #555; white-space: nowrap; }
@@ -101,54 +95,166 @@ img { max-width: 100%; height: auto; display: block; }
   transition: background 0.2s;
 }
 .header-contact-btn:hover { background: var(--orange-dark); }
-
 .header-left { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .header-right { display: flex; align-items: center; gap: 16px; margin-left: auto; flex-wrap: wrap; }
-
-/* LP案切り替え（ヘッダー） */
-.header-lp-links {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  font-weight: 600;
-  flex-shrink: 0;
-}
-.header-lp-links a {
-  color: var(--gray);
-  text-decoration: underline;
-  white-space: nowrap;
-}
+.header-lp-links { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+.header-lp-links a { color: var(--gray); text-decoration: underline; white-space: nowrap; }
 .header-lp-links a:hover { color: var(--green); }
 
-/* D案：ヘッダー左右分離（中央偏重解消） */
+/* ---------- D案ヘッダー：参考（木心家/IMURA風）を意識したオマージュ ---------- */
+/* 構成: [左] ブランド積み＋マーカー＋縦区切り線 | [中左] 連絡先縦積み | [中右] ユーティリティナビ（｜区切り） | [右] 2段CTAブロック（オレンジ/緑） */
+body.d-plan #header { box-shadow: 0 1px 0 rgba(0,0,0,0.06); background: #fff; }
 body.d-plan .header-top {
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
-  gap: 16px;
-  padding: 12px 24px;
-  max-width: 1400px;
+  gap: 28px 32px;
+  padding: 18px 20px 20px 24px;
+  max-width: 1280px;
   margin: 0 auto;
 }
-body.d-plan .header-top .header-left {
+body.d-plan .header-homage-brand {
   display: flex;
   align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
+  gap: 14px;
 }
-body.d-plan .header-top .header-right {
+body.d-plan .header-homage-brand .logo-area .logo-img { width: 100px; height: auto; }
+body.d-plan .header-homage-brand .header-brand-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+body.d-plan .header-brand-lead {
+  font-size: 12px;
+  font-weight: 700;
+  color: #555;
+  letter-spacing: 0.02em;
+}
+body.d-plan .header-brand-name {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--green-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+body.d-plan .header-brand-tagline {
+  font-size: 10px;
+  color: var(--gray);
+  margin-top: 2px;
+}
+body.d-plan .header-brand-marker {
+  font-size: 11px;
+  font-weight: 700;
+  color: #b8860b;
+  letter-spacing: 0.05em;
+}
+body.d-plan .header-sep {
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(180deg, transparent, #d4a020 20%, #d4a020 80%, transparent);
+  opacity: 0.8;
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+body.d-plan .header-contact-block {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+body.d-plan .header-contact-place {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-dark);
+}
+body.d-plan .header-contact-tel {
+  font-size: 15px;
+  font-weight: 900;
+  color: #222;
+}
+body.d-plan .header-contact-tel a { color: inherit; text-decoration: none; }
+body.d-plan .header-contact-tel a:hover { color: var(--green); }
+body.d-plan .header-contact-hours {
+  font-size: 11px;
+  color: var(--gray);
+}
+body.d-plan .header-util-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 10px 6px;
   flex-wrap: wrap;
-  justify-self: end;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gray);
 }
-body.d-plan .header-lp-links { order: 10; grid-column: 3; justify-self: end; font-size: 11px; }
+body.d-plan .header-util-nav a { color: var(--gray); text-decoration: none; }
+body.d-plan .header-util-nav a:hover { color: var(--green); }
+body.d-plan .header-util-sep {
+  color: #ddd;
+  font-weight: 300;
+  user-select: none;
+}
+body.d-plan .header-cta-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 140px;
+  flex-shrink: 0;
+}
+body.d-plan .header-cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.3;
+  transition: opacity 0.2s;
+  min-height: 52px;
+}
+body.d-plan .header-cta-block:hover { opacity: 0.95; color: #fff; }
+body.d-plan .header-cta-tel {
+  background: #1a365d;
+}
+body.d-plan .header-cta-form {
+  background: var(--green-dark);
+}
+body.d-plan .header-cta-block .header-cta-label { font-size: 10px; font-weight: 500; opacity: 0.95; margin-bottom: 2px; }
+body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
+body.d-plan .header-nav {
+  border-top: 1px solid rgba(0,0,0,0.07);
+  padding: 12px 24px 14px;
+  gap: 8px 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body.d-plan .header-nav a {
+  padding: 6px 4px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gray-dark);
+  display: inline-flex;
+  align-items: center;
+}
+body.d-plan .header-nav a::after { display: none; }
+body.d-plan .header-nav a:hover { color: var(--green); }
+body.d-plan .header-nav .header-lp-link {
+  margin-left: 12px;
+  padding-left: 16px;
+  border-left: 1px solid #eee;
+  font-size: 11px;
+  color: var(--gray);
+}
 @media (max-width: 900px) {
-  body.d-plan .header-top { grid-template-columns: 1fr auto; }
-  body.d-plan .header-top .header-right { grid-column: 2; }
-  body.d-plan .header-lp-links { grid-column: 1 / -1; justify-self: center; }
+  body.d-plan .header-top { grid-template-columns: 1fr; gap: 16px; padding: 16px; }
+  body.d-plan .header-homage-brand { order: 1; }
+  body.d-plan .header-contact-block { order: 2; }
+  body.d-plan .header-util-nav { order: 3; }
+  body.d-plan .header-cta-blocks { order: 4; flex-direction: row; width: 100%; }
+  body.d-plan .header-cta-block { flex: 1; min-height: 48px; }
 }
 
 /* NAV */
@@ -667,10 +773,11 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
 </head>
 <body class="d-plan">
 
-<!-- ===== HEADER ===== -->
+<!-- ===== HEADER（参考：木心家/IMURA風オマージュ） ===== -->
 <header id="header">
   <div class="header-top">
-    <div class="header-left">
+    <!-- 左：ブランド積み＋マーカー＋縦区切り線 -->
+    <div class="header-homage-brand">
       <div class="logo-area">
         <div class="logo-placeholder">
           <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン" class="logo-img"
@@ -681,35 +788,61 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
           </div>
         </div>
       </div>
-      <span style="font-size:14px; font-weight:700; color:var(--green); white-space:nowrap;">遺品整理なら</span>
-      <div class="header-badge">お見積り<strong>無料！</strong></div>
-      <div class="header-cancel">ご相談後の<span>キャンセルもOK</span></div>
-    </div>
-
-    <div class="header-right">
-      <div class="header-phone-area">
-        <div>
-          <div class="header-phone-label">まずはお気軽に</div>
-          <div class="header-phone"><span class="icon-tel">☎</span>0742-26-8496</div>
-        </div>
-        <div class="header-free-badge">7:00〜22:00 土日祝も</div>
+      <div class="header-brand-stack">
+        <span class="header-brand-lead">遺品整理なら</span>
+        <span class="header-brand-name">ハートフルクリーン</span>
+        <span class="header-brand-tagline">奈良・関西の遺品整理</span>
       </div>
-      <a href="#contact" class="header-contact-btn">✉ お問い合わせ</a>
+      <span class="header-brand-marker">見積無料</span>
+      <div class="header-sep" aria-hidden="true"></div>
     </div>
 
-    <div class="header-lp-links">
-      <a href="ihin-seiri.html">C案で比較</a>
+    <!-- 中左：連絡先（本社・TEL・営業時間の縦積み） -->
+    <div class="header-contact-block">
+      <div class="header-contact-place">奈良・関西対応</div>
+      <div class="header-contact-tel">TEL. <a href="tel:0742-26-8496">0742-26-8496</a></div>
+      <div class="header-contact-hours">営業時間 7:00〜22:00（土日祝も）</div>
+    </div>
+
+    <!-- 中右：ユーティリティナビ（｜区切り） -->
+    <nav class="header-util-nav" aria-label="メニュー">
+      <a href="#points">選ばれる理由</a>
+      <span class="header-util-sep">|</span>
+      <a href="#policy">お約束</a>
+      <span class="header-util-sep">|</span>
+      <a href="#cases">作業実績</a>
+      <span class="header-util-sep">|</span>
+      <a href="#voice">お客様の声</a>
+      <span class="header-util-sep">|</span>
+      <a href="#price">料金</a>
+      <span class="header-util-sep">|</span>
+      <a href="#flow">ご依頼の流れ</a>
+      <span class="header-util-sep">|</span>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+
+    <!-- 右：2段CTAブロック（参考のカタログ／住宅展示場に相当） -->
+    <div class="header-cta-blocks">
+      <a href="tel:0742-26-8496" class="header-cta-block header-cta-tel">
+        <span class="header-cta-label">お電話はこちら</span>
+        <span class="header-cta-main">0742-26-8496</span>
+      </a>
+      <a href="#contact" class="header-cta-block header-cta-form">
+        <span class="header-cta-label">フォームで問い合わせ</span>
+        <span class="header-cta-main">こちら</span>
+      </a>
     </div>
   </div>
 
-  <!-- Navigation -->
-  <nav class="header-nav">
+  <!-- メインナビ（参考：見学会・イムラの家づくり…の並び） -->
+  <nav class="header-nav" aria-label="ページ内リンク">
     <a href="#points">選ばれる理由</a>
     <a href="#policy">ハートフルクリーンのお約束</a>
     <a href="#cases">作業実績</a>
     <a href="#voice">お客様の声</a>
     <a href="#price">料金のご案内</a>
     <a href="#flow">ご依頼の流れ</a>
+    <a href="ihin-seiri.html" class="header-lp-link">C案で比較</a>
   </nav>
 </header>
 
