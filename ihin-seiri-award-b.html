@@ -228,11 +228,13 @@
 
     /* ===== Final CTA ===== */
     .final-cta { background: radial-gradient(circle at top left, rgba(45,183,66,0.12), transparent 55%), #fafaf7; border-top: 1px solid rgba(0,0,0,0.06); }
-    .final-cta-inner { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 4vw, 32px); align-items: start; max-width: 640px; }
+    .final-cta-inner { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 4vw, 32px); align-items: start; max-width: 720px; }
     .final-cta .h2.final-cta-heading { max-width: none; }
     .final-cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: nowrap; max-width: 100%; }
-    .final-cta-buttons .btn { min-width: 200px; padding: 20px 32px; font-size: 1.1rem; font-weight: 500; border-width: 2px; white-space: nowrap; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-direction: column; }
-    .final-cta-buttons .btn small { font-size: 0.8rem; white-space: nowrap; }
+    .final-cta-buttons .btn { min-width: 220px; flex-shrink: 0; padding: 20px 32px; font-size: 1.1rem; font-weight: 500; border-width: 2px; white-space: nowrap; text-align: center; display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex-direction: column; }
+    .final-cta-buttons .btn span,
+    .final-cta-buttons .btn small { white-space: nowrap; display: block; }
+    .final-cta-buttons .btn small { font-size: 0.8rem; }
     .final-cta-buttons .btn-cta-phone, .final-cta-buttons .btn-cta-line, .final-cta-buttons .btn-cta-estimate { box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
     .final-cta-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
