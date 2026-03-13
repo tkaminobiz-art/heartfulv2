@@ -360,19 +360,57 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
 }
 .feature-text span { color: var(--green); }
 
-/* ===== STATS BAR ===== */
-#stats {
-  background: var(--green);
-  padding: 16px 20px;
+/* ===== STATS BAR（信頼バー：左寄せ・中央ポツン禁止） ===== */
+#stats.stats-trust-bar {
+  background: var(--bg-base);
+  padding: 28px 0;
+  border-bottom: 3px solid rgba(45, 183, 66, 0.35);
 }
-.stats-inner {
-  max-width: 1000px; margin: 0 auto;
-  display: flex; align-items: center; justify-content: center; gap: 24px;
+.stats-trust-inner {
+  max-width: 1200px;
+  margin: 0;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.stats-trust-block {
+  max-width: 560px;
+  display: flex;
   flex-wrap: wrap;
+  align-items: baseline;
+  gap: 10px 20px;
 }
-.stats-satisfaction {
-  display: flex; align-items: center; gap: 10px;
+.stats-trust-label {
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  color: var(--text);
+  width: 100%;
+  order: 1;
 }
+.stats-trust-rating {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--green);
+  line-height: 1;
+  order: 2;
+}
+.stats-trust-area {
+  font-size: 15px;
+  color: var(--text);
+  order: 3;
+}
+@media (max-width: 768px) {
+  #stats.stats-trust-bar { padding: 24px 0; }
+  .stats-trust-inner { padding-left: 5%; padding-right: 5%; }
+  .stats-trust-block { gap: 8px 16px; }
+  .stats-trust-label { font-size: 13px; }
+  .stats-trust-rating { font-size: 22px; }
+  .stats-trust-area { font-size: 14px; }
+}
+/* 旧 stats 用（他セクションで参照されている場合のフォールバック） */
+.stats-inner { display: flex; align-items: center; justify-content: flex-start; gap: 24px; flex-wrap: wrap; }
 .satisfaction-circle {
   width: 90px; height: 90px; border-radius: 50%;
   background: conic-gradient(var(--orange) 0% 97.3%, rgba(255,255,255,0.3) 97.3% 100%);
@@ -388,11 +426,9 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
   font-size: 10px; font-weight: 500; line-height: 1.3;
 }
 .satisfaction-text .big { font-size: 20px; }
-.stats-record { color: #fff; text-align: center; }
+.stats-record { color: var(--text); text-align: left; }
 .stats-record .label { font-size: 12px; letter-spacing: 2px; }
-.stats-record .big-num {
-  font-size: 56px; font-weight: 500; color: var(--yellow); line-height: 1;
-}
+.stats-record .big-num { font-size: 24px; font-weight: 500; color: var(--green); line-height: 1; }
 .stats-record .unit { font-size: 18px; font-weight: 500; }
 .stats-record .desc { font-size: 16px; font-weight: 500; }
 .stats-truck { width: 180px; }
@@ -836,9 +872,7 @@ body.d-plan .feature-box:nth-child(3) { border-radius: 16px; background: transpa
 body.d-plan .feature-box:nth-child(3) .feature-check { display: none; }
 body.d-plan .feature-box:nth-child(3) .feature-text { margin-top: 0; }
 body.d-plan .feature-box:nth-child(3) .feature-text::before { content: "03"; display: block; font-size: 28px; font-weight: 500; color: var(--orange); margin-bottom: 4px; }
-/* 統計バー：実数らしく */
-body.d-plan .stats-record .big-num { font-size: 42px; }
-body.d-plan .stats-record .unit { font-size: 16px; }
+/* 統計バー：信頼バーは .stats-trust-* で左寄せ・スケール済み（D案では #stats を stats-trust-bar に差し替え済み） */
 /* ボタン：ホバーにスケールと影 */
 body.d-plan .header-contact-btn:hover { transform: scale(1.02); box-shadow: 0 4px 12px rgba(243,122,29,0.35); }
 body.d-plan .cta-mail-btn:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(243,122,29,0.3); }
@@ -1005,34 +1039,13 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
   </div>
 </section>
 
-<!-- ===== STATS BAR ===== -->
-<section id="stats">
-  <div class="stats-inner">
-    <!-- Satisfaction -->
-    <div class="stats-satisfaction">
-      <div class="satisfaction-circle">
-        <div class="satisfaction-text">
-          <div style="font-size:9px;">お客様満足度</div>
-          <div class="big">★5.0</div>
-        </div>
-      </div>
-      <div style="color:rgba(255,255,255,0.5); font-size:28px;">🌿</div>
-    </div>
-
-    <!-- Record -->
-    <div class="stats-record">
-      <div class="label">Google口コミ</div>
-      <div style="display:flex; align-items:baseline; gap:4px;">
-        <span class="big-num">★5.0</span>
-        <span class="unit"></span>
-      </div>
-      <div class="desc">奈良・大阪・京都・兵庫・滋賀対応</div>
-    </div>
-
-    <!-- Truck -->
-    <div class="stats-truck">
-      <img src="ハートフルクリーンサイト画像/work/work-moving-sofa-01.png" alt="作業の様子"
-           onerror="this.outerHTML='<div class=\'photo-placeholder\' style=\'height:100px; background:rgba(255,255,255,0.2); color:white; font-size:11px;\'>作業イメージ</div>'">
+<!-- ===== STATS BAR（信頼バー：Google口コミ ★5.0 ＋ 対応エリア・左寄せ） ===== -->
+<section id="stats" class="stats-trust-bar">
+  <div class="stats-trust-inner">
+    <div class="stats-trust-block">
+      <span class="stats-trust-label">Google口コミ</span>
+      <span class="stats-trust-rating">★5.0</span>
+      <span class="stats-trust-area">奈良・大阪・京都・兵庫・滋賀対応</span>
     </div>
   </div>
 </section>
