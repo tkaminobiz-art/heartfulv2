@@ -116,13 +116,12 @@
 
     /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
     .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
-    .trouble-grid { display: grid; grid-template-columns: 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
-    .trouble-photo { display: none; }
+    .trouble-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+    .trouble-photo { display: flex; align-items: center; justify-content: center; }
     .bubbles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px 18px; }
     .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-2); padding: 26px 22px; font-size: 16px; line-height: 1.65; box-shadow: var(--shadow-sm); }
     .bubble .hl { color: var(--green-bright); font-weight: 500; }
-    .trouble-photo { display: flex; align-items: center; }
-    .photo-card { width: min(340px, 100%); aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
+    .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ===== Reassurance (asymmetric 60:40, story + big visual) ===== */
@@ -287,7 +286,8 @@
       .trustbar-rating { font-size: 22px; }
       .trustbar-area { font-size: 14px; }
       .trouble-grid, .reassure-grid { grid-template-columns: 1fr; }
-      .trouble-photo, .reassure-visual { justify-self: center; justify-content: center; }
+      .trouble-photo { display: none; }
+      .reassure-visual { justify-self: center; justify-content: center; }
       .bubbles { grid-template-columns: 1fr; gap: 12px; }
       .bubble { padding: 18px 16px; font-size: 15px; }
       .cta-strip-inner { grid-template-columns: 1fr; gap: 14px; padding: 18px 0; }
