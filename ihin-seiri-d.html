@@ -939,24 +939,95 @@ body.d-plan .point-item:nth-child(4) .point-photo { border-radius: 12px; }
 /* お悩みセクション：非対称 60:40・左バブル2列／右画像（D案で共通スタイル使用） */
 body.d-plan #trouble { padding: 50px 24px 56px; }
 body.d-plan #trouble .trouble-title { margin-bottom: 32px; }
-/* ご安心セクション：3ゾーンで左右の寂しさ解消 */
-body.d-plan #reassurance { padding: 56px 24px 64px; }
+/* ご安心セクション：非対称60:40（左テキスト＋バッジ／右安心カード） */
+body.d-plan #reassurance { padding: 64px 24px 72px; }
 body.d-plan .reassurance-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 2fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 32px;
   max-width: 1100px;
   margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
 }
-body.d-plan .reassurance-badge { justify-self: end; }
-body.d-plan .reassurance-text { justify-self: start; text-align: center; }
-body.d-plan .reassurance-visual { justify-self: start; width: 100%; max-width: 240px; aspect-ratio: 1; border-radius: 12px; background: rgba(255,255,255,0.6); display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray); }
+body.d-plan .reassurance-left {
+  flex: 0 0 60%;
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+  text-align: left;
+}
+body.d-plan .reassurance-badge {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+}
+body.d-plan .reassurance-text {
+  text-align: left;
+}
+body.d-plan .reassurance-text p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+body.d-plan .reassurance-headline1,
+body.d-plan .reassurance-headline2 {
+  display: inline-block;
+}
+body.d-plan .reassurance-right {
+  flex: 0 0 40%;
+  min-width: 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+body.d-plan .reassurance-card {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.14);
+  padding: 20px 20px 22px;
+  display: flex;
+  align-items: flex-end;
+}
+body.d-plan .reassurance-card-inner {
+  font-size: 13px;
+  color: var(--text);
+  line-height: 1.7;
+}
+body.d-plan .reassurance-card-label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: rgba(45,183,66,0.12);
+  color: var(--green-dark);
+  margin-bottom: 6px;
+}
 @media (max-width: 768px) {
-  body.d-plan .reassurance-inner { grid-template-columns: 1fr; text-align: center; }
-  body.d-plan .reassurance-badge { justify-self: center; }
-  body.d-plan .reassurance-text { justify-self: center; }
-  body.d-plan .reassurance-visual { justify-self: center; }
+  body.d-plan #reassurance { padding: 48px 18px 56px; }
+  body.d-plan .reassurance-inner {
+    flex-direction: column;
+    gap: 28px;
+  }
+  body.d-plan .reassurance-left,
+  body.d-plan .reassurance-right {
+    flex: none;
+    max-width: 100%;
+  }
+  body.d-plan .reassurance-right {
+    justify-content: center;
+  }
+  body.d-plan .reassurance-card {
+    max-width: 260px;
+  }
+  body.d-plan .reassurance-text p {
+    font-size: 15px;
+  }
+  body.d-plan .reassurance-headline1 { font-size: 20px; }
+  body.d-plan .reassurance-headline2 { font-size: 24px; }
 }
 /* お支払い：3カード横並び・SP時1列（参考サイト風） */
 body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
@@ -1154,18 +1225,27 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
     </div>
   </div>
   <div class="reassurance-inner">
-    <div class="reassurance-badge">
-      <div class="badge-label">遺品整理</div>
-      <div class="badge-main">元警察官<br>代表</div>
+    <div class="reassurance-left">
+      <div class="reassurance-badge">
+        <div class="badge-label">遺品整理</div>
+        <div class="badge-main">元警察官<br>代表</div>
+      </div>
+      <div class="reassurance-text">
+        <p>遺品整理のプロ「ハートフルクリーン」では、<br>
+          <strong>元大阪府警の代表が責任を持ってご対応。</strong>
+        </p>
+        <div class="reassurance-headline1">迅速・丁寧にあなたの</div>
+        <div class="reassurance-headline2">お悩みを解決します！</div>
+      </div>
     </div>
-    <div class="reassurance-text">
-      <p>遺品整理のプロ「ハートフルクリーン」では、<br>
-        <strong>元大阪府警の代表が責任を持ってご対応。</strong>
-      </p>
-      <div class="reassurance-headline1">迅速・丁寧にあなたの</div>
-      <div class="reassurance-headline2">お悩みを解決します！</div>
+    <div class="reassurance-right" aria-hidden="true">
+      <div class="reassurance-card">
+        <div class="reassurance-card-inner">
+          <div class="reassurance-card-label">安心イメージ</div>
+          <div>代表とご家族・ご遺族様が<br>落ち着いた雰囲気で相談している<br>写真をここに配置（要調達）。</div>
+        </div>
+      </div>
     </div>
-    <div class="reassurance-visual" aria-hidden="true">画像スロット（調達用）</div>
   </div>
 </section>
 
