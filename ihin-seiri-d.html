@@ -631,62 +631,135 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
 }
 .point-badge-overlay .num { font-size: 28px; display: block; }
 
-/* ===== D案 専用：世界水準・トレンド・心地よいアニメーション ===== */
+/* ===== D案 専用：会議結果に基づくFV（鮮やか・一目で分かる・AI感ゼロ） ===== */
 body.d-plan { font-feature-settings: "palt" 1; }
-/* FV：主役をコピーに、余白と階層で誘導 */
-body.d-plan #hero { min-height: 75vh; background: linear-gradient(165deg, #f0f4ef 0%, #e2ebe0 50%, #d4e5d2 100%); }
-body.d-plan .hero-bg::before { opacity: 0.08; }
+
+/* FV：画面全体が一枚の鮮やかさ・1文で言い切る・信頼帯・主役写真1枚・CTA1本 */
+body.d-plan #hero {
+  min-height: 88vh;
+  background: linear-gradient(162deg, #e8f0e6 0%, #dcead8 38%, #d0e3cc 70%, #c4ddc2 100%);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+body.d-plan #hero::before {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: -20%;
+  right: -15%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.35) 0%, transparent 65%);
+  pointer-events: none;
+}
+body.d-plan #hero::after {
+  content: '';
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  bottom: -60px;
+  left: -40px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cellipse cx='50' cy='50' rx='45' ry='42' fill='%232db742' opacity='0.06'/%3E%3C/svg%3E") no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+body.d-plan .hero-bg,
+body.d-plan .hero-bg::before { display: none; }
 body.d-plan .hero-inner {
   display: grid;
-  grid-template-columns: 1fr minmax(320px, 1.1fr) 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 32px 24px;
-  padding: 40px 24px 56px;
-  max-width: 1280px;
+  gap: 48px 56px;
+  padding: 52px 28px 60px;
+  max-width: 1180px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
-body.d-plan .hero-left-photo {
-  justify-self: end;
+body.d-plan .fv-copy { padding-right: 0; }
+body.d-plan .fv-headline {
+  font-size: clamp(22px, 3.2vw, 30px);
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+}
+body.d-plan .fv-headline .fv-headline-accent {
+  display: block;
+  font-size: clamp(28px, 4.2vw, 42px);
+  color: var(--green-dark);
+  letter-spacing: 0.02em;
+  margin-top: 4px;
+}
+body.d-plan .fv-sub {
+  margin-top: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
+  line-height: 1.6;
+}
+body.d-plan .fv-trust {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(30,145,48,0.2);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+body.d-plan .fv-trust .fv-trust-sep {
+  color: rgba(0,0,0,0.18);
+  font-weight: 400;
+  user-select: none;
+}
+body.d-plan .fv-trust .fv-trust-star { color: var(--orange); font-weight: 800; }
+body.d-plan .fv-cta-wrap { margin-top: 30px; }
+body.d-plan .fv-cta-btn {
+  display: inline-block;
+  background: var(--green);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 38px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(45,183,66,0.32);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+body.d-plan .fv-cta-btn:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 26px rgba(45,183,66,0.38);
+}
+body.d-plan .fv-hero-img-wrap {
+  position: relative;
+}
+body.d-plan .fv-hero-img {
   width: 100%;
-  max-width: 280px;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 20px 20px 6px 20px;
+  box-shadow: 0 22px 52px rgba(30,145,48,0.14);
+  display: block;
 }
-body.d-plan .hero-center {
-  order: 0;
-  text-align: center;
-  padding: 24px 16px;
-}
-body.d-plan .hero-circle { width: 100%; max-width: 100%; height: auto; aspect-ratio: 1; border-width: 2px; border-radius: 24px; padding: 28px 24px; background: rgba(255,255,255,0.95); box-shadow: 0 24px 48px rgba(30,145,48,0.08); }
-body.d-plan .hero-circle-title1 { font-size: clamp(18px, 3.5vw, 26px); letter-spacing: 0.02em; }
-body.d-plan .hero-circle-title2 { font-size: clamp(24px, 4.5vw, 36px); }
-body.d-plan .hero-circle-title2 span { font-size: clamp(28px, 5vw, 42px); }
-body.d-plan .hero-regions { margin-top: 16px; }
-body.d-plan .hero-tagline { margin-top: 12px; font-size: 17px; }
-body.d-plan .hero-right-photo {
-  justify-self: start;
-  width: 100%;
-  max-width: 260px;
+body.d-plan .fv-hero-img-wrap .photo-placeholder {
+  min-height: 360px;
+  border-radius: 20px 20px 6px 20px;
+  background: rgba(255,255,255,0.5);
+  border: 2px dashed rgba(30,145,48,0.25);
 }
 @media (max-width: 900px) {
-  body.d-plan .hero-inner { grid-template-columns: 1fr; padding: 32px 20px 48px; }
-  body.d-plan .hero-center { order: 1; }
-  body.d-plan .hero-left-photo { order: 2; justify-self: center; max-width: 240px; }
-  body.d-plan .hero-right-photo { order: 3; justify-self: center; max-width: 200px; }
+  body.d-plan .hero-inner { grid-template-columns: 1fr; gap: 36px; padding: 40px 20px 48px; text-align: center; }
+  body.d-plan .fv-copy { padding-right: 0; }
+  body.d-plan .fv-headline { text-align: center; }
+  body.d-plan .fv-headline .fv-headline-accent { text-align: center; }
+  body.d-plan .fv-sub { text-align: center; }
+  body.d-plan .fv-trust { justify-content: center; }
+  body.d-plan .fv-cta-wrap { text-align: center; }
+  body.d-plan .fv-hero-img { max-height: 320px; }
 }
-/* FV内ベネフィットバナー（参考サイト風） */
-body.d-plan .hero-benefit-banners { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
-body.d-plan .hero-benefit-item {
-  background: var(--orange); color: #fff; border-radius: 6px; padding: 10px 18px;
-  font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 2px 8px rgba(243,122,29,0.35);
-}
-body.d-plan .hero-benefit-item strong { font-weight: 900; }
-body.d-plan .hero-cta-wrap { margin-top: 24px; }
-body.d-plan .hero-cta-btn {
-  display: inline-block; background: var(--green); color: #fff; border-radius: 8px;
-  padding: 16px 32px; font-size: 18px; font-weight: 700; text-align: center;
-  box-shadow: 0 4px 16px rgba(45,183,66,0.35); transition: transform 0.2s, box-shadow 0.2s;
-}
-body.d-plan .hero-cta-btn:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(45,183,66,0.4); }
-body.d-plan .hero-subcopy { margin-top: 10px; font-size: 15px; font-weight: 500; color: #555; line-height: 1.5; }
 /* 特徴3つ：意図的な差 */
 body.d-plan .features-inner { gap: 20px; padding: 28px 24px; flex-wrap: wrap; }
 body.d-plan .feature-box:nth-child(1) { border-radius: 12px; border: 2px solid var(--green-dark); background: #fff; }
@@ -813,51 +886,30 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
   </div>
 </header>
 
-<!-- ===== HERO ===== -->
+<!-- ===== FV（会議結果：鮮やか・一目で分かる・主役写真1枚・信頼帯・CTA1本） ===== -->
 <section id="hero">
   <div class="hero-bg"></div>
   <div class="hero-inner">
-    <!-- Left: worried couple -->
-    <div class="hero-left-photo">
-      <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談の様子" style="width:100%; height:auto;"
-           onerror="this.outerHTML='<div class=\'photo-placeholder\' style=\'height:320px\'>ご相談のイメージ</div>'">
-    </div>
-
-    <!-- Center: circle with text -->
-    <div class="hero-center">
-      <div class="hero-circle">
-        <div class="hero-circle-title1">遺品整理で</div>
-        <div class="hero-circle-title2"><span>"お悩み"</span>の方に</div>
-        <div class="hero-subcopy" style="margin-top:10px; font-size:15px; font-weight:500; color:#555; line-height:1.5;">
-        元警察官の代表が、奈良・関西エリアで丁寧にサポートします
+    <div class="fv-copy">
+      <h1 class="fv-headline">
+        奈良・関西の遺品整理は<br>
+        <span class="fv-headline-accent">ハートフルクリーンへ</span>
+      </h1>
+      <p class="fv-sub">お悩みの方に、真心を込めて。</p>
+      <div class="fv-trust">
+        <span>見積無料・キャンセル無料</span>
+        <span class="fv-trust-sep">｜</span>
+        <span>Google口コミ <span class="fv-trust-star">★5.0</span></span>
+        <span class="fv-trust-sep">｜</span>
+        <span>奈良・大阪・京都・兵庫・滋賀</span>
       </div>
-      <div class="hero-benefit-banners" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
-        <span class="hero-benefit-item">出張見積り<strong>無料</strong></span>
-        <span class="hero-benefit-item">キャンセル<strong>無料</strong></span>
-        <span class="hero-benefit-item">追加料金<strong>なし</strong></span>
-      </div>
-      <div class="hero-cta-wrap" style="margin-top:24px;">
-        <a href="#contact" class="hero-cta-btn">ご相談・お見積りはこちら</a>
-      </div>
-      </div>
-
-      <div class="hero-regions" style="margin-top:16px;">
-        <span class="region-badge">大阪</span>
-        <span class="region-badge">奈良</span>
-        <span class="region-badge">京都</span>
-        <span class="region-badge">兵庫</span>
-        <span class="region-badge">滋賀</span>
-        <span style="font-size:16px; font-weight:700; align-self:center;">の <span style="color:var(--green)">遺品整理</span></span>
-      </div>
-      <div class="hero-tagline">
-        ハートフルクリーンに<br><strong>お任せください！</strong>
+      <div class="fv-cta-wrap">
+        <a href="#contact" class="fv-cta-btn">ご相談・お見積りはこちら</a>
       </div>
     </div>
-
-    <!-- Right: staff team -->
-    <div class="hero-right-photo">
-      <img src="ハートフルクリーンサイト画像/people/portrait-fujita.png" alt="代表 藤田 元大阪府警察官" style="width:100%; height:auto;"
-           onerror="this.outerHTML='<div class=\'photo-placeholder\' style=\'height:320px\'>代表 藤田</div>'">
+    <div class="fv-hero-img-wrap">
+      <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="遺品整理のご相談の様子" class="fv-hero-img"
+           onerror="this.outerHTML='<div class=\'photo-placeholder fv-hero-img\'>ご相談のイメージ</div>'">
     </div>
   </div>
 </section>
