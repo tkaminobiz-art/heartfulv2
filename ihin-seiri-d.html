@@ -531,6 +531,21 @@ body.d-plan .hero-regions { margin-top: 20px; }
 body.d-plan .hero-tagline { margin-top: 16px; font-size: 18px; }
 body.d-plan .hero-left-photo { order: 2; width: 100%; max-width: 280px; margin: 0 auto; }
 body.d-plan .hero-right-photo { order: 3; width: 100%; max-width: 200px; margin: 0 auto; }
+/* FV内ベネフィットバナー（参考サイト風） */
+body.d-plan .hero-benefit-banners { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 20px; }
+body.d-plan .hero-benefit-item {
+  background: var(--orange); color: #fff; border-radius: 6px; padding: 10px 18px;
+  font-size: 14px; font-weight: 700; white-space: nowrap; box-shadow: 0 2px 8px rgba(243,122,29,0.35);
+}
+body.d-plan .hero-benefit-item strong { font-weight: 900; }
+body.d-plan .hero-cta-wrap { margin-top: 24px; }
+body.d-plan .hero-cta-btn {
+  display: inline-block; background: var(--green); color: #fff; border-radius: 8px;
+  padding: 16px 32px; font-size: 18px; font-weight: 700; text-align: center;
+  box-shadow: 0 4px 16px rgba(45,183,66,0.35); transition: transform 0.2s, box-shadow 0.2s;
+}
+body.d-plan .hero-cta-btn:hover { transform: scale(1.02); box-shadow: 0 6px 20px rgba(45,183,66,0.4); }
+body.d-plan .hero-subcopy { margin-top: 10px; font-size: 15px; font-weight: 500; color: #555; line-height: 1.5; }
 /* 特徴3つ：意図的な差 */
 body.d-plan .features-inner { gap: 20px; padding: 28px 24px; flex-wrap: wrap; }
 body.d-plan .feature-box:nth-child(1) { border-radius: 12px; border: 2px solid var(--green-dark); background: #fff; }
@@ -560,6 +575,11 @@ body.d-plan .dot-bg { background-size: 24px 24px; opacity: 0.6; }
 body.d-plan .point-photo { border-radius: 8px; }
 body.d-plan .point-item:nth-child(2) .point-photo { border-radius: 4px; }
 body.d-plan .point-item:nth-child(4) .point-photo { border-radius: 12px; }
+/* お支払い：3カード横並び・SP時1列（参考サイト風） */
+body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 768px) {
+  body.d-plan .payment-grid-3 { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body class="d-plan">
@@ -629,9 +649,17 @@ body.d-plan .point-item:nth-child(4) .point-photo { border-radius: 12px; }
       <div class="hero-circle">
         <div class="hero-circle-title1">遺品整理で</div>
         <div class="hero-circle-title2"><span>"お悩み"</span>の方に</div>
-        <div style="margin-top:6px; display:flex; align-items:center; gap:4px;">
-          <span style="font-size:24px;">➜</span>
-        </div>
+        <div class="hero-subcopy" style="margin-top:10px; font-size:15px; font-weight:500; color:#555; line-height:1.5;">
+        元警察官の代表が、奈良・関西エリアで丁寧にサポートします
+      </div>
+      <div class="hero-benefit-banners" style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:20px;">
+        <span class="hero-benefit-item">出張見積り<strong>無料</strong></span>
+        <span class="hero-benefit-item">キャンセル<strong>無料</strong></span>
+        <span class="hero-benefit-item">追加料金<strong>なし</strong></span>
+      </div>
+      <div class="hero-cta-wrap" style="margin-top:24px;">
+        <a href="#contact" class="hero-cta-btn">ご相談・お見積りはこちら</a>
+      </div>
       </div>
 
       <div class="hero-regions" style="margin-top:16px;">
@@ -1405,34 +1433,27 @@ body.d-plan .point-item:nth-child(4) .point-photo { border-radius: 12px; }
       <div style="font-size:13px; color:#aaa; letter-spacing:3px; text-transform:uppercase; margin-bottom:6px;">PAYMENT METHOD</div>
       <h2 style="font-size:28px; font-weight:900; color:var(--green);">お支払い方法</h2>
     </div>
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+    <div class="payment-grid-3" style="display:grid; grid-template-columns:repeat(3, 1fr); gap:20px;">
 
       <div style="background:#fff; border-radius:8px; padding:24px; text-align:center;">
         <div style="font-size:40px; margin-bottom:12px; text-align:center;">現金</div>
         <h3 style="font-size:18px; font-weight:900; color:var(--green); margin-bottom:12px;">現金払い</h3>
-        <p style="font-size:13px; color:#555; line-height:1.8;">作業終了後、お見積り時に提示させていただいた金額を現金にてお支払いいただきます。<br>お支払いいただいた後に領収書をその場で発行させていただきます。<br>また、お釣りをご用意しておりますのでご安心ください。</p>
+        <p style="font-size:13px; color:#555; line-height:1.8;">作業終了後、お見積り時に提示させていただいた金額を現金にてお支払いいただきます。<br>領収書をその場で発行し、お釣りもご用意しておりますのでご安心ください。</p>
       </div>
 
       <div style="background:#fff; border-radius:8px; padding:24px; text-align:center;">
         <div style="font-size:40px; margin-bottom:12px; text-align:center;">カード</div>
         <h3 style="font-size:18px; font-weight:900; color:var(--green); margin-bottom:12px;">各種クレジットカード払い</h3>
-        <p style="font-size:13px; color:#555; line-height:1.8;">急な出費で持ち合わせがなくてもご安心してご利用頂けます。また、状況によっては分割でのお支払いもご対応させていただきます。<br>お気軽にご相談ください。</p>
+        <p style="font-size:13px; color:#555; line-height:1.8;">急な出費で持ち合わせがなくてもご安心してご利用いただけます。状況に応じて分割払いもご相談可能です。</p>
         <div style="background:var(--yellow-light); border-radius:6px; padding:10px; margin-top:12px; font-size:12px; color:#555;">
-          【　取扱いクレジットカード　】<br>
-          VISA・Mastercard・American Express・JCB・Diners Club・Discoverの対応が可能です。
+          【取扱い】VISA・Mastercard・American Express・JCB・Diners Club・Discover
         </div>
       </div>
 
       <div style="background:#fff; border-radius:8px; padding:24px; text-align:center;">
-        <div style="font-size:40px; margin-bottom:12px; text-align:center;">振込</div>
-        <h3 style="font-size:18px; font-weight:900; color:var(--green); margin-bottom:12px;">銀行振込</h3>
-        <p style="font-size:13px; color:#555; line-height:1.8;">作業完了後に弊社指定の銀行口座へお振込みいただく方法です。<br>詳しくはお問い合わせください。</p>
-      </div>
-
-      <div style="background:#fff; border-radius:8px; padding:24px; text-align:center;">
-        <div style="font-size:40px; margin-bottom:12px; text-align:center;">分割</div>
-        <h3 style="font-size:18px; font-weight:900; color:var(--green); margin-bottom:12px;">分割払い（ローン）</h3>
-        <p style="font-size:13px; color:#555; line-height:1.8;">費用が高額になる場合でも、分割でのお支払いが可能です。<br>詳しくはお気軽にご相談ください。</p>
+        <div style="font-size:40px; margin-bottom:12px; text-align:center;">PayPay</div>
+        <h3 style="font-size:18px; font-weight:900; color:var(--green); margin-bottom:12px;">PayPay払い</h3>
+        <p style="font-size:13px; color:#555; line-height:1.8;">スマートフォンでかんたんにお支払いいただけます。PayPay残高・PayPayボーナス・クレジットカード決済に対応しています。</p>
       </div>
 
     </div>
