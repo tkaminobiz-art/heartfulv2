@@ -452,9 +452,11 @@ body.d-plan .header-cta-block .header-cta-main { font-size: 13px; }
 .cta-line-text { font-size: 13px; font-weight: 700; }
 .cta-line-text span { color: var(--green); font-size: 15px; }
 .cta-line-qr {
-  width: 60px; height: 60px; background: #ddd;
-  border-radius: 4px; display: flex; align-items: center; justify-content: center;
-  font-size: 10px; color: #999;
+  width: 100px; height: 100px; background: #f5f5f5;
+  border-radius: 8px; display: flex; align-items: center; justify-content: center;
+  font-size: 10px; color: #999; overflow: hidden;
+}
+.cta-line-qr-img { width: 100%; height: 100%; object-fit: contain; display: block;
 }
 .cta-photo {
   position: absolute; left: -60px; bottom: 0;
@@ -760,11 +762,14 @@ body.d-plan .feature-box:nth-child(1) { border-radius: 12px; border: 2px solid v
 body.d-plan .feature-box:nth-child(1) .feature-check { display: none; }
 body.d-plan .feature-box:nth-child(1) .feature-text { margin-top: 0; font-size: 15px; }
 body.d-plan .feature-box:nth-child(1) .feature-text::before { content: "01"; display: block; font-size: 28px; font-weight: 900; color: var(--green); margin-bottom: 4px; }
-body.d-plan .feature-box:nth-child(2) { border-radius: 4px; background: var(--green-light); box-shadow: none; }
-body.d-plan .feature-box:nth-child(2) .feature-check { width: 24px; height: 24px; font-size: 12px; }
+body.d-plan .feature-box:nth-child(2) { border-radius: 4px; background: var(--green-light); box-shadow: none; border: 2px solid rgba(45,167,66,0.35); }
+body.d-plan .feature-box:nth-child(2) .feature-check { display: none; }
+body.d-plan .feature-box:nth-child(2) .feature-text { margin-top: 0; }
+body.d-plan .feature-box:nth-child(2) .feature-text::before { content: "02"; display: block; font-size: 28px; font-weight: 900; color: var(--green); margin-bottom: 4px; }
 body.d-plan .feature-box:nth-child(3) { border-radius: 16px; background: transparent; border: 2px solid var(--orange); }
 body.d-plan .feature-box:nth-child(3) .feature-check { display: none; }
 body.d-plan .feature-box:nth-child(3) .feature-text { margin-top: 0; }
+body.d-plan .feature-box:nth-child(3) .feature-text::before { content: "03"; display: block; font-size: 28px; font-weight: 900; color: var(--orange); margin-bottom: 4px; }
 /* 統計バー：実数らしく */
 body.d-plan .stats-record .big-num { font-size: 42px; }
 body.d-plan .stats-record .unit { font-size: 16px; }
@@ -779,6 +784,14 @@ body.d-plan .d-reveal.is-visible { opacity: 1; transform: translateY(0); }
 body.d-plan #trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
 body.d-plan #reassurance { background: linear-gradient(180deg, #e8efe6 0%, #dce8d9 100%); }
 body.d-plan .dot-bg { background-size: 24px 24px; opacity: 0.6; }
+/* お客様の声：口コミテキストを読みやすく・もっと見るボタン */
+body.d-plan .voice-review-text { font-size: 16px; color: #444; line-height: 1.85; }
+body.d-plan .voice-google-more-btn {
+  display: inline-block; background: var(--green); color: #fff; font-size: 16px; font-weight: 700;
+  padding: 14px 28px; border-radius: 8px; text-decoration: none; transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(45,167,66,0.3);
+}
+body.d-plan .voice-google-more-btn:hover { background: var(--green-dark); transform: scale(1.02); }
 /* カードの角丸ゆらぎ */
 body.d-plan .point-photo { border-radius: 8px; }
 body.d-plan .point-item:nth-child(2) .point-photo { border-radius: 4px; }
@@ -978,15 +991,11 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:12px; color:#666;">QRコードから「ともだち追加」！</div>
           </div>
           <div class="cta-line-qr">
-            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener"><img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="LINE" style="width:60px; height:60px; object-fit:contain;" onerror="this.outerHTML='<span style=\'font-size:12px; color:var(--green); font-weight:700;\'>LINE追加</span>'"></a>
+            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで無料見積もり（QRコード）"><img src="ハートフルクリーンサイト画像/line-qr.png" alt="LINE公式アカウントQRコード" class="cta-line-qr-img" onerror="this.src='ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png'; this.alt='LINE'; this.onerror=null;"></a>
           </div>
         </div>
       </div>
     </div>
-    <!-- Operator photo -->
-    <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談"
-         style="position:absolute; left:-10px; bottom:0; width:110px; height:auto; object-fit:cover;"
-         onerror="this.style.display='none'">
   </div>
 </section>
 
@@ -1278,14 +1287,11 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:12px; color:#666;">QRコードから「ともだち追加」！</div>
           </div>
           <div class="cta-line-qr">
-            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" style="font-size:12px; color:var(--green); font-weight:700;">LINE追加</a>
+            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで無料見積もり（QRコード）"><img src="ハートフルクリーンサイト画像/line-qr.png" alt="LINE公式アカウントQRコード" class="cta-line-qr-img" onerror="this.src='ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png'; this.alt='LINE'; this.onerror=null;"></a>
           </div>
         </div>
       </div>
     </div>
-    <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="ご相談"
-         style="position:absolute; left:-10px; bottom:0; width:110px; height:auto; object-fit:cover;"
-         onerror="this.style.display='none'">
   </div>
 </section>
 
@@ -1490,7 +1496,7 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">40代 女性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">遺品整理で自分たちではどうしても進められなかった部屋が、プロの手で整理され、<mark style="background:var(--yellow); padding:1px 2px;">驚くほどきれいになりました。</mark>遺品だけでなく、<mark style="background:var(--yellow); padding:1px 2px;">心の整理もできた</mark>ような気がします。本当に助かりました。（Google口コミより）</p>
+        <p class="voice-review-text">遺品整理で自分たちではどうしても進められなかった部屋が、プロの手で整理され、<mark style="background:var(--yellow); padding:1px 2px;">驚くほどきれいになりました。</mark>遺品だけでなく、<mark style="background:var(--yellow); padding:1px 2px;">心の整理もできた</mark>ような気がします。本当に助かりました。（Google口コミより）</p>
       </div>
 
       <!-- Voice 2 -->
@@ -1503,7 +1509,7 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">50代 男性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">じっくりと検討したくてまずは見積もりだけをお願いしました。実は他でもいくつか見積もりをお願いしていたんですが<mark style="background:var(--yellow); padding:1px 2px;">親切で丁寧な対応と説明に安心感があり</mark>、お願いすることにしました。<mark style="background:var(--yellow); padding:1px 2px;">作業もスムーズでハートフルクリーンさんに頼んで良かったです。</mark>（Google口コミより）</p>
+        <p class="voice-review-text">じっくりと検討したくてまずは見積もりだけをお願いしました。実は他でもいくつか見積もりをお願いしていたんですが<mark style="background:var(--yellow); padding:1px 2px;">親切で丁寧な対応と説明に安心感があり</mark>、お願いすることにしました。<mark style="background:var(--yellow); padding:1px 2px;">作業もスムーズでハートフルクリーンさんに頼んで良かったです。</mark>（Google口コミより）</p>
       </div>
 
       <!-- Voice 3 -->
@@ -1516,7 +1522,7 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">60代 男性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">遺品整理のプロフェッショナルなアプローチに感謝しています。大切な家族の思い出を整理するのは難しい作業でしたが、<mark style="background:var(--yellow); padding:1px 2px;">丁寧な説明とサポートがあり、スムーズに進めることができました。</mark>感謝の気持ちでいっぱいです。（Google口コミより）</p>
+        <p class="voice-review-text">遺品整理のプロフェッショナルなアプローチに感謝しています。大切な家族の思い出を整理するのは難しい作業でしたが、<mark style="background:var(--yellow); padding:1px 2px;">丁寧な説明とサポートがあり、スムーズに進めることができました。</mark>感謝の気持ちでいっぱいです。（Google口コミより）</p>
       </div>
 
       <!-- Voice 4 -->
@@ -1529,7 +1535,7 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">50代 男性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">遺品整理サービスを通じて、故人への敬意を感じる丁寧な作業に感動しました。スタッフの方々の心遣いに感謝しています。安心して任せることができました。（Google口コミより）</p>
+        <p class="voice-review-text">遺品整理サービスを通じて、故人への敬意を感じる丁寧な作業に感動しました。スタッフの方々の心遣いに感謝しています。安心して任せることができました。（Google口コミより）</p>
       </div>
 
       <!-- Voice 5 -->
@@ -1542,7 +1548,7 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">60代 男性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">遺品整理サービスのチームは、私の家族の遺品を丁寧に扱ってくれました。心のこもったサービスに深く感謝しています。（Google口コミより）</p>
+        <p class="voice-review-text">遺品整理サービスのチームは、私の家族の遺品を丁寧に扱ってくれました。心のこもったサービスに深く感謝しています。（Google口コミより）</p>
       </div>
 
       <!-- Voice 6 -->
@@ -1555,9 +1561,13 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:13px; font-weight:700;">70代 女性</div>
           </div>
         </div>
-        <p style="font-size:13px; color:#555; line-height:1.8;">高齢のため、遺品整理が大変な作業でしたが、ハートフルクリーンのスタッフが親身になって対応してくださいました。本当に助かりました。（Google口コミより）</p>
+        <p class="voice-review-text">高齢のため、遺品整理が大変な作業でしたが、ハートフルクリーンのスタッフが親身になって対応してくださいました。本当に助かりました。（Google口コミより）</p>
       </div>
 
+    </div>
+
+    <div style="text-align:center; margin-top:32px;">
+      <a href="https://www.google.com/search?q=ハートフルクリーン+奈良+口コミ" target="_blank" rel="noopener noreferrer" class="voice-google-more-btn">Googleの口コミをもっと見る</a>
     </div>
   </div>
 </section>
@@ -1638,12 +1648,11 @@ body.d-plan .payment-grid-3 { grid-template-columns: repeat(3, 1fr); }
             <div style="font-size:12px; color:#666;">QRコードから「ともだち追加」！</div>
           </div>
           <div class="cta-line-qr">
-            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" style="font-size:12px; color:var(--green); font-weight:700;">LINE追加</a>
+            <a href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで無料見積もり（QRコード）"><img src="ハートフルクリーンサイト画像/line-qr.png" alt="LINE公式アカウントQRコード" class="cta-line-qr-img" onerror="this.src='ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png'; this.alt='LINE'; this.onerror=null;"></a>
           </div>
         </div>
       </div>
     </div>
-    <img src="ハートフルクリーンサイト画像/heartful画像/相談.jpeg" alt="" style="position:absolute; left:-10px; bottom:0; width:110px; height:auto; object-fit:cover;" onerror="this.style.display='none'">
   </div>
 </section>
 
