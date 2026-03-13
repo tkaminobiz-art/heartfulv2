@@ -15,21 +15,23 @@
     body { font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg-base); }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
-    :focus-visible { outline: 3px solid rgba(45, 183, 66, 0.45); outline-offset: 2px; }
+    :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 
-    /* ===== Tokens（道B: 転換重視・行動色あり） ===== */
+    /* ===== Tokens（道B: パキッと2色・グリーン＆オレンジ） ===== */
     :root{
       --bg-base: #fafaf7;
       --surface: #fffdf6;
       --surface-2: #f4f4ee;
       --text: #222222;
       --muted: #565656;
-      --green: #2db742;
-      --green-dark: #1e9130;
-      --accent: #2db742;
-      --orange: #e8601c;
-      --orange-dark: #d35400;
-      --accent-cta: #e8601c;
+      --green: #1a9e2e;
+      --green-dark: #158527;
+      --green-bright: #22c03c;
+      --accent: #1a9e2e;
+      --orange: #e85c10;
+      --orange-dark: #c94d08;
+      --orange-bright: #f36b1e;
+      --accent-cta: #e85c10;
       --shadow-sm: 0 6px 20px rgba(0,0,0,0.08);
       --shadow-md: 0 14px 36px rgba(0,0,0,0.12);
       --r-1: 8px;
@@ -64,11 +66,13 @@
     .btn:hover { transform: translateY(-1px); box-shadow: 0 10px 22px rgba(0,0,0,0.10); }
     .btn-primary { background: var(--accent); color: #fff; border-color: rgba(0,0,0,0.0); }
     .btn-primary:hover { background: var(--green-dark); }
-    .btn-cta { background: var(--accent-cta); color: #fff; border-color: transparent; }
-    .btn-cta:hover { background: var(--orange-dark); }
-    .btn small { font-size: 12px; opacity: .9; }
-    .header-phone-wrap { font-size: clamp(18px, 2vw, 22px); font-weight: 500; }
-    .header-phone-wrap a { color: var(--accent-cta); white-space: nowrap; }
+    .btn-cta { background: var(--accent-cta); color: #fff; border: none; font-weight: 500; }
+    .btn-cta:hover { background: var(--orange-dark); color: #fff; }
+    .btn-cta-green { background: var(--green); color: #fff; border: none; font-weight: 500; }
+    .btn-cta-green:hover { background: var(--green-dark); color: #fff; }
+    .btn small { font-size: 12px; opacity: .95; }
+    .header-phone-wrap { font-size: clamp(20px, 2.2vw, 24px); font-weight: 500; }
+    .header-phone-wrap a { color: var(--orange); white-space: nowrap; }
     .header-phone-wrap .label { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
 
     /* ===== Hero (non-centered, full-use) ===== */
@@ -79,25 +83,27 @@
     .hero-copy .eyebrow { margin-bottom: 12px; }
     .hero-copy .h1 { margin-bottom: 16px; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 18px; }
-    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: var(--r-2); background: rgba(45,183,66,0.10); color: var(--green-dark); border: 1px solid rgba(45,183,66,0.18); font-size: 13px; font-weight: 500; }
+    .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: var(--r-2); font-size: 14px; font-weight: 500; border: none; color: #fff; }
+    .pill.pill-green { background: var(--green); }
+    .pill.pill-orange { background: var(--orange); }
     .hero-actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
     .hero-actions .btn { padding: 14px 18px; }
 
-    /* ===== Trust bar (left aligned) ===== */
-    .trustbar { background: var(--bg-base); border-bottom: 3px solid rgba(45,183,66,0.35); padding: 26px 0; }
+    /* ===== Trust bar（グリーンでパキッと） ===== */
+    .trustbar { background: var(--green); padding: 20px 0; }
     .trustbar-inner { display: flex; justify-content: flex-start; }
     .trustbar-block { max-width: 620px; display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: baseline; }
-    .trustbar-label { width: 100%; font-size: 14px; letter-spacing: 0.08em; color: var(--muted); }
-    .trustbar-rating { font-size: 24px; font-weight: 500; color: var(--green-dark); line-height: 1; }
-    .trustbar-area { font-size: 15px; color: var(--text); }
-    .trustbar-note { font-size: 13px; color: var(--muted); width: 100%; }
+    .trustbar-label { width: 100%; font-size: 12px; letter-spacing: 0.1em; color: rgba(255,255,255,0.9); text-transform: uppercase; }
+    .trustbar-rating { font-size: 28px; font-weight: 500; color: #fff; line-height: 1; }
+    .trustbar-area { font-size: 16px; color: #fff; font-weight: 500; }
+    .trustbar-note { font-size: 12px; color: rgba(255,255,255,0.85); width: 100%; }
 
     /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
     .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
     .trouble-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; }
     .bubbles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 18px; }
     .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-2); padding: 26px 22px; font-size: 16px; line-height: 1.65; box-shadow: var(--shadow-sm); }
-    .bubble .hl { color: #b8e0c0; font-weight: 500; }
+    .bubble .hl { color: var(--green-bright); font-weight: 500; }
     .trouble-photo { display: flex; justify-content: flex-end; }
     .photo-card { width: min(340px, 100%); aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -191,16 +197,28 @@
     .final-cta-buttons { display: grid; gap: 10px; max-width: 420px; }
     .final-cta-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
 
-    /* ===== 道B: FV料金hint ===== */
-    .hero-price-hint { font-size: 14px; color: var(--muted); margin-top: 8px; padding: 8px 14px; background: rgba(232,96,28,0.08); border-left: 3px solid var(--orange); border-radius: 0 var(--r-1) var(--r-1) 0; display: inline-block; }
-    .hero-price-hint strong { color: var(--orange-dark); font-weight: 500; }
+    /* ===== 道B: FV料金hint（オレンジでパキッと） ===== */
+    .hero-price-hint { font-size: 15px; margin-top: 10px; padding: 12px 18px; background: var(--orange); color: #fff; border-radius: var(--r-2); display: inline-block; font-weight: 500; }
+    .hero-price-hint strong { font-weight: 500; }
 
-    /* ===== 道B: 繰り返しCTAバー ===== */
-    .cta-bar { background: linear-gradient(90deg, rgba(232,96,28,0.12) 0%, rgba(232,96,28,0.06) 100%); border-top: 1px solid rgba(232,96,28,0.2); border-bottom: 1px solid rgba(232,96,28,0.2); padding: 20px 0; }
+    /* ===== 道B: 繰り返しCTAバー（1本目グリーン・2本目オレンジ） ===== */
+    .cta-bar { padding: 22px 0; }
+    .cta-bar.cta-bar-green { background: var(--green); }
+    .cta-bar.cta-bar-green .cta-bar-text { color: #fff; }
+    .cta-bar.cta-bar-orange { background: var(--orange); }
+    .cta-bar.cta-bar-orange .cta-bar-text { color: #fff; }
     .cta-bar-inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
-    .cta-bar-text { font-size: 16px; font-weight: 500; color: var(--text); }
-    .cta-bar-btns { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-    .cta-bar-btns .btn-cta { padding: 12px 20px; }
+    .cta-bar-text { font-size: 17px; font-weight: 500; color: var(--text); }
+    .cta-bar-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .cta-bar-btns .btn { padding: 14px 22px; }
+    .cta-bar-green .btn-cta { background: #fff; color: var(--orange); }
+    .cta-bar-green .btn-cta:hover { background: #fff; color: var(--orange-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .cta-bar-green .btn-cta-green { background: rgba(255,255,255,0.95); color: var(--green); border: 2px solid #fff; }
+    .cta-bar-green .btn-cta-green:hover { background: #fff; color: var(--green-dark); }
+    .cta-bar-orange .btn-cta { background: #fff; color: var(--orange); }
+    .cta-bar-orange .btn-cta:hover { background: #fff; color: var(--orange-dark); box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+    .cta-bar-orange .btn-cta-green { background: var(--green); color: #fff; }
+    .cta-bar-orange .btn-cta-green:hover { background: var(--green-dark); color: #fff; }
 
     /* ===== Footer ===== */
     .site-footer { background: #2a2a2a; color: #e0e0e0; padding: 32px var(--gutter) 24px; }
@@ -258,7 +276,7 @@
           <div class="label">24時間受付</div>
           <a href="tel:0120-000-000" aria-label="電話で相談する">0120-XXX-XXX</a>
         </div>
-        <a class="btn" href="tel:0120-000-000" aria-label="電話で相談する">電話</a>
+        <a class="btn btn-cta-green" href="tel:0120-000-000" aria-label="電話で相談する">電話</a>
         <a class="btn" href="#contact" aria-label="LINEで相談する">LINE</a>
         <a class="btn btn-cta" href="#contact" aria-label="無料見積へ">
           <span>無料見積</span><small>今すぐ</small>
@@ -279,13 +297,14 @@
         <h1 class="h1">元警察官の代表が、<br>最初から最後まで責任対応。</h1>
         <p class="lead">ご遺族様の気持ちに寄り添い、仕分け・搬出・清掃・供養・買取まで一括で。<br>見積無料・キャンセル無料で、安心してご相談いただけます。</p>
         <div class="hero-pills" aria-label="安心ポイント">
-          <span class="pill">見積無料・キャンセル無料</span>
-          <span class="pill">追加費用なし（明朗会計）</span>
-          <span class="pill">関西一円対応</span>
+          <span class="pill pill-green">見積無料・キャンセル無料</span>
+          <span class="pill pill-green">追加費用なし（明朗会計）</span>
+          <span class="pill pill-orange">関西一円対応</span>
         </div>
         <p class="hero-price-hint"><strong>料金の目安</strong>はお見積りで。1Kからご相談可能です。</p>
         <div class="hero-actions">
           <a class="btn btn-cta" href="#contact">無料で相談・見積</a>
+          <a class="btn btn-cta-green" href="tel:0120-000-000">電話で相談</a>
           <a class="btn" href="#trouble">よくあるお悩みを見る</a>
         </div>
       </div>
@@ -377,12 +396,12 @@
       </div>
     </section>
 
-    <!-- ===== 道B: 繰り返しCTAバー（お悩みのあと） ===== -->
-    <section class="cta-bar" aria-label="ご相談はこちら">
+    <!-- ===== 道B: 繰り返しCTAバー（お悩みのあと・グリーン帯） ===== -->
+    <section class="cta-bar cta-bar-green" aria-label="ご相談はこちら">
       <div class="cta-bar-inner">
         <p class="cta-bar-text">まずは無料でご相談ください。見積無料・キャンセル無料。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta" href="tel:0120-000-000">電話で相談</a>
+          <a class="btn btn-cta-green" href="tel:0120-000-000">電話で相談</a>
           <a class="btn btn-cta" href="#contact">無料見積り</a>
         </div>
       </div>
@@ -483,12 +502,12 @@
       </div>
     </section>
 
-    <!-- ===== 道B: 繰り返しCTAバー（料金のあと） ===== -->
-    <section class="cta-bar" aria-label="お見積りはこちら">
+    <!-- ===== 道B: 繰り返しCTAバー（料金のあと・オレンジ帯） ===== -->
+    <section class="cta-bar cta-bar-orange" aria-label="お見積りはこちら">
       <div class="cta-bar-inner">
         <p class="cta-bar-text">料金が知りたい方も、お気軽に。無料出張見積りに対応しています。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta" href="tel:0120-000-000">0120-XXX-XXX</a>
+          <a class="btn btn-cta-green" href="tel:0120-000-000">0120-XXX-XXX</a>
           <a class="btn btn-cta" href="#contact">無料見積りを依頼</a>
         </div>
       </div>
@@ -677,17 +696,17 @@
         </div>
         <div>
           <div class="final-cta-buttons" aria-label="3つのご相談方法">
-            <a class="btn btn-cta" href="tel:0120-000-000">
+            <a class="btn btn-cta-green" href="tel:0120-000-000">
               <span>電話で相談する</span>
               <small>今すぐスタッフに繋がります</small>
+            </a>
+            <a class="btn btn-cta" href="#contact">
+              <span>無料見積りを依頼</span>
+              <small>フォームから24時間受付</small>
             </a>
             <a class="btn" href="#">
               <span>LINEで相談する</span>
               <small>QRコードから24時間受付</small>
-            </a>
-            <a class="btn" href="#">
-              <span>フォームで相談する</span>
-              <small>詳しい状況を書きたい方に</small>
             </a>
           </div>
         </div>
