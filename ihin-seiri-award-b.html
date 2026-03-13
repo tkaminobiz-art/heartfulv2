@@ -74,6 +74,7 @@
     .header-phone-wrap { font-size: clamp(20px, 2.2vw, 24px); font-weight: 500; }
     .header-phone-wrap a { color: var(--orange); white-space: nowrap; }
     .header-phone-wrap .label { font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+    .header-hours { font-size: 11px; color: var(--muted); white-space: nowrap; }
 
     /* ===== Hero (non-centered, full-use) ===== */
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1.08fr 0.92fr; }
@@ -175,6 +176,22 @@
     .review-name { font-size: 12px; color: var(--text); margin-top: 4px; }
     .review-source { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
+    /* ===== Policy（お約束） ===== */
+    .policy-section { background: var(--surface-2); }
+    .policy-list { display: grid; gap: 14px; max-width: 720px; }
+    .policy-card { background: #fff; border-radius: var(--r-2); padding: 18px 20px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--green); }
+    .policy-card h3 { font-size: 16px; font-weight: 500; color: var(--green); margin-bottom: 6px; }
+    .policy-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+
+    /* ===== Payment（お支払い方法） ===== */
+    .payment-section { background: var(--surface-2); }
+    .payment-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .payment-card { background: #fff; border-radius: var(--r-2); padding: 22px 20px; box-shadow: var(--shadow-sm); text-align: center; }
+    .payment-card .icon { font-size: 28px; margin-bottom: 10px; }
+    .payment-card h3 { font-size: 17px; font-weight: 500; color: var(--green); margin-bottom: 10px; }
+    .payment-card p { font-size: 13px; color: var(--muted); line-height: 1.8; }
+    .payment-card .note { background: rgba(255,236,180,0.4); border-radius: var(--r-1); padding: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+
     /* ===== Flow ===== */
     .flow { background: var(--bg-base); }
     .flow-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; position: relative; }
@@ -249,6 +266,7 @@
       .reason-photo,
       .reason-photo img { width: 100%; }
       .works-grid { grid-template-columns: 1fr; }
+      .payment-grid-3 { grid-template-columns: 1fr; }
       .flow-steps { grid-template-columns: 1fr; }
       .flow-step::after { display: none; }
       .final-cta-buttons .btn { width: 100%; }
@@ -273,11 +291,12 @@
       </div>
       <div class="header-ctas" aria-label="主要導線">
         <div class="header-phone-wrap">
-          <div class="label">24時間受付</div>
-          <a href="tel:0120-000-000" aria-label="電話で相談する">0120-XXX-XXX</a>
+          <div class="label">受付</div>
+          <a href="tel:0742268496" aria-label="電話で相談する">0742-26-8496</a>
         </div>
-        <a class="btn btn-cta-green" href="tel:0120-000-000" aria-label="電話で相談する">電話</a>
-        <a class="btn" href="#contact" aria-label="LINEで相談する">LINE</a>
+        <div class="header-hours">7:00〜22:00（土日祝も営業）</div>
+        <a class="btn btn-cta-green" href="tel:0742268496" aria-label="電話で相談する">電話</a>
+        <a class="btn" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで相談する">LINE</a>
         <a class="btn btn-cta" href="#contact" aria-label="無料見積へ">
           <span>無料見積</span><small>今すぐ</small>
         </a>
@@ -304,7 +323,7 @@
         <p class="hero-price-hint"><strong>料金の目安</strong>はお見積りで。1Kからご相談可能です。</p>
         <div class="hero-actions">
           <a class="btn btn-cta" href="#contact">無料で相談・見積</a>
-          <a class="btn btn-cta-green" href="tel:0120-000-000">電話で相談</a>
+          <a class="btn btn-cta-green" href="tel:0742268496">電話で相談</a>
           <a class="btn" href="#trouble">よくあるお悩みを見る</a>
         </div>
       </div>
@@ -339,6 +358,7 @@
             <div class="bubble">賃貸契約が切れるのでそれまでに<br><span class="hl">整理してほしい</span></div>
             <div class="bubble"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</div>
             <div class="bubble">警察から<span class="hl">孤独死</span>していると連絡がきた</div>
+            <div class="bubble">遺品を丁寧に扱ってくれそうな<span class="hl">信頼できる業者が見つからない</span></div>
           </div>
           <div class="trouble-photo">
             <div class="photo-card">
@@ -401,7 +421,7 @@
       <div class="cta-bar-inner">
         <p class="cta-bar-text">まずは無料でご相談ください。見積無料・キャンセル無料。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta-green" href="tel:0120-000-000">電話で相談</a>
+          <a class="btn btn-cta-green" href="tel:0742268496">電話で相談</a>
           <a class="btn btn-cta" href="#contact">無料見積り</a>
         </div>
       </div>
@@ -455,6 +475,38 @@
       </div>
     </section>
 
+    <!-- ===== お約束（D案より） ===== -->
+    <section class="section policy-section" id="policy" aria-label="ハートフルクリーンのお約束">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">お客様に安心と信頼を</div>
+          <h2 class="h2">ハートフルクリーンのお約束</h2>
+        </div>
+        <div class="policy-list" aria-label="5つのお約束">
+          <div class="policy-card">
+            <h3>01 ご相談のみでも大歓迎</h3>
+            <p>様々なケースに対応できる遺品整理のプロです。まずはお気軽にお電話（0742-26-8496）か、フォーム・LINEからお問い合わせください。</p>
+          </div>
+          <div class="policy-card">
+            <h3>02 お見積り・見積り後のキャンセルは無料</h3>
+            <p>お見積り金額がご希望に添えない場合など、キャンセルしていただいても費用は一切発生いたしません。</p>
+          </div>
+          <div class="policy-card">
+            <h3>03 透明性のある料金明細</h3>
+            <p>人件費・処理費・車両費・リサイクル料金など、すべて含んだ料金設定。お見積り後の料金変動はありません。</p>
+          </div>
+          <div class="policy-card">
+            <h3>04 追加費用は一切なし</h3>
+            <p>事前お見積りでご提示した金額から追加料金がかかることはありません。ご安心ください。</p>
+          </div>
+          <div class="policy-card">
+            <h3>05 仕分けに迷う遺品のご相談も可能</h3>
+            <p>何を残し、何を処分すべきか判断が難しい場合もご相談ください。実績と経験から適切にアドバイスいたします。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== PRICE ===== -->
     <section class="section price" id="price" aria-label="料金について">
       <div class="container">
@@ -502,12 +554,40 @@
       </div>
     </section>
 
+    <!-- ===== お支払い方法（D案より） ===== -->
+    <section class="section payment-section" id="payment" aria-label="お支払い方法">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">PAYMENT</div>
+          <h2 class="h2">お支払い方法</h2>
+        </div>
+        <div class="payment-grid-3">
+          <div class="payment-card">
+            <div class="icon">現金</div>
+            <h3>現金払い</h3>
+            <p>作業終了後、お見積り時に提示した金額を現金でお支払いいただきます。領収書をその場で発行し、お釣りもご用意しております。</p>
+          </div>
+          <div class="payment-card">
+            <div class="icon">カード</div>
+            <h3>各種クレジットカード払い</h3>
+            <p>急な出費で持ち合わせがなくてもご安心してご利用いただけます。状況に応じて分割払いもご相談可能です。</p>
+            <div class="note">【取扱い】VISA・Mastercard・American Express・JCB・Diners Club・Discover</div>
+          </div>
+          <div class="payment-card">
+            <div class="icon">PayPay</div>
+            <h3>PayPay払い</h3>
+            <p>スマートフォンでかんたんにお支払いいただけます。PayPay残高・PayPayボーナス・クレジットカード決済に対応しています。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== 道B: 繰り返しCTAバー（料金のあと・オレンジ帯） ===== -->
     <section class="cta-bar cta-bar-orange" aria-label="お見積りはこちら">
       <div class="cta-bar-inner">
         <p class="cta-bar-text">料金が知りたい方も、お気軽に。無料出張見積りに対応しています。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta-green" href="tel:0120-000-000">0120-XXX-XXX</a>
+          <a class="btn btn-cta-green" href="tel:0742268496">0742-26-8496</a>
           <a class="btn btn-cta" href="#contact">無料見積りを依頼</a>
         </div>
       </div>
@@ -613,6 +693,18 @@
               <div class="review-name">京都府・60代女性</div>
               <div class="review-source">※Googleの口コミより要約</div>
             </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>遺品整理で自分たちではどうしても進められなかった部屋が、プロの手で整理され、驚くほどきれいになりました。遺品だけでなく、心の整理もできたような気がします。本当に助かりました。</p>
+              <div class="review-name">40代 女性</div>
+              <div class="review-source">※Google口コミより</div>
+            </article>
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>じっくり検討したくてまずは見積もりだけをお願いしました。親切で丁寧な対応と説明に安心感があり、お願いすることにしました。作業もスムーズでハートフルクリーンさんに頼んで良かったです。</p>
+              <div class="review-name">50代 男性</div>
+              <div class="review-source">※Google口コミより</div>
+            </article>
           </div>
         </div>
       </div>
@@ -681,6 +773,26 @@
             <div class="faq-q">Q. 追加料金が発生することはありますか？</div>
             <div class="faq-a">A. 事前のお見積りから大きく変わる場合（想定外の特殊清掃や量の大幅な増加など）を除き、基本的には追加料金はいただきません。</div>
           </div>
+          <div class="faq-item">
+            <div class="faq-q">Q. 急ぎで対応してもらえますか？</div>
+            <div class="faq-a">A. はい、緊急対応も可能です。まずはお電話（0742-26-8496）でご相談ください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q. 料金の支払い方法はどんな種類がありますか？</div>
+            <div class="faq-a">A. 現金・クレジットカード・PayPayに対応しています。銀行振込・分割払いもご相談可能です。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q. 近畿以外の地域の遺品整理も依頼できますか？</div>
+            <div class="faq-a">A. 地域密着型ですが、近畿以外でも対応できる場合がございます。まずはお気軽にご相談ください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q. 遺品整理後の清掃まで任せられますか？</div>
+            <div class="faq-a">A. はい、遺品整理後の片付け・清掃まで承っております。お気軽にご相談ください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">Q. 忙しくて現場に立ち会えないのですが依頼できますか？</div>
+            <div class="faq-a">A. 事前にお電話で綿密に打ち合わせさせていただければ可能です。作業前後の写真や報告書で状況をご共有します。</div>
+          </div>
         </div>
       </div>
     </section>
@@ -696,7 +808,7 @@
         </div>
         <div>
           <div class="final-cta-buttons" aria-label="3つのご相談方法">
-            <a class="btn btn-cta-green" href="tel:0120-000-000">
+            <a class="btn btn-cta-green" href="tel:0742268496">
               <span>電話で相談する</span>
               <small>今すぐスタッフに繋がります</small>
             </a>
@@ -704,9 +816,9 @@
               <span>無料見積りを依頼</span>
               <small>フォームから24時間受付</small>
             </a>
-            <a class="btn" href="#">
+            <a class="btn" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
               <span>LINEで相談する</span>
-              <small>QRコードから24時間受付</small>
+              <small>QRコードからともだち追加</small>
             </a>
           </div>
         </div>
