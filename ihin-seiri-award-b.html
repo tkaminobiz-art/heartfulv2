@@ -47,35 +47,6 @@
       --gutter: clamp(18px, 4vw, 64px);
     }
 
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-base: #121212;
-        --surface: #1e1e1e;
-        --surface-2: #252525;
-        --text: #e8e8e8;
-        --muted: #a0a0a0;
-        --green: #2db83e;
-        --green-dark: #22a030;
-        --green-bright: #38d04a;
-        --orange: #f36b1e;
-        --orange-dark: #e85c10;
-        --orange-bright: #ff8533;
-        --estimate-bg: #3a3a38;
-        --estimate-text: #e0e0e0;
-        --shadow-sm: 0 6px 20px rgba(0,0,0,0.35);
-        --shadow-md: 0 14px 36px rgba(0,0,0,0.45);
-      }
-      .header { background: rgba(30,30,30,0.92); border-bottom-color: rgba(255,255,255,0.08); }
-      .hero-copy { background: linear-gradient(180deg, #1e1e1e 0%, #1a2419 100%); }
-      .trustbar { background: var(--green); }
-      .trouble { background: linear-gradient(180deg, #1a1a1a 0%, #151515 100%); }
-      .bubble { background: #2a2a2a; border: 1px solid rgba(255,255,255,0.08); }
-      .reassure { background: linear-gradient(180deg, #1a2218 0%, #151a14 100%); }
-      .site-footer { background: #1a1a1a; color: #c0c0c0; }
-      .site-footer-name { color: #eee; }
-      .site-footer-addr, .site-footer-note { color: #888; }
-    }
-
     /* ===== Layout helpers ===== */
     .container { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
     .section { padding: 48px 0; position: relative; }
@@ -369,6 +340,55 @@
 
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; transition: none !important; }
+    }
+
+    /* ===== ダークモード（末尾で上書きし、背景を確実に暗く・テキストを視認しやすく） ===== */
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-base: #0f0f0f;
+        --surface: #1a1a1a;
+        --surface-2: #222;
+        --text: #f0f0f0;
+        --muted: #b0b0b0;
+        --green: #2db83e;
+        --green-dark: #22a030;
+        --green-bright: #38d04a;
+        --orange: #f36b1e;
+        --orange-dark: #e85c10;
+        --orange-bright: #ff8533;
+        --estimate-bg: #333;
+        --estimate-text: #e8e8e8;
+        --shadow-sm: 0 6px 20px rgba(0,0,0,0.5);
+        --shadow-md: 0 14px 36px rgba(0,0,0,0.55);
+      }
+      .header { background: rgba(15,15,15,0.95) !important; border-bottom-color: rgba(255,255,255,0.1) !important; }
+      .hero-media { background: #1a1a1a !important; }
+      .hero-copy { background: linear-gradient(180deg, #1a1a1a 0%, #141f13 100%) !important; }
+      .trustbar { background: var(--green) !important; }
+      .trouble { background: linear-gradient(180deg, #141414 0%, #0f0f0f 100%) !important; }
+      .bubble { background: #252525 !important; border: 1px solid rgba(255,255,255,0.1) !important; }
+      .reassure { background: linear-gradient(180deg, #141a12 0%, #0f140d 100%) !important; }
+      .reassure-visual .cap { background: rgba(26,26,26,0.95) !important; border-color: rgba(255,255,255,0.1) !important; }
+      .cta-strip { border-color: rgba(255,255,255,0.08) !important; }
+      .reason-card,
+      .review-card,
+      .work-card,
+      .policy-card,
+      .payment-card,
+      .flow-step,
+      .faq-item { background: var(--surface) !important; border-color: rgba(255,255,255,0.08) !important; }
+      .price,
+      .flow { background: var(--bg-base) !important; }
+      .works { background: linear-gradient(180deg, #1a1a18 0%, #151512 100%) !important; }
+      .faq { background: #181818 !important; }
+      .final-cta { background: radial-gradient(circle at top left, rgba(45,183,66,0.15), transparent 55%), #121212 !important; border-top-color: rgba(255,255,255,0.08) !important; }
+      .photo-card { background: #1a1a1a !important; }
+      .reason-photo { background: #1a1a1a !important; }
+      .payment-card .note { background: rgba(255,200,100,0.12) !important; }
+      .site-footer { background: #0d0d0d !important; color: #c8c8c8 !important; }
+      .site-footer-name { color: #eee !important; }
+      .site-footer-addr,
+      .site-footer-note { color: #888 !important; }
     }
   </style>
 </head>
