@@ -119,8 +119,9 @@
     .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
     .trouble-grid { display: grid; grid-template-columns: 2.25fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
     .trouble-photo { display: flex; align-items: center; justify-content: center; min-width: 0; }
-    .bubbles { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 18px 20px; }
-    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 200px; word-break: keep-all; overflow-wrap: normal; box-shadow: var(--shadow-sm); display: block; overflow: visible; }
+    .bubbles { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 18px 20px; overflow: visible; }
+    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 200px; word-break: keep-all; overflow-wrap: normal; box-shadow: var(--shadow-sm); display: flex; align-items: center; overflow: visible; box-sizing: border-box; }
+    .bubble-inner { width: 100%; min-width: 0; }
     .bubble .hl { color: var(--green-bright); font-weight: 500; white-space: nowrap; }
     .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -518,12 +519,12 @@
 
         <div class="trouble-grid">
           <div class="bubbles" aria-label="よくあるお悩み">
-            <div class="bubble">まずは見積りだけ頼みたいけど<br><span class="hl">キャンセルが出来なさそう</span></div>
-            <div class="bubble">突然親族が亡くなり<br>何から始めれば<span class="hl">いいか分からない</span></div>
-            <div class="bubble">葬儀や家の処分にお金がかかるので<br><span class="hl">費用をなるべく抑えたい</span></div>
-            <div class="bubble">賃貸契約が切れるのでそれまでに<br><span class="hl">整理してほしい</span></div>
-            <div class="bubble"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</div>
-            <div class="bubble">警察から<span class="hl">孤独死</span>していると連絡がきた</div>
+            <div class="bubble"><div class="bubble-inner">まずは見積りだけ頼みたいけど<br><span class="hl">キャンセルが出来なさそう</span></div></div>
+            <div class="bubble"><div class="bubble-inner">突然親族が亡くなり<br>何から始めれば<span class="hl">いいか分からない</span></div></div>
+            <div class="bubble"><div class="bubble-inner">葬儀や家の処分にお金がかかるので<br><span class="hl">費用をなるべく抑えたい</span></div></div>
+            <div class="bubble"><div class="bubble-inner">賃貸契約が切れるのでそれまでに<br><span class="hl">整理してほしい</span></div></div>
+            <div class="bubble"><div class="bubble-inner"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</div></div>
+            <div class="bubble"><div class="bubble-inner">警察から<span class="hl">孤独死</span>していると連絡がきた</div></div>
           </div>
           <div class="trouble-photo">
             <div class="photo-card">
