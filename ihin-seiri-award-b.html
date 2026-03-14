@@ -155,8 +155,8 @@
     .reason-body { font-size: 14px; color: var(--muted); }
     .reason-body b { color: var(--text); font-weight: 500; }
     .reason-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
-    .reason-photo { width: 100%; max-width: none; min-width: 0; aspect-ratio: 4 / 3; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
-    .reason-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .reason-photo { position: relative; width: 100%; max-width: none; min-width: 0; aspect-ratio: 4 / 3; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
+    .reason-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
     /* ===== Price ===== */
     .price { background: var(--bg-base); }
