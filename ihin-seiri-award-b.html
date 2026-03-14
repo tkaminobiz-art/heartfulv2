@@ -172,8 +172,8 @@
     .price { background: var(--bg-base); }
     .price-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(22px, 4vw, 40px); align-items: start; }
     .price-inner--single { display: block; }
-    .price-lead { font-size: var(--f-body); color: var(--muted); max-width: 60ch; }
-    .price-inner--single { max-width: 56ch; }
+    .price-lead { font-size: var(--f-body); color: var(--muted); max-width: 100%; }
+    .price-inner--single { max-width: 780px; }
     .price-cta-line { font-size: var(--f-body); color: var(--green-dark); margin-top: 14px; font-weight: 500; }
     .price-note { font-size: var(--f-body); color: var(--muted); margin-top: 12px; }
 
@@ -355,6 +355,7 @@
       .container { padding-left: var(--gutter); padding-right: var(--gutter); }
       .lead, .section-head .lead { max-width: 42ch; }
       .reason-copy p { max-width: none; }
+      .reassure .reason-stack { max-width: none; }
     }
 
     @media (max-width: 480px) {
@@ -655,7 +656,7 @@
       <div class="container">
         <div class="section-head">
           <div class="eyebrow">料金について</div>
-          <h2 class="h2">「あとから増える」<wbr>をなくすための、料金設計。</h2>
+          <h2 class="h2">「あとから増える」をなくすための、<br>料金設計。</h2>
         </div>
 
         <div class="price-inner price-inner--single">
