@@ -45,11 +45,11 @@
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
       --container: 1200px;
       --gutter: clamp(18px, 4vw, 64px);
-      /* タイポグラフィ階層: FV→h2(65%)→lead(57% of h2)→body/list(93% of lead) */
-      --f-h1: clamp(48px, 4.4vw, 72px);
-      --f-h2: clamp(28px, 3.6vw, 48px);
-      --f-lead: clamp(16px, 1.85vw, 27px);
-      --f-body: clamp(15px, 1.65vw, 25px);
+      /* タイポグラフィ階層（緊急会議結論）: 1440pxで折り返し事故を防ぐ */
+      --f-h1: clamp(40px, 4vw, 64px);
+      --f-h2: clamp(24px, 2.8vw, 36px);
+      --f-lead: clamp(14px, 1.5vw, 18px);
+      --f-body: clamp(14px, 1.2vw, 16px);
     }
 
     /* ===== Layout helpers ===== */
@@ -64,8 +64,8 @@
     .reasons .section-head .h2 { max-width: none; }
     .section-head .lead { max-width: 62ch; }
     .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .h1 { font-size: var(--f-h1); line-height: 1.15; font-weight: 500; letter-spacing: 0.02em; }
-    .h2 { font-size: var(--f-h2); line-height: 1.25; font-weight: 500; letter-spacing: 0.02em; }
+    .h1 { font-size: var(--f-h1); line-height: 1.15; font-weight: 500; letter-spacing: 0.01em; word-break: keep-all; overflow-wrap: break-word; }
+    .h2 { font-size: var(--f-h2); line-height: 1.25; font-weight: 500; letter-spacing: 0; word-break: keep-all; overflow-wrap: break-word; }
     .lead { font-size: var(--f-lead); color: var(--muted); max-width: 62ch; line-height: 1.7; }
 
     /* ===== Header (award-like zones) ===== */
@@ -97,7 +97,7 @@
 
     /* ===== Hero (non-centered, full-use) ===== */
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1.08fr 0.92fr; }
-    .hero-media { position: relative; overflow: hidden; background: #dfeadd; grid-column: 1; }
+    .hero-media { position: relative; overflow: hidden; background: #dfeadd; grid-column: 1; min-height: 50vh; }
     .hero-copy { grid-column: 2; }
     .hero-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4.2vw, 56px) var(--gutter); background: linear-gradient(180deg, #fffdf6 0%, #f2f6ef 100%); }
@@ -125,10 +125,10 @@
     .trouble-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
     .trouble-photo { display: flex; align-items: center; justify-content: center; min-width: 0; }
     .trouble-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 52ch; }
-    .trouble-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: var(--f-body); line-height: 1.65; color: var(--text); }
+    .trouble-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: var(--f-body); line-height: 1.65; color: var(--text); word-break: keep-all; }
     .trouble-check { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; color: var(--green-dark); display: flex; align-items: center; justify-content: center; }
     .trouble-check svg { width: 18px; height: 18px; }
-    .trouble-list-text { flex: 1; min-width: 0; }
+    .trouble-list-text { flex: 1; min-width: 0; word-break: keep-all; }
     .trouble-list-text .hl { color: var(--green-dark); font-weight: 500; }
     .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #e8ebe6; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -164,7 +164,7 @@
     .reason-body b { color: var(--text); font-weight: 500; }
     .reason-note { font-size: var(--f-body); color: var(--muted); margin-top: 8px; }
     .reason-photo { position: relative; width: 100%; max-width: none; min-width: 0; height: 100%; min-height: 0; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
-    .reason-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
+    .reason-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 
     /* ===== Price ===== */
     .price { background: var(--bg-base); }
@@ -750,11 +750,11 @@
           <article class="work-card">
             <div class="work-img-wrap">
               <div class="work-img">
-                <img src="ハートフルクリーンサイト画像/heartful画像/不用品.jpeg" alt="作業前の様子" width="400" height="300" loading="lazy" decoding="async">
+                <img src="ハートフルクリーンサイト画像/heartful画像/不用品.jpeg" alt="作業前の様子" width="400" height="300" loading="lazy" decoding="async" onerror="this.style.background='#e8e8e8';this.alt='画像を読み込めません';this.onerror=null;">
                 <span class="work-tag">Before</span>
               </div>
               <div class="work-img">
-                <img src="ハートフルクリーンサイト画像/heartful画像/清掃.jpeg" alt="作業後の様子" width="400" height="300" loading="lazy" decoding="async">
+                <img src="ハートフルクリーンサイト画像/heartful画像/清掃.jpeg" alt="作業後の様子" width="400" height="300" loading="lazy" decoding="async" onerror="this.style.background='#e8e8e8';this.alt='画像を読み込めません';this.onerror=null;">
                 <span class="work-tag">After</span>
               </div>
             </div>
@@ -803,6 +803,22 @@
               <p>暑い中の作業にもかかわらず、スタッフの方が終始丁寧で、近隣への挨拶や配慮まで行き届いていました。<br>
                 最後にお仏壇の前で手を合わせてくださったのが印象的でした。</p>
               <div class="review-name">京都府・60代女性</div>
+              <div class="review-source">※Googleの口コミより要約</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>母の遺品整理を依頼しました。仕分けの相談に親身に乗っていただき、思い出の品も丁寧に扱ってくださいました。<br>
+                見積もり後のキャンセルが無料だったので、まずは相談だけと気軽に問い合わせできました。</p>
+              <div class="review-name">兵庫県・50代女性</div>
+              <div class="review-source">※Googleの口コミより要約</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>賃貸の退去まで日数がなく不安でしたが、スケジュールを組んでいただき無事に間に合いました。<br>
+                追加料金の説明も最初にしっかりあり、安心して任せられました。</p>
+              <div class="review-name">奈良県・40代ご家族</div>
               <div class="review-source">※Googleの口コミより要約</div>
             </article>
           </div>
