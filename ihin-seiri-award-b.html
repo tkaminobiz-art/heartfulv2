@@ -117,10 +117,10 @@
 
     /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
     .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
-    .trouble-grid { display: grid; grid-template-columns: 1.5fr 0.95fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
-    .trouble-photo { display: flex; align-items: center; justify-content: center; }
+    .trouble-grid { display: grid; grid-template-columns: 2.25fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+    .trouble-photo { display: flex; align-items: center; justify-content: center; min-width: 0; }
     .bubbles { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 18px 20px; min-width: 0; }
-    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 200px; word-break: keep-all; overflow-wrap: normal; box-shadow: var(--shadow-sm); display: flex; align-items: center; }
+    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 200px; word-break: keep-all; overflow-wrap: normal; box-shadow: var(--shadow-sm); display: flex; align-items: center; overflow: visible; }
     .bubble .hl { color: var(--green-bright); font-weight: 500; white-space: nowrap; }
     .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
@@ -309,6 +309,11 @@
       .reviews-meta { font-size: 15px; }
       .bubbles { gap: 20px 24px; }
       .bubble { padding: 30px 26px; font-size: 17px; min-height: 110px; line-height: 1.75; }
+    }
+
+    @media (min-width: 901px) and (max-width: 1199px) {
+      .trouble-grid { grid-template-columns: 1.6fr 1fr; }
+      .bubbles { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
     }
 
     /* ===== Responsive ===== */
