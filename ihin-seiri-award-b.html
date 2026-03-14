@@ -10,12 +10,12 @@
   <meta name="description" content="奈良・関西の遺品整理。見積無料・キャンセル無料・追加料金なし。料金の目安はお見積りで。元警察官の代表が責任対応。今すぐ相談を。" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     /* ===== Reset / Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; overflow-x: hidden; }
-    body { font-family: "Noto Sans JP", system-ui, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg-base); overflow-x: hidden; }
+    body { font-family: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; font-size: 16px; line-height: 1.8; color: var(--text); background: var(--bg-base); overflow-x: hidden; }
     a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; height: auto; }
     :focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
@@ -45,6 +45,11 @@
       --ease: cubic-bezier(0.16, 1, 0.3, 1);
       --container: 1200px;
       --gutter: clamp(18px, 4vw, 64px);
+      /* タイポグラフィ階層: FV→h2(65%)→lead(57% of h2)→body/list(93% of lead) */
+      --f-h1: clamp(48px, 4.4vw, 72px);
+      --f-h2: clamp(28px, 3.6vw, 48px);
+      --f-lead: clamp(16px, 1.85vw, 27px);
+      --f-body: clamp(15px, 1.65vw, 25px);
     }
 
     /* ===== Layout helpers ===== */
@@ -59,9 +64,9 @@
     .reasons .section-head .h2 { max-width: none; }
     .section-head .lead { max-width: 62ch; }
     .eyebrow { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-    .h1 { font-size: clamp(48px, 4.4vw, 72px); line-height: 1.15; font-weight: 500; letter-spacing: 0.02em; }
-    .h2 { font-size: clamp(32px, 3.2vw, 44px); line-height: 1.2; font-weight: 500; letter-spacing: 0.02em; }
-    .lead { font-size: clamp(15px, 1.35vw, 18px); color: var(--muted); max-width: 62ch; }
+    .h1 { font-size: var(--f-h1); line-height: 1.15; font-weight: 500; letter-spacing: 0.02em; }
+    .h2 { font-size: var(--f-h2); line-height: 1.25; font-weight: 500; letter-spacing: 0.02em; }
+    .lead { font-size: var(--f-lead); color: var(--muted); max-width: 62ch; line-height: 1.7; }
 
     /* ===== Header (award-like zones) ===== */
     .header { position: sticky; top: 0; z-index: 1000; background: rgba(255,253,246,0.86); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0,0,0,0.06); padding-top: env(safe-area-inset-top, 0); }
@@ -98,7 +103,7 @@
     .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: clamp(28px, 4.2vw, 56px) var(--gutter); background: linear-gradient(180deg, #fffdf6 0%, #f2f6ef 100%); }
     .hero-copy .eyebrow { margin-bottom: 12px; }
     .hero-copy .h1 { margin-bottom: 16px; max-width: 620px; line-height: 1.3; word-break: keep-all; overflow-wrap: break-word; }
-    .hero-copy .hero-sub { max-width: 520px; font-size: 1rem; line-height: 1.8; }
+    .hero-copy .hero-sub { max-width: 520px; font-size: var(--f-lead); line-height: 1.8; }
     .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0 18px; }
     .pill { display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: var(--r-2); font-size: 14px; font-weight: 500; border: none; color: #fff; }
     .pill.pill-green { background: var(--green); }
@@ -120,7 +125,7 @@
     .trouble-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
     .trouble-photo { display: flex; align-items: center; justify-content: center; min-width: 0; }
     .trouble-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 52ch; }
-    .trouble-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.65; color: var(--text); }
+    .trouble-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: var(--f-body); line-height: 1.65; color: var(--text); }
     .trouble-check { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; color: var(--green-dark); display: flex; align-items: center; justify-content: center; }
     .trouble-check svg { width: 18px; height: 18px; }
     .trouble-list-text { flex: 1; min-width: 0; }
@@ -132,7 +137,7 @@
     .reassure { background: linear-gradient(180deg, #e8efe6 0%, #dce8d9 100%); }
     .reassure-grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: clamp(22px, 4vw, 56px); align-items: center; }
     .reason-stack { display: grid; gap: 16px; max-width: 640px; }
-    .reason-copy p { color: var(--muted); font-size: 16px; }
+    .reason-copy p { color: var(--muted); font-size: var(--f-body); }
     .reason-copy strong { color: var(--green-dark); font-weight: 500; }
     .tagline { display: inline-flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
     .tagline b { display:inline-block; background: var(--green); color:#fff; padding: 10px 16px; border-radius: var(--r-1); font-weight: 500; font-size: 18px; }
@@ -146,7 +151,7 @@
     .cta-strip { background: var(--surface); border-top: 1px solid rgba(0,0,0,0.06); border-bottom: 1px solid rgba(0,0,0,0.06); }
     .cta-strip-inner { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 16px; padding: 22px 0; }
     .cta-strip h3 { font-size: 20px; font-weight: 500; line-height: 1.4; }
-    .cta-strip p { font-size: 14px; color: var(--muted); }
+    .cta-strip p { font-size: var(--f-body); color: var(--muted); }
 
     /* ===== Reasons (POINT) ===== */
     .reasons { background: var(--surface); }
@@ -154,10 +159,10 @@
     .reason-cards { display: grid; gap: 18px; }
     .reason-card { background: #ffffff; border-radius: var(--r-2); padding: 22px 22px 20px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.03); }
     .reason-label { font-size: 12px; letter-spacing: 0.08em; color: var(--green-dark); margin-bottom: 6px; }
-    .reason-title { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
-    .reason-body { font-size: 14px; color: var(--muted); }
+    .reason-title { font-size: var(--f-body); font-weight: 500; margin-bottom: 6px; }
+    .reason-body { font-size: var(--f-body); color: var(--muted); }
     .reason-body b { color: var(--text); font-weight: 500; }
-    .reason-note { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .reason-note { font-size: var(--f-body); color: var(--muted); margin-top: 8px; }
     .reason-photo { position: relative; width: 100%; max-width: none; min-width: 0; height: 100%; min-height: 0; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .reason-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
@@ -165,10 +170,10 @@
     .price { background: var(--bg-base); }
     .price-inner { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(22px, 4vw, 40px); align-items: start; }
     .price-inner--single { display: block; }
-    .price-lead { font-size: 15px; color: var(--muted); max-width: 60ch; }
+    .price-lead { font-size: var(--f-body); color: var(--muted); max-width: 60ch; }
     .price-inner--single { max-width: 56ch; }
-    .price-cta-line { font-size: 17px; color: var(--green-dark); margin-top: 14px; font-weight: 500; }
-    .price-note { font-size: 13px; color: var(--muted); margin-top: 12px; }
+    .price-cta-line { font-size: var(--f-body); color: var(--green-dark); margin-top: 14px; font-weight: 500; }
+    .price-note { font-size: var(--f-body); color: var(--muted); margin-top: 12px; }
 
     /* ===== Works (before / after) ===== */
     .works { background: linear-gradient(180deg, #f4f4ee 0%, #ece8de 100%); }
@@ -181,7 +186,7 @@
     .work-img { position: relative; overflow: hidden; }
     .work-img img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
     .work-tag { position: absolute; left: 8px; top: 8px; background: rgba(0,0,0,0.68); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 999px; }
-    .work-body { padding: 12px 14px 14px; font-size: 13px; color: var(--muted); }
+    .work-body { padding: 12px 14px 14px; font-size: var(--f-body); color: var(--muted); }
 
     /* ===== Reviews ===== */
     .reviews { background: var(--surface-2); }
@@ -190,7 +195,7 @@
     .review-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
     .reviews-meta { font-size: 14px; color: var(--muted); }
     .review-list { display: grid; gap: 14px; }
-    .review-card { background: #ffffff; border-radius: var(--r-2); padding: 16px 18px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.03); font-size: 13px; color: var(--muted); }
+    .review-card { background: #ffffff; border-radius: var(--r-2); padding: 16px 18px; box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.03); font-size: var(--f-body); color: var(--muted); }
     .review-stars { font-size: 18px; color: #f5b400; margin-bottom: 4px; }
     .review-name { font-size: 12px; color: var(--text); margin-top: 4px; }
     .review-source { font-size: 11px; color: var(--muted); margin-top: 2px; }
@@ -200,37 +205,37 @@
     .policy-list { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; max-width: 900px; }
     .policy-list > .policy-card:last-child { grid-column: 1 / -1; max-width: 50%; margin-left: auto; margin-right: auto; }
     .policy-card { background: #fff; border-radius: var(--r-2); padding: 18px 20px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--green); }
-    .policy-card h3 { font-size: 16px; font-weight: 500; color: var(--green); margin-bottom: 6px; }
-    .policy-card p { font-size: 14px; color: var(--muted); line-height: 1.75; }
+    .policy-card h3 { font-size: var(--f-body); font-weight: 500; color: var(--green); margin-bottom: 6px; }
+    .policy-card p { font-size: var(--f-body); color: var(--muted); line-height: 1.75; }
 
     /* ===== Payment（お支払い方法） ===== */
     .payment-section { background: var(--surface-2); }
     .payment-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .payment-card { background: #fff; border-radius: var(--r-2); padding: 22px 20px; box-shadow: var(--shadow-sm); text-align: center; }
     .payment-card .icon { font-size: 28px; margin-bottom: 10px; }
-    .payment-card h3 { font-size: 17px; font-weight: 500; color: var(--green); margin-bottom: 10px; }
-    .payment-card p { font-size: 13px; color: var(--muted); line-height: 1.8; }
-    .payment-card .note { background: rgba(255,236,180,0.4); border-radius: var(--r-1); padding: 10px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+    .payment-card h3 { font-size: var(--f-body); font-weight: 500; color: var(--green); margin-bottom: 10px; }
+    .payment-card p { font-size: var(--f-body); color: var(--muted); line-height: 1.8; }
+    .payment-card .note { background: rgba(255,236,180,0.4); border-radius: var(--r-1); padding: 10px; margin-top: 12px; font-size: var(--f-body); color: var(--muted); }
 
     /* ===== Flow ===== */
     .flow { background: var(--bg-base); }
     .flow-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; position: relative; }
-    .flow-step { background: #ffffff; border-radius: var(--r-2); padding: 18px 16px; box-shadow: var(--shadow-sm); font-size: 13px; color: var(--muted); position: relative; min-height: 140px; display: flex; flex-direction: column; }
+    .flow-step { background: #ffffff; border-radius: var(--r-2); padding: 18px 16px; box-shadow: var(--shadow-sm); font-size: var(--f-body); color: var(--muted); position: relative; min-height: 140px; display: flex; flex-direction: column; }
     .flow-step p { flex: 1; margin: 0; line-height: 1.7; }
     .flow-step-num { font-size: 12px; letter-spacing: 0.08em; color: var(--orange); font-weight: 500; margin-bottom: 4px; text-transform: uppercase; }
-    .flow-step-title { font-size: 15px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+    .flow-step-title { font-size: var(--f-body); font-weight: 500; color: var(--text); margin-bottom: 4px; }
     .flow-step::after { content: ""; position: absolute; right: -10px; top: 50%; width: 20px; height: 2px; background: var(--orange); opacity: 0.7; transform: translateY(-50%); }
     .flow-step:last-child::after { display: none; }
 
     /* ===== FAQ ===== */
     .faq { background: #f6f4ef; }
     .faq-list { display: grid; gap: 8px; max-width: 720px; }
-    .faq-item { background: #ffffff; border-radius: var(--r-2); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.06); font-size: 14px; }
+    .faq-item { background: #ffffff; border-radius: var(--r-2); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.06); font-size: var(--f-body); }
     .faq-item summary { padding: 14px 16px; font-weight: 500; color: var(--text); cursor: pointer; list-style: none; display: flex; align-items: center; gap: 8px; }
     .faq-item summary::-webkit-details-marker { display: none; }
     .faq-item summary::after { content: "＋"; margin-left: auto; font-size: 18px; color: var(--muted); }
     .faq-item[open] summary::after { content: "−"; }
-    .faq-a { padding: 0 16px 14px 16px; color: var(--muted); font-size: 13px; line-height: 1.75; }
+    .faq-a { padding: 0 16px 14px 16px; color: var(--muted); font-size: var(--f-body); line-height: 1.75; }
 
     /* ===== Final CTA ===== */
     .final-cta { background: radial-gradient(circle at top left, rgba(45,183,66,0.12), transparent 55%), #fafaf7; border-top: 1px solid rgba(0,0,0,0.06); }
@@ -275,8 +280,6 @@
     /* ===== PC表示: テキストサイズ改善（可読性・視認性） ===== */
     @media (min-width: 901px) {
       .eyebrow { font-size: 13px; }
-      .section-head .lead,
-      .lead { font-size: 18px; }
       .cta-bar-text { font-size: 1.125rem; }
       .cta-bar-btns .btn { font-size: 1rem; padding: 14px 24px; }
       .brand-name { font-size: 15px; }
@@ -286,31 +289,12 @@
       .header-hours { font-size: 12px; }
       .btn small { font-size: 13px; }
       .reason-label { font-size: 13px; }
-      .reason-body { font-size: 15px; }
-      .reason-note { font-size: 13px; }
-      .cta-strip h3 { font-size: 22px; }
-      .cta-strip p { font-size: 15px; }
-      .reason-title { font-size: 19px; }
-      .price-lead { font-size: 16px; }
-      .price-cta-line { font-size: 18px; }
-      .price-note { font-size: 14px; }
-      .review-card { font-size: 14px; }
+      .cta-strip h3 { font-size: var(--f-lead); }
       .review-name { font-size: 13px; }
       .review-source { font-size: 12px; }
-      .policy-card h3 { font-size: 17px; }
-      .policy-card p { font-size: 15px; }
-      .payment-card h3 { font-size: 18px; }
-      .payment-card p { font-size: 14px; }
-      .payment-card .note { font-size: 13px; }
-      .flow-step { font-size: 14px; }
       .flow-step-num { font-size: 13px; }
-      .flow-step-title { font-size: 16px; }
-      .faq-item { font-size: 15px; }
-      .faq-a { font-size: 14px; }
       .final-cta-note { font-size: 13px; }
-      .work-body { font-size: 14px; }
-      .reviews-meta { font-size: 15px; }
-      .trouble-list-item { font-size: 16px; }
+      .reviews-meta { font-size: var(--f-body); }
     }
 
     /* ===== Responsive ===== */
