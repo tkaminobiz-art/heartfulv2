@@ -115,15 +115,17 @@
     .trustbar-area { font-size: 16px; color: #fff; font-weight: 500; }
     .trustbar-note { font-size: 12px; color: rgba(255,255,255,0.85); width: 100%; }
 
-    /* ===== Trouble (asymmetric 60:40, bubbles grid) ===== */
-    .trouble { background: linear-gradient(180deg, #f5f7f4 0%, #eef2ec 100%); }
-    .trouble-grid { display: grid; grid-template-columns: 2.25fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
+    /* ===== Trouble（チェックリスト型・クリーム系に統一） ===== */
+    .trouble { background: linear-gradient(180deg, #f8f9f6 0%, #f0f2ee 100%); }
+    .trouble-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(32px, 5vw, 64px); align-items: center; }
     .trouble-photo { display: flex; align-items: center; justify-content: center; min-width: 0; }
-    .bubbles { display: grid; grid-template-columns: repeat(3, minmax(220px, 1fr)); gap: 18px 20px; overflow: visible; }
-    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 200px; word-break: keep-all; overflow-wrap: normal; box-shadow: var(--shadow-sm); display: flex; align-items: center; overflow: visible; box-sizing: border-box; }
-    .bubble-inner { width: 100%; min-width: 0; }
-    .bubble .hl { color: var(--green-bright); font-weight: 500; white-space: nowrap; }
-    .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
+    .trouble-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; max-width: 52ch; }
+    .trouble-list-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.65; color: var(--text); }
+    .trouble-check { flex-shrink: 0; width: 22px; height: 22px; margin-top: 2px; color: var(--green-dark); display: flex; align-items: center; justify-content: center; }
+    .trouble-check svg { width: 18px; height: 18px; }
+    .trouble-list-text { flex: 1; min-width: 0; }
+    .trouble-list-text .hl { color: var(--green-dark); font-weight: 500; }
+    .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #e8ebe6; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
 
     /* ===== Reassurance (asymmetric 60:40, story + big visual) ===== */
@@ -308,17 +310,7 @@
       .final-cta-note { font-size: 13px; }
       .work-body { font-size: 14px; }
       .reviews-meta { font-size: 15px; }
-      .bubbles { gap: 20px 24px; }
-      .bubble { padding: 30px 26px; font-size: 17px; min-height: 110px; line-height: 1.75; }
-    }
-
-    @media (min-width: 901px) and (max-width: 1199px) {
-      .trouble-grid { grid-template-columns: 1.6fr 1fr; }
-      .bubbles { grid-template-columns: repeat(2, minmax(240px, 1fr)); }
-    }
-
-    @media (min-width: 1200px) {
-      .trouble-grid { grid-template-columns: minmax(700px, 2.25fr) 1fr; }
+      .trouble-list-item { font-size: 16px; }
     }
 
     /* ===== Responsive ===== */
@@ -341,8 +333,8 @@
       .trouble-grid, .reassure-grid { grid-template-columns: 1fr; }
       .trouble-photo { display: none; }
       .reassure-visual { justify-self: center; justify-content: center; }
-      .bubbles { grid-template-columns: 1fr; gap: 14px; }
-      .bubble { padding: 22px 24px; font-size: 16px; min-height: auto; line-height: 1.7; }
+      .trouble-list { max-width: none; gap: 12px; }
+      .trouble-list-item { font-size: 15px; }
       .cta-strip-inner { grid-template-columns: 1fr; gap: 14px; padding: 18px 0; }
       .cta-strip .btn { width: 100%; min-height: 48px; }
       .reasons-grid,
@@ -420,7 +412,8 @@
       .hero-copy { background: linear-gradient(180deg, #1a1a1a 0%, #141f13 100%) !important; }
       .trustbar { background: var(--green) !important; }
       .trouble { background: linear-gradient(180deg, #141414 0%, #0f0f0f 100%) !important; }
-      .bubble { background: #252525 !important; border: 1px solid rgba(255,255,255,0.1) !important; }
+      .trouble-list-item { color: var(--text) !important; }
+      .trouble-list-text .hl { color: var(--green-bright) !important; }
       .reassure { background: linear-gradient(180deg, #141a12 0%, #0f140d 100%) !important; }
       .reassure-visual .cap { background: rgba(26,26,26,0.95) !important; border-color: rgba(255,255,255,0.1) !important; }
       .cta-strip { border-color: rgba(255,255,255,0.08) !important; }
@@ -518,14 +511,14 @@
         <div style="height:28px;"></div>
 
         <div class="trouble-grid">
-          <div class="bubbles" aria-label="よくあるお悩み">
-            <div class="bubble"><div class="bubble-inner">まずは見積りだけ頼みたいけど<br><span class="hl">キャンセルが出来なさそう</span></div></div>
-            <div class="bubble"><div class="bubble-inner">突然親族が亡くなり<br>何から始めれば<span class="hl">いいか分からない</span></div></div>
-            <div class="bubble"><div class="bubble-inner">葬儀や家の処分にお金がかかるので<br><span class="hl">費用をなるべく抑えたい</span></div></div>
-            <div class="bubble"><div class="bubble-inner">賃貸契約が切れるのでそれまでに<br><span class="hl">整理してほしい</span></div></div>
-            <div class="bubble"><div class="bubble-inner"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</div></div>
-            <div class="bubble"><div class="bubble-inner">警察から<span class="hl">孤独死</span>していると連絡がきた</div></div>
-          </div>
+          <ul class="trouble-list" aria-label="よくあるお悩み">
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text">まずは見積りだけ頼みたいけど、<span class="hl">キャンセルが出来なさそう</span></span></li>
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text">突然親族が亡くなり、何から始めれば<span class="hl">いいか分からない</span></span></li>
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text">葬儀や家の処分にお金がかかるので、<span class="hl">費用をなるべく抑えたい</span></span></li>
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text">賃貸契約が切れるのでそれまでに<span class="hl">整理してほしい</span></span></li>
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text"><span class="hl">遠方で時間がなく、</span>遺品整理ができない</span></li>
+            <li class="trouble-list-item"><span class="trouble-check" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><span class="trouble-list-text">警察から<span class="hl">孤独死</span>していると連絡がきた</span></li>
+          </ul>
           <div class="trouble-photo">
             <div class="photo-card">
               <img src="談笑するチーム_青空屋外.png" alt="ハートフルクリーンのスタッフ" width="400" height="533" loading="lazy" decoding="async">
