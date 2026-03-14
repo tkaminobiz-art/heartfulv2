@@ -120,8 +120,8 @@
     .trouble-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center; }
     .trouble-photo { display: flex; align-items: center; justify-content: center; }
     .bubbles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 20px; }
-    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; box-shadow: var(--shadow-sm); display: flex; align-items: center; }
-    .bubble .hl { color: var(--green-bright); font-weight: 500; }
+    .bubble { background: #3f3f3f; color: #fff; border-radius: var(--r-3); padding: 28px 24px; font-size: 16px; line-height: 1.7; min-height: 100px; min-width: 140px; word-break: keep-all; box-shadow: var(--shadow-sm); display: flex; align-items: center; }
+    .bubble .hl { color: var(--green-bright); font-weight: 500; white-space: nowrap; }
     .trouble .photo-card { width: 100%; max-width: 420px; aspect-ratio: 3 / 4; border-radius: var(--r-3); overflow: hidden; box-shadow: var(--shadow-md); background: #dfeadd; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; }
 
@@ -332,7 +332,7 @@
       .trouble-photo { display: none; }
       .reassure-visual { justify-self: center; justify-content: center; }
       .bubbles { grid-template-columns: 1fr; gap: 14px; }
-      .bubble { padding: 22px 20px; font-size: 16px; min-height: auto; line-height: 1.7; }
+      .bubble { padding: 22px 24px; font-size: 16px; min-height: auto; line-height: 1.7; }
       .cta-strip-inner { grid-template-columns: 1fr; gap: 14px; padding: 18px 0; }
       .cta-strip .btn { width: 100%; min-height: 48px; }
       .reasons-grid,
@@ -518,7 +518,7 @@
           </div>
           <div class="trouble-photo">
             <div class="photo-card">
-              <img src="作業服_青空屋外_両手をあげて笑顔.png" alt="青空の下、作業服で笑顔のスタッフ" width="400" height="533" loading="lazy" decoding="async">
+              <img src="談笑するチーム_青空屋外.png" alt="ハートフルクリーンのスタッフ" width="400" height="533" loading="lazy" decoding="async">
             </div>
           </div>
         </div>
