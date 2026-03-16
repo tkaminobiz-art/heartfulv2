@@ -428,6 +428,56 @@
       .site-footer-addr,
       .site-footer-note { color: #888 !important; }
     }
+
+    /* ===== Floating CTA (mobile) ===== */
+    .floating-cta {
+      display: none;
+    }
+    @media (max-width: 900px) {
+      .floating-cta {
+        display: flex;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 999;
+        padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0));
+        background: rgba(255,253,246,0.95);
+        backdrop-filter: blur(10px);
+        border-top: 1px solid rgba(0,0,0,0.08);
+        gap: 8px;
+      }
+      .floating-cta-btn {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 12px 8px;
+        border-radius: var(--r-2);
+        font-size: 13px;
+        font-weight: 500;
+        text-align: center;
+        text-decoration: none;
+      }
+      .floating-cta-phone {
+        background: var(--orange);
+        color: #fff;
+      }
+      .floating-cta-line {
+        background: var(--green);
+        color: #fff;
+      }
+      .floating-cta-form {
+        background: var(--surface-2);
+        color: var(--text);
+        border: 1px solid rgba(0,0,0,0.1);
+      }
+      /* フローティングCTAの高さ分、bodyの下にパディングを追加 */
+      body {
+        padding-bottom: 72px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -672,6 +722,22 @@
               <div class="review-source">※Googleの口コミより要約</div>
             </article>
 
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>遺品整理で自分たちではどうしても進められなかった部屋が、プロの手で整理され、驚くほどきれいになりました。<br>
+                遺品だけでなく、心の整理もできたような気がします。本当に助かりました。</p>
+              <div class="review-name">40代女性</div>
+              <div class="review-source">※Googleの口コミより</div>
+            </article>
+
+            <article class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p>まずは見積もりだけをお願いしました。親切で丁寧な対応と説明に安心感があり、お願いすることにしました。<br>
+                作業もスムーズでハートフルクリーンさんに頼んで良かったです。</p>
+              <div class="review-name">50代男性</div>
+              <div class="review-source">※Googleの口コミより</div>
+            </article>
+
           </div>
         </div>
       </div>
@@ -805,22 +871,6 @@
             <summary>Q. 急ぎで対応してもらえますか？</summary>
             <div class="faq-a">A. はい、緊急対応も可能です。まずはお電話（0742-26-8496）でご相談ください。</div>
           </details>
-          <details class="faq-item">
-            <summary>Q. 料金の支払い方法はどんな種類がありますか？</summary>
-            <div class="faq-a">A. 現金・クレジットカード・PayPayに対応しています。銀行振込・分割払いもご相談可能です。</div>
-          </details>
-          <details class="faq-item">
-            <summary>Q. 近畿以外の地域の遺品整理も依頼できますか？</summary>
-            <div class="faq-a">A. 地域密着型ですが、近畿以外でも対応できる場合がございます。まずはお気軽にご相談ください。</div>
-          </details>
-          <details class="faq-item">
-            <summary>Q. 遺品整理後の清掃まで任せられますか？</summary>
-            <div class="faq-a">A. はい、遺品整理後の片付け・清掃まで承っております。お気軽にご相談ください。</div>
-          </details>
-          <details class="faq-item">
-            <summary>Q. 忙しくて現場に立ち会えないのですが依頼できますか？</summary>
-            <div class="faq-a">A. 事前にお電話で綿密に打ち合わせさせていただければ可能です。作業前後の写真や報告書で状況をご共有します。</div>
-          </details>
         </div>
       </div>
     </section>
@@ -852,6 +902,20 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== FLOATING CTA (MOBILE) ===== -->
+    <div class="floating-cta" aria-label="お問い合わせ（固定バー）">
+      <a class="floating-cta-btn floating-cta-phone" href="tel:0742268496">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        電話する
+      </a>
+      <a class="floating-cta-btn floating-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
+        LINE相談
+      </a>
+      <a class="floating-cta-btn floating-cta-form" href="#contact">
+        無料見積り
+      </a>
+    </div>
 
   </main>
 
