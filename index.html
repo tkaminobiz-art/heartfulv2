@@ -379,6 +379,7 @@
     .reassure-visual img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.98) contrast(1.03); }
     .reassure-visual .cap { position: static; margin-top: 12px; padding: 0; background: transparent; border: none; border-radius: 0; box-shadow: none; font-size: 13px; color: var(--c-sub); line-height: 1.8; }
     .reassure-visual .cap .k { display: block; font-size: 14px; font-weight: 700; color: var(--c-ink); letter-spacing: 0; background: transparent; padding: 0; margin-bottom: 4px; }
+    .reassure-summary-sp { display: none; }
     .reassure-info-card { background: var(--c-white); border: 1px solid var(--c-border); border-radius: 12px; }
 
     /* ===== CTA strip (variation) ===== */
@@ -688,11 +689,20 @@
 
       .reassure { padding: 48px 0; }
       .reassure .reason-stack { max-width: none; padding: 0 var(--gutter); }
+      .reassure-summary-sp { display: block; padding: 0 var(--gutter); margin: 10px 0 0; font-size: 14px; line-height: 1.8; color: var(--c-sub); }
+      .reassure-summary-sp strong { color: var(--c-ink); font-weight: 700; }
+      .reassure .reason-copy { display: none; }
       /* 代表プロフィール: 写真小型化＋横並びでカード高さを抑える（実機フィードバック対応） */
       .reassure-visual {
         display: flex;
         align-items: flex-start;
         gap: 16px;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        aspect-ratio: auto;
+        overflow: visible;
+        position: static;
         background: var(--c-white);
         border-radius: 16px;
         padding: 24px 20px;
@@ -1167,6 +1177,7 @@
       <div class="container">
         <div class="eyebrow">私たちについて</div>
         <h2 class="h2" style="margin:10px 0 14px;">業界のやり方に、<br>納得できなかった二人。</h2>
+        <p class="reassure-summary-sp">元大阪府警の代表・藤田が責任対応。<strong>「丁寧すぎる」</strong>と怒られたほど誠実に、遺品や不用品でも「大切だったもの」として向き合います。</p>
 
         <div style="height:22px;"></div>
 
