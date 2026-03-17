@@ -91,18 +91,15 @@
     .brand-sub { font-size: 12px; color: var(--c-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .header-ctas { display: flex; align-items: center; gap: 8px; }
     .header-ctas .btn { padding: 10px 20px; font-size: 0.9rem; min-height: 44px; border-radius: 8px; transition: all 0.3s ease; }
-    .header-ctas .btn-cta-estimate small { display: none; }
-    .header-ctas .btn-cta-line { display: none; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,41,2,0.12); }
     .btn-primary { background: var(--c-accent); color: var(--c-white); border: none; }
     .btn-primary:hover { background: var(--c-accent-hover); color: var(--c-white); }
     .btn-cta-phone { background: transparent; color: var(--c-ink); border: 1px solid var(--c-ink); }
     .btn-cta-phone:hover { background: var(--c-ink); color: var(--c-white); }
-    .btn-cta-line { background: var(--c-primary); color: var(--c-white); border: none; }
-    .btn-cta-line:hover { background: #2d523c; color: var(--c-white); }
-    .btn-cta-estimate { background: var(--c-accent); color: var(--c-white); border: none; font-weight: 500; }
-    .btn-cta-estimate:hover { background: var(--c-accent-hover); color: var(--c-white); }
+    /* ===== LINEボタン：ブランドカラー ===== */
+    .btn-cta-line { background: #06C755; color: #FFFFFF; border: none; }
+    .btn-cta-line:hover { background: #05B34C; color: #FFFFFF; }
     .btn small { font-size: 12px; opacity: .95; }
     .header-phone-wrap { font-size: clamp(20px, 2.2vw, 24px); font-weight: 500; }
     .header-phone-wrap a { color: var(--c-ink); white-space: nowrap; }
@@ -123,7 +120,6 @@
     .pill.pill-orange { background: transparent; border: 1px solid var(--c-primary); color: var(--c-primary); }
     .hero-actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
     .hero-actions .btn { padding: 16px 32px; border-radius: 12px; }
-    .hero-actions .btn-cta-estimate { background: var(--c-accent); color: var(--c-white); border: none; }
     .hero-actions .btn-cta-phone { background: transparent; color: var(--c-ink); border: 1px solid var(--c-ink); }
     .hero-price-hint { font-size: 14px; color: var(--c-sub); margin-top: 10px; padding: 0; background: transparent; font-weight: 400; }
     .hero-price-hint strong { font-weight: 500; color: var(--c-sub); }
@@ -315,8 +311,7 @@
     .final-cta-buttons .btn small { white-space: nowrap; display: block; }
     .final-cta-buttons .btn small { font-size: 0.8rem; }
     .final-cta-buttons .btn-cta-phone { background: var(--c-accent); color: var(--c-white); border: none; }
-    .final-cta-buttons .btn-cta-estimate { background: var(--c-white); color: var(--c-ink); border: none; }
-    .final-cta-buttons .btn-cta-line { background: transparent; color: var(--c-white); border: 1px solid rgba(255,253,249,0.3); }
+    .final-cta-buttons .btn-cta-line { background: #06C755; color: #FFFFFF; border: none; }
     .final-cta-note { font-size: 12px; color: rgba(255,253,249,0.5); margin-top: 8px; }
 
 
@@ -330,10 +325,8 @@
     .cta-bar-btns .btn { padding: 14px 22px; border-radius: 10px; }
     .cta-bar .btn-cta-phone { background: transparent; color: var(--c-white); border: 1px solid rgba(255,253,249,0.4); }
     .cta-bar .btn-cta-phone:hover { background: rgba(255,253,249,0.1); color: var(--c-white); }
-    .cta-bar .btn-cta-estimate { background: var(--c-accent); color: var(--c-white); border: none; }
-    .cta-bar .btn-cta-estimate:hover { background: var(--c-accent-hover); color: var(--c-white); }
-    .cta-bar .btn-cta-line { background: transparent; color: var(--c-white); border: 1px solid rgba(255,253,249,0.4); }
-    .cta-bar .btn-cta-line:hover { background: rgba(255,253,249,0.1); color: var(--c-white); }
+    .cta-bar .btn-cta-line { background: #06C755; color: #FFFFFF; border: none; }
+    .cta-bar .btn-cta-line:hover { background: #05B34C; color: #FFFFFF; }
 
     /* ===== Footer (Quiet Luxury) ===== */
     .site-footer { background: var(--c-dark); color: var(--c-white); padding: 60px var(--gutter) 40px; border-top: 1px solid rgba(255,253,249,0.1); }
@@ -446,7 +439,6 @@
       .pill { padding: 8px 12px; font-size: 13px; }
       .hero-actions { flex-direction: column; gap: 10px; margin-top: 14px; }
       .hero-actions .btn { width: 100%; padding: 14px 16px; min-height: 48px; }
-      .hero-actions .btn-cta-estimate { min-height: 52px; padding: 16px 24px; font-size: 16px; border-radius: 12px; animation: pulse-glow 3s ease-in-out infinite; }
 
       .line-cta-link { max-width: 100%; }
 
@@ -553,7 +545,6 @@
         align-items: center;
         justify-content: center;
       }
-      .cta-bar .btn-cta-estimate { animation: pulse-glow 3s ease-in-out infinite; }
 
       /* --- Works: 横スワイプカルーセル + 画像高さ制限 --- */
       .works .container { padding-left: 0; padding-right: 0; }
@@ -823,7 +814,6 @@
         padding: 0;
       }
       .floating-cta-phone svg { width: 22px; height: 22px; }
-      .floating-cta-line { display: none; }
       .floating-cta-form {
         flex: 1;
         padding: 14px 20px;
@@ -855,11 +845,8 @@
           <a href="tel:0742268496" aria-label="電話で相談する">0742-26-8496</a>
         </div>
         <div class="header-hours">7:00〜22:00（土日祝も営業）</div>
+        <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談する">LINE</a>
         <a class="btn btn-cta-phone" href="tel:0742268496" aria-label="電話で相談する">電話</a>
-        <a class="btn btn-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener" aria-label="LINEで相談する">LINE</a>
-        <a class="btn btn-cta-estimate" href="#contact" aria-label="無料見積へ">
-          <span>無料見積</span><small>今すぐ</small>
-        </a>
       </div>
     </div>
   </header>
@@ -885,7 +872,7 @@
         </div>
         <p class="hero-price-hint"><strong>料金の目安</strong>はお見積りで。1Kからご相談可能です。</p>
         <div class="hero-actions">
-          <a class="btn btn-cta-estimate" href="#contact">無料で相談・見積</a>
+          <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">LINEで相談</a>
           <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
           <a class="btn" href="#trouble">よくあるお悩みを見る</a>
         </div>
@@ -1006,8 +993,8 @@
       <div class="cta-bar-inner">
         <p class="cta-bar-text">まずは無料でご相談ください。見積もキャンセルも無料。</p>
         <div class="cta-bar-btns">
+          <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">LINEで相談</a>
           <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
-          <a class="btn btn-cta-estimate" href="#contact">無料見積り</a>
         </div>
       </div>
     </section>
@@ -1195,8 +1182,8 @@
       <div class="cta-bar-inner">
         <p class="cta-bar-text">料金が知りたい方も、お気軽に。無料出張見積りに対応しています。</p>
         <div class="cta-bar-btns">
-          <a class="btn btn-cta-phone" href="tel:0742268496">0742-26-8496</a>
-          <a class="btn btn-cta-estimate" href="#contact">無料見積りを依頼</a>
+          <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">LINEで相談</a>
+          <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
         </div>
       </div>
     </section>
@@ -1263,7 +1250,7 @@
           <article class="flow-step">
             <div class="flow-step-num">STEP 01</div>
             <div class="flow-step-title">お問い合わせ</div>
-            <p>お電話・LINE・メールフォームから、ご状況やご希望の時期をお聞かせください。</p>
+            <p>お電話・LINEから、ご状況やご希望の時期をお聞かせください。</p>
           </article>
           <article class="flow-step">
             <div class="flow-step-num">STEP 02</div>
@@ -1323,7 +1310,7 @@
     </section>
 
     <!-- ===== FINAL CTA ===== -->
-    <section class="section final-cta" id="contact" aria-label="無料相談・無料見積">
+    <section class="section final-cta" id="contact" aria-label="無料相談（LINE・電話）">
       <div class="container final-cta-inner">
         <div>
           <div class="eyebrow">無料相談</div>
@@ -1332,18 +1319,14 @@
           <p class="final-cta-note">※見積無料・キャンセル無料です。強引な勧誘や、あとからの追加請求は一切行いません。</p>
         </div>
         <div>
-          <div class="final-cta-buttons" aria-label="3つのご相談方法">
+          <div class="final-cta-buttons" aria-label="2つのご相談方法">
+            <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">
+              <span>LINEで相談する</span>
+              <small>写真を送るだけで無料見積り</small>
+            </a>
             <a class="btn btn-cta-phone" href="tel:0742268496">
               <span>電話で相談する</span>
               <small>今すぐスタッフに繋がります</small>
-            </a>
-            <a class="btn btn-cta-estimate" href="#contact">
-              <span>無料見積りを依頼</span>
-              <small>フォームから24時間受付</small>
-            </a>
-            <a class="btn btn-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
-              <span>LINEで相談する</span>
-              <small>QRコードからともだち追加</small>
             </a>
           </div>
         </div>
@@ -1352,15 +1335,12 @@
 
     <!-- ===== FLOATING CTA (MOBILE) ===== -->
     <div class="floating-cta" aria-label="お問い合わせ（固定バー）">
+      <a class="floating-cta-btn floating-cta-line btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">
+        LINEで相談
+      </a>
       <a class="floating-cta-btn floating-cta-phone" href="tel:0742268496">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         電話する
-      </a>
-      <a class="floating-cta-btn floating-cta-line" href="https://line.me/R/ti/p/@195brsjr" target="_blank" rel="noopener">
-        LINE相談
-      </a>
-      <a class="floating-cta-btn floating-cta-form" href="#contact">
-        無料見積り
       </a>
     </div>
 
