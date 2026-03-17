@@ -418,28 +418,65 @@
       .trustbar-area { font-size: 14px; white-space: nowrap; }
       .trustbar-note { font-size: 11px; }
 
-      .trouble { padding: 40px 0; }
+      .trouble { padding: 40px 0; overflow: hidden; }
       .trouble-grid, .reassure-grid { grid-template-columns: 1fr; }
       .trouble-photo { display: none; }
       .reassure-visual { justify-self: center; }
-      .trouble-list { max-width: none; gap: 12px; padding: 0 var(--gutter); }
+      .trouble-list { max-width: 100%; gap: 12px; padding: 0 var(--gutter); }
       .trouble-list-item {
-        font-size: 15px;
+        font-size: 14px;
         background: var(--c-white);
         border-radius: 12px;
         padding: 16px 20px;
         line-height: 1.6;
         box-shadow: 0 1px 3px rgba(0,0,0,0.04);
         border-left: 3px solid var(--c-accent);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
       }
+      .trouble-list-item .trouble-list-text { min-width: 0; overflow-wrap: break-word; word-break: break-word; }
+      .trouble-list-item .trouble-list-text .hl,
+      .trouble-list-item strong,
+      .trouble-list-item b { display: inline; word-break: break-word; }
 
       .reassure { padding: 48px 0; }
       .reassure .reason-stack { max-width: none; padding: 0 var(--gutter); }
-      .reassure-visual img { width: 160px; height: 160px; border-radius: 50%; object-fit: cover; object-position: center 20%; margin: 0 auto 24px; display: block; border: 3px solid var(--c-border); }
-      .reassure-visual .cap { margin-top: 12px; text-align: center; }
+      /* 代表プロフィール: 写真小型化＋横並びでカード高さを抑える（実機フィードバック対応） */
+      .reassure-visual {
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        background: var(--c-white);
+        border-radius: 16px;
+        padding: 24px 20px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+        margin-top: 24px;
+        box-sizing: border-box;
+      }
+      .reassure-visual img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center 20%;
+        flex-shrink: 0;
+        border: 2px solid var(--c-border);
+        margin: 0;
+      }
+      .reassure-visual .cap { margin-top: 0; text-align: left; flex: 1; min-width: 0; }
+      .reassure-visual .cap .k { font-size: 18px; font-weight: 600; color: var(--c-ink); margin-bottom: 4px; }
+      .reassure-visual .cap .k + div { font-size: 13px; color: var(--c-sub); line-height: 1.6; }
       .reassure .section-head .h2 { text-align: center; }
-      .reassure-cards { padding: 0 var(--gutter); }
-      .reassure-info-card { min-width: 0; }
+      .reassure-cards { display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; padding: 0; margin-top: 20px; }
+      .reassure-info-card { min-width: 0 !important; padding: 14px !important; font-size: 13px; border-radius: 10px; background: var(--c-bg-warm); }
+      .reassure-info-card > div:first-child { font-size: 12px; }
+      .reassure-info-card > div:not(:first-child) { font-size: 13px; font-weight: 500; }
 
       .cta-bar { padding: 24px 0; }
       .cta-bar-inner { flex-direction: column; align-items: center; text-align: center; padding: 0 var(--gutter); }
