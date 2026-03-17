@@ -80,17 +80,215 @@
     .h2 { font-family: var(--font-heading); font-size: var(--f-h2); line-height: 1.25; font-weight: 500; letter-spacing: 0; word-break: keep-all; overflow-wrap: break-word; color: var(--c-ink); }
     .lead { font-size: var(--f-lead); color: var(--c-sub); max-width: 62ch; line-height: 2.0; }
 
-    /* ===== Header (Quiet Luxury) ===== */
-    .header { position: sticky; top: 0; z-index: 1000; background: var(--c-bg); border-bottom: 1px solid var(--c-border); padding-top: env(safe-area-inset-top, 0); transition: background 0.3s ease, backdrop-filter 0.3s ease; }
-    .header.scrolled { background: rgba(247,244,239,0.9); backdrop-filter: blur(12px); }
-    .header-inner { display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; padding: 12px var(--gutter); max-width: var(--container); margin: 0 auto; }
-    .brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
-    .brand img { width: 128px; height: auto; }
-    .brand-meta { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-    .brand-name { font-size: 14px; font-weight: 500; color: var(--c-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .brand-sub { font-size: 12px; color: var(--c-sub); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .header-ctas { display: flex; align-items: center; gap: 8px; }
-    .header-ctas .btn { padding: 10px 20px; font-size: 0.9rem; min-height: 44px; border-radius: 8px; transition: all 0.3s ease; }
+    /* =============================================
+       HEADER — Quiet Luxury（ジュエリーブランド）
+       ============================================= */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(247, 244, 239, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(176, 141, 87, 0.15);
+      padding-top: env(safe-area-inset-top, 0);
+      transition: padding 0.3s ease, background 0.3s ease;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 3vw, 40px);
+      height: 72px;
+      gap: 18px;
+      transition: height 0.3s ease;
+    }
+    .header.is-scrolled { background: rgba(247, 244, 239, 0.98); border-bottom-color: rgba(176, 141, 87, 0.25); }
+    .header.is-scrolled .header-inner { height: 56px; }
+
+    /* ===== ブランド（左） ===== */
+    .header-brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      gap: 2px;
+      flex-shrink: 0;
+      min-width: 0;
+    }
+    .header-brand-name {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--c-ink);
+      letter-spacing: 0.08em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .header-brand-sub {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 400;
+      color: var(--c-sub);
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .header.is-scrolled .header-brand-sub { display: none; }
+
+    /* ===== ナビ（中央） ===== */
+    .header-nav { display: flex; align-items: center; gap: 32px; }
+    .header-nav-link {
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--c-ink);
+      text-decoration: none;
+      letter-spacing: 0.08em;
+      padding: 4px 0;
+      position: relative;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+    .header-nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--c-accent);
+      transition: width 0.3s ease;
+    }
+    .header-nav-link:hover { color: var(--c-accent); }
+    .header-nav-link:hover::after { width: 100%; }
+
+    /* ===== CTA（右） ===== */
+    .header-ctas { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .header-phone { text-decoration: none; }
+    .header-phone-number {
+      font-family: var(--font-label);
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--c-ink);
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+    }
+    .btn-header-line {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
+      background: #06C755;
+      color: #FFFFFF;
+      font-family: var(--font-label);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease;
+      min-height: 44px;
+    }
+    .btn-header-line:hover { background: #05B34C; }
+    .btn-header-phone {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 20px;
+      background: transparent;
+      color: var(--c-ink);
+      font-family: var(--font-label);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid var(--c-border);
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+      min-height: 44px;
+    }
+    .btn-header-phone:hover { background: var(--c-ink); color: var(--c-white); border-color: rgba(0, 41, 2, 0.2); }
+
+    /* ===== ハンバーガー（SP のみ） ===== */
+    .header-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      width: 44px;
+      height: 44px;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
+      z-index: 1001;
+      flex-shrink: 0;
+    }
+    .hamburger-line { display: block; width: 22px; height: 1.5px; background: var(--c-ink); transition: transform 0.3s ease, opacity 0.3s ease; }
+    .header-hamburger[aria-expanded="true"] .hamburger-line:first-child { transform: translateY(3.75px) rotate(45deg); }
+    .header-hamburger[aria-expanded="true"] .hamburger-line:last-child { transform: translateY(-3.75px) rotate(-45deg); }
+
+    /* ===== フルスクリーンメニュー（SP） ===== */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--c-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 48px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s ease;
+      padding: 24px;
+    }
+    .mobile-menu[aria-hidden="false"] { opacity: 1; visibility: visible; }
+    .mobile-menu-nav { display: flex; flex-direction: column; align-items: center; gap: 28px; }
+    .mobile-menu-link {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 500;
+      color: var(--c-white);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.2s ease;
+    }
+    .mobile-menu-link:hover { color: var(--c-accent); }
+    .mobile-menu-ctas { display: flex; flex-direction: column; align-items: center; gap: 12px; width: min(320px, 100%); }
+    .btn-mobile-line {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: #06C755;
+      color: #FFFFFF;
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 6px;
+      min-height: 52px;
+    }
+    .btn-mobile-phone {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      background: transparent;
+      color: var(--c-white);
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      border: 1px solid rgba(255, 253, 249, 0.3);
+      border-radius: 6px;
+      min-height: 52px;
+    }
+    .mobile-menu-hours { font-family: var(--font-label); font-size: 12px; color: rgba(255, 253, 249, 0.5); margin-top: 8px; text-align: center; }
     .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 16px; border-radius: 8px; font-weight: 500; transition: all 0.3s ease; }
     .btn:hover { transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,41,2,0.12); }
     .btn-primary { background: var(--c-accent); color: var(--c-white); border: none; }
@@ -101,10 +299,8 @@
     .btn-cta-line { background: #06C755; color: #FFFFFF; border: none; }
     .btn-cta-line:hover { background: #05B34C; color: #FFFFFF; }
     .btn small { font-size: 12px; opacity: .95; }
-    .header-phone-wrap { font-size: clamp(20px, 2.2vw, 24px); font-weight: 500; }
-    .header-phone-wrap a { color: var(--c-ink); white-space: nowrap; }
-    .header-phone-wrap .label { font-size: 11px; color: var(--c-sub); margin-bottom: 2px; }
-    .header-hours { font-size: 11px; color: var(--c-sub); white-space: nowrap; }
+    /* ===== 旧ヘッダー要素（互換のため非表示） ===== */
+    .brand, .brand-meta, .brand-name, .brand-sub, .header-phone-wrap, .header-hours { display: none; }
 
     /* ===== Hero (Quiet Luxury 60:40) ===== */
     .hero { min-height: 100vh; display: grid; grid-template-columns: 1.2fr 0.8fr; }
@@ -328,28 +524,29 @@
     .cta-bar .btn-cta-line { background: #06C755; color: #FFFFFF; border: none; }
     .cta-bar .btn-cta-line:hover { background: #05B34C; color: #FFFFFF; }
 
-    /* ===== Footer (Quiet Luxury) ===== */
-    .site-footer { background: var(--c-dark); color: var(--c-white); padding: 60px var(--gutter) 40px; border-top: 1px solid rgba(255,253,249,0.1); }
-    .site-footer-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr auto; grid-template-rows: auto auto; gap: 40px 40px; align-items: start; }
-    .site-footer-inner .footer-copy { grid-column: 1 / -1; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,253,249,0.08); margin-bottom: 0; }
-    .site-footer-inner .site-footer-lp-link { grid-column: 1 / -1; }
-    .site-footer-name { font-size: 14px; font-weight: 500; color: var(--c-white); margin-bottom: 8px; }
-    .site-footer-addr { font-size: 12px; color: rgba(255,253,249,0.6); margin-bottom: 4px; }
-    .site-footer-note { font-size: 11px; color: rgba(255,253,249,0.4); margin-top: 16px; margin-bottom: 20px; }
-    .site-footer-lp-link { margin-top: 16px; display: none; }
-    .site-footer-lp-link a { display: inline-block; padding: 6px 12px; background: transparent; color: rgba(255,253,249,0.5); border-radius: var(--r-1); font-size: 11px; border: 1px solid rgba(255,253,249,0.2); transition: background .2s, color .2s; }
-    .site-footer-lp-link a:hover { background: rgba(255,255,255,0.1); color: var(--c-white); }
+    /* =============================================
+       FOOTER — Minimal
+       ============================================= */
+    .site-footer { background: var(--c-dark); color: var(--c-white); padding: 48px 0 24px; }
+    .footer-inner { max-width: var(--container); margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px); }
+    .footer-main { display: flex; justify-content: space-between; align-items: flex-start; gap: 40px; padding-bottom: 32px; border-bottom: 1px solid rgba(255, 253, 249, 0.1); }
+    .footer-name { font-family: var(--font-heading); font-size: 16px; font-weight: 500; letter-spacing: 0.08em; margin-bottom: 8px; }
+    .footer-addr, .footer-license { font-family: var(--font-body); font-size: 12px; font-weight: 400; color: rgba(255, 253, 249, 0.5); line-height: 1.8; }
+    .footer-contact { text-align: right; }
+    .footer-phone { font-family: var(--font-label); font-size: 18px; font-weight: 400; color: var(--c-white); text-decoration: none; letter-spacing: 0.04em; }
+    .footer-hours { font-family: var(--font-body); font-size: 11px; color: rgba(255, 253, 249, 0.5); margin-top: 4px; margin-bottom: 16px; }
+    .footer-line-btn { display: inline-block; padding: 10px 24px; background: #06C755; color: #FFFFFF; font-family: var(--font-body); font-size: 13px; font-weight: 600; text-decoration: none; border-radius: 4px; transition: background 0.2s ease; }
+    .footer-line-btn:hover { background: #05B34C; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; gap: 16px; }
+    .footer-privacy { font-family: var(--font-body); font-size: 11px; color: rgba(255, 253, 249, 0.4); text-decoration: none; transition: color 0.2s ease; }
+    .footer-privacy:hover { color: rgba(255, 253, 249, 0.7); }
+    .footer-copy { font-family: var(--font-label); font-size: 11px; color: rgba(255, 253, 249, 0.3); margin: 0; }
 
     /* ===== PC表示: テキストサイズ改善（可読性・視認性） ===== */
     @media (min-width: 901px) {
       .eyebrow { font-size: 13px; }
       .cta-bar-text { font-size: 1.125rem; }
       .cta-bar-btns .btn { font-size: 1rem; padding: 14px 24px; }
-      .brand-name { font-size: 15px; }
-      .brand-sub { font-size: 13px; }
-      .header-ctas .btn { font-size: 1rem; }
-      .header-phone-wrap .label { font-size: 12px; }
-      .header-hours { font-size: 12px; }
       .btn small { font-size: 13px; }
       .reason-label { font-size: 13px; }
       .cta-strip h3 { font-size: var(--f-lead); }
@@ -366,6 +563,17 @@
       50% { box-shadow: 0 0 0 8px rgba(176,141,87,0); }
     }
     @media (max-width: 900px) {
+      /* ===== Header: SPはブランド＋ハンバーガーのみ ===== */
+      .header-inner { padding: 0 16px; height: 56px; }
+      .header-nav { display: none; }
+      .header-phone { display: none; }
+      .header-ctas { display: none; }
+      .header-hamburger { display: flex; }
+      .header-brand-name { font-size: 15px; }
+      .header-brand-sub { font-size: 9px; }
+      .header.is-scrolled .header-inner { height: 56px; }
+      .header.is-scrolled .header-brand-sub { display: block; }
+
       /* --- セクション背景リズム --- */
       .hero { background: var(--c-bg); }
       .trustbar { background: var(--c-white); border-bottom: 1px solid var(--c-border); }
@@ -698,6 +906,12 @@
       .final-cta-buttons .btn-cta-phone { animation: pulse-glow 3s ease-in-out infinite; min-height: 56px; padding: 18px; font-size: 17px; font-weight: 700; border-radius: 14px; }
       .final-cta-buttons .btn span, .final-cta-buttons .btn small { white-space: nowrap; }
 
+      /* ===== Footer: SPは1カラム ===== */
+      .footer-inner { padding: 0 20px; }
+      .footer-main { flex-direction: column; gap: 24px; }
+      .footer-contact { text-align: left; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+
       .section { padding: 36px 0; }
       .container { padding-left: var(--gutter); padding-right: var(--gutter); }
       .lead, .section-head .lead { max-width: 42ch; }
@@ -707,21 +921,13 @@
 
     @media (max-width: 480px) {
       :root { --gutter: 16px; }
-      .header-inner { padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; }
-      .header-ctas { flex-direction: row; justify-content: flex-end; gap: 6px; flex-wrap: nowrap; }
-      .header-phone-wrap { display: none; }
-      .header-hours { display: none; }
-      .header-ctas .btn-cta-phone { display: none; }
-      .brand img { width: 90px; }
-      .brand-name { font-size: 13px; }
-      .brand-sub { font-size: 11px; }
-      .header-ctas .btn { flex: none; min-height: 44px; font-size: 12px; padding: 8px 14px; border-radius: 8px; }
+      .header-inner { padding-left: 12px; padding-right: 12px; }
       .hero-copy { padding: 20px 16px 28px; padding-top: 80px; }
       .hero-copy .h1 { font-size: 1.5rem; line-height: 1.35; }
       .section { padding: 28px 0; }
       .section-head .h2 { font-size: 1.35rem; }
       .final-cta-buttons .btn { padding: 14px 16px; min-height: 48px; font-size: 0.9375rem; }
-      .site-footer { padding: 24px 16px; padding-bottom: max(20px, env(safe-area-inset-bottom)); }
+      .site-footer { padding-bottom: max(24px, env(safe-area-inset-bottom)); }
       .work-card { flex: 0 0 90vw; }
       .review-card { flex: 0 0 90vw; }
     }
@@ -830,26 +1036,62 @@
   </style>
 </head>
 <body>
-  <header class="header" aria-label="ヘッダー">
+  <header class="header" id="header" aria-label="ヘッダー">
     <div class="header-inner">
-      <div class="brand">
-        <img src="ハートフルクリーンサイト画像/logo/logo-heartful-clean-darkbg.png" alt="ハートフルクリーン" width="128" height="48" loading="lazy" decoding="async">
-        <div class="brand-meta">
-          <div class="brand-name">遺品整理・生前整理・特殊清掃</div>
-          <div class="brand-sub">奈良・大阪・京都・兵庫・滋賀（関西一円）</div>
-        </div>
-      </div>
+
+      <!-- 左：ブランド -->
+      <a href="#top" class="header-brand" aria-label="ページ上部へ">
+        <span class="header-brand-name">ハートフルクリーン</span>
+        <span class="header-brand-sub">遺品整理・生前整理・特殊清掃</span>
+      </a>
+
+      <!-- 中央：ページ内ナビ（PC のみ） -->
+      <nav class="header-nav" aria-label="ページ内ナビゲーション">
+        <a href="#price" class="header-nav-link">料金</a>
+        <a href="#works" class="header-nav-link">事例</a>
+        <a href="#reviews" class="header-nav-link">口コミ</a>
+        <a href="#faq" class="header-nav-link">FAQ</a>
+      </nav>
+
+      <!-- 右：CTA -->
       <div class="header-ctas" aria-label="主要導線">
-        <div class="header-phone-wrap">
-          <div class="label">受付</div>
-          <a href="tel:0742268496" aria-label="電話で相談する">0742-26-8496</a>
-        </div>
-        <div class="header-hours">7:00〜22:00（土日祝も営業）</div>
-        <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer" aria-label="LINEで相談する">LINE</a>
-        <a class="btn btn-cta-phone" href="tel:0742268496" aria-label="電話で相談する">電話</a>
+        <a href="tel:0742268496" class="header-phone" aria-label="電話で相談する">
+          <span class="header-phone-number">0742-26-8496</span>
+        </a>
+        <a href="https://page.line.me/195brsjr?openQrModal=true"
+           target="_blank" rel="noopener noreferrer"
+           class="btn btn-header-line"
+           aria-label="LINEで相談">LINE</a>
+        <a href="tel:0742268496"
+           class="btn btn-header-phone"
+           aria-label="電話で相談">電話</a>
       </div>
+
+      <!-- SP：ハンバーガー -->
+      <button class="header-hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
     </div>
   </header>
+
+  <!-- SP：フルスクリーンメニュー -->
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav class="mobile-menu-nav" aria-label="モバイルメニュー">
+      <a href="#price" class="mobile-menu-link">料金</a>
+      <a href="#works" class="mobile-menu-link">事例</a>
+      <a href="#reviews" class="mobile-menu-link">口コミ</a>
+      <a href="#faq" class="mobile-menu-link">FAQ</a>
+    </nav>
+    <div class="mobile-menu-ctas">
+      <a href="https://page.line.me/195brsjr?openQrModal=true"
+         target="_blank" rel="noopener noreferrer"
+         class="btn btn-mobile-line">LINEで相談する</a>
+      <a href="tel:0742268496" class="btn btn-mobile-phone">電話で相談する</a>
+      <p class="mobile-menu-hours">受付 7:00〜22:00（土日祝も営業）</p>
+    </div>
+  </div>
 
   <main>
     <!-- ===== HERO ===== -->
@@ -1347,28 +1589,101 @@
   </main>
 
   <footer class="site-footer" aria-label="フッター">
-    <div class="site-footer-inner">
-      <div>
-        <p class="site-footer-name">ハートフルクリーン</p>
-        <p class="site-footer-addr">〒630-8114 奈良県奈良市芝辻町4-2-1</p>
-        <p class="site-footer-addr">古物商許可番号：第641010002931号　遺品整理士認定番号：第IS26084号</p>
+    <div class="footer-inner">
+
+      <div class="footer-main">
+        <!-- 左：会社情報 -->
+        <div class="footer-info">
+          <p class="footer-name">ハートフルクリーン</p>
+          <p class="footer-addr">〒630-8114 奈良県奈良市芝辻町4-2-1</p>
+          <p class="footer-license">古物商許可 第641010002931号 ／ 遺品整理士 第IS26084号</p>
+        </div>
+
+        <!-- 右：連絡先 + LINE -->
+        <div class="footer-contact">
+          <a href="tel:0742268496" class="footer-phone" aria-label="電話をかける">0742-26-8496</a>
+          <p class="footer-hours">7:00〜22:00（土日祝も営業）</p>
+          <a href="https://page.line.me/195brsjr?openQrModal=true"
+             target="_blank" rel="noopener noreferrer"
+             class="footer-line-btn"
+             aria-label="LINEで相談する">LINEで相談する</a>
+        </div>
       </div>
-      <div>
-        <p class="site-footer-addr"><a href="tel:0742268496" style="color:inherit;">0742-26-8496</a></p>
-        <p class="site-footer-note">7:00〜22:00（土日祝も営業）</p>
+
+      <div class="footer-bottom">
+        <a href="#" class="footer-privacy">プライバシーポリシー</a>
+        <p class="footer-copy">© ハートフルクリーン All Rights Reserved.</p>
       </div>
-      <p class="footer-copy">&copy; ハートフルクリーン All Rights Reserved.</p>
+
     </div>
   </footer>
 
   <script>
+    /* ===== ヘッダー スクロールシュリンク ===== */
     (function() {
-      var header = document.querySelector('.header');
-      if (header) {
-        window.addEventListener('scroll', function() {
-          header.classList.toggle('scrolled', window.scrollY > 20);
-        }, { passive: true });
-      }
+      var header = document.getElementById('header');
+      if (!header) return;
+      var onScroll = function() {
+        header.classList.toggle('is-scrolled', window.scrollY > 60);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    /* ===== ハンバーガーメニュー ===== */
+    (function() {
+      var btn = document.querySelector('.header-hamburger');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+
+      var close = function() {
+        btn.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      };
+      var open = function() {
+        btn.setAttribute('aria-expanded', 'true');
+        menu.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      };
+      var toggle = function() {
+        var isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) close(); else open();
+      };
+
+      btn.addEventListener('click', toggle);
+      menu.addEventListener('click', function(e) {
+        if (e.target === menu) close();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') close();
+      });
+      menu.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          close();
+        });
+      });
+    })();
+
+    /* ===== ページ内スムーススクロール（ヘッダー分オフセット） ===== */
+    (function() {
+      var selector = '.header-nav-link, .mobile-menu-link, .header-brand';
+      document.querySelectorAll(selector).forEach(function(link) {
+        link.addEventListener('click', function(e) {
+          var href = this.getAttribute('href');
+          if (!href || href.charAt(0) !== '#') return;
+          var target = document.querySelector(href);
+          if (!target) return;
+          e.preventDefault();
+          var headerInner = document.querySelector('.header-inner');
+          var headerH = headerInner ? headerInner.offsetHeight : 0;
+          var y = target.getBoundingClientRect().top + window.scrollY - headerH - 16;
+          window.scrollTo({ top: y, behavior: 'smooth' });
+        });
+      });
+    })();
+
+    (function() {
       var observer = new IntersectionObserver(function(entries) {
         entries.forEach(function(entry) {
           if (entry.isIntersecting) {
