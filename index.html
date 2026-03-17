@@ -195,6 +195,11 @@
     .price { background: var(--c-bg); }
     .price .section-head .h2 { font-family: var(--font-heading); }
     #price .section-head { text-align: center; }
+    /* ★ h2・pのボックス自体を中央配置（text-alignだけでは効かない） */
+    #price .section-head h2,
+    #price .section-head p,
+    #faq .section-head h2,
+    #faq .section-head p { margin-left: auto; margin-right: auto; }
     #price table,
     #price .price-table,
     #price .price-table-wrap { margin-left: auto; margin-right: auto; }
