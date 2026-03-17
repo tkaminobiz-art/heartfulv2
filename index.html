@@ -128,6 +128,12 @@
     .hero-price-hint { font-size: 14px; color: var(--c-sub); margin-top: 10px; padding: 0; background: transparent; font-weight: 400; }
     .hero-price-hint strong { font-weight: 500; color: var(--c-sub); }
 
+    /* ===== LINE CTAセクション ===== */
+    .line-cta { padding: 0; background: var(--c-dark, #0A1F0E); }
+    .line-cta-link { display: block; max-width: var(--container); margin: 0 auto; transition: opacity 0.2s ease; }
+    .line-cta-link:hover { opacity: 0.92; }
+    .line-cta-img { display: block; width: 100%; height: auto; }
+
     /* ===== Trust bar (Quiet Luxury) ===== */
     .trustbar { background: var(--c-bg-warm); padding: 28px 0; }
     .trustbar-inner { display: flex; justify-content: flex-start; }
@@ -419,6 +425,8 @@
       .hero-actions { flex-direction: column; gap: 10px; margin-top: 14px; }
       .hero-actions .btn { width: 100%; padding: 14px 16px; min-height: 48px; }
       .hero-actions .btn-cta-estimate { min-height: 52px; padding: 16px 24px; font-size: 16px; border-radius: 12px; animation: pulse-glow 3s ease-in-out infinite; }
+
+      .line-cta-link { max-width: 100%; }
 
       .trustbar { padding: 12px var(--gutter); }
       .trustbar-inner { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; scroll-snap-type: x mandatory; gap: 12px; }
@@ -860,6 +868,28 @@
           <a class="btn" href="#trouble">よくあるお悩みを見る</a>
         </div>
       </div>
+    </section>
+
+    <!-- ===== LINE CTA セクション ===== -->
+    <section id="line-cta" class="section line-cta" aria-label="LINEで無料見積もり">
+      <a href="https://page.line.me/195brsjr?openQrModal=true"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="line-cta-link"
+         aria-label="LINE公式アカウントを友だち追加して写真見積もり">
+        <picture>
+          <source media="(max-width: 900px)"
+                  srcset="SPバナー1_微調整.png"
+                  type="image/png">
+          <img src="PCバナー1_微調整.png"
+               alt="LINEで写真を送るだけ — 見積もり無料。お部屋の写真を撮って送るだけで概算費用をお伝えします。"
+               width="2752"
+               height="1536"
+               loading="eager"
+               decoding="async"
+               class="line-cta-img">
+        </picture>
+      </a>
     </section>
 
     <!-- ===== TRUST BAR ===== -->
