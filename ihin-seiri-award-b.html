@@ -478,11 +478,40 @@
       .reassure-info-card > div:first-child { font-size: 12px; }
       .reassure-info-card > div:not(:first-child) { font-size: 13px; font-weight: 500; }
 
-      .cta-bar { padding: 24px 0; }
-      .cta-bar-inner { flex-direction: column; align-items: center; text-align: center; padding: 0 var(--gutter); }
-      .cta-bar-text { white-space: normal; margin-bottom: 8px; }
-      .cta-bar-btns { width: 100%; flex-direction: column; }
-      .cta-bar-btns .btn { width: 100%; min-height: 48px; }
+      /* CTAバー: テキスト切れ・ボタン中央寄せ（詳細度競合の解消） */
+      .cta-bar { padding: 24px 0; overflow: hidden; }
+      .cta-bar-inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0 var(--gutter);
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .cta-bar .cta-bar-text {
+        white-space: normal !important;
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.6;
+        max-width: 100%;
+        text-align: center;
+      }
+      .cta-bar-btns {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+      }
+      .cta-bar-btns .btn {
+        width: 100%;
+        max-width: 100%;
+        min-height: 48px;
+        box-sizing: border-box;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .cta-bar .btn-cta-estimate { animation: pulse-glow 3s ease-in-out infinite; }
 
       /* --- Works: 横スワイプカルーセル + 画像高さ制限 --- */
