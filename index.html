@@ -955,31 +955,6 @@
       .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
     }
 
-    /* ===== ダークモード ===== */
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --c-ink: #e8ebe6;
-        --c-sub: #a0a89e;
-        --c-bg: #0f1410;
-        --c-bg-warm: #141a14;
-        --c-white: #1a1f1a;
-        --c-border: rgba(255,255,255,0.08);
-        --c-dark: #050a06;
-      }
-      .header { background: rgba(15,20,15,0.95) !important; }
-      .hero-media { background: var(--c-bg-warm) !important; }
-      .hero-copy { background: var(--c-bg) !important; }
-      .trustbar { background: var(--c-bg-warm) !important; }
-      .trouble,
-      .reassure,
-      .works,
-      .reviews,
-      .price,
-      .flow,
-      .faq { background: var(--c-bg) !important; }
-      .site-footer { background: var(--c-dark) !important; }
-    }
-
     /* ===== Floating CTA (mobile, Quiet Luxury) ===== */
     .floating-cta { display: none; }
     @media (max-width: 900px) {
