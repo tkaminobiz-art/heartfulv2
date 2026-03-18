@@ -429,6 +429,36 @@
     .line-cta-link:hover { opacity: 0.92; }
     .line-cta-img { display: block; width: 100%; height: auto; }
 
+    /* ===== FV ヒーローバナー ===== */
+    .hero-banner {
+      padding: 0;
+      background: #F7F4EF;
+      min-height: auto;
+      display: block;
+      grid-template-columns: none;
+    }
+    .hero-banner-link {
+      display: block;
+      transition: opacity 0.2s ease;
+    }
+    .hero-banner-link:hover { opacity: 0.95; }
+    .hero-banner-img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
     /* ===== Trust bar (Quiet Luxury) ===== */
     .trustbar { background: var(--c-bg-warm); padding: 28px 0; }
     .trustbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
@@ -719,6 +749,12 @@
         min-height: 100svh;
         position: relative;
         overflow: hidden;
+      }
+      .hero-banner {
+        display: block;
+        min-height: auto;
+        position: static;
+        overflow: visible;
       }
       .hero-media {
         position: absolute;
@@ -1198,31 +1234,28 @@
   </div>
 
   <main>
-    <!-- ===== HERO ===== -->
-    <section class="hero" id="top" aria-label="ファーストビュー">
-      <div class="hero-media" aria-hidden="true">
+    <!-- ===== FV ヒーロー（画像バナー） ===== -->
+    <section id="top" class="hero hero-banner" aria-label="ファーストビュー">
+      <a href="https://page.line.me/195brsjr?openQrModal=true"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="hero-banner-link"
+         aria-label="ハートフルクリーンにLINEで相談する">
         <picture>
-          <source media="(max-width: 900px)" srcset="hero-sp.jpg" type="image/jpeg">
-          <img src="バナー/FVセクションバナー.png" alt="遺品整理のご相談・代表のイメージ" width="1200" height="675" loading="eager" decoding="async" fetchpriority="high"
-               onerror="this.outerHTML='<div style=&quot;width:100%;height:100%;display:grid;place-items:center;color:#2b3; font-weight:500;&quot;>FV画像を設置してください</div>'">
+          <source media="(max-width: 900px)"
+                  srcset="FVSP用_パターン1.png"
+                  type="image/png">
+          <img src="FVPC用_パターン1.png"
+               alt="ハートフルクリーン — 遺品整理・生前整理。見積もり無料、追加料金一切なし、遺品整理士在籍。安心・丁寧なサービスであなたをサポート。"
+               width="1600"
+               height="900"
+               loading="eager"
+               decoding="async"
+               fetchpriority="high"
+               class="hero-banner-img">
         </picture>
-      </div>
-      <div class="hero-copy">
-        <div class="eyebrow">奈良・関西の遺品整理</div>
-        <h1 class="h1">元警察官の代表が、<br>誠実な整理を<br>お約束します。</h1>
-        <p class="lead hero-sub">ご遺族様の気持ちに寄り添い、<br>仕分け・搬出・清掃・供養・買取まで一括で。<br>見積無料・キャンセル無料で、安心してご相談いただけます。</p>
-        <div class="hero-pills" aria-label="安心ポイント">
-          <span class="pill pill-green">見積無料・キャンセル無料</span>
-          <span class="pill pill-green">追加費用なし（明朗会計）</span>
-          <span class="pill pill-orange">関西一円対応</span>
-        </div>
-        <p class="hero-price-hint"><strong>料金の目安</strong>はお見積りで。1Kからご相談可能です。</p>
-        <div class="hero-actions">
-          <a class="btn btn-cta-line" href="https://page.line.me/195brsjr?openQrModal=true" target="_blank" rel="noopener noreferrer">LINEで相談</a>
-          <a class="btn btn-cta-phone" href="tel:0742268496">電話で相談</a>
-          <a class="btn" href="#trouble">よくあるお悩みを見る</a>
-        </div>
-      </div>
+      </a>
+      <h1 class="visually-hidden">遺品整理・生前整理ならハートフルクリーン｜奈良・関西対応</h1>
     </section>
 
     <!-- ===== LINE CTA セクション ===== -->
