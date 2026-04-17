@@ -116,6 +116,18 @@
     ]
   }
   </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WP5Q4854"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    window.gtag = window.gtag || gtag;
+    gtag('js', new Date());
+    gtag('config', 'GT-WP5Q4854');
+    gtag('config', 'AW-18031574489');
+  </script>
+
   <style>
     /* ===== Reset / Base ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1752,6 +1764,51 @@
   </footer>
 
   <script>
+    /* ===== Google Ads conversions (phone / LINE / 30s) ===== */
+    (function() {
+      var ADS_SEND_TO = {
+        phone: 'AW-18031574489/MmIMC0vHsJ0cENn7j5ZD',
+        line: 'AW-18031574489/D0vqCJCQyZ0cENn7j5ZD',
+        stay30: 'AW-18031574489/5GPICIzLsJ0cENn7j5ZD'
+      };
+
+      function sendConversion(sendTo) {
+        try {
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', { send_to: sendTo });
+          } else if (window.dataLayer && typeof window.dataLayer.push === 'function') {
+            window.dataLayer.push(['event', 'conversion', { send_to: sendTo }]);
+          }
+        } catch (e) { /* noop */ }
+      }
+
+      // phone / LINE click tracking (capture phase so it works even if navigation happens quickly)
+      document.addEventListener('click', function(e) {
+        var el = e.target;
+        if (!el) return;
+        var a = el.closest ? el.closest('a[href]') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (!href) return;
+
+        if (href.indexOf('tel:') === 0) {
+          sendConversion(ADS_SEND_TO.phone);
+          return;
+        }
+        if (/^https?:\/\/(page\.)?line\.me\//i.test(href) || /^https?:\/\/lin\.ee\//i.test(href)) {
+          sendConversion(ADS_SEND_TO.line);
+        }
+      }, true);
+
+      // 30 seconds stay (fire once per page load)
+      var fired30 = false;
+      window.setTimeout(function() {
+        if (fired30) return;
+        fired30 = true;
+        sendConversion(ADS_SEND_TO.stay30);
+      }, 30000);
+    })();
+
     /* ===== ヘッダー スクロールシュリンク ===== */
     (function() {
       var header = document.getElementById('header');
