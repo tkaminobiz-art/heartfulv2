@@ -30,9 +30,9 @@
 
 コンバージョン（send_to）:
 
-- **電話**: `AW-18031574489/MmIMC0vHsJ0cENn7j5ZD`
-- **LINE**: `AW-18031574489/D0vqCJCQyZ0cENn7j5ZD`
-- **30秒以上滞在**: `AW-18031574489/5GPICIzLsJ0cENn7j5ZD`
+- **電話**: `AW-18031574489/MmIMCOvHsJ0cENn7j5ZD`（Ads画面の「0」と「O」取り違えに注意）
+- **LINE**: `AW-18031574489/DOvqCJCQyZ0cENn7j5ZD`（先頭が `D0` か `DO` か要確認）
+- **30秒以上滞在**: `AW-18031574489/5GPlCIzLsJ0cENn7j5ZD`（`I` / `l` 取り違えに注意）
 
 ### このリポジトリで行った変更（注意：本番反映とは別）
 
