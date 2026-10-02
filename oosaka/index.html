@@ -66,16 +66,18 @@
   <link rel="stylesheet" href="/assets/analytics-consent.css" />
   <script src="/assets/analytics-consent.js"></script>
 
-  <!-- Google tag (gtag.js) — 奈良本番と同一アカウント。CVは各CTAのtel:/LINEクリックで発火（body末尾） -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=GT-WP5Q4854"></script>
+  <!-- Preserve the existing opt-in GA4 command queue; Ads is managed by GTM. -->
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    window.gtag = window.gtag || gtag;
-    gtag('js', new Date());
-    gtag('config', 'GT-WP5Q4854');
-    gtag('config', 'AW-18031574489');
+    window.gtag = window.gtag || function(){window.dataLayer.push(arguments);};
   </script>
+  <!-- Google Tag Manager: Osaka only. Keep Nara's existing Ads setup separate. -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-TLDHF95V');</script>
+  <!-- End Google Tag Manager -->
 
   <style>
     :root{
@@ -1409,6 +1411,10 @@
   </style>
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLDHF95V"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   <a class="skip-link" href="#main">本文へスキップ</a>
 
   <header class="header" aria-label="ヘッダー">
@@ -2173,38 +2179,6 @@
       LINEで写真見積り
     </a>
   </nav>
-
-  <!-- Google Ads コンバージョン計測（電話 / LINE クリック・30秒滞在）— 奈良本番と同一ラベル -->
-  <script>
-    (function() {
-      var ADS_SEND_TO = {
-        phone: 'AW-18031574489/MmIMCOvHsJ0cENn7j5ZD',
-        line: 'AW-18031574489/DOvqCJCQyZ0cENn7j5ZD',
-        stay30: 'AW-18031574489/5GPlCIzLsJ0cENn7j5ZD'
-      };
-      function sendConversion(sendTo) {
-        try {
-          if (typeof window.gtag === 'function') {
-            window.gtag('event', 'conversion', { send_to: sendTo });
-          } else if (window.dataLayer && typeof window.dataLayer.push === 'function') {
-            window.dataLayer.push(['event', 'conversion', { send_to: sendTo }]);
-          }
-        } catch (e) { /* noop */ }
-      }
-      document.addEventListener('click', function(e) {
-        var el = e.target;
-        if (!el) return;
-        var a = el.closest ? el.closest('a[href]') : null;
-        if (!a) return;
-        var href = a.getAttribute('href') || '';
-        if (!href) return;
-        if (href.indexOf('tel:') === 0) { sendConversion(ADS_SEND_TO.phone); return; }
-        if (/^https?:\/\/(page\.)?line\.me\//i.test(href) || /^https?:\/\/lin\.ee\//i.test(href)) { sendConversion(ADS_SEND_TO.line); }
-      }, true);
-      var fired30 = false;
-      window.setTimeout(function() { if (fired30) return; fired30 = true; sendConversion(ADS_SEND_TO.stay30); }, 30000);
-    })();
-  </script>
 
   <script>
     (function(){
